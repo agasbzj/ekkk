@@ -23,8 +23,8 @@
 		41750DF2134AFA8300CFF97E /* ItemModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41750DF0134AFA8300CFF97E /* ItemModel.xcdatamodeld */; };
 		41750DFD134AFAB600CFF97E /* restaurants.png in Resources */ = {isa = PBXBuildFile; fileRef = 41750DF3134AFAB600CFF97E /* restaurants.png */; };
 		41750DFE134AFAB600CFF97E /* bar&coffee.png in Resources */ = {isa = PBXBuildFile; fileRef = 41750DF4134AFAB600CFF97E /* bar&coffee.png */; };
-		41750DFF134AFAB600CFF97E /* png-0014.png in Resources */ = {isa = PBXBuildFile; fileRef = 41750DF5134AFAB600CFF97E /* png-0014.png */; };
-		41750E00134AFAB600CFF97E /* png-0015.png in Resources */ = {isa = PBXBuildFile; fileRef = 41750DF6134AFAB600CFF97E /* png-0015.png */; };
+		41750DFF134AFAB600CFF97E /* massages.png in Resources */ = {isa = PBXBuildFile; fileRef = 41750DF5134AFAB600CFF97E /* massages.png */; };
+		41750E00134AFAB600CFF97E /* gasstations.png in Resources */ = {isa = PBXBuildFile; fileRef = 41750DF6134AFAB600CFF97E /* gasstations.png */; };
 		41750E01134AFAB600CFF97E /* png-0029.png in Resources */ = {isa = PBXBuildFile; fileRef = 41750DF7134AFAB600CFF97E /* png-0029.png */; };
 		41750E02134AFAB600CFF97E /* png-0003.png in Resources */ = {isa = PBXBuildFile; fileRef = 41750DF8134AFAB600CFF97E /* png-0003.png */; };
 		41750E03134AFAB600CFF97E /* png-0006.png in Resources */ = {isa = PBXBuildFile; fileRef = 41750DF9134AFAB600CFF97E /* png-0006.png */; };
@@ -77,8 +77,8 @@
 		41750DF1134AFA8300CFF97E /* ItemModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ItemModel.xcdatamodel; sourceTree = "<group>"; };
 		41750DF3134AFAB600CFF97E /* restaurants.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restaurants.png; sourceTree = "<group>"; };
 		41750DF4134AFAB600CFF97E /* bar&coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar&coffee.png"; sourceTree = "<group>"; };
-		41750DF5134AFAB600CFF97E /* png-0014.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "png-0014.png"; sourceTree = "<group>"; };
-		41750DF6134AFAB600CFF97E /* png-0015.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "png-0015.png"; sourceTree = "<group>"; };
+		41750DF5134AFAB600CFF97E /* massages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = massages.png; sourceTree = "<group>"; };
+		41750DF6134AFAB600CFF97E /* gasstations.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gasstations.png; sourceTree = "<group>"; };
 		41750DF7134AFAB600CFF97E /* png-0029.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "png-0029.png"; sourceTree = "<group>"; };
 		41750DF8134AFAB600CFF97E /* png-0003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "png-0003.png"; sourceTree = "<group>"; };
 		41750DF9134AFAB600CFF97E /* png-0006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "png-0006.png"; sourceTree = "<group>"; };
@@ -326,8 +326,8 @@
 				41750E12134AFCAB00CFF97E /* Place_holder.png */,
 				41750DF3134AFAB600CFF97E /* restaurants.png */,
 				41750DF4134AFAB600CFF97E /* bar&coffee.png */,
-				41750DF5134AFAB600CFF97E /* png-0014.png */,
-				41750DF6134AFAB600CFF97E /* png-0015.png */,
+				41750DF5134AFAB600CFF97E /* massages.png */,
+				41750DF6134AFAB600CFF97E /* gasstations.png */,
 				41750DF7134AFAB600CFF97E /* png-0029.png */,
 				41750DF8134AFAB600CFF97E /* png-0003.png */,
 				41750DF9134AFAB600CFF97E /* png-0006.png */,
@@ -396,8 +396,8 @@
 				41750DEF134AF8CE00CFF97E /* CategoryList.plist in Resources */,
 				41750DFD134AFAB600CFF97E /* restaurants.png in Resources */,
 				41750DFE134AFAB600CFF97E /* bar&coffee.png in Resources */,
-				41750DFF134AFAB600CFF97E /* png-0014.png in Resources */,
-				41750E00134AFAB600CFF97E /* png-0015.png in Resources */,
+				41750DFF134AFAB600CFF97E /* massages.png in Resources */,
+				41750E00134AFAB600CFF97E /* gasstations.png in Resources */,
 				41750E01134AFAB600CFF97E /* png-0029.png in Resources */,
 				41750E02134AFAB600CFF97E /* png-0003.png in Resources */,
 				41750E03134AFAB600CFF97E /* png-0006.png in Resources */,
