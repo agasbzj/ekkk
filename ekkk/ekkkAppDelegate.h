@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "LocateOperation.h"
-@interface ekkkAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
+#import <CoreLocation/CoreLocation.h>
+
+@interface ekkkAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, CLLocationManagerDelegate> {
 
     NSOperationQueue *locateAndParseQueue; 
-
+    CLLocationManager *locationManager;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -24,7 +26,9 @@
 
 
 @property (nonatomic, retain) NSOperationQueue *locateAndParseQueue;
+@property (nonatomic, retain) CLLocationManager *locationManager;
 
+- (void)startStandardUpdates;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

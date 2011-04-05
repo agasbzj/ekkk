@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
-
-@interface LocateOperation : NSOperation {
-    
+@interface LocateOperation : NSOperation <CLLocationManagerDelegate>{
+    CLLocationManager *locationManager;
 }
+@property (nonatomic, retain) CLLocationManager *locationManager;
+
+- (void)startStandardUpdates;
 
 @end

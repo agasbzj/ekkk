@@ -10,7 +10,9 @@
 
 
 @interface OffersRootViewController : UIViewController {
-    
+    UITableView *tableView;
 }
+
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 
 @end

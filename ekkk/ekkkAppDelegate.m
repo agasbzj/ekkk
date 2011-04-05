@@ -23,19 +23,58 @@
 
 @synthesize locateAndParseQueue;
 
+@synthesize locationManager;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     // Add the tab bar controller's current view as a subview of the window
-    
-    locateAndParseQueue = [NSOperationQueue new];
-    LocateOperation *locateOperation = [[LocateOperation alloc] init];
-    [self.locateAndParseQueue addOperation:locateAndParseQueue];
+    [self startStandardUpdates];
+//    
+//    locateAndParseQueue = [NSOperationQueue new];
+//    LocateOperation *locateOperation = [[LocateOperation alloc] init];
+//    [self.locateAndParseQueue addOperation:locateOperation];
     
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
 }
+
+- (void)startStandardUpdates
+{
+    // Create the location manager if this object does not
+    // already have one.
+    if (nil == locationManager)
+        locationManager = [[CLLocationManager alloc] init];
+    
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    // Set a movement threshold for new events.
+    locationManager.distanceFilter = kCLHeadingFilterNone;
+    
+    [locationManager startUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"latitude %+.6f, longitude %+.6f\n",
+          newLocation.coordinate.latitude,
+          newLocation.coordinate.longitude);
+    // If it's a relatively recent event, turn off updates to save power
+//    NSDate* eventDate = newLocation.timestamp;
+//    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
+//    if (abs(howRecent) < 15.0)
+//    {
+//        NSLog(@"latitude %+.6f, longitude %+.6f\n",
+//              newLocation.coordinate.latitude,
+//              newLocation.coordinate.longitude);
+//    }
+    // else skip the event and process the next one.
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

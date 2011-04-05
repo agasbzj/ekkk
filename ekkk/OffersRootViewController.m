@@ -10,6 +10,7 @@
 
 
 @implementation OffersRootViewController
+@synthesize tableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -22,6 +23,7 @@
 
 - (void)dealloc
 {
+    [tableView release];
     [super dealloc];
 }
 

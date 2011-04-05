@@ -365,12 +365,12 @@
 		41A4D0821348CC5E00D070BB /* Parse */ = {
 			isa = PBXGroup;
 			children = (
-				41750DD8134AF17300CFF97E /* ParseOperation.h */,
-				41750DD9134AF17300CFF97E /* ParseOperation.m */,
 				A9BE3081134B228300DA6E86 /* LocateOperation.h */,
 				A9BE3082134B228300DA6E86 /* LocateOperation.m */,
 				A9BE3084134B22BD00DA6E86 /* InterconnectWithServer.h */,
 				A9BE3085134B22BD00DA6E86 /* InterconnectWithServer.m */,
+				41750DD8134AF17300CFF97E /* ParseOperation.h */,
+				41750DD9134AF17300CFF97E /* ParseOperation.m */,
 			);
 			name = Parse;
 			sourceTree = "<group>";
