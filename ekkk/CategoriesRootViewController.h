@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  CategoriesRootViewController.h
 //  ekkk
 //
 //  Created by Wu Jianjun on 11-4-3.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface SecondViewController : UIViewController {
+@interface CategoriesRootViewController : UIViewController {
     
 }
 

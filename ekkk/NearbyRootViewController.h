@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  NearbyRootViewController.h
 //  ekkk
 //
 //  Created by Wu Jianjun on 11-4-3.
@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 
-@interface FirstViewController : UIViewController {
-
+@interface NearbyRootViewController : UIViewController {
+    
 }
 
 @end
