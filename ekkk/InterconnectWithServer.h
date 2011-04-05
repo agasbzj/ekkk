@@ -10,7 +10,12 @@
 
 
 @interface InterconnectWithServer : NSOperation {
-    
+    NSNumber *latitude;
+    NSNumber *longitude;
 }
+
+@property (nonatomic, retain) NSNumber *latitude;
+@property (nonatomic, retain) NSNumber *longitude;
+- (id)initWithCoordinate:(NSDictionary *)dictionary;
 
 @end

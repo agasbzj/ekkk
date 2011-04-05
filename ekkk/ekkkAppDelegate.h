@@ -13,8 +13,8 @@
 @interface ekkkAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, CLLocationManagerDelegate>
 {
 
-
     CLLocationManager *locationManager;
+    NSOperationQueue *interConnectOperationQueue;
     
 }
 
@@ -25,7 +25,7 @@
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-
+@property (nonatomic, retain) NSOperationQueue *interConnectOperationQueue;
 
 
 @property (nonatomic, retain) CLLocationManager *locationManager;

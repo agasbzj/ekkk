@@ -7,7 +7,7 @@
 //
  
 #import "ekkkAppDelegate.h"
-
+#import "InterconnectWithServer.h"
 
 @implementation ekkkAppDelegate
 
@@ -23,7 +23,7 @@
 @synthesize persistentStoreCoordinator=__persistentStoreCoordinator;
 
 @synthesize locationManager;
-
+@synthesize interConnectOperationQueue;
 
 - (NSURL *)locationDataFilePath {
 
@@ -37,6 +37,7 @@
 {
    
     [self startStandardUpdates];
+    interConnectOperationQueue = [NSOperationQueue new];
     
     // Override point for customization after application launch.
     // Add the tab bar controller's current view as a subview of the window
@@ -87,6 +88,10 @@
     [ddd setValue:lat forKey:@"latitude"];
     [ddd setValue:log forKey:@"longitude"];
     [ddd writeToURL:[self locationDataFilePath] atomically:YES];
+    
+    InterconnectWithServer *interconnectOperation = [[InterconnectWithServer alloc] initWithCoordinate:ddd];
+    [self.interConnectOperationQueue addOperation: interconnectOperation];
+    [interconnectOperation release];
     
 }
 
