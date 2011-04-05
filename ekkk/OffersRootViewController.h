@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface OffersRootViewController : UIViewController {
+@interface OffersRootViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
     UITableView *tableView;
 }
 

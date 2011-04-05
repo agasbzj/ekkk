@@ -8,6 +8,7 @@
  
 #import "ekkkAppDelegate.h"
 
+
 @implementation ekkkAppDelegate
 
 
@@ -25,15 +26,32 @@
 
 @synthesize locationManager;
 
+
+- (NSURL *)locationDataFilePath {
+//    NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *docu = [path objectAtIndex:0];
+//    NSString *p = [docu stringByAppendingPathComponent:kFileName];
+//    return p;
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kFileName];
+    NSLog(@"%@", storeURL);
+    return storeURL;
+}
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     // Add the tab bar controller's current view as a subview of the window
     [self startStandardUpdates];
-//    
-//    locateAndParseQueue = [NSOperationQueue new];
-//    LocateOperation *locateOperation = [[LocateOperation alloc] init];
-//    [self.locateAndParseQueue addOperation:locateOperation];
+
+//    NSString *locationFile = [self locationDataFilePath];
+//    if ([[NSFileManager defaultManager] fileExistsAtPath:locationFile]) {
+//        NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:locationFile];
+//        NSNumber *lat = [dic valueForKey:@"latitude"];
+//        NSNumber *log = [dic valueForKey:@"longitude"];
+//        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([lat doubleValue], [log doubleValue]);
+//                                              
+//    }
     
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
@@ -73,8 +91,25 @@
 //              newLocation.coordinate.longitude);
 //    }
     // else skip the event and process the next one.
+    [locationManager stopUpdatingLocation];
+
+    
+    NSMutableDictionary *ddd = [NSMutableDictionary dictionaryWithCapacity:2];
+    NSNumber *lat = [NSNumber numberWithFloat:newLocation.coordinate.latitude];
+    NSNumber *log = [NSNumber numberWithFloat:newLocation.coordinate.longitude];
+    [ddd setValue:lat forKey:@"latitude"];
+    [ddd setValue:log forKey:@"longitude"];
+    [ddd writeToURL:[self locationDataFilePath] atomically:YES];
+    
+
 }
 
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    // The location "unknown" error simply means the manager is currently unable to get the location.
+    // We can ignore this error for the scenario of getting a single location fix, because we already have a 
+    // timeout that will stop the location manager to save power.
+    NSLog(@"Error:%@", [error userInfo]);
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -118,6 +153,7 @@
 
 - (void)dealloc
 {
+    [locationManager release];
     [_window release];
     [__managedObjectContext release];
     [__managedObjectModel release];
