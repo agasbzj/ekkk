@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import <CoreLocation/CoreLocation.h>
-
 #define kFileName @"location.plist"
+
 @interface ekkkAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, CLLocationManagerDelegate>
 {
 
@@ -32,8 +31,8 @@
 @property (nonatomic, retain) CLLocationManager *locationManager;
 
 - (void)startStandardUpdates;
-
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 - (NSURL *)locationDataFilePath;
+
 @end

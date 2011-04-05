@@ -14,5 +14,7 @@
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
+- (NSURL *)applicationDocumentsDirectory;
+- (NSURL *)locationDataFilePath;
 
 @end

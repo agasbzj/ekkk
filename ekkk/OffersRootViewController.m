@@ -7,10 +7,23 @@
 //
 
 #import "OffersRootViewController.h"
-
+#define kFileName @"location.plist"
 
 @implementation OffersRootViewController
 @synthesize tableView;
+
+- (NSURL *)locationDataFilePath {
+    
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kFileName];
+    NSLog(@"%@", storeURL);
+    return storeURL;
+}
+
+
+- (NSURL *)applicationDocumentsDirectory
+{
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,6 +54,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    NSURL *filePath = [self locationDataFilePath];
+    NSDictionary *tmp = [[NSDictionary alloc] initWithContentsOfURL:filePath];
+    NSLog(@"%@,%@",[tmp valueForKey:@"latitude"],[tmp valueForKey:@"longitude"]);
 }
 
 - (void)viewDidUnload

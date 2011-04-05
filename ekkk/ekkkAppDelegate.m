@@ -22,16 +22,11 @@
 
 @synthesize persistentStoreCoordinator=__persistentStoreCoordinator;
 
-
-
 @synthesize locationManager;
 
 
 - (NSURL *)locationDataFilePath {
-//    NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSString *docu = [path objectAtIndex:0];
-//    NSString *p = [docu stringByAppendingPathComponent:kFileName];
-//    return p;
+
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kFileName];
     NSLog(@"%@", storeURL);
     return storeURL;
@@ -40,19 +35,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+   
+    [self startStandardUpdates];
+    
     // Override point for customization after application launch.
     // Add the tab bar controller's current view as a subview of the window
-    [self startStandardUpdates];
-
-//    NSString *locationFile = [self locationDataFilePath];
-//    if ([[NSFileManager defaultManager] fileExistsAtPath:locationFile]) {
-//        NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:locationFile];
-//        NSNumber *lat = [dic valueForKey:@"latitude"];
-//        NSNumber *log = [dic valueForKey:@"longitude"];
-//        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([lat doubleValue], [log doubleValue]);
-//                                              
-//    }
-    
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
@@ -101,7 +88,6 @@
     [ddd setValue:log forKey:@"longitude"];
     [ddd writeToURL:[self locationDataFilePath] atomically:YES];
     
-
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
