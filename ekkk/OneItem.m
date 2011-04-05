@@ -10,7 +10,7 @@
 
 
 @implementation OneItem
-@synthesize city, location, categoryCoarse, categoryFine, seller, discount, startDate, endDate, details, comment, telephone, latitude, longitude;
+@synthesize city, area, categoryCoarse, categoryFine, seller, discount, startDate, endDate, descriptions, comment, telephone, address, latitude, longitude, hot;
 
 + (NSSet *)keyPathsForValuesAffectingCoordinate
 {
@@ -26,18 +26,20 @@
 
 - (void)dealloc{
     [city release];
-    [location release];
+    [area release];
     [categoryFine release];
     [categoryCoarse release];
     [seller release];
     [discount release];
     [startDate release];
     [endDate release];
-    [details release];
+    [descriptions release];
     [comment release];
     [telephone release];
     [latitude release];
     [longitude release];
+    [address release];
+    
     [super dealloc];
 }
 @end
