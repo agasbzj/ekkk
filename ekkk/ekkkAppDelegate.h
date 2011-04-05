@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "LocateOperation.h"
 @interface ekkkAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
+
+    NSOperationQueue *locateAndParseQueue; 
 
 }
 
@@ -16,4 +18,14 @@
 
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 
+@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+
+@property (nonatomic, retain) NSOperationQueue *locateAndParseQueue;
+
+
+- (void)saveContext;
+- (NSURL *)applicationDocumentsDirectory;
 @end
