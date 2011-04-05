@@ -250,8 +250,6 @@
 		41A4D0491348CB9A00D070BB = {
 			isa = PBXGroup;
 			children = (
-				A9BE3091134B2E5000DA6E86 /* MobileCoreServices.framework */,
-				A9BE308F134B2E4100DA6E86 /* SystemConfiguration.framework */,
 				41A4D05E1348CB9A00D070BB /* ekkk */,
 				41750E16134AFCE100CFF97E /* Resource */,
 				41A4D0571348CB9A00D070BB /* Frameworks */,
@@ -270,6 +268,8 @@
 		41A4D0571348CB9A00D070BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A9BE3091134B2E5000DA6E86 /* MobileCoreServices.framework */,
+				A9BE308F134B2E4100DA6E86 /* SystemConfiguration.framework */,
 				A9BE3004134B1F4600DA6E86 /* CFNetwork.framework */,
 				41750E07134AFB2600CFF97E /* MapKit.framework */,
 				41750DD6134AF0F300CFF97E /* libz.dylib */,
