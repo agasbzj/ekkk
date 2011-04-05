@@ -53,7 +53,6 @@
 		41A4D0961348CCE000D070BB /* CardsRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A4D0941348CCE000D070BB /* CardsRootViewController.xib */; };
 		A9BE3005134B1F4600DA6E86 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BE3004134B1F4600DA6E86 /* CFNetwork.framework */; };
 		A9BE3080134B21C000DA6E86 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE307F134B21C000DA6E86 /* Reachability.m */; };
-		A9BE3083134B228400DA6E86 /* LocateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE3082134B228300DA6E86 /* LocateOperation.m */; };
 		A9BE3086134B22BD00DA6E86 /* InterconnectWithServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE3085134B22BD00DA6E86 /* InterconnectWithServer.m */; };
 		A9BE3090134B2E4100DA6E86 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BE308F134B2E4100DA6E86 /* SystemConfiguration.framework */; };
 		A9BE3092134B2E5000DA6E86 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BE3091134B2E5000DA6E86 /* MobileCoreServices.framework */; };
@@ -132,8 +131,6 @@
 		A9BE3004134B1F4600DA6E86 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		A9BE307E134B21C000DA6E86 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		A9BE307F134B21C000DA6E86 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		A9BE3081134B228300DA6E86 /* LocateOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocateOperation.h; sourceTree = "<group>"; };
-		A9BE3082134B228300DA6E86 /* LocateOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocateOperation.m; sourceTree = "<group>"; };
 		A9BE3084134B22BD00DA6E86 /* InterconnectWithServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterconnectWithServer.h; sourceTree = "<group>"; };
 		A9BE3085134B22BD00DA6E86 /* InterconnectWithServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterconnectWithServer.m; sourceTree = "<group>"; };
 		A9BE308F134B2E4100DA6E86 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -365,8 +362,6 @@
 		41A4D0821348CC5E00D070BB /* Parse */ = {
 			isa = PBXGroup;
 			children = (
-				A9BE3081134B228300DA6E86 /* LocateOperation.h */,
-				A9BE3082134B228300DA6E86 /* LocateOperation.m */,
 				A9BE3084134B22BD00DA6E86 /* InterconnectWithServer.h */,
 				A9BE3085134B22BD00DA6E86 /* InterconnectWithServer.m */,
 				41750DD8134AF17300CFF97E /* ParseOperation.h */,
@@ -518,7 +513,6 @@
 				41750E0C134AFB5900CFF97E /* MapViewController.m in Sources */,
 				41750E11134AFC2900CFF97E /* OneItem.m in Sources */,
 				A9BE3080134B21C000DA6E86 /* Reachability.m in Sources */,
-				A9BE3083134B228400DA6E86 /* LocateOperation.m in Sources */,
 				A9BE3086134B22BD00DA6E86 /* InterconnectWithServer.m in Sources */,
 				A9BE30A7134B2EEC00DA6E86 /* ASIAuthenticationDialog.m in Sources */,
 				A9BE30A8134B2EEC00DA6E86 /* ASIDataCompressor.m in Sources */,
