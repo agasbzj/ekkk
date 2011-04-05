@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LocateOperation.h"
+
 #import <CoreLocation/CoreLocation.h>
 
-@interface ekkkAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, CLLocationManagerDelegate> {
+@interface ekkkAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, CLLocationManagerDelegate>
+{
 
-    NSOperationQueue *locateAndParseQueue; 
+
     CLLocationManager *locationManager;
 }
 
@@ -25,7 +26,7 @@
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 
-@property (nonatomic, retain) NSOperationQueue *locateAndParseQueue;
+
 @property (nonatomic, retain) CLLocationManager *locationManager;
 
 - (void)startStandardUpdates;

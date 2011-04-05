@@ -21,7 +21,7 @@
 
 @synthesize persistentStoreCoordinator=__persistentStoreCoordinator;
 
-@synthesize locateAndParseQueue;
+
 
 @synthesize locationManager;
 
