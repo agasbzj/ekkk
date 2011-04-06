@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TBXML.h"
+#import "OneItem.h"
+@interface ParseOperation : NSObject {
 
-
-@interface ParseOperation : NSOperation {
-@private
-    
+    NSMutableArray *itemList;
+    TBXML *tbxml;
 }
 
+
+@property (nonatomic, retain) NSMutableArray *itemList;
+
+- (void)parseLocalXML;
 @end

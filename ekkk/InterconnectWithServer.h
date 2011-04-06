@@ -7,15 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "ParseOperation.h"
 
 @interface InterconnectWithServer : NSOperation {
     NSNumber *latitude;
     NSNumber *longitude;
+    
+    ParseOperation *parseOperation;
 }
 
 @property (nonatomic, retain) NSNumber *latitude;
 @property (nonatomic, retain) NSNumber *longitude;
+@property (nonatomic, retain) ParseOperation *parseOperation;
 - (id)initWithCoordinate:(NSDictionary *)dictionary;
 
 @end

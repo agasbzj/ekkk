@@ -51,6 +51,6 @@
 @property (nonatomic, retain) NSString *address;
 @property BOOL *hot;
 
-@property (nonatomic, assign, readonly) CLLocationCoordinate2D coordinate;
+@property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 
 @end

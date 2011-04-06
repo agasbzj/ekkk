@@ -10,7 +10,7 @@
 
 
 @implementation OneItem
-@synthesize city, area, categoryCoarse, categoryFine, seller, discount, startDate, endDate, descriptions, comment, telephone, address, latitude, longitude, hot;
+@synthesize city, area, categoryCoarse, categoryFine, seller, discount, startDate, endDate, descriptions, comment, telephone, address, latitude, longitude, hot, coordinate;
 
 + (NSSet *)keyPathsForValuesAffectingCoordinate
 {

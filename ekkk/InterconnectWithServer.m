@@ -12,7 +12,7 @@
 @implementation InterconnectWithServer
 @synthesize latitude;
 @synthesize longitude;
-
+@synthesize parseOperation;
 - (id)initWithCoordinate:(NSDictionary *)dictionary {
     if ((self = [super init])) {
         self.latitude = [dictionary valueForKey:@"latitude"];
@@ -22,7 +22,12 @@
 }
 
 - (void)main {
-    
+    parseOperation = [[ParseOperation alloc] init];
 
+}
+
+- (void)dealloc {
+    [parseOperation release];
+    [super dealloc];
 }
 @end
