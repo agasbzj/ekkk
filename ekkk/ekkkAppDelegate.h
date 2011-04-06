@@ -16,6 +16,8 @@
     CLLocationManager *locationManager;
     NSOperationQueue *interConnectOperationQueue;
     
+    NSArray *parsedItems;   //存放解析完回传过来的新数据，其中每个元素为OneItem类
+    
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -26,13 +28,12 @@
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, retain) NSOperationQueue *interConnectOperationQueue;
-
-
 @property (nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic, retain) NSArray *parsedItems;
 
 - (void)startStandardUpdates;
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 - (NSURL *)locationDataFilePath;
-
+- (void)printItems:(NSNotification *)itemList;
 @end

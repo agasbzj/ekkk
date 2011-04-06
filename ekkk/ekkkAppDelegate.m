@@ -24,7 +24,7 @@
 
 @synthesize locationManager;
 @synthesize interConnectOperationQueue;
-
+@synthesize parsedItems;
 - (NSURL *)locationDataFilePath {
 
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kFileName];
@@ -32,11 +32,22 @@
     return storeURL;
 }
 
+//打印传回的解析完的数据
+- (void)printItems:(NSNotification *)items {
+    self.parsedItems = [[items userInfo] objectForKey:@"Items"];
+    NSLog(@"%@", parsedItems);
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"LocalXMLParsed" object:nil];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-   
+    //注册为观察者，用于接受新线程解析的数据。
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(printItems:) name:@"LocalXMLParsed" object:nil];
+    
+   //开始定位
     [self startStandardUpdates];
+    
+    //新建线程
     interConnectOperationQueue = [NSOperationQueue new];
     
     // Override point for customization after application launch.
@@ -89,6 +100,7 @@
     [ddd setValue:log forKey:@"longitude"];
     [ddd writeToURL:[self locationDataFilePath] atomically:YES];
     
+    //定位完成开始和服务器交互
     InterconnectWithServer *interconnectOperation = [[InterconnectWithServer alloc] initWithCoordinate:ddd];
     [self.interConnectOperationQueue addOperation: interconnectOperation];
     [interconnectOperation release];
@@ -144,6 +156,7 @@
 
 - (void)dealloc
 {
+    [parsedItems release];
     [locationManager release];
     [_window release];
     [__managedObjectContext release];

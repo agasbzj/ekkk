@@ -19,7 +19,9 @@
         // Initialization code here.
         [self parseLocalXML];
         
-        NSLog(@"%@", self.itemList);
+        //解析完成，把数据发回。
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"LocalXMLParsed" object:self userInfo:[NSDictionary dictionaryWithObject:self.itemList forKey:@"Items"]];
+        
     }
     
     return self;
@@ -50,6 +52,7 @@ static NSString *kDescriptionElem = @"description";
 static NSString *kHotElem = @"hot";
 
 #pragma mark - Parse Local XML File
+//解析xml文件
 - (void)parseLocalXML {
     itemList = [[NSMutableArray alloc] initWithCapacity:10];
     tbxml = [[TBXML tbxmlWithXMLFile:@"test.xml"] retain];

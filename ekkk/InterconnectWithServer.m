@@ -22,6 +22,7 @@
 }
 
 - (void)main {
+    //于服务器交互完毕开始解析获得的xml文件
     parseOperation = [[ParseOperation alloc] init];
 
 }
