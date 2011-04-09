@@ -51,6 +51,7 @@
 		41A4D0911348CCC600D070BB /* CategoriesRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A4D08F1348CCC600D070BB /* CategoriesRootViewController.xib */; };
 		41A4D0951348CCE000D070BB /* CardsRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A4D0931348CCE000D070BB /* CardsRootViewController.m */; };
 		41A4D0961348CCE000D070BB /* CardsRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A4D0941348CCE000D070BB /* CardsRootViewController.xib */; };
+		41AB4F59135096850031E4D0 /* test.xml in Resources */ = {isa = PBXBuildFile; fileRef = 41AB4F58135096850031E4D0 /* test.xml */; };
 		A9BE3005134B1F4600DA6E86 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BE3004134B1F4600DA6E86 /* CFNetwork.framework */; };
 		A9BE3080134B21C000DA6E86 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE307F134B21C000DA6E86 /* Reachability.m */; };
 		A9BE3086134B22BD00DA6E86 /* InterconnectWithServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE3085134B22BD00DA6E86 /* InterconnectWithServer.m */; };
@@ -128,6 +129,7 @@
 		41A4D0921348CCE000D070BB /* CardsRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardsRootViewController.h; sourceTree = "<group>"; };
 		41A4D0931348CCE000D070BB /* CardsRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsRootViewController.m; sourceTree = "<group>"; };
 		41A4D0941348CCE000D070BB /* CardsRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardsRootViewController.xib; sourceTree = "<group>"; };
+		41AB4F58135096850031E4D0 /* test.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test.xml; sourceTree = "<group>"; };
 		A9BE3004134B1F4600DA6E86 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		A9BE307E134B21C000DA6E86 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		A9BE307F134B21C000DA6E86 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 		41A4D05E1348CB9A00D070BB /* ekkk */ = {
 			isa = PBXGroup;
 			children = (
+				41AB4F58135096850031E4D0 /* test.xml */,
 				A9BE3006134B215000DA6E86 /* ASIHttpRequest */,
 				41750E18134AFEDD00CFF97E /* ItemModel */,
 				41750E0E134AFB6100CFF97E /* MapView */,
@@ -486,6 +489,7 @@
 				41750E06134AFAB600CFF97E /* png-0002.png in Resources */,
 				41750E0D134AFB5900CFF97E /* MapViewController.xib in Resources */,
 				41750E13134AFCAC00CFF97E /* Place_holder.png in Resources */,
+				41AB4F59135096850031E4D0 /* test.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

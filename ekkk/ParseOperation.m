@@ -49,7 +49,7 @@ static NSString *kEndDateElem = @"end_date";
 static NSString *kTelElem = @"tel";
 static NSString *kCommentsElem = @"comments";
 static NSString *kDescriptionElem = @"description";
-static NSString *kHotElem = @"hot";
+static bool *kHotElem = @"hot";
 
 #pragma mark - Parse Local XML File
 //解析xml文件
@@ -69,6 +69,9 @@ static NSString *kHotElem = @"hot";
             TBXMLElement *area = [TBXML childElementNamed:kAreaElem parentElement:index];
             oneItem.area = [TBXML textForElement:area];
             
+            TBXMLElement *address = [TBXML childElementNamed:kAddressElem parentElement:index];
+            oneItem.address = [TBXML textForElement:address];
+            
             TBXMLElement *categoryCoarse = [TBXML childElementNamed:kCategoryCoarseElem parentElement:index];
             oneItem.categoryCoarse = [TBXML textForElement:categoryCoarse];
             
@@ -77,6 +80,9 @@ static NSString *kHotElem = @"hot";
             
             TBXMLElement *seller = [TBXML childElementNamed:kSellerElem parentElement:index];
             oneItem.seller = [TBXML textForElement:seller];
+            
+//            TBXMLElement *hot = [TBXML childElementNamed:kHotElem parentElement:index];
+//            oneItem.hot = [TBXML textForElement:hot];
             
             TBXMLElement *discount = [TBXML childElementNamed:kDiscountElem parentElement:index];
             oneItem.discount = [TBXML textForElement:discount];

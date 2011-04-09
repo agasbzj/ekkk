@@ -24,7 +24,7 @@
 
 @synthesize locationManager;
 @synthesize interConnectOperationQueue;
-@synthesize parsedItems;
+@synthesize parsedItems = _parsedItems;
 - (NSURL *)locationDataFilePath {
 
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kFileName];
@@ -34,10 +34,28 @@
 
 //打印传回的解析完的数据
 - (void)printItems:(NSNotification *)items {
-    self.parsedItems = [[items userInfo] objectForKey:@"Items"];
-    NSLog(@"%@", parsedItems);
+    _parsedItems = [[items userInfo] objectForKey:@"Items"];
+    NSLog(@"%@", _parsedItems);
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"LocalXMLParsed" object:nil];
+    
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ItemDetail" inManagedObjectContext:context];
+    
+    
+    OneItem *oneItem = [[OneItem alloc] init];
+    NSError *error;
+    for (oneItem in _parsedItems) {
+        NSManagedObject *object = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+        [object setValue:oneItem.city forKey:@"city"];
+        [object setValue:oneItem.address forKey:@"address"];
+        [object setValue:oneItem.latitude forKey:@"latitude"];
+        [object setValue:oneItem.longitude forKey:@"longitude"];
+        [context save:&error];
+    }
 }
+
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -49,6 +67,31 @@
     
     //新建线程
     interConnectOperationQueue = [NSOperationQueue new];
+    
+    //取得数据
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSArray *array = [NSMutableArray array];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ItemDetail" inManagedObjectContext:context];
+    
+    [fetchRequest setEntity:entity];
+    
+    array = [context executeFetchRequest:fetchRequest error:nil];
+    
+    NSMutableArray *marray = [[NSMutableArray alloc] initWithCapacity:30];
+    
+    for (NSManagedObject *oneObject in array) {
+        OneItem *one = [[OneItem alloc] init];
+        one.city = [oneObject valueForKey:@"city"];
+        one.address = [oneObject valueForKey:@"address"];
+        one.latitude = [oneObject valueForKey:@"latitude"];
+        one.longitude = [oneObject valueForKey:@"longitude"];
+        
+        [marray addObject:one];
+        [one release];
+    }
     
     // Override point for customization after application launch.
     // Add the tab bar controller's current view as a subview of the window
@@ -156,7 +199,7 @@
 
 - (void)dealloc
 {
-    [parsedItems release];
+    [_parsedItems release];
     [locationManager release];
     [_window release];
     [__managedObjectContext release];
