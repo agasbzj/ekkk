@@ -35,7 +35,7 @@
 //打印传回的解析完的数据
 - (void)printItems:(NSNotification *)items {
     _parsedItems = [[items userInfo] objectForKey:@"Items"];
-    NSLog(@"%@", _parsedItems);
+//    NSLog(@"%@", _parsedItems);
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"LocalXMLParsed" object:nil];
     
     NSManagedObjectContext *context = [self managedObjectContext];
@@ -48,11 +48,14 @@
     for (oneItem in _parsedItems) {
         NSManagedObject *object = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
         [object setValue:oneItem.city forKey:@"city"];
+        [object setValue:oneItem.discount forKey:@"discount"];
         [object setValue:oneItem.address forKey:@"address"];
         [object setValue:oneItem.latitude forKey:@"latitude"];
         [object setValue:oneItem.longitude forKey:@"longitude"];
         [context save:&error];
     }
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"NewDataSaved" object:self];
+    [interConnectOperationQueue release];
 }
 
 

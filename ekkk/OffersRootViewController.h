@@ -7,13 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "FetchDataController.h"
 
 @interface OffersRootViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
-    UITableView *tableView;
+    UITableView *_tableView;
+    NSArray *_dataArray;
+    FetchDataController *_fetchDataController;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) NSArray *dataArray;
+@property (nonatomic, retain) FetchDataController *fetchDataController;
 - (NSURL *)applicationDocumentsDirectory;
 - (NSURL *)locationDataFilePath;
 

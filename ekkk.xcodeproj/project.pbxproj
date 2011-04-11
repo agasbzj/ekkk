@@ -18,7 +18,6 @@
 		41750DE4134AF23000CFF97E /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 41750DE3134AF23000CFF97E /* ImageDownloader.m */; };
 		41750DE8134AF27B00CFF97E /* CardsSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41750DE6134AF27B00CFF97E /* CardsSelectorViewController.m */; };
 		41750DE9134AF27B00CFF97E /* CardsSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41750DE7134AF27B00CFF97E /* CardsSelectorViewController.xib */; };
-		41750DEC134AF84500CFF97E /* FetechDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41750DEB134AF84500CFF97E /* FetechDataController.m */; };
 		41750DEF134AF8CE00CFF97E /* CategoryList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41750DEE134AF8CE00CFF97E /* CategoryList.plist */; };
 		41750DF2134AFA8300CFF97E /* ItemModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41750DF0134AFA8300CFF97E /* ItemModel.xcdatamodeld */; };
 		41750DFD134AFAB600CFF97E /* restaurants.png in Resources */ = {isa = PBXBuildFile; fileRef = 41750DF3134AFAB600CFF97E /* restaurants.png */; };
@@ -65,6 +64,7 @@
 		A9BE30AC134B2EEC00DA6E86 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE309F134B2EEC00DA6E86 /* ASIHTTPRequest.m */; };
 		A9BE30AD134B2EEC00DA6E86 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE30A3134B2EEC00DA6E86 /* ASIInputStream.m */; };
 		A9BE30AE134B2EEC00DA6E86 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE30A5134B2EEC00DA6E86 /* ASINetworkQueue.m */; };
+		A9D10E041352072D0014E03B /* FetchDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D10E021352072D0014E03B /* FetchDataController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,8 +85,6 @@
 		41750DE5134AF27B00CFF97E /* CardsSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardsSelectorViewController.h; sourceTree = "<group>"; };
 		41750DE6134AF27B00CFF97E /* CardsSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsSelectorViewController.m; sourceTree = "<group>"; };
 		41750DE7134AF27B00CFF97E /* CardsSelectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardsSelectorViewController.xib; sourceTree = "<group>"; };
-		41750DEA134AF84500CFF97E /* FetechDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetechDataController.h; sourceTree = "<group>"; };
-		41750DEB134AF84500CFF97E /* FetechDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetechDataController.m; sourceTree = "<group>"; };
 		41750DEE134AF8CE00CFF97E /* CategoryList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CategoryList.plist; sourceTree = "<group>"; };
 		41750DF1134AFA8300CFF97E /* ItemModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ItemModel.xcdatamodel; sourceTree = "<group>"; };
 		41750DF3134AFAB600CFF97E /* restaurants.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restaurants.png; sourceTree = "<group>"; };
@@ -157,6 +155,8 @@
 		A9BE30A4134B2EEC00DA6E86 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
 		A9BE30A5134B2EEC00DA6E86 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
 		A9BE30A6134B2EEC00DA6E86 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
+		A9D10E021352072D0014E03B /* FetchDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchDataController.m; sourceTree = "<group>"; };
+		A9D10E031352072D0014E03B /* FetchDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchDataController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,13 +210,13 @@
 			name = DetailView;
 			sourceTree = "<group>";
 		};
-		41750DED134AF84D00CFF97E /* FetechData */ = {
+		41750DED134AF84D00CFF97E /* FetchData */ = {
 			isa = PBXGroup;
 			children = (
-				41750DEA134AF84500CFF97E /* FetechDataController.h */,
-				41750DEB134AF84500CFF97E /* FetechDataController.m */,
+				A9D10E031352072D0014E03B /* FetchDataController.h */,
+				A9D10E021352072D0014E03B /* FetchDataController.m */,
 			);
-			name = FetechData;
+			name = FetchData;
 			sourceTree = "<group>";
 		};
 		41750E0E134AFB6100CFF97E /* MapView */ = {
@@ -291,7 +291,7 @@
 				A9BE3006134B215000DA6E86 /* ASIHttpRequest */,
 				41750E18134AFEDD00CFF97E /* ItemModel */,
 				41750E0E134AFB6100CFF97E /* MapView */,
-				41750DED134AF84D00CFF97E /* FetechData */,
+				41750DED134AF84D00CFF97E /* FetchData */,
 				41750DE1134AF1EB00CFF97E /* DetailView */,
 				41750DE0134AF1E700CFF97E /* ImageDownloader */,
 				41750DCA134AF09300CFF97E /* TBXML */,
@@ -512,7 +512,6 @@
 				41750DDE134AF1D000CFF97E /* DetailViewController.m in Sources */,
 				41750DE4134AF23000CFF97E /* ImageDownloader.m in Sources */,
 				41750DE8134AF27B00CFF97E /* CardsSelectorViewController.m in Sources */,
-				41750DEC134AF84500CFF97E /* FetechDataController.m in Sources */,
 				41750DF2134AFA8300CFF97E /* ItemModel.xcdatamodeld in Sources */,
 				41750E0C134AFB5900CFF97E /* MapViewController.m in Sources */,
 				41750E11134AFC2900CFF97E /* OneItem.m in Sources */,
@@ -526,6 +525,7 @@
 				A9BE30AC134B2EEC00DA6E86 /* ASIHTTPRequest.m in Sources */,
 				A9BE30AD134B2EEC00DA6E86 /* ASIInputStream.m in Sources */,
 				A9BE30AE134B2EEC00DA6E86 /* ASINetworkQueue.m in Sources */,
+				A9D10E041352072D0014E03B /* FetchDataController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
