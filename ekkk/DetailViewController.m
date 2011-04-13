@@ -7,7 +7,7 @@
 //
 
 #import "DetailViewController.h"
-
+#import "OneItem.h"
 
 @implementation DetailViewController
 

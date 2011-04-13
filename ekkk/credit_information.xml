@@ -7,16 +7,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-1</start_date>
+		<end_date>2011-5-31</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -29,16 +31,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>火锅</category_fine>
 		<seller>陌生人火锅餐厅（崮山路店）</seller>
-		<tel> 021-5860247</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone> 021-5860247</telephone>
 		<address>上海市浦东新区崮山路375号</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>38.214567</longitude>
 		<discount>消费满100元凭券享受；每桌限用一次；不与店内其他优惠同享</discount>
 		<details>Donut King是澳洲第一的Coffee &amp; Donuts休闲连锁品牌。2008年登陆中国上海，目前已在上海开出了7家门店；以其著名的Hot Cinnamon Cake Donut和Royal Bean Coffee而深受欢迎</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-2</start_date>
+		<end_date>2011-6-1</end_date>
 		<card_bank>招商银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -51,15 +55,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>休闲</category_fine>
 		<seller>Donut King 多乐星</seller>
-		<tel>021-68828288</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-68828288</telephone>
 		<address>浦东新区世纪大道201号渣打银行大厦1F</address>
 		<www_address>ttp://cn.donutking.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>38.214567</longitude>
 		<discount>刷浦发信用卡消费可享 1.Donuts买三送三（Cake Donuts和杯装Donuts除外）； 2.买任意Royal Bean Coffee加两元赠送任意款Donut的优惠</discount>
 		<details>Donut King是澳洲第一的Coffee &amp; Donuts休闲连锁品牌。2008年登陆中国上海，目前已在上海开出了7家门店；以其著名的Hot Cinnamon Cake Donut和Royal Bean Coffee而深受欢迎</details>
-		<duration>2010.12.1-2011.5.31</duration>
+		<start_date>2010-12-3</start_date>
+		<end_date>2011-6-2</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
+		<hot>0</hot>
 		<comments_Enviroment>5</comments_Enviroment>
 		<comments_Service>5</comments_Service>
 		<comments_Discount>5</comments_Discount>
@@ -72,16 +79,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-4</start_date>
+		<end_date>2011-6-3</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -94,16 +103,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-5</start_date>
+		<end_date>2011-6-4</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -116,16 +127,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-6</start_date>
+		<end_date>2011-6-5</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -138,16 +151,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-7</start_date>
+		<end_date>2011-6-6</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -160,16 +175,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-8</start_date>
+		<end_date>2011-6-7</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -182,16 +199,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-9</start_date>
+		<end_date>2011-6-8</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -204,16 +223,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-10</start_date>
+		<end_date>2011-6-9</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -226,16 +247,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-11</start_date>
+		<end_date>2011-6-10</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>0</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -248,16 +271,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-12</start_date>
+		<end_date>2011-6-11</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>0</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -270,16 +295,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-13</start_date>
+		<end_date>2011-6-12</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>0</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -292,16 +319,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-14</start_date>
+		<end_date>2011-6-13</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>0</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -314,16 +343,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-15</start_date>
+		<end_date>2011-6-14</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>0</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -336,16 +367,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-16</start_date>
+		<end_date>2011-6-15</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>0</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -358,16 +391,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-17</start_date>
+		<end_date>2011-6-16</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>0</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -380,16 +415,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-18</start_date>
+		<end_date>2011-6-17</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>0</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -402,16 +439,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-19</start_date>
+		<end_date>2011-6-18</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>0</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -424,16 +463,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-20</start_date>
+		<end_date>2011-6-19</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>0</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -446,16 +487,18 @@
 		<category_coarse>咖啡</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-21</start_date>
+		<end_date>2011-6-20</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>0</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -468,16 +511,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-22</start_date>
+		<end_date>2011-6-21</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>0</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -490,16 +535,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-23</start_date>
+		<end_date>2011-6-22</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>0</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -512,16 +559,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-24</start_date>
+		<end_date>2011-6-23</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -534,16 +583,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-25</start_date>
+		<end_date>2011-6-24</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -556,16 +607,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-26</start_date>
+		<end_date>2011-6-25</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -578,16 +631,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-27</start_date>
+		<end_date>2011-6-26</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -600,16 +655,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-28</start_date>
+		<end_date>2011-6-27</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -622,16 +679,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-29</start_date>
+		<end_date>2011-6-28</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -644,16 +703,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-30</start_date>
+		<end_date>2011-6-29</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -666,16 +727,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2010-12-31</start_date>
+		<end_date>2011-6-30</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -688,16 +751,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2011-1-1</start_date>
+		<end_date>2011-7-1</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -710,16 +775,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2011-1-2</start_date>
+		<end_date>2011-7-2</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -732,16 +799,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2011-1-3</start_date>
+		<end_date>2011-7-3</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -754,16 +823,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2011-1-4</start_date>
+		<end_date>2011-7-4</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -776,16 +847,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2011-1-5</start_date>
+		<end_date>2011-7-5</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -798,16 +871,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2011-1-6</start_date>
+		<end_date>2011-7-6</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -820,16 +895,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2011-1-7</start_date>
+		<end_date>2011-7-7</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -842,16 +919,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2011-1-8</start_date>
+		<end_date>2011-7-8</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -864,16 +943,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2011-1-9</start_date>
+		<end_date>2011-7-9</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -886,16 +967,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2011-1-10</start_date>
+		<end_date>2011-7-10</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -908,16 +991,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2011-1-11</start_date>
+		<end_date>2011-7-11</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -930,16 +1015,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2011-1-12</start_date>
+		<end_date>2011-7-12</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -952,16 +1039,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2011-1-13</start_date>
+		<end_date>2011-7-13</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -974,16 +1063,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2011-1-14</start_date>
+		<end_date>2011-7-14</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -996,16 +1087,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2011-1-15</start_date>
+		<end_date>2011-7-15</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -1018,16 +1111,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2011-1-16</start_date>
+		<end_date>2011-7-16</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -1040,16 +1135,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2011-1-17</start_date>
+		<end_date>2011-7-17</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -1062,16 +1159,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2011-1-18</start_date>
+		<end_date>2011-7-18</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -1084,16 +1183,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2011-1-19</start_date>
+		<end_date>2011-7-19</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
@@ -1106,16 +1207,18 @@
 		<category_coarse>餐馆</category_coarse>
 		<category_fine>湘菜</category_fine>
 		<seller>大渔铁板烧</seller>
-		<tel>021-61157396</tel>
+		<image>http://img.cnbeta.com/topics/hardware.gif</image>
+		<telephone>021-61157396</telephone>
 		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
 		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。相传东瀛的渔民出海打渔前会举行一些祭祀活动，其中一个仪式就是开悬“大渔”旗，以祈祷“渔业丰收，生活富足，平安康健”，此传说寄托了人们对美好生活的吉祥愿望。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
-		<duration>2010.12.1~2011.5.31</duration>
+		<start_date>2011-1-20</start_date>
+		<end_date>2011-7-20</end_date>
 		<card_bank>上海浦东发展银行</card_bank>
-		<hot>yes</hot>
+		<hot>1</hot>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>

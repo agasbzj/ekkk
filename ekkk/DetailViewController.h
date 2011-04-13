@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class OneItem;
 
 @interface DetailViewController : UIViewController {
-    
+@private
+    NSDateFormatter *dateFormatter;
+    OneItem *OneItem;
 }
+
+@property (nonatomic, retain) OneItem *oneItem;
+@property (nonatomic, readonly, retain) NSDateFormatter *dateFormatter;
 
 @end

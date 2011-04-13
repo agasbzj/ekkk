@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4155F0E31355F61B00EE4A1C /* credit_information.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4155F0E21355F61B00EE4A1C /* credit_information.xml */; };
+		4155F0E61355F8A800EE4A1C /* Cards.m in Sources */ = {isa = PBXBuildFile; fileRef = 4155F0E51355F8A800EE4A1C /* Cards.m */; };
 		41750DCF134AF09300CFF97E /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 41750DCC134AF09300CFF97E /* NSDataAdditions.m */; };
 		41750DD0134AF09300CFF97E /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 41750DCE134AF09300CFF97E /* TBXML.m */; };
 		41750DD3134AF0B900CFF97E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41750DD2134AF0B900CFF97E /* CoreData.framework */; };
@@ -65,10 +67,12 @@
 		A9BE30AD134B2EEC00DA6E86 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE30A3134B2EEC00DA6E86 /* ASIInputStream.m */; };
 		A9BE30AE134B2EEC00DA6E86 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE30A5134B2EEC00DA6E86 /* ASINetworkQueue.m */; };
 		A9D10E041352072D0014E03B /* FetchDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D10E021352072D0014E03B /* FetchDataController.m */; };
-		A9E0F98B13534C0600964C8A /* credit_information.xml in Resources */ = {isa = PBXBuildFile; fileRef = A9E0F98A13534C0600964C8A /* credit_information.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4155F0E21355F61B00EE4A1C /* credit_information.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = credit_information.xml; sourceTree = "<group>"; };
+		4155F0E41355F8A800EE4A1C /* Cards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cards.h; sourceTree = "<group>"; };
+		4155F0E51355F8A800EE4A1C /* Cards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cards.m; sourceTree = "<group>"; };
 		41750DCB134AF09300CFF97E /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
 		41750DCC134AF09300CFF97E /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
 		41750DCD134AF09300CFF97E /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
@@ -158,7 +162,6 @@
 		A9BE30A6134B2EEC00DA6E86 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
 		A9D10E021352072D0014E03B /* FetchDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchDataController.m; sourceTree = "<group>"; };
 		A9D10E031352072D0014E03B /* FetchDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchDataController.h; sourceTree = "<group>"; };
-		A9E0F98A13534C0600964C8A /* credit_information.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = credit_information.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +250,8 @@
 				41750DF0134AFA8300CFF97E /* ItemModel.xcdatamodeld */,
 				41750E0F134AFC2700CFF97E /* OneItem.h */,
 				41750E10134AFC2800CFF97E /* OneItem.m */,
+				4155F0E41355F8A800EE4A1C /* Cards.h */,
+				4155F0E51355F8A800EE4A1C /* Cards.m */,
 			);
 			name = ItemModel;
 			sourceTree = "<group>";
@@ -289,7 +294,7 @@
 		41A4D05E1348CB9A00D070BB /* ekkk */ = {
 			isa = PBXGroup;
 			children = (
-				A9E0F98A13534C0600964C8A /* credit_information.xml */,
+				4155F0E21355F61B00EE4A1C /* credit_information.xml */,
 				41AB4F58135096850031E4D0 /* test.xml */,
 				A9BE3006134B215000DA6E86 /* ASIHttpRequest */,
 				41750E18134AFEDD00CFF97E /* ItemModel */,
@@ -493,7 +498,7 @@
 				41750E0D134AFB5900CFF97E /* MapViewController.xib in Resources */,
 				41750E13134AFCAC00CFF97E /* Place_holder.png in Resources */,
 				41AB4F59135096850031E4D0 /* test.xml in Resources */,
-				A9E0F98B13534C0600964C8A /* credit_information.xml in Resources */,
+				4155F0E31355F61B00EE4A1C /* credit_information.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +535,7 @@
 				A9BE30AD134B2EEC00DA6E86 /* ASIInputStream.m in Sources */,
 				A9BE30AE134B2EEC00DA6E86 /* ASINetworkQueue.m in Sources */,
 				A9D10E041352072D0014E03B /* FetchDataController.m in Sources */,
+				4155F0E61355F8A800EE4A1C /* Cards.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

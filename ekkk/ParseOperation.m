@@ -38,18 +38,22 @@
 static NSString *kCityElem = @"city";
 static NSString *kAreaElem = @"area";
 static NSString *kCategoryCoarseElem = @"category_coarse";
-static NSString *kCategoryFine = @"category_fine";
+static NSString *kCategoryFineElem = @"category_fine";
 static NSString *kSellerElem = @"seller";
 static NSString *kAddressElem = @"address";
+static NSString *kImageElem = @"image";
+static NSString *kWwwAddressElem = @"www_address";
 static NSString *kLatitudeElem = @"latitude";
 static NSString *kLongitudeElem = @"longitude";
 static NSString *kDiscountElem = @"discount";
 static NSString *kDetailsElem = @"details";
 static NSString *kStartDateElem = @"start_date";
 static NSString *kEndDateElem = @"end_date";
-static NSString *kTelElem = @"tel";
-static NSString *kCommentsElem = @"comments";
-static NSString *kDescriptionElem = @"description";
+static NSString *kTelephoneElem = @"telephone";
+static NSString *kCommentsEnviromentElem = @"comments_Enviroment";
+static NSString *kCommentsServiceElem = @"comments_Service";
+static NSString *kCommentsDiscountElem = @"comments_Discount";
+static NSString *kCommentsGeneralElem = @"comments_General";
 static NSString *kHotElem = @"hot";
 
 #pragma mark - Parse Local XML File
@@ -72,12 +76,18 @@ static NSString *kHotElem = @"hot";
             
             TBXMLElement *address = [TBXML childElementNamed:kAddressElem parentElement:index];
             oneItem.address = [TBXML textForElement:address];
+
+            TBXMLElement *wwwAddress = [TBXML childElementNamed:kWwwAddressElem parentElement:index];
+            oneItem.www_Address = [TBXML textForElement:wwwAddress];
+            
+            TBXMLElement *image = [TBXML childElementNamed:kImageElem parentElement:index];
+            oneItem.image = [TBXML textForElement:image];
             
             TBXMLElement *categoryCoarse = [TBXML childElementNamed:kCategoryCoarseElem parentElement:index];
-            oneItem.categoryCoarse = [TBXML textForElement:categoryCoarse];
+            oneItem.category_Coarse = [TBXML textForElement:categoryCoarse];
             
-            TBXMLElement *categoryFine = [TBXML childElementNamed:kCategoryFine parentElement:index];
-            oneItem.categoryFine = [TBXML textForElement:categoryFine];
+            TBXMLElement *categoryFine = [TBXML childElementNamed:kCategoryFineElem parentElement:index];
+            oneItem.category_Fine = [TBXML textForElement:categoryFine];
             
             TBXMLElement *seller = [TBXML childElementNamed:kSellerElem parentElement:index];
             oneItem.seller = [TBXML textForElement:seller];
@@ -90,11 +100,27 @@ static NSString *kHotElem = @"hot";
             
             TBXMLElement *details = [TBXML childElementNamed:kDetailsElem parentElement:index];
             oneItem.details = [TBXML textForElement:details];
+
+            TBXMLElement *endDate = [TBXML childElementNamed:kEndDateElem parentElement:index];
+            oneItem.end_Date = [TBXML textForElement:endDate];
             
-//            TBXMLElement *comments = [TBXML childElementNamed:kCommentsElem parentElement:index];
-//            oneItem.comment = [TBXML textForElement:comments];
+            TBXMLElement *startDate = [TBXML childElementNamed:kStartDateElem parentElement:index];
+            oneItem.start_Date = [TBXML textForElement:startDate];
             
-            TBXMLElement *tel = [TBXML childElementNamed:kTelElem parentElement:index];
+            TBXMLElement *commentsEnviroment = [TBXML childElementNamed:kCommentsEnviromentElem parentElement:index];
+            oneItem.comments_Enviroment = [TBXML textForElement:commentsEnviroment];
+            
+            TBXMLElement *commentsService = [TBXML childElementNamed:kCommentsServiceElem parentElement:index];
+            oneItem.comments_Service = [TBXML textForElement:commentsService];
+            
+            TBXMLElement *commentsDiscount = [TBXML childElementNamed:kCommentsDiscountElem parentElement:index];
+            oneItem.comments_Discount = [TBXML textForElement:commentsDiscount];
+            
+            TBXMLElement *commentsGeneral = [TBXML childElementNamed:kCommentsGeneralElem parentElement:index];
+            oneItem.comments_General = [TBXML textForElement:commentsGeneral];
+            
+            
+            TBXMLElement *tel = [TBXML childElementNamed:kTelephoneElem parentElement:index];
             oneItem.telephone = [TBXML textForElement:tel];
             
             TBXMLElement *latitude = [TBXML childElementNamed:kLatitudeElem parentElement:index];            

@@ -8,9 +8,9 @@
 
 #import "OneItem.h"
 
-
 @implementation OneItem
-@synthesize city, area, categoryCoarse, categoryFine, seller, discount, details, startDate, endDate, descriptions, comment, telephone, address, latitude, longitude, coordinate;
+
+@synthesize city,area,category_Coarse,category_Fine,seller,discount,image,details,start_Date,end_Date,comments_Enviroment,comments_Service, comments_Discount, comments_General, telephone, address, www_Address,latitude, longitude, coordinate, hot;
 
 + (NSSet *)keyPathsForValuesAffectingCoordinate
 {
@@ -34,20 +34,26 @@
 - (void)dealloc{
     [city release];
     [area release];
-    [categoryFine release];
-    [categoryCoarse release];
+    [category_Fine release];
+    [category_Coarse release];
     [seller release];
     [discount release];
     [details release];
-    [startDate release];
-    [endDate release];
-    [descriptions release];
-    [comment release];
+    [start_Date release];
+    [end_Date release];
+    [comments_Enviroment release];
+    [comments_General release];
+    [comments_Discount release];
+    [comments_Service release];
     [telephone release];
     [latitude release];
     [longitude release];
     [address release];
-    
+    [www_Address release];
+    [hot release];
+    [image release];
     [super dealloc];
+
 }
+
 @end

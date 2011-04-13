@@ -52,8 +52,8 @@
     for (NSManagedObject *oneObject in objects) {
         OneItem *one = [[[OneItem alloc] init] autorelease];
         one.city = [oneObject valueForKey:@"city"];
-        one.categoryCoarse = [oneObject valueForKey:@"categoryCoarse"];
-        one.categoryFine = [oneObject valueForKey:@"categoryFine"];
+        one.category_Coarse = [oneObject valueForKey:@"categoryCoarse"];
+        one.category_Fine = [oneObject valueForKey:@"categoryFine"];
         one.seller = [oneObject valueForKey:@"seller"];
         one.discount = [oneObject valueForKey:@"discount"];
         one.telephone = [oneObject valueForKey:@"telephone"];
