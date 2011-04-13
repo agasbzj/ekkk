@@ -49,7 +49,6 @@
     [fetchRequest setPredicate:predicate];
     NSError *error;
     NSArray *objects = [context executeFetchRequest:fetchRequest error:&error];
-//    _itemList = (NSMutableArray *)objects;
     for (NSManagedObject *oneObject in objects) {
         OneItem *one = [[[OneItem alloc] init] autorelease];
         one.city = [oneObject valueForKey:@"city"];
@@ -62,6 +61,7 @@
         one.longitude = [oneObject valueForKey:@"longitude"];
         [_itemList addObject:one];
     }
+    [fetchRequest release];
     
     
 }

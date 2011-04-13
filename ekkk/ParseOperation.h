@@ -19,4 +19,5 @@
 @property (nonatomic, retain) NSMutableArray *itemList;
 
 - (void)parseLocalXML;
+- (void)saveParsedItems:(NSArray *)items;
 @end

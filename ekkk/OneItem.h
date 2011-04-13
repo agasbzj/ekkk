@@ -18,7 +18,7 @@
     NSString *categoryFine;     //子分类
     NSString *seller;           //商家
     NSString *discount;         //折扣
-    
+    NSString *details;          //描述
     NSDate *startDate;          //开始日期
     NSDate *endDate;            //结束日期
     
@@ -29,7 +29,7 @@
     NSNumber *latitude;         //经度
     NSNumber *longitude;        //纬度
     NSString *address;          //商家地址
-    BOOL *hot;
+    BOOL hot;
     
     CLLocationCoordinate2D coordinate;      //坐标
     
@@ -41,6 +41,7 @@
 @property (nonatomic, retain) NSString *categoryFine;
 @property (nonatomic, retain) NSString *seller;
 @property (nonatomic, retain) NSString *discount;
+@property (nonatomic, retain) NSString *details;
 @property (nonatomic, retain) NSString *descriptions;
 @property (nonatomic, retain) NSString *comment;
 @property (nonatomic, retain) NSString *telephone;
@@ -49,7 +50,7 @@
 @property (nonatomic, retain) NSNumber *latitude;
 @property (nonatomic, retain) NSNumber *longitude;
 @property (nonatomic, retain) NSString *address;
-@property BOOL *hot;
+@property (nonatomic, assign) BOOL hot;
 
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 

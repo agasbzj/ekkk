@@ -25,6 +25,8 @@
 @synthesize locationManager;
 @synthesize interConnectOperationQueue;
 @synthesize parsedItems = _parsedItems;
+@synthesize interconnectOperation;
+
 - (NSURL *)locationDataFilePath {
 
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kFileName];
@@ -43,15 +45,22 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"ItemDetail" inManagedObjectContext:context];
     
     
-    OneItem *oneItem = [[OneItem alloc] init];
+
     NSError *error;
-    for (oneItem in _parsedItems) {
+    for (OneItem *oneItem in _parsedItems) {
         NSManagedObject *object = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
         [object setValue:oneItem.city forKey:@"city"];
+        [object setValue:oneItem.area forKey:@"area"];
+        [object setValue:oneItem.categoryCoarse forKey:@"categoryCoarse"];
+        [object setValue:oneItem.categoryFine forKey:@"categoryFine"];
+        [object setValue:oneItem.seller forKey:@"seller"];
+        [object setValue:oneItem.telephone forKey:@"telephone"];
         [object setValue:oneItem.discount forKey:@"discount"];
+        [object setValue:oneItem.details forKey:@"details"];
         [object setValue:oneItem.address forKey:@"address"];
         [object setValue:oneItem.latitude forKey:@"latitude"];
         [object setValue:oneItem.longitude forKey:@"longitude"];
+//        [object setValue:oneItem.hot forKey:@"hot"];
         [context save:&error];
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:@"NewDataSaved" object:self];
@@ -68,33 +77,7 @@
    //开始定位
     [self startStandardUpdates];
     
-    //新建线程
-    interConnectOperationQueue = [NSOperationQueue new];
-    
-    //取得数据
-    NSManagedObjectContext *context = [self managedObjectContext];
-    NSArray *array = [NSMutableArray array];
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ItemDetail" inManagedObjectContext:context];
-    
-    [fetchRequest setEntity:entity];
-    
-    array = [context executeFetchRequest:fetchRequest error:nil];
-    
-    NSMutableArray *marray = [[NSMutableArray alloc] initWithCapacity:30];
-    
-    for (NSManagedObject *oneObject in array) {
-        OneItem *one = [[OneItem alloc] init];
-        one.city = [oneObject valueForKey:@"city"];
-        one.address = [oneObject valueForKey:@"address"];
-        one.latitude = [oneObject valueForKey:@"latitude"];
-        one.longitude = [oneObject valueForKey:@"longitude"];
-        
-        [marray addObject:one];
-        [one release];
-    }
+
     
     // Override point for customization after application launch.
     // Add the tab bar controller's current view as a subview of the window
@@ -146,10 +129,13 @@
     [ddd setValue:log forKey:@"longitude"];
     [ddd writeToURL:[self locationDataFilePath] atomically:YES];
     
+    
+    //新建线程
+    interConnectOperationQueue = [NSOperationQueue new];
+    
     //定位完成开始和服务器交互
-    InterconnectWithServer *interconnectOperation = [[InterconnectWithServer alloc] initWithCoordinate:ddd];
+    interconnectOperation = [[[InterconnectWithServer alloc] initWithCoordinate:ddd] autorelease];
     [self.interConnectOperationQueue addOperation: interconnectOperation];
-    [interconnectOperation release];
     
 }
 
@@ -204,6 +190,7 @@
 {
     [_parsedItems release];
     [locationManager release];
+    [interConnectOperationQueue release];
     [_window release];
     [__managedObjectContext release];
     [__managedObjectModel release];

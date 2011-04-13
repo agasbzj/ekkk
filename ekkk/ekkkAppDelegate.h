@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "InterconnectWithServer.h"
 #define kFileName @"location.plist"
 
 @interface ekkkAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, CLLocationManagerDelegate>
@@ -15,7 +16,7 @@
 
     CLLocationManager *locationManager;
     NSOperationQueue *interConnectOperationQueue;
-    
+    InterconnectWithServer *interconnectOperation;
     NSArray *_parsedItems;   //存放解析完回传过来的新数据，其中每个元素为OneItem类
     
 }
@@ -27,7 +28,8 @@
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (nonatomic, retain) NSOperationQueue *interConnectOperationQueue;
+@property (nonatomic, retain, readonly) NSOperationQueue *interConnectOperationQueue;
+@property (nonatomic, retain) InterconnectWithServer *interconnectOperation;
 @property (nonatomic, retain) CLLocationManager *locationManager;
 @property (nonatomic, retain) NSArray *parsedItems;
 

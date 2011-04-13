@@ -12,6 +12,7 @@
 @implementation ParseOperation
 @synthesize itemList;
 
+
 - (id)init
 {
     self = [super init];
@@ -19,8 +20,7 @@
         // Initialization code here.
         [self parseLocalXML];
         
-        //解析完成，把数据发回。
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"LocalXMLParsed" object:self userInfo:[NSDictionary dictionaryWithObject:self.itemList forKey:@"Items"]];
+
         
     }
     
@@ -36,7 +36,7 @@
 #pragma mark - Element Name Define
 
 static NSString *kCityElem = @"city";
-static NSString *kAreaElem = @"location";
+static NSString *kAreaElem = @"area";
 static NSString *kCategoryCoarseElem = @"category_coarse";
 static NSString *kCategoryFine = @"category_fine";
 static NSString *kSellerElem = @"seller";
@@ -44,22 +44,23 @@ static NSString *kAddressElem = @"address";
 static NSString *kLatitudeElem = @"latitude";
 static NSString *kLongitudeElem = @"longitude";
 static NSString *kDiscountElem = @"discount";
+static NSString *kDetailsElem = @"details";
 static NSString *kStartDateElem = @"start_date";
 static NSString *kEndDateElem = @"end_date";
 static NSString *kTelElem = @"tel";
 static NSString *kCommentsElem = @"comments";
 static NSString *kDescriptionElem = @"description";
-static bool *kHotElem = @"hot";
+static NSString *kHotElem = @"hot";
 
 #pragma mark - Parse Local XML File
 //解析xml文件
 - (void)parseLocalXML {
-    itemList = [[NSMutableArray alloc] initWithCapacity:10];
-    tbxml = [[TBXML tbxmlWithXMLFile:@"test.xml"] retain];
+    itemList = [[NSMutableArray alloc] initWithCapacity:30];
+    tbxml = [[TBXML tbxmlWithXMLFile:@"credit_information.xml"] retain];
     TBXMLElement *root = tbxml.rootXMLElement; 
     
     if (root) {
-        TBXMLElement *index = [TBXML childElementNamed:@"index" parentElement:root];
+        TBXMLElement *index = [TBXML childElementNamed:@"Row" parentElement:root];
         while (index != nil) {
             OneItem *oneItem = [[OneItem alloc] init];
             
@@ -82,13 +83,16 @@ static bool *kHotElem = @"hot";
             oneItem.seller = [TBXML textForElement:seller];
             
 //            TBXMLElement *hot = [TBXML childElementNamed:kHotElem parentElement:index];
-//            oneItem.hot = [TBXML textForElement:hot];
+//            oneItem.hot = [[TBXML textForElement:hot] boolValue];
             
             TBXMLElement *discount = [TBXML childElementNamed:kDiscountElem parentElement:index];
             oneItem.discount = [TBXML textForElement:discount];
             
-            TBXMLElement *comments = [TBXML childElementNamed:kCommentsElem parentElement:index];
-            oneItem.comment = [TBXML textForElement:comments];
+            TBXMLElement *details = [TBXML childElementNamed:kDetailsElem parentElement:index];
+            oneItem.details = [TBXML textForElement:details];
+            
+//            TBXMLElement *comments = [TBXML childElementNamed:kCommentsElem parentElement:index];
+//            oneItem.comment = [TBXML textForElement:comments];
             
             TBXMLElement *tel = [TBXML childElementNamed:kTelElem parentElement:index];
             oneItem.telephone = [TBXML textForElement:tel];
@@ -111,7 +115,17 @@ static bool *kHotElem = @"hot";
         }
     }
     [tbxml release];
+    
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"LocalXMLParsed" object:self userInfo:[NSDictionary dictionaryWithObject:itemList forKey:@"Items"]];
+    
+//    [self performSelectorOnMainThread:@selector(saveParsedItems:) withObject:itemList waitUntilDone:YES];
 
+}
+
+- (void)saveParsedItems:(NSArray *)items {
+    assert([NSThread isMainThread]);
+    //解析完成，把数据发回。
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"LocalXMLParsed" object:self userInfo:[NSDictionary dictionaryWithObject:items forKey:@"Items"]];
 }
 
 

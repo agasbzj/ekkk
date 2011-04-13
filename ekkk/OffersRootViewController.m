@@ -8,12 +8,13 @@
 
 #import "OffersRootViewController.h"
 #import "OneItem.h"
+
 #define kFileName @"location.plist"
 
 @implementation OffersRootViewController
 @synthesize tableView = _tableView;
 @synthesize dataArray = _dataArray;
-@synthesize fetchDataController = _fetchDataController;
+//@synthesize fetchDataController = _fetchDataController;
 - (NSURL *)locationDataFilePath {
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kFileName];
@@ -38,7 +39,7 @@
 
 - (void)dealloc
 {
-    [_fetchDataController release];
+//    [_fetchDataController release];
     [_dataArray release];
     [_tableView release];
     [super dealloc];
@@ -53,9 +54,10 @@
 }
 
 - (void)getData {
-
-    [_fetchDataController getDataByKey:@"city" isEqualToValue:@"Shanghai"];
-    _dataArray = [NSArray arrayWithArray:_fetchDataController.itemList];
+    FetchDataController *fetchDataController = [[FetchDataController alloc] init];
+    [fetchDataController getDataByKey:@"city" isEqualToValue:@"上海"];
+    _dataArray = [NSArray arrayWithArray:(NSArray *)fetchDataController.itemList];
+    [fetchDataController release];
 
 }
 
@@ -75,11 +77,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _fetchDataController = [[FetchDataController alloc] init];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(regetData) name:@"NewDataSaved" object:nil];
     // Do any additional setup after loading the view from its nib.
     NSURL *filePath = [self locationDataFilePath];
-    NSDictionary *tmp = [[NSDictionary alloc] initWithContentsOfURL:filePath];
+    NSDictionary *tmp = [[[NSDictionary alloc] initWithContentsOfURL:filePath] autorelease];
     NSLog(@"%@,%@",[tmp valueForKey:@"latitude"],[tmp valueForKey:@"longitude"]);
     [self getData];
 }
@@ -107,11 +109,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"CellIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier] autorelease];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     OneItem *item = [_dataArray objectAtIndex:indexPath.row];
+    
     cell.textLabel.text = item.discount;
     cell.detailTextLabel.text = item.city;
     
