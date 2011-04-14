@@ -20,4 +20,5 @@
 
 - (void)saveContext;
 - (void)getDataByKey:(NSString *)key isEqualToValue:(id)value;
+- (void)getDataByPredicate:(NSPredicate *)predicate;
 @end

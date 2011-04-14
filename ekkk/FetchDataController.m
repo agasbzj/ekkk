@@ -40,18 +40,18 @@
     }
 }
 
-- (void)getDataByKey:(NSString *)key isEqualToValue:(id)value {
+- (void)getDataByPredicate:(NSPredicate *)predicate {
     NSManagedObjectContext *context = __managedObjectContext;
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"ItemDetail" inManagedObjectContext:context];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     [fetchRequest setEntity:entity];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(city = %@)",  value];
     [fetchRequest setPredicate:predicate];
     NSError *error;
     NSArray *objects = [context executeFetchRequest:fetchRequest error:&error];
     for (NSManagedObject *oneObject in objects) {
         OneItem *one = [[[OneItem alloc] init] autorelease];
         one.city = [oneObject valueForKey:@"city"];
+        one.area = [oneObject valueForKey:@"area"];
         one.category_Coarse = [oneObject valueForKey:@"category_Coarse"];
         one.category_Fine = [oneObject valueForKey:@"category_Fine"];
         one.seller = [oneObject valueForKey:@"seller"];
@@ -59,6 +59,33 @@
         one.telephone = [oneObject valueForKey:@"telephone"];
         one.latitude = [oneObject valueForKey:@"latitude"];
         one.longitude = [oneObject valueForKey:@"longitude"];
+        one.hot = [oneObject valueForKey:@"hot"];
+        [_itemList addObject:one];
+    }
+    [fetchRequest release];
+}
+
+- (void)getDataByKey:(NSString *)key isEqualToValue:(id)value {
+    NSManagedObjectContext *context = __managedObjectContext;
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ItemDetail" inManagedObjectContext:context];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:entity];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@ = %@", key, value];
+    [fetchRequest setPredicate:predicate];
+    NSError *error;
+    NSArray *objects = [context executeFetchRequest:fetchRequest error:&error];
+    for (NSManagedObject *oneObject in objects) {
+        OneItem *one = [[[OneItem alloc] init] autorelease];
+        one.city = [oneObject valueForKey:@"city"];
+        one.area = [oneObject valueForKey:@"area"];
+        one.category_Coarse = [oneObject valueForKey:@"category_Coarse"];
+        one.category_Fine = [oneObject valueForKey:@"category_Fine"];
+        one.seller = [oneObject valueForKey:@"seller"];
+        one.discount = [oneObject valueForKey:@"discount"];
+        one.telephone = [oneObject valueForKey:@"telephone"];
+        one.latitude = [oneObject valueForKey:@"latitude"];
+        one.longitude = [oneObject valueForKey:@"longitude"];
+        one.hot = [oneObject valueForKey:@"hot"];
         [_itemList addObject:one];
     }
     [fetchRequest release];

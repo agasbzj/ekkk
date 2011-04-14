@@ -30,7 +30,7 @@
     NSDate *start_Date;          //开始日期
     NSDate *end_Date;            //结束日期
     
-    BOOL hot;
+    NSString *hot;          //是否热门，使用时转换为BOOL或NSInteger
     
     NSString *comments_Enviroment;       //评论
     NSString *comments_Service;          //评论
@@ -60,7 +60,7 @@
 @property (nonatomic, retain) NSDate *start_Date;          //开始日期
 @property (nonatomic, retain) NSDate *end_Date;            //结束日期
 
-@property (nonatomic, assign) BOOL hot;
+@property (nonatomic, retain) NSString *hot;
 
 @property (nonatomic, retain) NSString *comments_Enviroment;       //评论
 @property (nonatomic, retain) NSString *comments_Service;          //评论

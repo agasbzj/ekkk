@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <credit_info>
-  <index>0
+        <index>0
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -22,7 +22,7 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-  </index>
+        </index>
 		<index>1
 		<city>上海</city>
 		<area>金桥</area>

@@ -92,8 +92,8 @@ static NSString *kHotElem = @"hot";
             TBXMLElement *seller = [TBXML childElementNamed:kSellerElem parentElement:index];
             oneItem.seller = [TBXML textForElement:seller];
             
-//            TBXMLElement *hot = [TBXML childElementNamed:kHotElem parentElement:index];
-//            oneItem.hot = [[TBXML textForElement:hot] boolValue];
+            TBXMLElement *hot = [TBXML childElementNamed:kHotElem parentElement:index];
+            oneItem.hot = [TBXML textForElement:hot];
             
             TBXMLElement *discount = [TBXML childElementNamed:kDiscountElem parentElement:index];
             oneItem.discount = [TBXML textForElement:discount];

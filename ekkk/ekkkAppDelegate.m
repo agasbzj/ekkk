@@ -60,7 +60,7 @@
         [object setValue:oneItem.address forKey:@"address"];
         [object setValue:oneItem.latitude forKey:@"latitude"];
         [object setValue:oneItem.longitude forKey:@"longitude"];
-//        [object setValue:oneItem.hot forKey:@"hot"];
+        [object setValue:oneItem.hot forKey:@"hot"];
         [context save:&error];
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:@"NewDataSaved" object:self];
