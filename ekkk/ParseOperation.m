@@ -59,7 +59,7 @@ static NSString *kHotElem = @"hot";
 #pragma mark - Parse Local XML File
 //解析xml文件
 - (void)parseLocalXML {
-    itemList = [[NSMutableArray alloc] initWithCapacity:30];
+    itemList = [[NSMutableArray alloc] initWithCapacity:50];
     tbxml = [[TBXML tbxmlWithXMLFile:@"credit_information.xml"] retain];
     TBXMLElement *root = tbxml.rootXMLElement; 
     

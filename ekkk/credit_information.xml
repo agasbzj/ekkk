@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<Row>
-		<index>0</index>
+<credit_info>
+  <index>0
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -23,9 +22,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>1</index>
+  </index>
+		<index>1
 		<city>上海</city>
 		<area>金桥</area>
 		<category_coarse>餐馆</category_coarse>
@@ -47,9 +45,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>2</index>
+        </index>
+		<index>2
 		<city>上海</city>
 		<area>陆家嘴</area>
 		<category_coarse>餐馆</category_coarse>
@@ -71,9 +68,8 @@
 		<comments_Service>5</comments_Service>
 		<comments_Discount>5</comments_Discount>
 		<comments_General>5</comments_General>
-	</Row>
-	<Row>
-		<index>3</index>
+        </index>
+		<index>3
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -95,9 +91,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>4</index>
+        </index>
+		<index>4
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -119,9 +114,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>5</index>
+        </index>
+		<index>5
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -143,9 +137,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>6</index>
+        </index>
+		<index>6
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -167,9 +160,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>7</index>
+        </index>
+		<index>7
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -191,9 +183,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>8</index>
+        </index>
+		<index>8
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -215,9 +206,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>9</index>
+        </index>
+		<index>9
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -239,9 +229,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>10</index>
+</index>
+		<index>10
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -263,9 +252,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>11</index>
+</index>
+		<index>11
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -287,9 +275,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>12</index>
+</index>
+		<index>12
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -311,9 +298,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>13</index>
+</index>
+		<index>13
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -335,9 +321,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>14</index>
+</index>
+		<index>14
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -359,9 +344,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>15</index>
+</index>
+		<index>15
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -383,9 +367,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>16</index>
+</index>
+		<index>16
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -407,9 +390,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>17</index>
+</index>
+		<index>17
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -431,9 +413,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>18</index>
+</index>
+		<index>18
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -455,9 +436,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>19</index>
+</index>
+		<index>19
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -479,9 +459,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>20</index>
+</index>
+		<index>20
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>咖啡</category_coarse>
@@ -503,9 +482,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>21</index>
+</index>
+		<index>21
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -527,9 +505,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>22</index>
+</index>
+		<index>22
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -551,9 +528,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>23</index>
+</index>
+		<index>23
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -575,9 +551,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>24</index>
+</index>
+		<index>24
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -599,9 +574,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>25</index>
+</index>
+		<index>25
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -623,9 +597,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>26</index>
+</index>
+		<index>26
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -647,9 +620,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>27</index>
+</index>
+		<index>27
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -671,9 +643,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>28</index>
+</index>
+		<index>28
 		<city>上海</city>
 		<area>八佰伴</area>
 		<category_coarse>餐馆</category_coarse>
@@ -695,9 +666,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>29</index>
+</index>
+		<index>29
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -719,9 +689,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>30</index>
+</index>
+		<index>30
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -743,9 +712,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>31</index>
+</index>
+		<index>31
 		<city>上海</city>
 		<area>世纪公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -767,9 +735,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>32</index>
+</index>
+		<index>32
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -791,9 +758,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>33</index>
+</index>
+		<index>33
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -815,9 +781,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>34</index>
+</index>
+		<index>34
 		<city>上海</city>
 		<area>人民广场</area>
 		<category_coarse>餐馆</category_coarse>
@@ -839,9 +804,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>35</index>
+</index>
+		<index>35
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -863,9 +827,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>36</index>
+</index>
+		<index>36
 		<city>上海</city>
 		<area>静安区</area>
 		<category_coarse>餐馆</category_coarse>
@@ -887,9 +850,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>37</index>
+</index>
+		<index>37
 		<city>上海</city>
 		<area>八佰伴</area>
 		<category_coarse>餐馆</category_coarse>
@@ -911,9 +873,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>38</index>
+</index>
+		<index>38
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -935,9 +896,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>39</index>
+</index>
+		<index>39
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -959,9 +919,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>40</index>
+</index>
+		<index>40
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -983,9 +942,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>41</index>
+</index>
+		<index>41
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -1007,9 +965,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>42</index>
+</index>
+		<index>42
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -1031,9 +988,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>43</index>
+</index>
+		<index>43
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -1055,9 +1011,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>44</index>
+</index>
+		<index>44
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -1079,9 +1034,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>45</index>
+</index>
+		<index>45
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -1103,9 +1057,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>46</index>
+        </index>
+		<index>46
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -1127,9 +1080,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>47</index>
+        </index>
+		<index>47
 		<city>上海</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -1151,9 +1103,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>48</index>
+        </index>
+		<index>48
 		<city>天津</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -1175,9 +1126,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>49</index>
+        </index>
+		<index>49
 		<city>沈阳</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -1199,9 +1149,8 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-	<Row>
-		<index>50</index>
+        </index>
+		<index>50
 		<city>北京</city>
 		<area>中山公园</area>
 		<category_coarse>餐馆</category_coarse>
@@ -1223,5 +1172,5 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>
-	</Row>
-</Root>
+        </index>
+</credit_info>
