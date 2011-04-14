@@ -20,7 +20,7 @@
         // Initialization code here.
         [self parseLocalXML];
         
-
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"LocalXMLParsed" object:self userInfo:[NSDictionary dictionaryWithObject:self.itemList forKey:@"Items"]];
         
     }
     
@@ -64,7 +64,7 @@ static NSString *kHotElem = @"hot";
     TBXMLElement *root = tbxml.rootXMLElement; 
     
     if (root) {
-        TBXMLElement *index = [TBXML childElementNamed:@"Row" parentElement:root];
+        TBXMLElement *index = [TBXML childElementNamed:@"index" parentElement:root];
         while (index != nil) {
             OneItem *oneItem = [[OneItem alloc] init];
             
@@ -101,11 +101,11 @@ static NSString *kHotElem = @"hot";
             TBXMLElement *details = [TBXML childElementNamed:kDetailsElem parentElement:index];
             oneItem.details = [TBXML textForElement:details];
 
-            TBXMLElement *endDate = [TBXML childElementNamed:kEndDateElem parentElement:index];
-            oneItem.end_Date = [TBXML textForElement:endDate];
-            
-            TBXMLElement *startDate = [TBXML childElementNamed:kStartDateElem parentElement:index];
-            oneItem.start_Date = [TBXML textForElement:startDate];
+//            TBXMLElement *endDate = [TBXML childElementNamed:kEndDateElem parentElement:index];
+//            oneItem.end_Date = [TBXML textForElement:endDate];
+//            
+//            TBXMLElement *startDate = [TBXML childElementNamed:kStartDateElem parentElement:index];
+//            oneItem.start_Date = [TBXML textForElement:startDate];
             
             TBXMLElement *commentsEnviroment = [TBXML childElementNamed:kCommentsEnviromentElem parentElement:index];
             oneItem.comments_Enviroment = [TBXML textForElement:commentsEnviroment];

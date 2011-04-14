@@ -6,7 +6,7 @@
 //  Copyright 2011年 __MyCompanyName__. All rights reserved.
 //
 
-/*
+
 #import "OffersRootViewController.h"
 #import "OneItem.h"
 
@@ -16,6 +16,7 @@
 @synthesize tableView = _tableView;
 @synthesize dataArray = _dataArray;
 //@synthesize fetchDataController = _fetchDataController;
+
 - (NSURL *)locationDataFilePath {
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kFileName];
@@ -57,7 +58,7 @@
 - (void)getData {
     FetchDataController *fetchDataController = [[FetchDataController alloc] init];
     [fetchDataController getDataByKey:@"city" isEqualToValue:@"上海"];
-    _dataArray = [NSArray arrayWithArray:(NSArray *)fetchDataController.itemList];
+    _dataArray = [[NSArray arrayWithArray:(NSArray *)fetchDataController.itemList] retain]; //把这里retain就没有崩溃了
     [fetchDataController release];
 
 }
@@ -123,8 +124,9 @@
     return cell;
 }
 @end
- */
+ 
 
+/*
 #import "OffersRootViewController.h"
 #import "DetailViewController.h"
 #import "OneItem.h"
@@ -310,4 +312,4 @@
 }
 
 @end
-
+*/

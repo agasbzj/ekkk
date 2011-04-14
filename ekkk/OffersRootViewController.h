@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FetchDataController.h"
-/*
+
 @interface OffersRootViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
     UITableView *_tableView;
     NSArray *_dataArray;
@@ -22,8 +22,8 @@
 - (NSURL *)locationDataFilePath;
 
 @end
-*/
 
+/*
 #import <UIKit/UIKit.h>
 
 @class DetailViewController;
@@ -53,3 +53,5 @@
 - (void)fetch;
 
 @end
+
+*/

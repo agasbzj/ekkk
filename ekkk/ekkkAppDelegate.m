@@ -51,8 +51,8 @@
         NSManagedObject *object = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
         [object setValue:oneItem.city forKey:@"city"];
         [object setValue:oneItem.area forKey:@"area"];
-        [object setValue:oneItem.category_Coarse forKey:@"categoryCoarse"];
-        [object setValue:oneItem.category_Fine forKey:@"categoryFine"];
+        [object setValue:oneItem.category_Coarse forKey:@"category_Coarse"];
+        [object setValue:oneItem.category_Fine forKey:@"category_Fine"];
         [object setValue:oneItem.seller forKey:@"seller"];
         [object setValue:oneItem.telephone forKey:@"telephone"];
         [object setValue:oneItem.discount forKey:@"discount"];
