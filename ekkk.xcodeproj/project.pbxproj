@@ -37,6 +37,9 @@
 		41750E0D134AFB5900CFF97E /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41750E0B134AFB5100CFF97E /* MapViewController.xib */; };
 		41750E11134AFC2900CFF97E /* OneItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 41750E10134AFC2800CFF97E /* OneItem.m */; };
 		41750E13134AFCAC00CFF97E /* Place_holder.png in Resources */ = {isa = PBXBuildFile; fileRef = 41750E12134AFCAB00CFF97E /* Place_holder.png */; };
+		41A0376F1358730C001D52A8 /* IndividualTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A0376E1358730C001D52A8 /* IndividualTableCell.m */; };
+		41A0377413587383001D52A8 /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A0377313587383001D52A8 /* RatingView.m */; };
+		41A03776135874DF001D52A8 /* IndividualTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A03775135874DF001D52A8 /* IndividualTableCell.xib */; };
 		41A4D0591348CB9A00D070BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A4D0581348CB9A00D070BB /* UIKit.framework */; };
 		41A4D05B1348CB9A00D070BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A4D05A1348CB9A00D070BB /* Foundation.framework */; };
 		41A4D05D1348CB9A00D070BB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A4D05C1348CB9A00D070BB /* CoreGraphics.framework */; };
@@ -109,6 +112,11 @@
 		41750E0F134AFC2700CFF97E /* OneItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneItem.h; sourceTree = "<group>"; };
 		41750E10134AFC2800CFF97E /* OneItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneItem.m; sourceTree = "<group>"; };
 		41750E12134AFCAB00CFF97E /* Place_holder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Place_holder.png; sourceTree = "<group>"; };
+		41A0376D1358730C001D52A8 /* IndividualTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndividualTableCell.h; sourceTree = "<group>"; };
+		41A0376E1358730C001D52A8 /* IndividualTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndividualTableCell.m; sourceTree = "<group>"; };
+		41A0377213587383001D52A8 /* RatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingView.h; sourceTree = "<group>"; };
+		41A0377313587383001D52A8 /* RatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingView.m; sourceTree = "<group>"; };
+		41A03775135874DF001D52A8 /* IndividualTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndividualTableCell.xib; sourceTree = "<group>"; };
 		41A4D0541348CB9A00D070BB /* ekkk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ekkk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A4D0581348CB9A00D070BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		41A4D05A1348CB9A00D070BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -256,6 +264,18 @@
 			name = ItemModel;
 			sourceTree = "<group>";
 		};
+		41A037711358731D001D52A8 /* IndividualTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				41A0376D1358730C001D52A8 /* IndividualTableCell.h */,
+				41A0376E1358730C001D52A8 /* IndividualTableCell.m */,
+				41A0377213587383001D52A8 /* RatingView.h */,
+				41A0377313587383001D52A8 /* RatingView.m */,
+				41A03775135874DF001D52A8 /* IndividualTableCell.xib */,
+			);
+			name = IndividualTableCell;
+			sourceTree = "<group>";
+		};
 		41A4D0491348CB9A00D070BB = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +314,7 @@
 		41A4D05E1348CB9A00D070BB /* ekkk */ = {
 			isa = PBXGroup;
 			children = (
+				41A037711358731D001D52A8 /* IndividualTableCell */,
 				4155F0E21355F61B00EE4A1C /* credit_information.xml */,
 				41AB4F58135096850031E4D0 /* test.xml */,
 				A9BE3006134B215000DA6E86 /* ASIHttpRequest */,
@@ -499,6 +520,7 @@
 				41750E13134AFCAC00CFF97E /* Place_holder.png in Resources */,
 				41AB4F59135096850031E4D0 /* test.xml in Resources */,
 				4155F0E31355F61B00EE4A1C /* credit_information.xml in Resources */,
+				41A03776135874DF001D52A8 /* IndividualTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +558,8 @@
 				A9BE30AE134B2EEC00DA6E86 /* ASINetworkQueue.m in Sources */,
 				A9D10E041352072D0014E03B /* FetchDataController.m in Sources */,
 				4155F0E61355F8A800EE4A1C /* Cards.m in Sources */,
+				41A0376F1358730C001D52A8 /* IndividualTableCell.m in Sources */,
+				41A0377413587383001D52A8 /* RatingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

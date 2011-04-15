@@ -11,11 +11,14 @@
 #import "OneItem.h"
 
 #define kFileName @"location.plist"
+#define DARK_BACKGROUND [UIColor colorWithRed:151.0/255.0 green:152.0/255.0 blue:155.0/255.0 alpha:1.0];
+#define LIGHT_BACKGROUND [UIColor colorWithRed:172.0/255.0 green:173.0/255.0 blue:175.0/255.0 alpha:1.0];
 
 @implementation OffersRootViewController
 @synthesize tableView = _tableView;
 @synthesize dataArray = _dataArray;
 @synthesize segmentedControl = _segmentedControl;
+@synthesize individualCell = _individualCell;
 
 - (NSURL *)locationDataFilePath {
     
@@ -44,6 +47,7 @@
     [_segmentedControl release];
     [_dataArray release];
     [_tableView release];
+    [_individualCell release];
     [super dealloc];
 }
 
@@ -85,7 +89,7 @@
     switch (_segmentedControl.selectedSegmentIndex) {
         case 0:
         {
-            pre = [NSPredicate predicateWithFormat:@"area = '中山公园'"];
+            pre = [NSPredicate predicateWithFormat:@"hot = '1'"];
             
             break;
         }
@@ -111,6 +115,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.rowHeight = 74;
+    
     self.navigationController.navigationBarHidden = YES;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(regetData) name:@"NewDataSaved" object:nil];
@@ -145,15 +151,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"CellIdentifier";
-    UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    IndividualTableCell *cell = (IndividualTableCell *)[_tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier] autorelease];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        [[NSBundle mainBundle] loadNibNamed:@"IndividualTableCell" owner:self options:nil];
+        cell = _individualCell;
+        self.individualCell = nil;
     }
+    
+
     OneItem *item = [_dataArray objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = item.discount;
-    cell.detailTextLabel.text = item.area;
+    cell.discountLable.text = item.discount;
+    cell.sellerLabel.text = item.seller;
+    cell.cityLabel.text = item.city;
+    cell.areaLabel.text = item.area;
     
     return cell;
 }
