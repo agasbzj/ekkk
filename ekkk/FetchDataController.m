@@ -60,6 +60,10 @@
         one.latitude = [oneObject valueForKey:@"latitude"];
         one.longitude = [oneObject valueForKey:@"longitude"];
         one.hot = [oneObject valueForKey:@"hot"];
+        one.comments_Service = [oneObject valueForKey:@"comments_Service"];
+        one.comments_General = [oneObject valueForKey:@"comments_General"];
+        one.comments_Enviroment = [oneObject valueForKey:@"comments_Enviroment"];
+        one.comments_Discount = [oneObject valueForKey:@"comments_Discount"];
         [_itemList addObject:one];
     }
     [fetchRequest release];
@@ -86,6 +90,11 @@
         one.latitude = [oneObject valueForKey:@"latitude"];
         one.longitude = [oneObject valueForKey:@"longitude"];
         one.hot = [oneObject valueForKey:@"hot"];
+        one.address = [oneObject valueForKey:@"address"];
+        one.comments_Enviroment = [oneObject valueForKey:@"comments_Enviroment"];
+        one.comments_Discount = [oneObject valueForKey:@"comments_Discount"];
+        one.comments_Service = [oneObject valueForKey:@"comments_Service"];
+        one.comments_General = [oneObject valueForKey:@"comments_General"];
         [_itemList addObject:one];
     }
     [fetchRequest release];

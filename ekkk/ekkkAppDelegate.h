@@ -37,5 +37,5 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 - (NSURL *)locationDataFilePath;
-- (void)printItems:(NSNotification *)itemList;
+- (void)saveItems:(NSNotification *)itemList;
 @end

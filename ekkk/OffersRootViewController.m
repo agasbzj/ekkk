@@ -169,6 +169,15 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    OneItem *item = [_dataArray objectAtIndex:indexPath.row];
+    DetailViewController *detailController = [[[DetailViewController alloc] init] autorelease];
+    detailController.oneItem = item;
+    [self.navigationController pushViewController:detailController animated:YES];
+}
+
+
+
 @end
  
 

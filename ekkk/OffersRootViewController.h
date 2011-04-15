@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FetchDataController.h"
 #import "IndividualTableCell.h"
+#import "DetailViewController.h"
 
 @interface OffersRootViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
     UITableView *_tableView;

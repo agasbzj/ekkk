@@ -34,8 +34,8 @@
     return storeURL;
 }
 
-//打印传回的解析完的数据
-- (void)printItems:(NSNotification *)items {
+//写入解析完的数据
+- (void)saveItems:(NSNotification *)items {
     _parsedItems = [[items userInfo] objectForKey:@"Items"];
 //    NSLog(@"%@", _parsedItems);
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"LocalXMLParsed" object:nil];
@@ -61,6 +61,10 @@
         [object setValue:oneItem.latitude forKey:@"latitude"];
         [object setValue:oneItem.longitude forKey:@"longitude"];
         [object setValue:oneItem.hot forKey:@"hot"];
+        [object setValue:oneItem.comments_Service forKey:@"comments_Service"];
+        [object setValue:oneItem.comments_General forKey:@"comments_General"];
+        [object setValue:oneItem.comments_Enviroment forKey:@"comments_Enviroment"];
+        [object setValue:oneItem.comments_Discount forKey:@"comments_Discount"];
         [context save:&error];
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:@"NewDataSaved" object:self];
@@ -72,7 +76,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //注册为观察者，用于接受新线程解析的数据。
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(printItems:) name:@"LocalXMLParsed" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveItems:) name:@"LocalXMLParsed" object:nil];
     
    //开始定位
     [self startStandardUpdates];
