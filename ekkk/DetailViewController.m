@@ -27,6 +27,9 @@
 
 //实现点击显示地图按钮
 - (IBAction)showMap:(id)sender {
+    MapViewController *mapViewController = [[MapViewController alloc] init];
+    mapViewController.theItem = _oneItem;
+    [self.navigationController pushViewController:mapViewController animated:YES];
     
 }
 

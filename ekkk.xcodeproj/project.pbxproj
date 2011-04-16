@@ -56,6 +56,7 @@
 		41A4D0951348CCE000D070BB /* CardsRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A4D0931348CCE000D070BB /* CardsRootViewController.m */; };
 		41A4D0961348CCE000D070BB /* CardsRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A4D0941348CCE000D070BB /* CardsRootViewController.xib */; };
 		41AB4F59135096850031E4D0 /* test.xml in Resources */ = {isa = PBXBuildFile; fileRef = 41AB4F58135096850031E4D0 /* test.xml */; };
+		A981566A13598B300056396A /* ItemAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A981566913598B300056396A /* ItemAnnotation.m */; };
 		A9BE3005134B1F4600DA6E86 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BE3004134B1F4600DA6E86 /* CFNetwork.framework */; };
 		A9BE3080134B21C000DA6E86 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE307F134B21C000DA6E86 /* Reachability.m */; };
 		A9BE3086134B22BD00DA6E86 /* InterconnectWithServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE3085134B22BD00DA6E86 /* InterconnectWithServer.m */; };
@@ -141,6 +142,9 @@
 		41A4D0931348CCE000D070BB /* CardsRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsRootViewController.m; sourceTree = "<group>"; };
 		41A4D0941348CCE000D070BB /* CardsRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardsRootViewController.xib; sourceTree = "<group>"; };
 		41AB4F58135096850031E4D0 /* test.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test.xml; sourceTree = "<group>"; };
+		A981565E135969570056396A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A981566813598B2F0056396A /* ItemAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemAnnotation.h; sourceTree = "<group>"; };
+		A981566913598B300056396A /* ItemAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemAnnotation.m; sourceTree = "<group>"; };
 		A9BE3004134B1F4600DA6E86 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		A9BE307E134B21C000DA6E86 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		A9BE307F134B21C000DA6E86 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -177,12 +181,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41750DD5134AF0C500CFF97E /* CoreLocation.framework in Frameworks */,
 				A9BE3092134B2E5000DA6E86 /* MobileCoreServices.framework in Frameworks */,
 				A9BE3090134B2E4100DA6E86 /* SystemConfiguration.framework in Frameworks */,
 				A9BE3005134B1F4600DA6E86 /* CFNetwork.framework in Frameworks */,
 				41750E08134AFB2700CFF97E /* MapKit.framework in Frameworks */,
 				41750DD7134AF0F300CFF97E /* libz.dylib in Frameworks */,
-				41750DD5134AF0C500CFF97E /* CoreLocation.framework in Frameworks */,
 				41750DD3134AF0B900CFF97E /* CoreData.framework in Frameworks */,
 				41A4D0591348CB9A00D070BB /* UIKit.framework in Frameworks */,
 				41A4D05B1348CB9A00D070BB /* Foundation.framework in Frameworks */,
@@ -238,6 +242,8 @@
 				41750E09134AFB4A00CFF97E /* MapViewController.h */,
 				41750E0A134AFB4C00CFF97E /* MapViewController.m */,
 				41750E0B134AFB5100CFF97E /* MapViewController.xib */,
+				A981566813598B2F0056396A /* ItemAnnotation.h */,
+				A981566913598B300056396A /* ItemAnnotation.m */,
 			);
 			name = MapView;
 			sourceTree = "<group>";
@@ -297,6 +303,7 @@
 		41A4D0571348CB9A00D070BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A981565E135969570056396A /* CoreLocation.framework */,
 				A9BE3091134B2E5000DA6E86 /* MobileCoreServices.framework */,
 				A9BE308F134B2E4100DA6E86 /* SystemConfiguration.framework */,
 				A9BE3004134B1F4600DA6E86 /* CFNetwork.framework */,
@@ -560,6 +567,7 @@
 				4155F0E61355F8A800EE4A1C /* Cards.m in Sources */,
 				41A0376F1358730C001D52A8 /* IndividualTableCell.m in Sources */,
 				41A0377413587383001D52A8 /* RatingView.m in Sources */,
+				A981566A13598B300056396A /* ItemAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

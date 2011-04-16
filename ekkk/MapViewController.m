@@ -10,6 +10,64 @@
 
 
 @implementation MapViewController
+@synthesize mapView = _mapView;
+@synthesize theItem = _theItem;
+@synthesize navItem = _navItem;
+@synthesize itemAnnotation = _itemAnnotation;
+
+//切换地图模式
+- (IBAction)setMapStyle:(id)sender {
+    UISegmentedControl *seg = (UISegmentedControl *)sender;
+    switch (seg.selectedSegmentIndex) {
+        case 0:
+        {
+            _mapView.mapType = MKMapTypeStandard;
+            break;
+        } 
+        case 1:
+        {
+            _mapView.mapType = MKMapTypeSatellite;
+            break;
+        
+        }
+        default:
+            break;
+    }
+}
+
+- (IBAction)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)startLocating:(OneItem *)item {
+    MKCoordinateRegion current = _mapView.region;
+    if (current.span.latitudeDelta < 10)
+    {
+        [self performSelector:@selector(animateToWorld:) withObject:item afterDelay:0.3];
+        [self performSelector:@selector(animateToPlace:) withObject:item afterDelay:1.7];        
+    }
+    else
+    {
+        [self performSelector:@selector(animateToPlace:) withObject:item afterDelay:0.3];        
+    }
+}
+
+- (void)animateToWorld:(OneItem *)item
+{    
+    MKCoordinateRegion current = _mapView.region;
+    MKCoordinateRegion zoomOut = { { (current.center.latitude + item.coordinate.latitude)/2.0 , (current.center.longitude + item.coordinate.longitude)/2.0 }, {90, 90} };
+    [_mapView setRegion:zoomOut animated:YES];
+}
+
+- (void)animateToPlace:(OneItem *)item
+{
+    MKCoordinateRegion region;
+    region.center = item.coordinate;
+    MKCoordinateSpan span = {0.5, 0.5}; //缩放大小
+    region.span = span;
+    [_mapView setRegion:region animated:YES];
+    
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -22,6 +80,7 @@
 
 - (void)dealloc
 {
+    [_mapView release];
     [super dealloc];
 }
 
@@ -39,6 +98,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navItem.title = _theItem.seller;
+    [self startLocating:_theItem];
+    _itemAnnotation = [[ItemAnnotation alloc] init];
+    _itemAnnotation.seller = _theItem.seller;
+    _itemAnnotation.address = _theItem.address;
+    _itemAnnotation.coordinate = _theItem.coordinate;
+    [self.mapView addAnnotation:_itemAnnotation];
+    
 }
 
 - (void)viewDidUnload
