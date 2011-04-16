@@ -19,6 +19,17 @@
 @synthesize seller = _seller;
 @synthesize telephone = _telephone;
 
+//点击返回按钮
+- (IBAction)back:(id)sender {
+    self.navigationController.navigationBarHidden = YES;
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+//实现点击显示地图按钮
+- (IBAction)showMap:(id)sender {
+    
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -56,6 +67,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBarHidden = YES;
+
+    
     // Do any additional setup after loading the view from its nib.
     _address.text = _oneItem.address;
     _telephone.text = _oneItem.telephone;
@@ -65,6 +79,9 @@
     _comments_Enviroment.text = _oneItem.comments_Enviroment;
     _seller.text = _oneItem.seller;
     _category_Fine.text = _oneItem.category_Fine;
+    
+
+
 }
 
 - (void)viewDidUnload

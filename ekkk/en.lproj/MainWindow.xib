@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1024</int>
-		<string key="IBDocument.SystemVersion">10J567</string>
+		<string key="IBDocument.SystemVersion">10J869</string>
 		<string key="IBDocument.InterfaceBuilderVersion">1306</string>
 		<string key="IBDocument.AppKitVersion">1038.35</string>
-		<string key="IBDocument.HIToolboxVersion">462.00</string>
+		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">301</string>
@@ -53,7 +53,6 @@
 				<object class="NSPSMatrix" key="NSFrameMatrix"/>
 				<string key="NSFrameSize">{320, 480}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSNextKeyView"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MSAxIDEAA</bytes>
@@ -76,9 +75,9 @@
 				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<bool key="IBUIHorizontal">NO</bool>
-				<object class="IBUINavigationController" key="IBUISelectedViewController" id="129860433">
-					<object class="IBUITabBarItem" key="IBUITabBarItem" id="930234390">
-						<string key="IBUITitle">Offers</string>
+				<object class="IBUINavigationController" key="IBUISelectedViewController" id="741592292">
+					<object class="IBUITabBarItem" key="IBUITabBarItem" id="386883900">
+						<string key="IBUITitle">Nearby</string>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 					<reference key="IBUIParentViewController" ref="1034742383"/>
@@ -89,7 +88,7 @@
 					</object>
 					<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					<bool key="IBUIHorizontal">NO</bool>
-					<object class="IBUINavigationBar" key="IBUINavigationBar" id="123789338">
+					<object class="IBUINavigationBar" key="IBUINavigationBar" id="794522904">
 						<nil key="NSNextResponder"/>
 						<int key="NSvFlags">256</int>
 						<string key="NSFrameSize">{0, 0}</string>
@@ -100,13 +99,13 @@
 					</object>
 					<object class="NSMutableArray" key="IBUIViewControllers">
 						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="IBUIViewController" id="583385365">
-							<object class="IBUINavigationItem" key="IBUINavigationItem" id="253648771">
-								<string key="IBUITitle">Offers</string>
+						<object class="IBUIViewController" id="692379103">
+							<object class="IBUINavigationItem" key="IBUINavigationItem" id="343229128">
+								<string key="IBUITitle">Root View Controller</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
-							<reference key="IBUIParentViewController" ref="129860433"/>
-							<string key="IBUINibName">OffersRootViewController</string>
+							<reference key="IBUIParentViewController" ref="741592292"/>
+							<string key="IBUINibName">NearbyRootViewController</string>
 							<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 								<int key="IBUIInterfaceOrientation">1</int>
 								<int key="interfaceOrientation">1</int>
@@ -118,10 +117,9 @@
 				</object>
 				<object class="NSMutableArray" key="IBUIViewControllers">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<reference ref="129860433"/>
-					<object class="IBUINavigationController" id="741592292">
-						<object class="IBUITabBarItem" key="IBUITabBarItem" id="386883900">
-							<string key="IBUITitle">Nearby</string>
+					<object class="IBUINavigationController" id="129860433">
+						<object class="IBUITabBarItem" key="IBUITabBarItem" id="930234390">
+							<string key="IBUITitle">Offers</string>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
 						<reference key="IBUIParentViewController" ref="1034742383"/>
@@ -132,7 +130,7 @@
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<bool key="IBUIHorizontal">NO</bool>
-						<object class="IBUINavigationBar" key="IBUINavigationBar" id="794522904">
+						<object class="IBUINavigationBar" key="IBUINavigationBar" id="123789338">
 							<nil key="NSNextResponder"/>
 							<int key="NSvFlags">256</int>
 							<string key="NSFrameSize">{0, 0}</string>
@@ -143,13 +141,13 @@
 						</object>
 						<object class="NSMutableArray" key="IBUIViewControllers">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUIViewController" id="692379103">
-								<object class="IBUINavigationItem" key="IBUINavigationItem" id="343229128">
-									<string key="IBUITitle">Root View Controller</string>
+							<object class="IBUIViewController" id="583385365">
+								<object class="IBUINavigationItem" key="IBUINavigationItem" id="253648771">
+									<string key="IBUITitle">Offers</string>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<reference key="IBUIParentViewController" ref="741592292"/>
-								<string key="IBUINibName">NearbyRootViewController</string>
+								<reference key="IBUIParentViewController" ref="129860433"/>
+								<string key="IBUINibName">OffersRootViewController</string>
 								<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 									<int key="IBUIInterfaceOrientation">1</int>
 									<int key="interfaceOrientation">1</int>
@@ -159,6 +157,7 @@
 							</object>
 						</object>
 					</object>
+					<reference ref="741592292"/>
 					<object class="IBUINavigationController" id="440804415">
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="638392155">
 							<string key="IBUITitle">Categories</string>
@@ -245,10 +244,9 @@
 					<int key="NSvFlags">266</int>
 					<string key="NSFrame">{{0, 431}, {320, 49}}</string>
 					<reference key="NSSuperview"/>
-					<reference key="NSNextKeyView"/>
 					<object class="NSColor" key="IBUIBackgroundColor">
 						<int key="NSColorSpace">3</int>
-						<bytes key="NSWhite">MCAwAA</bytes>
+						<bytes key="NSWhite">MQA</bytes>
 					</object>
 					<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 					<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>

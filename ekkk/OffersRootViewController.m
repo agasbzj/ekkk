@@ -63,7 +63,6 @@
 //别的表视图重写这个方法！！！！
 - (void)getData {
     FetchDataController *fetchDataController = [[FetchDataController alloc] init];
-//    [fetchDataController getDataByKey:@"city" isEqualToValue:@"上海"];
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"hot = '1'"];    //设置查询格式
     [fetchDataController getDataByPredicate:predicate];
@@ -77,9 +76,9 @@
     [self.tableView reloadData];
 }
 
+
+//新数据来了之后重新读数据库并显示新数据
 - (void)regetData {
-//    _fetchDataController = nil;
-//    _dataArray = nil;
     [self getData];
     [_tableView reloadData];
 }
@@ -115,11 +114,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableView.rowHeight = 74;
+    self.tableView.rowHeight = 74;  //设置每个cell行高
     
     self.navigationController.navigationBarHidden = YES;
     
+    //观察新数据是否保持完毕
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(regetData) name:@"NewDataSaved" object:nil];
+    
     // Do any additional setup after loading the view from its nib.
     NSURL *filePath = [self locationDataFilePath];
     NSDictionary *tmp = [[[NSDictionary alloc] initWithContentsOfURL:filePath] autorelease];
@@ -172,8 +173,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     OneItem *item = [_dataArray objectAtIndex:indexPath.row];
     DetailViewController *detailController = [[[DetailViewController alloc] init] autorelease];
-    detailController.oneItem = item;
-    self.navigationController.navigationBarHidden = NO;
+    detailController.oneItem = item;    
+    detailController.hidesBottomBarWhenPushed = YES;    //detail隐藏tabbar
     [self.navigationController pushViewController:detailController animated:YES];
 }
 
