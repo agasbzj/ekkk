@@ -17,8 +17,7 @@
 
 //切换地图模式
 - (IBAction)setMapStyle:(id)sender {
-    UISegmentedControl *seg = (UISegmentedControl *)sender;
-    switch (seg.selectedSegmentIndex) {
+    switch (((UISegmentedControl *)sender).selectedSegmentIndex) {
         case 0:
         {
             _mapView.mapType = MKMapTypeStandard;
@@ -108,9 +107,10 @@
     [self.mapView addAnnotation:_itemAnnotation];
     
     UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"地图", @"卫星", nil]];
+    [seg addTarget:self action:@selector(setMapStyle:) forControlEvents:UIControlEventValueChanged];
     seg.segmentedControlStyle = UISegmentedControlStyleBar;
     seg.selectedSegmentIndex = 0;
-    [seg addTarget:self action:@selector(setMapType:) forControlEvents:UIControlEventValueChanged];
+    
     UIBarButtonItem *segItem = [[UIBarButtonItem alloc] initWithCustomView:seg];
     [seg release];
     self.navigationItem.rightBarButtonItem = segItem;
@@ -123,6 +123,7 @@
     self.navigationItem.title = _theItem.seller;
     
     self.navigationController.navigationBar.translucent = YES;
+    
 }
 
 - (void)viewDidUnload
