@@ -173,6 +173,7 @@
     OneItem *item = [_dataArray objectAtIndex:indexPath.row];
     DetailViewController *detailController = [[[DetailViewController alloc] init] autorelease];
     detailController.oneItem = item;
+    self.navigationController.navigationBarHidden = NO;
     [self.navigationController pushViewController:detailController animated:YES];
 }
 

@@ -55,6 +55,7 @@
         one.category_Coarse = [oneObject valueForKey:@"category_Coarse"];
         one.category_Fine = [oneObject valueForKey:@"category_Fine"];
         one.seller = [oneObject valueForKey:@"seller"];
+        one.address = [oneObject valueForKey:@"address"];
         one.discount = [oneObject valueForKey:@"discount"];
         one.telephone = [oneObject valueForKey:@"telephone"];
         one.latitude = [oneObject valueForKey:@"latitude"];
