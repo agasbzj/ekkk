@@ -20,10 +20,10 @@
 @synthesize telephone = _telephone;
 
 //点击返回按钮
-- (IBAction)back:(id)sender {
-    self.navigationController.navigationBarHidden = YES;
-    [self.navigationController popViewControllerAnimated:YES];
-}
+//- (IBAction)back:(id)sender {
+//    self.navigationController.navigationBarHidden = YES;
+//    [self.navigationController popViewControllerAnimated:YES];
+//}
 
 //实现点击显示地图按钮
 - (IBAction)showMap:(id)sender {
@@ -70,9 +70,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden = YES;
-
     
+    self.navigationItem.title = _oneItem.seller;
+
+//    UIButton *mapButton = [[UIButton alloc] init];
+//    mapButton.titleLabel.text = @"地图";
+//    [mapButton addTarget:self action:@selector(showMap:) forControlEvents:UIControlEventTouchUpInside];
+//    UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithCustomView:mapButton];
+//    [mapButton release];
+    
+    
+    UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:@"地图" style:UIBarButtonItemStyleDone target:self action:@selector(showMap:)];
+    self.navigationItem.rightBarButtonItem = mapButton;
+    [mapButton release];
     // Do any additional setup after loading the view from its nib.
     _address.text = _oneItem.address;
     _telephone.text = _oneItem.telephone;
@@ -83,7 +93,7 @@
     _seller.text = _oneItem.seller;
     _category_Fine.text = _oneItem.category_Fine;
     
-
+    
 
 }
 

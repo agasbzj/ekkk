@@ -27,8 +27,10 @@
 @synthesize parsedItems = _parsedItems;
 @synthesize interconnectOperation;
 
-- (NSURL *)locationDataFilePath {
+@synthesize offerNavController = _offerNavController;
 
+- (NSURL *)locationDataFilePath {
+    
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kFileName];
     NSLog(@"%@", storeURL);
     return storeURL;
@@ -36,6 +38,10 @@
 
 //写入解析完的数据
 - (void)saveItems:(NSNotification *)items {
+    
+    //关闭状态栏小菊花
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    
     _parsedItems = [[items userInfo] objectForKey:@"Items"];
 //    NSLog(@"%@", _parsedItems);
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"LocalXMLParsed" object:nil];
@@ -45,7 +51,7 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"ItemDetail" inManagedObjectContext:context];
     
     
-
+    
     NSError *error;
     for (OneItem *oneItem in _parsedItems) {
         NSManagedObject *object = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];

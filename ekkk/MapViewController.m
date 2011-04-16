@@ -12,7 +12,7 @@
 @implementation MapViewController
 @synthesize mapView = _mapView;
 @synthesize theItem = _theItem;
-@synthesize navItem = _navItem;
+
 @synthesize itemAnnotation = _itemAnnotation;
 
 //切换地图模式
@@ -36,6 +36,7 @@
 }
 
 - (IBAction)back:(id)sender {
+    self.navigationController.navigationBar.translucent = NO;
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -98,7 +99,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navItem.title = _theItem.seller;
+
     [self startLocating:_theItem];
     _itemAnnotation = [[ItemAnnotation alloc] init];
     _itemAnnotation.seller = _theItem.seller;
@@ -106,6 +107,22 @@
     _itemAnnotation.coordinate = _theItem.coordinate;
     [self.mapView addAnnotation:_itemAnnotation];
     
+    UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"地图", @"卫星", nil]];
+    seg.segmentedControlStyle = UISegmentedControlStyleBar;
+    seg.selectedSegmentIndex = 0;
+    [seg addTarget:self action:@selector(setMapType:) forControlEvents:UIControlEventValueChanged];
+    UIBarButtonItem *segItem = [[UIBarButtonItem alloc] initWithCustomView:seg];
+    [seg release];
+    self.navigationItem.rightBarButtonItem = segItem;
+    [segItem release];
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(back:)];
+    self.navigationItem.leftBarButtonItem = backButton;
+    [backButton release];
+    
+    self.navigationItem.title = _theItem.seller;
+    
+    self.navigationController.navigationBar.translucent = YES;
 }
 
 - (void)viewDidUnload

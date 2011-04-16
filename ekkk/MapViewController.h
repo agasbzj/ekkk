@@ -10,14 +10,13 @@
 #import <MapKit/MapKit.h>
 #import "OneItem.h"
 #import "ItemAnnotation.h"
-@interface MapViewController : UIViewController <MKMapViewDelegate, MKAnnotation> {
+@interface MapViewController : UIViewController <MKMapViewDelegate> {
     MKMapView *_mapView;
-    UINavigationItem *_navItem;
     OneItem *_theItem;
     ItemAnnotation *_itemAnnotation;
 }
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
-@property (nonatomic, retain) IBOutlet UINavigationItem *navItem;
+
 @property (nonatomic, retain) ItemAnnotation *itemAnnotation;
 @property (nonatomic, retain) OneItem *theItem;
 

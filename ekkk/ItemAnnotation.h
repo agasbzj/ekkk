@@ -6,6 +6,9 @@
 //  Copyright 2011年 __MyCompanyName__. All rights reserved.
 //
 
+
+//地图上的指示器的类
+
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MKAnnotation.h>

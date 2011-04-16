@@ -116,7 +116,7 @@
     [super viewDidLoad];
     self.tableView.rowHeight = 74;  //设置每个cell行高
     
-    self.navigationController.navigationBarHidden = YES;
+//    self.navigationController.navigationBarHidden = YES;
     
     //观察新数据是否保持完毕
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(regetData) name:@"NewDataSaved" object:nil];
@@ -127,6 +127,15 @@
     NSLog(@"%@,%@",[tmp valueForKey:@"latitude"],[tmp valueForKey:@"longitude"]);
     
     [self getData];
+    
+    _segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"Hot", @"My Cards", nil]];
+    _segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
+    _segmentedControl.selectedSegmentIndex = 0;
+    
+    [_segmentedControl addTarget:self action:@selector(switchCategory:) forControlEvents:UIControlEventValueChanged];
+    self.navigationItem.titleView = _segmentedControl;
+    
+    
 }
 
 - (void)viewDidUnload

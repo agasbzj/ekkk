@@ -30,6 +30,6 @@
 //@property (nonatomic, retain) IBOutlet UINavigationBar *navBar;
 //@property (nonatomic, retain) UINavigationItem *navItem;
 
-- (IBAction)back:(id)sender;
+//- (IBAction)back:(id)sender;
 - (IBAction)showMap:(id)sender;
 @end

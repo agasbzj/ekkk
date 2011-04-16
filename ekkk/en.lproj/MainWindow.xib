@@ -75,9 +75,9 @@
 				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<bool key="IBUIHorizontal">NO</bool>
-				<object class="IBUINavigationController" key="IBUISelectedViewController" id="741592292">
-					<object class="IBUITabBarItem" key="IBUITabBarItem" id="386883900">
-						<string key="IBUITitle">Nearby</string>
+				<object class="IBUINavigationController" key="IBUISelectedViewController" id="129860433">
+					<object class="IBUITabBarItem" key="IBUITabBarItem" id="930234390">
+						<string key="IBUITitle">Offers</string>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 					<reference key="IBUIParentViewController" ref="1034742383"/>
@@ -88,7 +88,7 @@
 					</object>
 					<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					<bool key="IBUIHorizontal">NO</bool>
-					<object class="IBUINavigationBar" key="IBUINavigationBar" id="794522904">
+					<object class="IBUINavigationBar" key="IBUINavigationBar" id="123789338">
 						<nil key="NSNextResponder"/>
 						<int key="NSvFlags">256</int>
 						<string key="NSFrameSize">{0, 0}</string>
@@ -99,13 +99,13 @@
 					</object>
 					<object class="NSMutableArray" key="IBUIViewControllers">
 						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="IBUIViewController" id="692379103">
-							<object class="IBUINavigationItem" key="IBUINavigationItem" id="343229128">
-								<string key="IBUITitle">Root View Controller</string>
+						<object class="IBUIViewController" id="583385365">
+							<object class="IBUINavigationItem" key="IBUINavigationItem" id="253648771">
+								<string key="IBUITitle">Offers</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
-							<reference key="IBUIParentViewController" ref="741592292"/>
-							<string key="IBUINibName">NearbyRootViewController</string>
+							<reference key="IBUIParentViewController" ref="129860433"/>
+							<string key="IBUINibName">OffersRootViewController</string>
 							<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 								<int key="IBUIInterfaceOrientation">1</int>
 								<int key="interfaceOrientation">1</int>
@@ -117,9 +117,10 @@
 				</object>
 				<object class="NSMutableArray" key="IBUIViewControllers">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="IBUINavigationController" id="129860433">
-						<object class="IBUITabBarItem" key="IBUITabBarItem" id="930234390">
-							<string key="IBUITitle">Offers</string>
+					<reference ref="129860433"/>
+					<object class="IBUINavigationController" id="741592292">
+						<object class="IBUITabBarItem" key="IBUITabBarItem" id="386883900">
+							<string key="IBUITitle">Nearby</string>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
 						<reference key="IBUIParentViewController" ref="1034742383"/>
@@ -130,7 +131,7 @@
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<bool key="IBUIHorizontal">NO</bool>
-						<object class="IBUINavigationBar" key="IBUINavigationBar" id="123789338">
+						<object class="IBUINavigationBar" key="IBUINavigationBar" id="794522904">
 							<nil key="NSNextResponder"/>
 							<int key="NSvFlags">256</int>
 							<string key="NSFrameSize">{0, 0}</string>
@@ -141,13 +142,13 @@
 						</object>
 						<object class="NSMutableArray" key="IBUIViewControllers">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUIViewController" id="583385365">
-								<object class="IBUINavigationItem" key="IBUINavigationItem" id="253648771">
-									<string key="IBUITitle">Offers</string>
+							<object class="IBUIViewController" id="692379103">
+								<object class="IBUINavigationItem" key="IBUINavigationItem" id="343229128">
+									<string key="IBUITitle">Root View Controller</string>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<reference key="IBUIParentViewController" ref="129860433"/>
-								<string key="IBUINibName">OffersRootViewController</string>
+								<reference key="IBUIParentViewController" ref="741592292"/>
+								<string key="IBUINibName">NearbyRootViewController</string>
 								<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 									<int key="IBUIInterfaceOrientation">1</int>
 									<int key="interfaceOrientation">1</int>
@@ -157,7 +158,6 @@
 							</object>
 						</object>
 					</object>
-					<reference ref="741592292"/>
 					<object class="IBUINavigationController" id="440804415">
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="638392155">
 							<string key="IBUITitle">Categories</string>
@@ -279,6 +279,14 @@
 						<reference key="destination" ref="1034742383"/>
 					</object>
 					<int key="connectionID">113</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">offerNavController</string>
+						<reference key="source" ref="664661524"/>
+						<reference key="destination" ref="129860433"/>
+					</object>
+					<int key="connectionID">176</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -559,7 +567,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">175</int>
+			<int key="maxID">176</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>

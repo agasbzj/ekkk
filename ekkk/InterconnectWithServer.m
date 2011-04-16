@@ -23,6 +23,8 @@
 
 - (void)main {
     //于服务器交互完毕开始解析获得的xml文件
+    //打开状态栏网络提示
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     parseOperation = [[ParseOperation alloc] init];
 
 }
