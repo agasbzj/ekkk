@@ -19,7 +19,6 @@
 		41750DE4134AF23000CFF97E /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 41750DE3134AF23000CFF97E /* ImageDownloader.m */; };
 		41750DE8134AF27B00CFF97E /* CardsSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41750DE6134AF27B00CFF97E /* CardsSelectorViewController.m */; };
 		41750DE9134AF27B00CFF97E /* CardsSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41750DE7134AF27B00CFF97E /* CardsSelectorViewController.xib */; };
-		41750DEF134AF8CE00CFF97E /* CategoryList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41750DEE134AF8CE00CFF97E /* CategoryList.plist */; };
 		41750DF2134AFA8300CFF97E /* ItemModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41750DF0134AFA8300CFF97E /* ItemModel.xcdatamodeld */; };
 		41750DFD134AFAB600CFF97E /* restaurants.png in Resources */ = {isa = PBXBuildFile; fileRef = 41750DF3134AFAB600CFF97E /* restaurants.png */; };
 		41750DFE134AFAB600CFF97E /* bar&coffee.png in Resources */ = {isa = PBXBuildFile; fileRef = 41750DF4134AFAB600CFF97E /* bar&coffee.png */; };
@@ -56,6 +55,7 @@
 		41A4D0951348CCE000D070BB /* CardsRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A4D0931348CCE000D070BB /* CardsRootViewController.m */; };
 		41A4D0961348CCE000D070BB /* CardsRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A4D0941348CCE000D070BB /* CardsRootViewController.xib */; };
 		41AB4F59135096850031E4D0 /* test.xml in Resources */ = {isa = PBXBuildFile; fileRef = 41AB4F58135096850031E4D0 /* test.xml */; };
+		A9724E2F135C835E000982A3 /* NearbyCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9724E2E135C835E000982A3 /* NearbyCategory.plist */; };
 		A981566A13598B300056396A /* ItemAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A981566913598B300056396A /* ItemAnnotation.m */; };
 		A9BE3005134B1F4600DA6E86 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BE3004134B1F4600DA6E86 /* CFNetwork.framework */; };
 		A9BE3080134B21C000DA6E86 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE307F134B21C000DA6E86 /* Reachability.m */; };
@@ -93,7 +93,6 @@
 		41750DE5134AF27B00CFF97E /* CardsSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardsSelectorViewController.h; sourceTree = "<group>"; };
 		41750DE6134AF27B00CFF97E /* CardsSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsSelectorViewController.m; sourceTree = "<group>"; };
 		41750DE7134AF27B00CFF97E /* CardsSelectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardsSelectorViewController.xib; sourceTree = "<group>"; };
-		41750DEE134AF8CE00CFF97E /* CategoryList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CategoryList.plist; sourceTree = "<group>"; };
 		41750DF1134AFA8300CFF97E /* ItemModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ItemModel.xcdatamodel; sourceTree = "<group>"; };
 		41750DF3134AFAB600CFF97E /* restaurants.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restaurants.png; sourceTree = "<group>"; };
 		41750DF4134AFAB600CFF97E /* bar&coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar&coffee.png"; sourceTree = "<group>"; };
@@ -142,6 +141,7 @@
 		41A4D0931348CCE000D070BB /* CardsRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsRootViewController.m; sourceTree = "<group>"; };
 		41A4D0941348CCE000D070BB /* CardsRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardsRootViewController.xib; sourceTree = "<group>"; };
 		41AB4F58135096850031E4D0 /* test.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test.xml; sourceTree = "<group>"; };
+		A9724E2E135C835E000982A3 /* NearbyCategory.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = NearbyCategory.plist; sourceTree = "<group>"; };
 		A981565E135969570056396A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A981566813598B2F0056396A /* ItemAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemAnnotation.h; sourceTree = "<group>"; };
 		A981566913598B300056396A /* ItemAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemAnnotation.m; sourceTree = "<group>"; };
@@ -380,7 +380,7 @@
 		41A4D0801348CC4D00D070BB /* Nearby */ = {
 			isa = PBXGroup;
 			children = (
-				41750DEE134AF8CE00CFF97E /* CategoryList.plist */,
+				A9724E2E135C835E000982A3 /* NearbyCategory.plist */,
 				41A4D0881348CCB300D070BB /* NearbyRootViewController.h */,
 				41A4D0891348CCB300D070BB /* NearbyRootViewController.m */,
 				41A4D08A1348CCB300D070BB /* NearbyRootViewController.xib */,
@@ -511,7 +511,6 @@
 				41A4D0911348CCC600D070BB /* CategoriesRootViewController.xib in Resources */,
 				41A4D0961348CCE000D070BB /* CardsRootViewController.xib in Resources */,
 				41750DE9134AF27B00CFF97E /* CardsSelectorViewController.xib in Resources */,
-				41750DEF134AF8CE00CFF97E /* CategoryList.plist in Resources */,
 				41750DFD134AFAB600CFF97E /* restaurants.png in Resources */,
 				41750DFE134AFAB600CFF97E /* bar&coffee.png in Resources */,
 				41750DFF134AFAB600CFF97E /* massages.png in Resources */,
@@ -528,6 +527,7 @@
 				4155F0E31355F61B00EE4A1C /* credit_information.xml in Resources */,
 				41A03776135874DF001D52A8 /* IndividualTableCell.xib in Resources */,
 				41A0377813588555001D52A8 /* DetailViewController.xib in Resources */,
+				A9724E2F135C835E000982A3 /* NearbyCategory.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
