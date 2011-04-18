@@ -251,7 +251,6 @@
 		41750E16134AFCE100CFF97E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				41750DEE134AF8CE00CFF97E /* CategoryList.plist */,
 				41A4D0971348CDD700D070BB /* Images */,
 			);
 			name = Resource;
@@ -381,6 +380,7 @@
 		41A4D0801348CC4D00D070BB /* Nearby */ = {
 			isa = PBXGroup;
 			children = (
+				41750DEE134AF8CE00CFF97E /* CategoryList.plist */,
 				41A4D0881348CCB300D070BB /* NearbyRootViewController.h */,
 				41A4D0891348CCB300D070BB /* NearbyRootViewController.m */,
 				41A4D08A1348CCB300D070BB /* NearbyRootViewController.xib */,
