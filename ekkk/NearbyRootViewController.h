@@ -10,7 +10,15 @@
 
 
 @interface NearbyRootViewController : UITableViewController {
+<<<<<<< Create_Map_View
     
 }
 
+=======
+    NSArray *_categoryArray;
+    NSDictionary *_plistKey;
+}
+@property (nonatomic, retain) NSArray *categoryArray;
+@property (nonatomic, retain) NSDictionary *plistKey;
+>>>>>>> local
 @end
