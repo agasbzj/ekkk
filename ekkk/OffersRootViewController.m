@@ -20,6 +20,8 @@
 @synthesize segmentedControl = _segmentedControl;
 @synthesize individualCell = _individualCell;
 
+NSArray *temp;  //跟踪指针，用来释放。
+
 - (NSURL *)locationDataFilePath {
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kFileName];
@@ -66,7 +68,8 @@
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"hot = '1'"];    //设置查询格式
     [fetchDataController getDataByPredicate:predicate];
-    _dataArray = [[NSArray arrayWithArray:(NSArray *)fetchDataController.itemList] retain]; //把这里retain就没有崩溃了
+    temp = [[NSArray arrayWithArray:(NSArray *)fetchDataController.itemList] retain];   //把这里retain就没有崩溃了
+    _dataArray = temp; 
     [fetchDataController release];
 
 }
@@ -79,6 +82,7 @@
 
 //新数据来了之后重新读数据库并显示新数据
 - (void)regetData {
+    [temp release];
     [self getData];
     [_tableView reloadData];
 }
