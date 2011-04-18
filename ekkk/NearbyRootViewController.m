@@ -10,11 +10,10 @@
 
 
 @implementation NearbyRootViewController
-<<<<<<< Create_Map_View
-=======
+
 @synthesize categoryArray = _categoryArray;
 @synthesize plistKey = _plistKey;
->>>>>>> local
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,11 +26,9 @@
 
 - (void)dealloc
 {
-<<<<<<< Create_Map_View
-=======
+
     [_categoryArray release];
     [_plistKey release];
->>>>>>> local
     [super dealloc];
 }
 
@@ -48,21 +45,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-<<<<<<< Create_Map_View
 
-=======
+
     
     self.tableView.rowHeight = 60;  //根据类别数量配置行高
     self.tableView.scrollEnabled = NO; //不允许滚动
     
->>>>>>> local
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-<<<<<<< Create_Map_View
-=======
+
     
     
     //获得plist下的内容
@@ -70,7 +65,7 @@
     _plistKey = [[NSDictionary alloc] initWithContentsOfFile:path];
     _categoryArray = [_plistKey valueForKey:@"categoryList"];
 
->>>>>>> local
+
 }
 
 - (void)viewDidUnload
@@ -110,26 +105,18 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-<<<<<<< Create_Map_View
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-=======
+
     // Return the number of sections.
     return 1;
->>>>>>> local
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-<<<<<<< Create_Map_View
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-=======
+
     // Return the number of rows in the section.
     return [_categoryArray count];
->>>>>>> local
+
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -139,12 +126,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-<<<<<<< Create_Map_View
-    }
-    
-    // Configure the cell...
-    
-=======
+
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
@@ -153,7 +135,7 @@
     cell.textLabel.text = [dic valueForKey:@"name"];
     UIImage *icon = [UIImage imageNamed:[dic valueForKey:@"icon"]];
     cell.imageView.image = icon;                 
->>>>>>> local
+
     return cell;
 }
 
@@ -198,19 +180,6 @@
 
 #pragma mark - Table view delegate
 
-<<<<<<< Create_Map_View
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
-}
-=======
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 //{
 //    // Navigation logic may go here. Create and push another view controller.
@@ -222,6 +191,6 @@
 //     [detailViewController release];
 //     */
 //}
->>>>>>> local
+
 
 @end
