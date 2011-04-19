@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		413F1D53135DC736000CDB11 /* CategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 413F1D51135DC736000CDB11 /* CategoryTableViewController.m */; };
+		413F1D54135DC736000CDB11 /* CategoryTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413F1D52135DC736000CDB11 /* CategoryTableViewController.xib */; };
 		4155F0E31355F61B00EE4A1C /* credit_information.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4155F0E21355F61B00EE4A1C /* credit_information.xml */; };
 		4155F0E61355F8A800EE4A1C /* Cards.m in Sources */ = {isa = PBXBuildFile; fileRef = 4155F0E51355F8A800EE4A1C /* Cards.m */; };
 		41750DCF134AF09300CFF97E /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 41750DCC134AF09300CFF97E /* NSDataAdditions.m */; };
@@ -76,6 +78,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		413F1D50135DC736000CDB11 /* CategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewController.h; sourceTree = "<group>"; };
+		413F1D51135DC736000CDB11 /* CategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewController.m; sourceTree = "<group>"; };
+		413F1D52135DC736000CDB11 /* CategoryTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewController.xib; sourceTree = "<group>"; };
 		4155F0E21355F61B00EE4A1C /* credit_information.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = credit_information.xml; sourceTree = "<group>"; };
 		4155F0E41355F8A800EE4A1C /* Cards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cards.h; sourceTree = "<group>"; };
 		4155F0E51355F8A800EE4A1C /* Cards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cards.m; sourceTree = "<group>"; };
@@ -378,6 +383,9 @@
 				41A4D08D1348CCC600D070BB /* CategoriesRootViewController.h */,
 				41A4D08E1348CCC600D070BB /* CategoriesRootViewController.m */,
 				41A4D08F1348CCC600D070BB /* CategoriesRootViewController.xib */,
+				413F1D50135DC736000CDB11 /* CategoryTableViewController.h */,
+				413F1D51135DC736000CDB11 /* CategoryTableViewController.m */,
+				413F1D52135DC736000CDB11 /* CategoryTableViewController.xib */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -537,6 +545,7 @@
 				41A0377813588555001D52A8 /* DetailViewController.xib in Resources */,
 				A9724E2F135C835E000982A3 /* NearbyCategory.plist in Resources */,
 				A99BD8F9135DA84A0008588C /* NearbyTableViewController.xib in Resources */,
+				413F1D54135DC736000CDB11 /* CategoryTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +587,7 @@
 				41A0377413587383001D52A8 /* RatingView.m in Sources */,
 				A981566A13598B300056396A /* ItemAnnotation.m in Sources */,
 				A99BD8F8135DA84A0008588C /* NearbyTableViewController.m in Sources */,
+				413F1D53135DC736000CDB11 /* CategoryTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,10 +7,12 @@
 //
 
 #import "CategoriesRootViewController.h"
-
+#import "CategoryTableViewController.h"
+#import "FetchDataController.h"
 
 @implementation CategoriesRootViewController
 
+/*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -52,6 +54,24 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+*/
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    NSDictionary *dic = [_categoryArray objectAtIndex:indexPath.row];
+    NSString *str = [dic valueForKey:@"keyForSearch"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category_Coarse = %@", str];
+    FetchDataController *fetchController = [[FetchDataController alloc] init];
+    [fetchController getDataByPredicate:predicate];
+    
+    CategoryTableViewController *categoryTableViewController = [[CategoryTableViewController alloc] init];
+    categoryTableViewController.dataArray = fetchController.itemList;
+    //    [nearbyTableViewController setDataArray:[fetchController itemList]];
+    [self.navigationController pushViewController:categoryTableViewController animated:YES];
+    [categoryTableViewController release];
 }
 
 @end

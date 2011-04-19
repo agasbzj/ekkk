@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NearbyRootViewController.h"
 
-
-@interface CategoriesRootViewController : UIViewController {
+@interface CategoriesRootViewController : NearbyRootViewController {
     
 }
 
