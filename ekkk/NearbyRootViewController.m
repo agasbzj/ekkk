@@ -7,7 +7,8 @@
 //
 
 #import "NearbyRootViewController.h"
-
+#import "FetchDataController.h"
+#import "NearbyTableViewController.h"
 
 @implementation NearbyRootViewController
 
@@ -178,17 +179,21 @@
 
 #pragma mark - Table view delegate
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    // Navigation logic may go here. Create and push another view controller.
-//    /*
-//     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-//     // ...
-//     // Pass the selected object to the new view controller.
-//     [self.navigationController pushViewController:detailViewController animated:YES];
-//     [detailViewController release];
-//     */
-//}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    NSDictionary *dic = [_categoryArray objectAtIndex:indexPath.row];
+    NSString *str = [dic valueForKey:@"keyForSearch"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category_Coarse = %@", str];
+    FetchDataController *fetchController = [[FetchDataController alloc] init];
+    [fetchController getDataByPredicate:predicate];
+    
+    NearbyTableViewController *nearbyTableViewController = [[NearbyTableViewController alloc] init];
+    nearbyTableViewController.dataArray = fetchController.itemList;
+//    [nearbyTableViewController setDataArray:[fetchController itemList]];
+    [self.navigationController pushViewController:nearbyTableViewController animated:YES];
+    [nearbyTableViewController release];
+}
 
 
 @end

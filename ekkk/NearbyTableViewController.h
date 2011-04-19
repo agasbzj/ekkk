@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class IndividualTableCell;
 
 @interface NearbyTableViewController : UITableViewController {
     NSArray *_dataArray;
+    IndividualTableCell *_individualCell;
 }
 @property (nonatomic, retain) NSArray *dataArray;
+@property (nonatomic, retain) IndividualTableCell *individualCell;
 @end

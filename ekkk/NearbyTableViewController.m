@@ -8,9 +8,12 @@
 
 #import "NearbyTableViewController.h"
 #import "DetailViewController.h"
+#import "IndividualTableCell.h"
+#import "OneItem.h"
 
 @implementation NearbyTableViewController
 @synthesize dataArray = _dataArray;
+@synthesize individualCell = _individualCell;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -40,12 +43,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.tableView.rowHeight = 74;
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"All Cards", @"My Cards", nil]];
+    segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
+    segmentedControl.selectedSegmentIndex = 0;
+//    [segmentedControl addTarget:self action:@selector(switchCards:) forControlEvents:UIControlEventValueChanged];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithCustomView:segmentedControl];
+    self.navigationItem.rightBarButtonItem = button;
+    [button release];
 }
 
 - (void)viewDidUnload
@@ -99,12 +111,22 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    IndividualTableCell *cell = (IndividualTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        [[NSBundle mainBundle] loadNibNamed:@"IndividualTableCell" owner:self options:nil];
+        cell = _individualCell;
+        self.individualCell = nil;
+    
     }
     
     // Configure the cell...
+    
+    OneItem *item = [_dataArray objectAtIndex:indexPath.row];
+    
+    cell.discountLable.text = item.discount;
+    cell.sellerLabel.text = item.seller;
+    cell.cityLabel.text = item.city;
+    cell.areaLabel.text = item.area;
     
     return cell;
 }
@@ -160,6 +182,12 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
+    DetailViewController *detailViewController = [[DetailViewController alloc] init];
+    detailViewController.oneItem = [_dataArray objectAtIndex:indexPath.row];
+    detailViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    [detailViewController release];
+    
 }
 
 @end
