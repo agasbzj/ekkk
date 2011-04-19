@@ -1,19 +1,16 @@
 //
-//  NearbyRootViewController.m
+//  NearbyTableViewController.m
 //  ekkk
 //
-//  Created by 卞 中杰 on 11-4-18.
+//  Created by 卞 中杰 on 11-4-19.
 //  Copyright 2011年 __MyCompanyName__. All rights reserved.
 //
 
-#import "NearbyRootViewController.h"
+#import "NearbyTableViewController.h"
+#import "DetailViewController.h"
 
-
-@implementation NearbyRootViewController
-
-@synthesize categoryArray = _categoryArray;
-@synthesize plistKey = _plistKey;
-
+@implementation NearbyTableViewController
+@synthesize dataArray = _dataArray;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,9 +23,7 @@
 
 - (void)dealloc
 {
-
-    [_categoryArray release];
-    [_plistKey release];
+    [_dataArray release];
     [super dealloc];
 }
 
@@ -46,24 +41,11 @@
 {
     [super viewDidLoad];
 
-    self.tableView.rowHeight = 60;  //根据类别数量配置行高
-    self.tableView.scrollEnabled = NO; //不允许滚动
-    
-
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-
-    
-    
-    //获得plist下的内容
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"NearbyCategory" ofType:@"plist"];
-    _plistKey = [[NSDictionary alloc] initWithContentsOfFile:path];
-    _categoryArray = [_plistKey valueForKey:@"categoryList"];
-
-
 }
 
 - (void)viewDidUnload
@@ -103,18 +85,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
     // Return the number of sections.
     return 1;
-
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
     // Return the number of rows in the section.
-    return [_categoryArray count];
-
+    return [_dataArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -124,16 +102,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
     // Configure the cell...
-    NSDictionary *dic = [_categoryArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = [dic valueForKey:@"name"];
-    UIImage *icon = [UIImage imageNamed:[dic valueForKey:@"icon"]];
-    cell.imageView.image = icon;                 
-
+    
     return cell;
 }
 
@@ -178,17 +150,16 @@
 
 #pragma mark - Table view delegate
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    // Navigation logic may go here. Create and push another view controller.
-//    /*
-//     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-//     // ...
-//     // Pass the selected object to the new view controller.
-//     [self.navigationController pushViewController:detailViewController animated:YES];
-//     [detailViewController release];
-//     */
-//}
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     [detailViewController release];
+     */
+}
 
 @end

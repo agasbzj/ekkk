@@ -16,14 +16,12 @@
     UISegmentedControl *_segmentedControl;
     NSArray *_dataArray;
     IndividualTableCell *_individualCell;
-
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *segmentedControl;
 @property (nonatomic, retain) NSArray *dataArray;
 @property (nonatomic, retain) IBOutlet IndividualTableCell *individualCell;
-
 - (NSURL *)applicationDocumentsDirectory;
 - (NSURL *)locationDataFilePath;
 - (IBAction)switchCategory:(id)sender;

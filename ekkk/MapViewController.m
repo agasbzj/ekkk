@@ -35,7 +35,7 @@
 }
 
 - (IBAction)back:(id)sender {
-    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -122,7 +122,8 @@
     
     self.navigationItem.title = _theItem.seller;
     
-    self.navigationController.navigationBar.translucent = YES;
+//    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     
 }
 
