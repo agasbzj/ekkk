@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 
-@interface CardsRootViewController : UIViewController {
-    
+@interface CardsRootViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+    UITableView *_tableView;
+    NSArray *_bankList;
 }
-
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) NSArray *bankList;
 @end

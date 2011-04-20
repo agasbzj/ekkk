@@ -190,7 +190,6 @@
     
     NearbyTableViewController *nearbyTableViewController = [[NearbyTableViewController alloc] init];
     nearbyTableViewController.dataArray = fetchController.itemList;
-//    [nearbyTableViewController setDataArray:[fetchController itemList]];
     [self.navigationController pushViewController:nearbyTableViewController animated:YES];
     [nearbyTableViewController release];
 }

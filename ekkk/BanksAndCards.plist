@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Banks</key>
+	<array>
+		<dict>
+			<key>bankName</key>
+			<string>工商银行</string>
+			<key>cards</key>
+			<array>
+				<string>g1</string>
+				<string>g2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>bankName</key>
+			<string>农业银行</string>
+			<key>cards</key>
+			<array>
+				<string>n1</string>
+				<string>n2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>bankName</key>
+			<string>中国银行</string>
+			<key>cards</key>
+			<array>
+				<string>z1</string>
+				<string>z2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>bankName</key>
+			<string>建设银行</string>
+			<key>cards</key>
+			<array>
+				<string>j1</string>
+				<string>j2</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -57,6 +57,7 @@
 		41A4D0951348CCE000D070BB /* CardsRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A4D0931348CCE000D070BB /* CardsRootViewController.m */; };
 		41A4D0961348CCE000D070BB /* CardsRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A4D0941348CCE000D070BB /* CardsRootViewController.xib */; };
 		41AB4F59135096850031E4D0 /* test.xml in Resources */ = {isa = PBXBuildFile; fileRef = 41AB4F58135096850031E4D0 /* test.xml */; };
+		A90AED1D135EB1BE002DEFD3 /* BanksAndCards.plist in Resources */ = {isa = PBXBuildFile; fileRef = A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */; };
 		A9724E2F135C835E000982A3 /* NearbyCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9724E2E135C835E000982A3 /* NearbyCategory.plist */; };
 		A981566A13598B300056396A /* ItemAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A981566913598B300056396A /* ItemAnnotation.m */; };
 		A99BD8F8135DA84A0008588C /* NearbyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99BD8F6135DA84A0008588C /* NearbyTableViewController.m */; };
@@ -148,6 +149,7 @@
 		41A4D0931348CCE000D070BB /* CardsRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsRootViewController.m; sourceTree = "<group>"; };
 		41A4D0941348CCE000D070BB /* CardsRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardsRootViewController.xib; sourceTree = "<group>"; };
 		41AB4F58135096850031E4D0 /* test.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test.xml; sourceTree = "<group>"; };
+		A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BanksAndCards.plist; sourceTree = "<group>"; };
 		A9724E2E135C835E000982A3 /* NearbyCategory.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = NearbyCategory.plist; sourceTree = "<group>"; };
 		A981565E135969570056396A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A981566813598B2F0056396A /* ItemAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemAnnotation.h; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 				41750DE5134AF27B00CFF97E /* CardsSelectorViewController.h */,
 				41750DE6134AF27B00CFF97E /* CardsSelectorViewController.m */,
 				41750DE7134AF27B00CFF97E /* CardsSelectorViewController.xib */,
+				A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */,
 			);
 			name = Cards;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				A9724E2F135C835E000982A3 /* NearbyCategory.plist in Resources */,
 				A99BD8F9135DA84A0008588C /* NearbyTableViewController.xib in Resources */,
 				413F1D54135DC736000CDB11 /* CategoryTableViewController.xib in Resources */,
+				A90AED1D135EB1BE002DEFD3 /* BanksAndCards.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
