@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 @class IndividualTableCell;
 
-@interface CategoryTableViewController : UITableViewController {
+@interface CategoryTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     NSArray *_dataArray;
-    IndividualTableCell *_individualCell;
+    UITableView *_tableView;
 }
 @property (nonatomic, retain) NSArray *dataArray;
-@property (nonatomic, retain) IndividualTableCell *individualCell;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 @end
 

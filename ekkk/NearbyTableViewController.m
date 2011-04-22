@@ -13,7 +13,6 @@
 
 @implementation NearbyTableViewController
 @synthesize dataArray = _dataArray;
-@synthesize individualCell = _individualCell;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -113,9 +112,11 @@
     
     IndividualTableCell *cell = (IndividualTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        [[NSBundle mainBundle] loadNibNamed:@"IndividualTableCell" owner:self options:nil];
-        cell = _individualCell;
-        self.individualCell = nil;
+//        [[NSBundle mainBundle] loadNibNamed:@"IndividualTableCell" owner:self options:nil];
+//        cell = _individualCell;
+//        self.individualCell = nil;
+        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"IndividualTableCell" owner:self options:nil];
+        cell = [array objectAtIndex:0];
     
     }
     

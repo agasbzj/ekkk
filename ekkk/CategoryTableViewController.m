@@ -8,13 +8,13 @@
 
 #import "CategoryTableViewController.h"
 #import "DetailViewController.h"
-#import "IndividualTableCell.h"
+#import "CategoryTableCell.h"
 #import "OneItem.h"
 
 @implementation CategoryTableViewController
 
 @synthesize dataArray = _dataArray;
-@synthesize individualCell = _individualCell;
+@synthesize tableView = _tableView;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -46,23 +46,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableView.rowHeight = 74;
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-//    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"All Cards", @"My Cards", nil]];
-//    segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
-//    segmentedControl.selectedSegmentIndex = 0;
-//    //    [segmentedControl addTarget:self action:@selector(switchCards:) forControlEvents:UIControlEventValueChanged];
-//    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithCustomView:segmentedControl];
-//    self.navigationItem.rightBarButtonItem = button;
-
-    
-    
+    self.tableView.rowHeight = 74;    
 }
 
 - (void)viewDidUnload
@@ -116,22 +100,23 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    IndividualTableCell *cell = (IndividualTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    CategoryTableCell *cell = (CategoryTableCell *)[_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        [[NSBundle mainBundle] loadNibNamed:@"IndividualTableCell" owner:self options:nil];
-        cell = _individualCell;
-        self.individualCell = nil;
+//        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"CategoryTableCell" owner:self options:nil];
+//        cell = [array objectAtIndex:0];
+        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"IndividualTableCell" owner:self options:nil];
+        cell = [array objectAtIndex:0];
         
     }
     
     // Configure the cell...
     
-    OneItem *item = [_dataArray objectAtIndex:indexPath.row];
-    
-    cell.discountLable.text = item.discount;
-    cell.sellerLabel.text = item.seller;
-    cell.cityLabel.text = item.city;
-    cell.areaLabel.text = item.area;
+//    OneItem *item = [_dataArray objectAtIndex:indexPath.row];
+//    
+//    cell.discountLable.text = item.discount;
+//    cell.sellerLabel.text = item.seller;
+//    cell.cityLabel.text = item.city;
+//    cell.areaLabel.text = item.area;
     
     return cell;
 }

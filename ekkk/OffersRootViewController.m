@@ -167,9 +167,11 @@ NSArray *temp;  //跟踪指针，用来释放。
     static NSString *cellIdentifier = @"CellIdentifier";
     IndividualTableCell *cell = (IndividualTableCell *)[_tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        [[NSBundle mainBundle] loadNibNamed:@"IndividualTableCell" owner:self options:nil];
-        cell = _individualCell;
-        self.individualCell = nil;
+//        [[NSBundle mainBundle] loadNibNamed:@"IndividualTableCell" owner:self options:nil];
+//        cell = _individualCell;
+//        self.individualCell = nil;
+        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"IndividualTableCell" owner:self options:nil];
+        cell = [array objectAtIndex:0];
     }
     
 

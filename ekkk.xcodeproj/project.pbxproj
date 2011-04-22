@@ -59,6 +59,8 @@
 		41AB4F59135096850031E4D0 /* test.xml in Resources */ = {isa = PBXBuildFile; fileRef = 41AB4F58135096850031E4D0 /* test.xml */; };
 		A90AED1D135EB1BE002DEFD3 /* BanksAndCards.plist in Resources */ = {isa = PBXBuildFile; fileRef = A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */; };
 		A9724E2F135C835E000982A3 /* NearbyCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9724E2E135C835E000982A3 /* NearbyCategory.plist */; };
+		A97DA87E1361BBC100994946 /* CategoryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A97DA87D1361BBC100994946 /* CategoryTableCell.m */; };
+		A97DA8801361BBD000994946 /* CategoryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97DA87F1361BBD000994946 /* CategoryTableCell.xib */; };
 		A981566A13598B300056396A /* ItemAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A981566913598B300056396A /* ItemAnnotation.m */; };
 		A99BD8F8135DA84A0008588C /* NearbyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99BD8F6135DA84A0008588C /* NearbyTableViewController.m */; };
 		A99BD8F9135DA84A0008588C /* NearbyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99BD8F7135DA84A0008588C /* NearbyTableViewController.xib */; };
@@ -151,6 +153,9 @@
 		41AB4F58135096850031E4D0 /* test.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test.xml; sourceTree = "<group>"; };
 		A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BanksAndCards.plist; sourceTree = "<group>"; };
 		A9724E2E135C835E000982A3 /* NearbyCategory.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = NearbyCategory.plist; sourceTree = "<group>"; };
+		A97DA87C1361BBC100994946 /* CategoryTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableCell.h; sourceTree = "<group>"; };
+		A97DA87D1361BBC100994946 /* CategoryTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableCell.m; sourceTree = "<group>"; };
+		A97DA87F1361BBD000994946 /* CategoryTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableCell.xib; sourceTree = "<group>"; };
 		A981565E135969570056396A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A981566813598B2F0056396A /* ItemAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemAnnotation.h; sourceTree = "<group>"; };
 		A981566913598B300056396A /* ItemAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemAnnotation.m; sourceTree = "<group>"; };
@@ -286,9 +291,9 @@
 			children = (
 				41A0376D1358730C001D52A8 /* IndividualTableCell.h */,
 				41A0376E1358730C001D52A8 /* IndividualTableCell.m */,
+				41A03775135874DF001D52A8 /* IndividualTableCell.xib */,
 				41A0377213587383001D52A8 /* RatingView.h */,
 				41A0377313587383001D52A8 /* RatingView.m */,
-				41A03775135874DF001D52A8 /* IndividualTableCell.xib */,
 			);
 			name = IndividualTableCell;
 			sourceTree = "<group>";
@@ -389,6 +394,9 @@
 				413F1D50135DC736000CDB11 /* CategoryTableViewController.h */,
 				413F1D51135DC736000CDB11 /* CategoryTableViewController.m */,
 				413F1D52135DC736000CDB11 /* CategoryTableViewController.xib */,
+				A97DA87C1361BBC100994946 /* CategoryTableCell.h */,
+				A97DA87D1361BBC100994946 /* CategoryTableCell.m */,
+				A97DA87F1361BBD000994946 /* CategoryTableCell.xib */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -550,6 +558,7 @@
 				A99BD8F9135DA84A0008588C /* NearbyTableViewController.xib in Resources */,
 				413F1D54135DC736000CDB11 /* CategoryTableViewController.xib in Resources */,
 				A90AED1D135EB1BE002DEFD3 /* BanksAndCards.plist in Resources */,
+				A97DA8801361BBD000994946 /* CategoryTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +601,7 @@
 				A981566A13598B300056396A /* ItemAnnotation.m in Sources */,
 				A99BD8F8135DA84A0008588C /* NearbyTableViewController.m in Sources */,
 				413F1D53135DC736000CDB11 /* CategoryTableViewController.m in Sources */,
+				A97DA87E1361BBC100994946 /* CategoryTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
