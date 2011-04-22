@@ -8,8 +8,8 @@
 
 #import "CategoryTableViewController.h"
 #import "DetailViewController.h"
-#import "CategoryTableCell.h"
 #import "OneItem.h"
+#import "IndividualTableCell.h"
 
 @implementation CategoryTableViewController
 
@@ -100,10 +100,8 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    CategoryTableCell *cell = (CategoryTableCell *)[_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    IndividualTableCell *cell = (IndividualTableCell *)[_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-//        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"CategoryTableCell" owner:self options:nil];
-//        cell = [array objectAtIndex:0];
         NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"IndividualTableCell" owner:self options:nil];
         cell = [array objectAtIndex:0];
         
@@ -111,12 +109,12 @@
     
     // Configure the cell...
     
-//    OneItem *item = [_dataArray objectAtIndex:indexPath.row];
-//    
-//    cell.discountLable.text = item.discount;
-//    cell.sellerLabel.text = item.seller;
-//    cell.cityLabel.text = item.city;
-//    cell.areaLabel.text = item.area;
+    OneItem *item = [_dataArray objectAtIndex:indexPath.row];
+    
+    cell.discountLable.text = item.discount;
+    cell.sellerLabel.text = item.seller;
+    cell.cityLabel.text = item.city;
+    cell.areaLabel.text = item.area;
     
     return cell;
 }
