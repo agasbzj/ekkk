@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NearbyRootViewController.h"
 
-@interface CategoriesRootViewController : NearbyRootViewController {
-    
+@interface CategoriesRootViewController : UITableViewController {
+    NSArray *_categoryArray;
+    NSDictionary *_plistKey;
 }
+
+@property (nonatomic, retain) NSArray *categoryArray;
+@property (nonatomic, retain) NSDictionary *plistKey;
 
 @end

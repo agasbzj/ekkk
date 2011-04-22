@@ -7,21 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NearbyTableViewController.h"
 @class IndividualTableCell;
 
-@interface CategoryTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-    UITableView *_tableView;
+@interface CategoryTableViewController : UITableViewController {
     NSArray *_dataArray;
-    IndividualTableCell *_individualTableCell;
-    UINib *cellNib;
-    UITableViewController *_tableViewController;
+    IndividualTableCell *_individualCell;
 }
-
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) NSArray *dataArray;
-@property (nonatomic, retain) IndividualTableCell *individualTableCell;
-@property (nonatomic, retain) UINib *cellNib;
-@property (nonatomic, retain) UITableViewController *tableViewController;
-
+@property (nonatomic, retain) IndividualTableCell *individualCell;
 @end
+
