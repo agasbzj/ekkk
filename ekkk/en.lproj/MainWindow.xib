@@ -196,7 +196,6 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBUIViewController" id="980225876">
 								<object class="IBUINavigationItem" key="IBUINavigationItem" id="763046807">
-									<reference key="IBUINavigationBar"/>
 									<string key="IBUITitle">Root View Controller</string>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
@@ -540,6 +539,7 @@
 					<string>173.CustomClassName</string>
 					<string>173.IBPluginDependency</string>
 					<string>175.IBPluginDependency</string>
+					<string>177.CustomClassName</string>
 					<string>177.IBPluginDependency</string>
 					<string>178.IBPluginDependency</string>
 					<string>2.IBAttributePlaceholdersKey</string>
@@ -575,6 +575,7 @@
 					<string>OffersRootViewController</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>ManagementRootViewController</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSMutableDictionary">

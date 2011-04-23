@@ -7,12 +7,11 @@
 //
 
 #import "BankSelectViewController.h"
-
+#import "CardsSelectView.h"
 
 @implementation BankSelectViewController
 @synthesize tableView = _tableView;
 @synthesize bankArray = _bankArray;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -43,6 +42,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    _bankArray = [[[[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"BanksAndCards" ofType:@"plist"]] valueForKey:@"Banks"] retain];
 }
 
 - (void)viewDidUnload
@@ -70,11 +70,24 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    
+    NSDictionary *dic = [_bankArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = [dic valueForKey:@"bankName"];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"CardsSelectView" owner:self options:nil];
+    CardsSelectView *cardsSelectView = [[CardsSelectView alloc] init];
+    cardsSelectView = [array objectAtIndex:0];
+    cardsSelectView.cardsArray = [[_bankArray objectAtIndex:indexPath.row] valueForKey:@"cards"];
+    [self.view addSubview:cardsSelectView];
+}
+
+- (IBAction)ok:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)cancel:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
 }
 @end

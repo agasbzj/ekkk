@@ -7,7 +7,7 @@
 //
 
 #import "ManagementRootViewController.h"
-
+#import "BankSelectViewController.h"
 
 @implementation ManagementRootViewController
 
@@ -55,7 +55,9 @@
 }
 
 - (IBAction)logIn:(id)sender {
-    
+    BankSelectViewController *bankSelectViewController = [[BankSelectViewController alloc] init];
+    [self presentModalViewController:bankSelectViewController animated:YES];
+    [bankSelectViewController release];
 }
 
 @end

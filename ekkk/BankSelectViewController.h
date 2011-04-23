@@ -16,4 +16,7 @@
 }
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) NSArray *bankArray;
+
+- (IBAction)ok:(id)sender;
+- (IBAction)cancel:(id)sender;
 @end

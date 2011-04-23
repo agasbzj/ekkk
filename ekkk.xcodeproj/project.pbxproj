@@ -68,6 +68,8 @@
 		A9A46A271363004100964881 /* ManagementRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A46A251363004100964881 /* ManagementRootViewController.xib */; };
 		A9A46A331363021500964881 /* BankSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A46A311363021500964881 /* BankSelectViewController.m */; };
 		A9A46A341363021500964881 /* BankSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A46A321363021500964881 /* BankSelectViewController.xib */; };
+		A9A46A4613630D4A00964881 /* CardsSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A46A4513630D4A00964881 /* CardsSelectView.m */; };
+		A9A46A4813630D6000964881 /* CardsSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A46A4713630D5F00964881 /* CardsSelectView.xib */; };
 		A9BE3005134B1F4600DA6E86 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BE3004134B1F4600DA6E86 /* CFNetwork.framework */; };
 		A9BE3080134B21C000DA6E86 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE307F134B21C000DA6E86 /* Reachability.m */; };
 		A9BE3086134B22BD00DA6E86 /* InterconnectWithServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE3085134B22BD00DA6E86 /* InterconnectWithServer.m */; };
@@ -172,6 +174,9 @@
 		A9A46A301363021500964881 /* BankSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankSelectViewController.h; sourceTree = "<group>"; };
 		A9A46A311363021500964881 /* BankSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankSelectViewController.m; sourceTree = "<group>"; };
 		A9A46A321363021500964881 /* BankSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankSelectViewController.xib; sourceTree = "<group>"; };
+		A9A46A4413630D4A00964881 /* CardsSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardsSelectView.h; sourceTree = "<group>"; };
+		A9A46A4513630D4A00964881 /* CardsSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsSelectView.m; sourceTree = "<group>"; };
+		A9A46A4713630D5F00964881 /* CardsSelectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardsSelectView.xib; sourceTree = "<group>"; };
 		A9BE3004134B1F4600DA6E86 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		A9BE307E134B21C000DA6E86 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		A9BE307F134B21C000DA6E86 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -474,6 +479,9 @@
 				A9A46A301363021500964881 /* BankSelectViewController.h */,
 				A9A46A311363021500964881 /* BankSelectViewController.m */,
 				A9A46A321363021500964881 /* BankSelectViewController.xib */,
+				A9A46A4413630D4A00964881 /* CardsSelectView.h */,
+				A9A46A4513630D4A00964881 /* CardsSelectView.m */,
+				A9A46A4713630D5F00964881 /* CardsSelectView.xib */,
 			);
 			name = Manage;
 			sourceTree = "<group>";
@@ -585,6 +593,7 @@
 				A97DA8801361BBD000994946 /* CategoryTableCell.xib in Resources */,
 				A9A46A271363004100964881 /* ManagementRootViewController.xib in Resources */,
 				A9A46A341363021500964881 /* BankSelectViewController.xib in Resources */,
+				A9A46A4813630D6000964881 /* CardsSelectView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,6 +639,7 @@
 				A97DA87E1361BBC100994946 /* CategoryTableCell.m in Sources */,
 				A9A46A261363004100964881 /* ManagementRootViewController.m in Sources */,
 				A9A46A331363021500964881 /* BankSelectViewController.m in Sources */,
+				A9A46A4613630D4A00964881 /* CardsSelectView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
