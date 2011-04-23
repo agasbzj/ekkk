@@ -7,6 +7,8 @@
 		<dict>
 			<key>bankName</key>
 			<string>中国工商银行</string>
+			<key>icon</key>
+			<string>shoppingmalls.png</string>
 			<key>cards</key>
 			<array>
 				<string>g1</string>
@@ -16,6 +18,8 @@
 		<dict>
 			<key>bankName</key>
 			<string>中国农业银行</string>
+			<key>icon</key>
+			<string>shoppingmalls.png</string>
 			<key>cards</key>
 			<array>
 				<string>n1</string>
@@ -25,6 +29,8 @@
 		<dict>
 			<key>bankName</key>
 			<string>中国银行</string>
+			<key>icon</key>
+			<string>shoppingmalls.png</string>
 			<key>cards</key>
 			<array>
 				<string>z1</string>
@@ -34,6 +40,8 @@
 		<dict>
 			<key>bankName</key>
 			<string>中国建设银行</string>
+			<key>icon</key>
+			<string>shoppingmalls.png</string>
 			<key>cards</key>
 			<array>
 				<string>j1</string>
@@ -43,6 +51,8 @@
 		<dict>
 			<key>bankName</key>
 			<string>上海浦东发展银行</string>
+			<key>icon</key>
+			<string>shoppingmalls.png</string>
 			<key>cards</key>
 			<array>
 				<string>j1</string>
@@ -51,7 +61,86 @@
 		</dict>
 		<dict>
 			<key>bankName</key>
-			<string>招商银行</string>
+			<string>交通银行</string>
+			<key>icon</key>
+			<string>shoppingmalls.png</string>
+			<key>cards</key>
+			<array>
+				<string>j1</string>
+				<string>j2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>bankName</key>
+			<string>深圳发展银行</string>
+			<key>icon</key>
+			<string>shoppingmalls.png</string>
+			<key>cards</key>
+			<array>
+				<string>j1</string>
+				<string>j2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>bankName</key>
+			<string>广东发展银行</string>
+			<key>icon</key>
+			<string>shoppingmalls.png</string>
+			<key>cards</key>
+			<array>
+				<string>j1</string>
+				<string>j2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>bankName</key>
+			<string>中国光大银行</string>
+			<key>icon</key>
+			<string>shoppingmalls.png</string>
+			<key>cards</key>
+			<array>
+				<string>j1</string>
+				<string>j2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>bankName</key>
+			<string>中国民生银行</string>
+			<key>icon</key>
+			<string>shoppingmalls.png</string>
+			<key>cards</key>
+			<array>
+				<string>j1</string>
+				<string>j2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>bankName</key>
+			<string>华夏银行</string>
+			<key>icon</key>
+			<string>shoppingmalls.png</string>
+			<key>cards</key>
+			<array>
+				<string>j1</string>
+				<string>j2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>bankName</key>
+			<string>中信银行</string>
+			<key>icon</key>
+			<string>shoppingmalls.png</string>
+			<key>cards</key>
+			<array>
+				<string>j1</string>
+				<string>j2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>bankName</key>
+			<string>中国平安银行</string>
+			<key>icon</key>
+			<string>shoppingmalls.png</string>
 			<key>cards</key>
 			<array>
 				<string>j1</string>
