@@ -121,7 +121,7 @@
     
     CategoryTableViewController *categoryTableViewController = [[CategoryTableViewController alloc] init];
     categoryTableViewController.dataArray = fetchController.itemList;
-    self.hidesBottomBarWhenPushed = YES;
+    categoryTableViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:categoryTableViewController animated:YES];
     [categoryTableViewController release];
 }

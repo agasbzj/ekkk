@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>bankName</key>
-			<string>工商银行</string>
+			<string>中国工商银行</string>
 			<key>cards</key>
 			<array>
 				<string>g1</string>
@@ -15,7 +15,7 @@
 		</dict>
 		<dict>
 			<key>bankName</key>
-			<string>农业银行</string>
+			<string>中国农业银行</string>
 			<key>cards</key>
 			<array>
 				<string>n1</string>
@@ -33,7 +33,25 @@
 		</dict>
 		<dict>
 			<key>bankName</key>
-			<string>建设银行</string>
+			<string>中国建设银行</string>
+			<key>cards</key>
+			<array>
+				<string>j1</string>
+				<string>j2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>bankName</key>
+			<string>上海浦东发展银行</string>
+			<key>cards</key>
+			<array>
+				<string>j1</string>
+				<string>j2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>bankName</key>
+			<string>招商银行</string>
 			<key>cards</key>
 			<array>
 				<string>j1</string>

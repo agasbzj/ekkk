@@ -173,7 +173,7 @@
      */
     DetailViewController *detailViewController = [[DetailViewController alloc] init];
     detailViewController.oneItem = [_dataArray objectAtIndex:indexPath.row];
-    detailViewController.hidesBottomBarWhenPushed = YES;
+//    detailViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
     
