@@ -11,8 +11,10 @@
 
 @interface CardsRootViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     UITableView *_tableView;
-    NSArray *_bankList;
+    NSArray *_bankArray;
+    NSDictionary *_plistKey;
 }
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
-@property (nonatomic, retain) NSArray *bankList;
+@property (nonatomic, retain) NSArray *bankArray;
+@property (nonatomic, retain) NSDictionary *plistKey;
 @end
