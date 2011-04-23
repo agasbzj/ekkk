@@ -12,6 +12,15 @@
 @implementation CardsSelectView
 @synthesize tableView = _tableView;
 @synthesize cardsArray = _cardsArray;
+@synthesize selectedCards = _selectedCards;
+
+- (id)init {
+    if ((self = [super init])) {
+        _selectedCards = [NSMutableArray arrayWithCapacity:5];
+
+    }
+    return self;
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -33,6 +42,7 @@
 
 - (void)dealloc
 {
+    [_selectedCards release];
     [_tableView release];
     [_cardsArray release];
     [super dealloc];
@@ -50,17 +60,30 @@
     UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     cell.textLabel.text = [_cardsArray objectAtIndex:indexPath.row];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [_tableView cellForRowAtIndexPath:indexPath];
+    NSString *selected = [_cardsArray objectAtIndex:indexPath.row];
+    for (NSString *str in _selectedCards) {
+        if ([str isEqualToString:cell.textLabel.text]) {
 
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            [self.selectedCards removeObject:selected];
+            return;
+        }
+
+    }
+    [_selectedCards addObject:selected];
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
 }
 
 - (IBAction)ok:(id)sender {
+    NSLog(@"%@", _selectedCards);
     [self removeFromSuperview];
 }
 - (IBAction)cancel:(id)sender {

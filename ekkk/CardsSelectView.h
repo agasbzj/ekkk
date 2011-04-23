@@ -12,9 +12,12 @@
 @interface CardsSelectView : UIView <UITableViewDataSource, UITableViewDelegate> {
     UITableView *tableView;
     NSArray *_cardsArray;
+    NSMutableArray *_selectedCards;
+    
 }
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) NSArray *cardsArray;
+@property (nonatomic, retain) NSMutableArray *selectedCards;
 
 - (IBAction)ok:(id)sender;
 - (IBAction)cancel:(id)sender;
