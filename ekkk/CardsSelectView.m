@@ -16,8 +16,7 @@
 
 - (id)init {
     if ((self = [super init])) {
-        _selectedCards = [NSMutableArray arrayWithCapacity:5];
-
+        
     }
     return self;
 }
@@ -61,6 +60,7 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 //        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     cell.textLabel.text = [_cardsArray objectAtIndex:indexPath.row];
     return cell;
@@ -74,11 +74,13 @@
 
             cell.accessoryType = UITableViewCellAccessoryNone;
             [self.selectedCards removeObject:selected];
+            NSLog(@"%@", _selectedCards);
             return;
         }
 
     }
     [_selectedCards addObject:selected];
+    NSLog(@"%@", _selectedCards);
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
 }
 

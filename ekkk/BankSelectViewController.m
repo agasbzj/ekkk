@@ -80,6 +80,7 @@
     CardsSelectView *cardsSelectView = [[CardsSelectView alloc] init];
     cardsSelectView = [array objectAtIndex:0];
     cardsSelectView.cardsArray = [[_bankArray objectAtIndex:indexPath.row] valueForKey:@"cards"];
+    cardsSelectView.selectedCards = [NSMutableArray arrayWithCapacity:3];
     [self.view addSubview:cardsSelectView];
 }
 
