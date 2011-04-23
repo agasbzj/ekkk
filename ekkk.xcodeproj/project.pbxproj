@@ -64,6 +64,10 @@
 		A981566A13598B300056396A /* ItemAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A981566913598B300056396A /* ItemAnnotation.m */; };
 		A99BD8F8135DA84A0008588C /* NearbyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99BD8F6135DA84A0008588C /* NearbyTableViewController.m */; };
 		A99BD8F9135DA84A0008588C /* NearbyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99BD8F7135DA84A0008588C /* NearbyTableViewController.xib */; };
+		A9A46A261363004100964881 /* ManagementRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A46A241363004100964881 /* ManagementRootViewController.m */; };
+		A9A46A271363004100964881 /* ManagementRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A46A251363004100964881 /* ManagementRootViewController.xib */; };
+		A9A46A331363021500964881 /* BankSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A46A311363021500964881 /* BankSelectViewController.m */; };
+		A9A46A341363021500964881 /* BankSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A46A321363021500964881 /* BankSelectViewController.xib */; };
 		A9BE3005134B1F4600DA6E86 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BE3004134B1F4600DA6E86 /* CFNetwork.framework */; };
 		A9BE3080134B21C000DA6E86 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE307F134B21C000DA6E86 /* Reachability.m */; };
 		A9BE3086134B22BD00DA6E86 /* InterconnectWithServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE3085134B22BD00DA6E86 /* InterconnectWithServer.m */; };
@@ -162,6 +166,12 @@
 		A99BD8F5135DA84A0008588C /* NearbyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyTableViewController.h; sourceTree = "<group>"; };
 		A99BD8F6135DA84A0008588C /* NearbyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyTableViewController.m; sourceTree = "<group>"; };
 		A99BD8F7135DA84A0008588C /* NearbyTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearbyTableViewController.xib; sourceTree = "<group>"; };
+		A9A46A231363004100964881 /* ManagementRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagementRootViewController.h; sourceTree = "<group>"; };
+		A9A46A241363004100964881 /* ManagementRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagementRootViewController.m; sourceTree = "<group>"; };
+		A9A46A251363004100964881 /* ManagementRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManagementRootViewController.xib; sourceTree = "<group>"; };
+		A9A46A301363021500964881 /* BankSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankSelectViewController.h; sourceTree = "<group>"; };
+		A9A46A311363021500964881 /* BankSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankSelectViewController.m; sourceTree = "<group>"; };
+		A9A46A321363021500964881 /* BankSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankSelectViewController.xib; sourceTree = "<group>"; };
 		A9BE3004134B1F4600DA6E86 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		A9BE307E134B21C000DA6E86 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		A9BE307F134B21C000DA6E86 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -337,6 +347,7 @@
 		41A4D05E1348CB9A00D070BB /* ekkk */ = {
 			isa = PBXGroup;
 			children = (
+				A9A46A211362FF4700964881 /* Manage */,
 				41A037711358731D001D52A8 /* IndividualTableCell */,
 				4155F0E21355F61B00EE4A1C /* credit_information.xml */,
 				41AB4F58135096850031E4D0 /* test.xml */,
@@ -454,6 +465,19 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		A9A46A211362FF4700964881 /* Manage */ = {
+			isa = PBXGroup;
+			children = (
+				A9A46A231363004100964881 /* ManagementRootViewController.h */,
+				A9A46A241363004100964881 /* ManagementRootViewController.m */,
+				A9A46A251363004100964881 /* ManagementRootViewController.xib */,
+				A9A46A301363021500964881 /* BankSelectViewController.h */,
+				A9A46A311363021500964881 /* BankSelectViewController.m */,
+				A9A46A321363021500964881 /* BankSelectViewController.xib */,
+			);
+			name = Manage;
+			sourceTree = "<group>";
+		};
 		A9BE3006134B215000DA6E86 /* ASIHttpRequest */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,6 +583,8 @@
 				413F1D54135DC736000CDB11 /* CategoryTableViewController.xib in Resources */,
 				A90AED1D135EB1BE002DEFD3 /* BanksAndCards.plist in Resources */,
 				A97DA8801361BBD000994946 /* CategoryTableCell.xib in Resources */,
+				A9A46A271363004100964881 /* ManagementRootViewController.xib in Resources */,
+				A9A46A341363021500964881 /* BankSelectViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,6 +628,8 @@
 				A99BD8F8135DA84A0008588C /* NearbyTableViewController.m in Sources */,
 				413F1D53135DC736000CDB11 /* CategoryTableViewController.m in Sources */,
 				A97DA87E1361BBC100994946 /* CategoryTableCell.m in Sources */,
+				A9A46A261363004100964881 /* ManagementRootViewController.m in Sources */,
+				A9A46A331363021500964881 /* BankSelectViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
