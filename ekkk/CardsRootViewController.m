@@ -7,11 +7,13 @@
 //
 
 #import "CardsRootViewController.h"
-
+#import "FetchDataController.h"
+#import "CategoryTableViewController.h"
 
 @implementation CardsRootViewController
 @synthesize tableView = _tableView;
-@synthesize bankList = _bankList;
+@synthesize bankArray = _bankArray;
+@synthesize plistKey = _plistKey;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,7 +27,8 @@
 - (void)dealloc
 {
     [_tableView release];
-    [_bankList release];
+    [_bankArray release];
+    [_plistKey release];
     [super dealloc];
 }
 
@@ -43,7 +46,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    _bankList = [[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"BanksAndCards" ofType:@"plist"]] valueForKey:@"Banks"];
+//    _bankList = [[[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"BanksAndCards" ofType:@"plist"]] valueForKey:@"Banks"] retain];
+//    self.tableView.rowHeight = 60;  //根据类别数量配置行高
+    self.tableView.scrollEnabled = YES; //不允许滚动
+    
+    
+    //获得plist下的内容
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"BanksAndCards" ofType:@"plist"];
+    _plistKey = [[NSDictionary alloc] initWithContentsOfFile:path];
+    _bankArray = [_plistKey valueForKey:@"Banks"];
     
 }
 
@@ -60,21 +71,61 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark - TableView Delegate
+#pragma mark - Table view data source
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_bankList count];
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    
+    // Return the number of sections.
+    return 1;
+    
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *CellIdentifier = @"CellIdentifier";
-    UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    
+    // Return the number of rows in the section.
+    return [_bankArray count];
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    NSDictionary *dic = [_bankList objectAtIndex:indexPath.row];
+    
+    // Configure the cell...
+    NSDictionary *dic = [_bankArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [dic valueForKey:@"bankName"];
+    UIImage *icon = [UIImage imageNamed:[dic valueForKey:@"icon"]];
+    cell.imageView.image = icon;                 
+    
     return cell;
 }
 
+/*
+#pragma mark - TableView Delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    NSDictionary *dic = [_bankArray objectAtIndex:indexPath.row];
+    NSString *str = [dic valueForKey:@"bankName"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"card_Bank = %@", str];
+    FetchDataController *fetchController = [[FetchDataController alloc] init];
+    [fetchController getDataByPredicate:predicate];
+    
+    CategoryTableViewController *categoryTableViewController = [[CategoryTableViewController alloc] init];
+    categoryTableViewController.dataArray = fetchController.itemList;
+    categoryTableViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:categoryTableViewController animated:YES];
+    [categoryTableViewController release];
+}
+*/
 @end
