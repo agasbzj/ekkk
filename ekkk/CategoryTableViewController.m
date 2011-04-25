@@ -39,7 +39,6 @@ static NSUInteger choosenTag = 0;   //点了哪个查询分类
     [_showArray release];
     [_toolBar release];
     [_dataArray release];
-    [_showArray release];
     [_pickerArray release];
     [super dealloc];
 }
