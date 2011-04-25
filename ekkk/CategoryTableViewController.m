@@ -21,6 +21,8 @@
 @synthesize picker = _picker;
 @synthesize pickerArray = _pickerArray;
 
+static NSUInteger choosenTag = 0;   //点了哪个查询分类
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -245,7 +247,11 @@
     
     NSString *str;
     NSInteger flag = 0;
-    switch (button.tag) {
+    
+    choosenTag = button.tag;
+    
+    //根据分类显示选取器内可供选择的数据
+    switch (choosenTag) {
         case 1:
             for (OneItem *item in _dataArray) {
                 str = item.city;
@@ -289,12 +295,22 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (buttonIndex == [actionSheet destructiveButtonIndex]) {
         NSUInteger choosen = [_picker selectedRowInComponent:0];
-        [_showArray removeAllObjects];
-        for (OneItem *item in _dataArray) {
-            if ([item.city isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
-                [_showArray addObject:item];
-            }
+        [_showArray removeAllObjects];  //先清空要显示的数据
+        
+        //按点击的分类查询刷新数据
+        switch (choosenTag) {
+            case 1:
+                for (OneItem *item in _dataArray) {
+                    if ([item.city isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
+                        [_showArray addObject:item];
+                    }
+                }
+                break;
+                
+            default:
+                break;
         }
+
         [_tableView reloadData];
     }
 }

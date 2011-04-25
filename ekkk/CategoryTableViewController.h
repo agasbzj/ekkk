@@ -11,7 +11,7 @@
 
 @interface CategoryTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
     NSArray *_dataArray;    //初始传入的值
-    NSMutableArray *_showArray;    //调整选择后用来显示的值
+    NSMutableArray *_showArray;    //表视图用来显示的数据
     NSMutableArray *_pickerArray;
     
     UITableView *_tableView;
