@@ -12,7 +12,7 @@
 
 @interface DetailViewController : UIViewController {
     OneItem *_oneItem;
-    UILabel *_seller, *_category_Fine, *_comments_General, *_comments_Service, *_comments_Enviroment, *_comments_Discount, *_telephone, *_address;
+    UILabel *_seller, *_category_Fine, *_comments_General, *_comments_Service, *_comments_Enviroment, *_comments_Discount, *_telephone, *_address,*_card_Bank;
 //    UINavigationBar *_navBar;
 //    UINavigationItem *_navItem;
 }
@@ -26,6 +26,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *comments_Discount;
 @property (nonatomic, retain) IBOutlet UILabel *telephone;
 @property (nonatomic, retain) IBOutlet UILabel *address;
+@property (nonatomic, retain) IBOutlet UILabel *card_Bank;
 
 //@property (nonatomic, retain) IBOutlet UINavigationBar *navBar;
 //@property (nonatomic, retain) UINavigationItem *navItem;

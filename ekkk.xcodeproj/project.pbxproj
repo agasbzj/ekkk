@@ -19,8 +19,8 @@
 		41750DDA134AF17300CFF97E /* ParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 41750DD9134AF17300CFF97E /* ParseOperation.m */; };
 		41750DDE134AF1D000CFF97E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41750DDC134AF1D000CFF97E /* DetailViewController.m */; };
 		41750DE4134AF23000CFF97E /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 41750DE3134AF23000CFF97E /* ImageDownloader.m */; };
-		41750DE8134AF27B00CFF97E /* CardsSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41750DE6134AF27B00CFF97E /* CardsSelectorViewController.m */; };
-		41750DE9134AF27B00CFF97E /* CardsSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41750DE7134AF27B00CFF97E /* CardsSelectorViewController.xib */; };
+		41750DE8134AF27B00CFF97E /* CardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41750DE6134AF27B00CFF97E /* CardsTableViewController.m */; };
+		41750DE9134AF27B00CFF97E /* CardsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41750DE7134AF27B00CFF97E /* CardsTableViewController.xib */; };
 		41750DF2134AFA8300CFF97E /* ItemModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41750DF0134AFA8300CFF97E /* ItemModel.xcdatamodeld */; };
 		41750DFD134AFAB600CFF97E /* restaurants.png in Resources */ = {isa = PBXBuildFile; fileRef = 41750DF3134AFAB600CFF97E /* restaurants.png */; };
 		41750DFE134AFAB600CFF97E /* bar&coffee.png in Resources */ = {isa = PBXBuildFile; fileRef = 41750DF4134AFAB600CFF97E /* bar&coffee.png */; };
@@ -126,9 +126,9 @@
 		41750DDC134AF1D000CFF97E /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		41750DE2134AF23000CFF97E /* ImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloader.h; sourceTree = "<group>"; };
 		41750DE3134AF23000CFF97E /* ImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloader.m; sourceTree = "<group>"; };
-		41750DE5134AF27B00CFF97E /* CardsSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardsSelectorViewController.h; sourceTree = "<group>"; };
-		41750DE6134AF27B00CFF97E /* CardsSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsSelectorViewController.m; sourceTree = "<group>"; };
-		41750DE7134AF27B00CFF97E /* CardsSelectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardsSelectorViewController.xib; sourceTree = "<group>"; };
+		41750DE5134AF27B00CFF97E /* CardsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = CardsTableViewController.h; sourceTree = "<group>"; };
+		41750DE6134AF27B00CFF97E /* CardsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsTableViewController.m; sourceTree = "<group>"; };
+		41750DE7134AF27B00CFF97E /* CardsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardsTableViewController.xib; sourceTree = "<group>"; };
 		41750DF1134AFA8300CFF97E /* ItemModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ItemModel.xcdatamodel; sourceTree = "<group>"; };
 		41750DF3134AFAB600CFF97E /* restaurants.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restaurants.png; sourceTree = "<group>"; };
 		41750DF4134AFAB600CFF97E /* bar&coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar&coffee.png"; sourceTree = "<group>"; };
@@ -435,9 +435,9 @@
 				41A4D0921348CCE000D070BB /* CardsRootViewController.h */,
 				41A4D0931348CCE000D070BB /* CardsRootViewController.m */,
 				41A4D0941348CCE000D070BB /* CardsRootViewController.xib */,
-				41750DE5134AF27B00CFF97E /* CardsSelectorViewController.h */,
-				41750DE6134AF27B00CFF97E /* CardsSelectorViewController.m */,
-				41750DE7134AF27B00CFF97E /* CardsSelectorViewController.xib */,
+				41750DE5134AF27B00CFF97E /* CardsTableViewController.h */,
+				41750DE6134AF27B00CFF97E /* CardsTableViewController.m */,
+				41750DE7134AF27B00CFF97E /* CardsTableViewController.xib */,
 				A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */,
 			);
 			name = Cards;
@@ -630,7 +630,7 @@
 				41A4D08C1348CCB300D070BB /* NearbyRootViewController.xib in Resources */,
 				41A4D0911348CCC600D070BB /* CategoriesRootViewController.xib in Resources */,
 				41A4D0961348CCE000D070BB /* CardsRootViewController.xib in Resources */,
-				41750DE9134AF27B00CFF97E /* CardsSelectorViewController.xib in Resources */,
+				41750DE9134AF27B00CFF97E /* CardsTableViewController.xib in Resources */,
 				41750DFD134AFAB600CFF97E /* restaurants.png in Resources */,
 				41750DFE134AFAB600CFF97E /* bar&coffee.png in Resources */,
 				41750DFF134AFAB600CFF97E /* massages.png in Resources */,
@@ -695,7 +695,7 @@
 				41750DDA134AF17300CFF97E /* ParseOperation.m in Sources */,
 				41750DDE134AF1D000CFF97E /* DetailViewController.m in Sources */,
 				41750DE4134AF23000CFF97E /* ImageDownloader.m in Sources */,
-				41750DE8134AF27B00CFF97E /* CardsSelectorViewController.m in Sources */,
+				41750DE8134AF27B00CFF97E /* CardsTableViewController.m in Sources */,
 				41750DF2134AFA8300CFF97E /* ItemModel.xcdatamodeld in Sources */,
 				41750E0C134AFB5900CFF97E /* MapViewController.m in Sources */,
 				41750E11134AFC2900CFF97E /* OneItem.m in Sources */,

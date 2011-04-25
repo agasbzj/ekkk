@@ -36,7 +36,7 @@
     NSString *comments_Service;          //评论
     NSString *comments_Discount;          //评论    
     NSString *comments_General;          //评论
-
+    NSString *card_Bank;                 //银行
     
     CLLocationCoordinate2D coordinate;      //坐标
     
@@ -66,6 +66,8 @@
 @property (nonatomic, retain) NSString *comments_Service;          //评论
 @property (nonatomic, retain) NSString *comments_Discount;          //评论    
 @property (nonatomic, retain) NSString *comments_General;          //评论
+
+@property (nonatomic, retain) NSString *card_Bank;        //银行
 
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 

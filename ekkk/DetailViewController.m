@@ -18,6 +18,7 @@
 @synthesize comments_Service = _comments_Service;
 @synthesize seller = _seller;
 @synthesize telephone = _telephone;
+@synthesize card_Bank = _card_Bank;
 
 //点击返回按钮
 //- (IBAction)back:(id)sender {
@@ -53,6 +54,7 @@
     [_telephone release];
     [_seller release];
     [_category_Fine release];
+    [_card_Bank release];
     
     [super dealloc];
 }
@@ -92,6 +94,7 @@
     _comments_Enviroment.text = _oneItem.comments_Enviroment;
     _seller.text = _oneItem.seller;
     _category_Fine.text = _oneItem.category_Fine;
+    _card_Bank.text = _oneItem.card_Bank;
     
     
 

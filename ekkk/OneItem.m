@@ -10,7 +10,7 @@
 
 @implementation OneItem
 
-@synthesize city,area,category_Coarse,category_Fine,seller,discount,image,details,start_Date,end_Date,comments_Enviroment,comments_Service, comments_Discount, comments_General, telephone, address, www_Address,latitude, longitude, coordinate, hot;
+@synthesize city,area,category_Coarse,category_Fine,seller,discount,image,details,start_Date,end_Date,comments_Enviroment,comments_Service, comments_Discount, comments_General, telephone, address, www_Address,latitude, longitude, coordinate, hot,card_Bank;
 
 + (NSSet *)keyPathsForValuesAffectingCoordinate
 {
@@ -52,6 +52,7 @@
     [www_Address release];
     [hot release];
     [image release];
+    [card_Bank release];
     [super dealloc];
 
 }

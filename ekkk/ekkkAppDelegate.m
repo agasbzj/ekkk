@@ -71,6 +71,7 @@
         [object setValue:oneItem.comments_General forKey:@"comments_General"];
         [object setValue:oneItem.comments_Enviroment forKey:@"comments_Enviroment"];
         [object setValue:oneItem.comments_Discount forKey:@"comments_Discount"];
+        [object setValue:oneItem.card_Bank forKey:@"card_Bank"];
         [context save:&error];
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:@"NewDataSaved" object:self];

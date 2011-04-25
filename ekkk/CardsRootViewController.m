@@ -8,7 +8,7 @@
 
 #import "CardsRootViewController.h"
 #import "FetchDataController.h"
-#import "CategoryTableViewController.h"
+#import "CardsTableViewController.h"
 
 @implementation CardsRootViewController
 @synthesize tableView = _tableView;
@@ -109,23 +109,21 @@
     return cell;
 }
 
-/*
-#pragma mark - TableView Delegate
+#pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     NSDictionary *dic = [_bankArray objectAtIndex:indexPath.row];
-    NSString *str = [dic valueForKey:@"bankName"];
+    NSString *str = [dic valueForKey:@"keyForSearch"];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"card_Bank = %@", str];
     FetchDataController *fetchController = [[FetchDataController alloc] init];
     [fetchController getDataByPredicate:predicate];
+    CardsTableViewController *cardsTableViewController = [[CardsTableViewController alloc] init];
+    cardsTableViewController.dataArray = fetchController.itemList;
     
-    CategoryTableViewController *categoryTableViewController = [[CategoryTableViewController alloc] init];
-    categoryTableViewController.dataArray = fetchController.itemList;
-    categoryTableViewController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:categoryTableViewController animated:YES];
-    [categoryTableViewController release];
+    [self.navigationController pushViewController:cardsTableViewController animated:YES];
+    //    [nearbyTableViewController release];
 }
-*/
+
 @end

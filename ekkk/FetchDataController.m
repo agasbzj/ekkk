@@ -65,6 +65,7 @@
         one.comments_General = [oneObject valueForKey:@"comments_General"];
         one.comments_Enviroment = [oneObject valueForKey:@"comments_Enviroment"];
         one.comments_Discount = [oneObject valueForKey:@"comments_Discount"];
+        one.card_Bank = [oneObject valueForKey:@"card_Bank"];
         one.coordinate = [one coordinate];
         [_itemList addObject:one];
     }
@@ -97,6 +98,7 @@
         one.comments_Discount = [oneObject valueForKey:@"comments_Discount"];
         one.comments_Service = [oneObject valueForKey:@"comments_Service"];
         one.comments_General = [oneObject valueForKey:@"comments_General"];
+        one.card_Bank = [oneObject valueForKey:@"card_Bank"];
         [_itemList addObject:one];
     }
     [fetchRequest release];

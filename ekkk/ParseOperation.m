@@ -55,6 +55,7 @@ static NSString *kCommentsServiceElem = @"comments_Service";
 static NSString *kCommentsDiscountElem = @"comments_Discount";
 static NSString *kCommentsGeneralElem = @"comments_General";
 static NSString *kHotElem = @"hot";
+static NSString *kCardBankElem = @"card_Bank";
 
 #pragma mark - Parse Local XML File
 //解析xml文件
@@ -123,6 +124,9 @@ static NSString *kHotElem = @"hot";
             TBXMLElement *tel = [TBXML childElementNamed:kTelephoneElem parentElement:index];
             oneItem.telephone = [TBXML textForElement:tel];
             
+            TBXMLElement *bank = [TBXML childElementNamed:kCardBankElem parentElement:index];
+            oneItem.card_Bank = [TBXML textForElement:bank]; 
+            
             TBXMLElement *latitude = [TBXML childElementNamed:kLatitudeElem parentElement:index];            
             NSNumber *lat = [NSNumber numberWithFloat:[[TBXML textForElement:latitude] floatValue]];            
             oneItem.latitude = lat;
@@ -130,6 +134,7 @@ static NSString *kHotElem = @"hot";
             TBXMLElement *longitude = [TBXML childElementNamed:kLongitudeElem parentElement:index];
             NSNumber *lon = [NSNumber numberWithFloat:[[TBXML textForElement:longitude] floatValue]];
             oneItem.longitude = lon;
+            
             
             oneItem.coordinate = CLLocationCoordinate2DMake(lat.doubleValue, lon.doubleValue);
             
