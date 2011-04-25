@@ -115,15 +115,16 @@
 {
     
     NSDictionary *dic = [_bankArray objectAtIndex:indexPath.row];
-    NSString *str = [dic valueForKey:@"keyForSearch"];
+    NSString *str = [dic valueForKey:@"bankName"];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"card_Bank = %@", str];
     FetchDataController *fetchController = [[FetchDataController alloc] init];
     [fetchController getDataByPredicate:predicate];
+    
     CardsTableViewController *cardsTableViewController = [[CardsTableViewController alloc] init];
     cardsTableViewController.dataArray = fetchController.itemList;
-    
+    cardsTableViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:cardsTableViewController animated:YES];
-    //    [nearbyTableViewController release];
+    [cardsTableViewController release];
 }
 
 @end

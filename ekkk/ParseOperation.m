@@ -55,7 +55,7 @@ static NSString *kCommentsServiceElem = @"comments_Service";
 static NSString *kCommentsDiscountElem = @"comments_Discount";
 static NSString *kCommentsGeneralElem = @"comments_General";
 static NSString *kHotElem = @"hot";
-static NSString *kCardBankElem = @"card_Bank";
+static NSString *kCardBankElem = @"card_bank";
 
 #pragma mark - Parse Local XML File
 //解析xml文件
