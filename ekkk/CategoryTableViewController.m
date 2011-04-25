@@ -15,6 +15,11 @@
 
 @synthesize dataArray = _dataArray;
 @synthesize tableView = _tableView;
+@synthesize toolBar = _toolBar;
+@synthesize cityButton = _cityButton;
+@synthesize showArray = _showArray;
+@synthesize picker = _picker;
+@synthesize pickerArray = _pickerArray;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -28,8 +33,12 @@
 
 - (void)dealloc
 {
-    
+    [_picker release];
+    [_showArray release];
+    [_toolBar release];
     [_dataArray release];
+    [_showArray release];
+    [_pickerArray release];
     [super dealloc];
 }
 
@@ -46,7 +55,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableView.rowHeight = 74;    
+    _showArray = [[NSMutableArray alloc] initWithArray:_dataArray];
+    _pickerArray = [[NSMutableArray alloc] initWithCapacity:10];
+    self.tableView.rowHeight = 74;  
+    _picker = [[UIPickerView alloc] init];
+    _picker.delegate = self;
+    _picker.dataSource = self;
+    _picker.showsSelectionIndicator = YES;
+    
+    CGPoint p = _picker.center;
+    p.y += 50;
+    _picker.center = p;
+    
+    CGRect rect = _picker.bounds;
+    rect.size.width = 280;
+    _picker.bounds = rect;
 }
 
 - (void)viewDidUnload
@@ -93,7 +116,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [_dataArray count];
+    return [_showArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -109,7 +132,7 @@
     
     // Configure the cell...
     
-    OneItem *item = [_dataArray objectAtIndex:indexPath.row];
+    OneItem *item = [_showArray objectAtIndex:indexPath.row];
     
     cell.discountLable.text = item.discount;
     cell.sellerLabel.text = item.seller;
@@ -179,4 +202,83 @@
     
 }
 
+- (void)generateActionSheet {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"请选择\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"好" otherButtonTitles:nil];
+    actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+
+//    actionSheet.layer.shadowOffset = CGSizeMake(0, -10);
+//    actionSheet.layer.shadowOpacity = 0.5;
+//    actionSheet.layer.shadowColor = [[UIColor blackColor] CGColor];
+//    [actionSheet showFromToolbar:_toolBar];
+//    [actionSheet showFromBarButtonItem:_cityButton animated:YES];
+    
+//    UIDatePicker *picker = [[UIDatePicker alloc] init];
+//    picker.datePickerMode = UIDatePickerModeDate;
+//    
+//    CGRect menuRect = actionSheet.frame;
+//    CGFloat mh = menuRect.size.height;
+//    menuRect.origin.y -= 214;
+//    menuRect.size.height += 214;
+//    actionSheet.frame = menuRect;
+//    
+//    CGRect pickerRect = picker.frame;
+//    pickerRect.origin.y = mh;
+//    picker.frame = pickerRect;
+//  
+//    picker.contentMode = UIViewContentModeScaleAspectFit;
+//    [actionSheet addSubview:picker];
+    [actionSheet addSubview:_picker];
+    [actionSheet showInView:self.view];
+    
+    
+    [actionSheet release];
+}
+
+- (IBAction)cityButtonPressed:(id)sender {
+    [self generateActionSheet];
+    
+}
+
+- (IBAction)selectButtonPressed:(id)sender {
+    UIBarButtonItem *button = (UIBarButtonItem *)sender;
+    [_pickerArray removeAllObjects];
+    
+    NSString *str;
+    NSInteger flag = 0;
+    switch (button.tag) {
+        case 1:
+            for (OneItem *item in _dataArray) {
+                str = item.city;
+                for (NSString *s in _pickerArray) {
+                    if ([s isEqualToString:str]) {
+                        flag = 1;
+                        break;
+                    }
+                }
+                if (flag == 0) {
+                    [_pickerArray addObject:item.city];
+                }
+                flag = 0;
+            }
+            break;
+            
+        default:
+            break;
+    }
+    [self generateActionSheet];
+}
+
+#pragma mark - Picker
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return [_pickerArray count];
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [_pickerArray objectAtIndex:row];
+}
 @end
