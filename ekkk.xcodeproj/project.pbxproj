@@ -357,7 +357,6 @@
 		41A4D0491348CB9A00D070BB = {
 			isa = PBXGroup;
 			children = (
-				A986BAA013647A2B0085433E /* QuartzCore.framework */,
 				41A4D05E1348CB9A00D070BB /* ekkk */,
 				41750E16134AFCE100CFF97E /* Resource */,
 				41A4D0571348CB9A00D070BB /* Frameworks */,
@@ -376,6 +375,7 @@
 		41A4D0571348CB9A00D070BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A986BAA013647A2B0085433E /* QuartzCore.framework */,
 				A981565E135969570056396A /* CoreLocation.framework */,
 				A9BE3091134B2E5000DA6E86 /* MobileCoreServices.framework */,
 				A9BE308F134B2E4100DA6E86 /* SystemConfiguration.framework */,

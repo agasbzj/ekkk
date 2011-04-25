@@ -268,6 +268,7 @@
     [self generateActionSheet];
 }
 
+
 #pragma mark - Picker
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -280,5 +281,21 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     return [_pickerArray objectAtIndex:row];
+}
+
+
+#pragma mark - Action Sheet
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == [actionSheet destructiveButtonIndex]) {
+        NSUInteger choosen = [_picker selectedRowInComponent:0];
+        [_showArray removeAllObjects];
+        for (OneItem *item in _dataArray) {
+            if ([item.city isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
+                [_showArray addObject:item];
+            }
+        }
+        [_tableView reloadData];
+    }
 }
 @end
