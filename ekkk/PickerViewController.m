@@ -59,7 +59,9 @@
         case 1:
             [delegate selectedOneInPicker:[_picker selectedRowInComponent:0]];
             break;
-            
+        case 2:
+            [delegate selectedOneInPicker:10000];
+            break;
         default:
             break;
     }

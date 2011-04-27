@@ -22,6 +22,7 @@
 @synthesize pickerArray = _pickerArray;
 
 static NSUInteger choosenTag = 0;   //点了哪个查询分类
+static bool pickerOpen = NO;    //是否已经打开了一个picker
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -221,6 +222,9 @@ static NSUInteger choosenTag = 0;   //点了哪个查询分类
 }
 
 - (IBAction)selectButtonPressed:(id)sender {
+    if (pickerOpen == YES) {
+        return;
+    }
     UIBarButtonItem *button = (UIBarButtonItem *)sender;
     [_pickerArray removeAllObjects];
     
@@ -279,6 +283,7 @@ static NSUInteger choosenTag = 0;   //点了哪个查询分类
     pickerView.frame = rect;
     
     [self.view addSubview:pickerView];
+    pickerOpen = YES;
                                                   
 //    [self generateActionSheet];
 }
@@ -325,6 +330,10 @@ static NSUInteger choosenTag = 0;   //点了哪个查询分类
 }
 
 - (void)selectedOneInPicker:(NSUInteger)choosen {
+    pickerOpen = NO;
+    if (choosen == 10000) {
+        return;
+    }
     [_showArray removeAllObjects];
     switch (choosenTag) {
         case 1:
