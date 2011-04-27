@@ -10,7 +10,7 @@
 #import "DetailViewController.h"
 #import "OneItem.h"
 #import "IndividualTableCell.h"
-
+#import "PickerViewController.h"
 @implementation CategoryTableViewController
 
 @synthesize dataArray = _dataArray;
@@ -205,29 +205,9 @@ static NSUInteger choosenTag = 0;   //点了哪个查询分类
 
 - (void)generateActionSheet {
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"请选择\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"好" otherButtonTitles:nil];
-    actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+    actionSheet.actionSheetStyle = UIActionSheetStyleAutomatic;
 
-//    actionSheet.layer.shadowOffset = CGSizeMake(0, -10);
-//    actionSheet.layer.shadowOpacity = 0.5;
-//    actionSheet.layer.shadowColor = [[UIColor blackColor] CGColor];
-//    [actionSheet showFromToolbar:_toolBar];
-//    [actionSheet showFromBarButtonItem:_cityButton animated:YES];
-    
-//    UIDatePicker *picker = [[UIDatePicker alloc] init];
-//    picker.datePickerMode = UIDatePickerModeDate;
-//    
-//    CGRect menuRect = actionSheet.frame;
-//    CGFloat mh = menuRect.size.height;
-//    menuRect.origin.y -= 214;
-//    menuRect.size.height += 214;
-//    actionSheet.frame = menuRect;
-//    
-//    CGRect pickerRect = picker.frame;
-//    pickerRect.origin.y = mh;
-//    picker.frame = pickerRect;
-//  
-//    picker.contentMode = UIViewContentModeScaleAspectFit;
-//    [actionSheet addSubview:picker];
+
     [actionSheet addSubview:_picker];
     [actionSheet showInView:self.view];
     
@@ -270,7 +250,16 @@ static NSUInteger choosenTag = 0;   //点了哪个查询分类
         default:
             break;
     }
-    [self generateActionSheet];
+
+    
+    PickerViewController *pickerView;
+    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"PickerViewController" owner:self options:nil];
+    pickerView = [array objectAtIndex:0];
+    pickerView.pickerArray = _pickerArray;
+    pickerView.delegate = self;
+    [self.view addSubview:pickerView];
+                                                  
+//    [self generateActionSheet];
 }
 
 
@@ -312,5 +301,22 @@ static NSUInteger choosenTag = 0;   //点了哪个查询分类
 
         [_tableView reloadData];
     }
+}
+
+- (void)selectedOneInPicker:(NSUInteger)choosen {
+    [_showArray removeAllObjects];
+    switch (choosenTag) {
+        case 1:
+            for (OneItem *item in _dataArray) {
+                if ([item.city isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
+                    [_showArray addObject:item];
+                }
+            }
+            break;
+            
+        default:
+            break;
+    }
+    [_tableView reloadData];
 }
 @end

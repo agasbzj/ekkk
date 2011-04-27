@@ -103,6 +103,8 @@
 		A9BE30AC134B2EEC00DA6E86 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE309F134B2EEC00DA6E86 /* ASIHTTPRequest.m */; };
 		A9BE30AD134B2EEC00DA6E86 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE30A3134B2EEC00DA6E86 /* ASIInputStream.m */; };
 		A9BE30AE134B2EEC00DA6E86 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE30A5134B2EEC00DA6E86 /* ASINetworkQueue.m */; };
+		A9CE12301367E70F00C38610 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CE122F1367E70F00C38610 /* PickerViewController.m */; };
+		A9CE12331367E71E00C38610 /* PickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CE12321367E71E00C38610 /* PickerViewController.xib */; };
 		A9D10E041352072D0014E03B /* FetchDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D10E021352072D0014E03B /* FetchDataController.m */; };
 /* End PBXBuildFile section */
 
@@ -126,7 +128,7 @@
 		41750DDC134AF1D000CFF97E /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		41750DE2134AF23000CFF97E /* ImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloader.h; sourceTree = "<group>"; };
 		41750DE3134AF23000CFF97E /* ImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloader.m; sourceTree = "<group>"; };
-		41750DE5134AF27B00CFF97E /* CardsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = CardsTableViewController.h; sourceTree = "<group>"; };
+		41750DE5134AF27B00CFF97E /* CardsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardsTableViewController.h; sourceTree = "<group>"; };
 		41750DE6134AF27B00CFF97E /* CardsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsTableViewController.m; sourceTree = "<group>"; };
 		41750DE7134AF27B00CFF97E /* CardsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardsTableViewController.xib; sourceTree = "<group>"; };
 		41750DF1134AFA8300CFF97E /* ItemModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ItemModel.xcdatamodel; sourceTree = "<group>"; };
@@ -244,6 +246,9 @@
 		A9BE30A4134B2EEC00DA6E86 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
 		A9BE30A5134B2EEC00DA6E86 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
 		A9BE30A6134B2EEC00DA6E86 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
+		A9CE122E1367E70F00C38610 /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
+		A9CE122F1367E70F00C38610 /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
+		A9CE12321367E71E00C38610 /* PickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerViewController.xib; sourceTree = "<group>"; };
 		A9D10E021352072D0014E03B /* FetchDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchDataController.m; sourceTree = "<group>"; };
 		A9D10E031352072D0014E03B /* FetchDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchDataController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -455,6 +460,9 @@
 				A97DA87C1361BBC100994946 /* CategoryTableCell.h */,
 				A97DA87D1361BBC100994946 /* CategoryTableCell.m */,
 				A97DA87F1361BBD000994946 /* CategoryTableCell.xib */,
+				A9CE122E1367E70F00C38610 /* PickerViewController.h */,
+				A9CE122F1367E70F00C38610 /* PickerViewController.m */,
+				A9CE12321367E71E00C38610 /* PickerViewController.xib */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -674,6 +682,7 @@
 				41E364BB13646AC8001EFDC4 /* 中国建设银行.png in Resources */,
 				41E364BC13646AC8001EFDC4 /* 招商银行.png in Resources */,
 				41E364BD13646AC8001EFDC4 /* 中国农业银行.png in Resources */,
+				A9CE12331367E71E00C38610 /* PickerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,6 +729,7 @@
 				A9A46A261363004100964881 /* ManagementRootViewController.m in Sources */,
 				A9A46A331363021500964881 /* BankSelectViewController.m in Sources */,
 				A9A46A4613630D4A00964881 /* CardsSelectView.m in Sources */,
+				A9CE12301367E70F00C38610 /* PickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
