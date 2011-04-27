@@ -40,7 +40,7 @@
 - (void)saveItems:(NSNotification *)items {
     
     //关闭状态栏小菊花
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     
     _parsedItems = [[items userInfo] objectForKey:@"Items"];
 //    NSLog(@"%@", _parsedItems);
