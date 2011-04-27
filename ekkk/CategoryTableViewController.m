@@ -246,7 +246,21 @@ static NSUInteger choosenTag = 0;   //点了哪个查询分类
                 flag = 0;
             }
             break;
-            
+        case 2:
+            for (OneItem *item in _dataArray) {
+                str = item.category_Fine;
+                for (NSString *s in _pickerArray) {
+                    if ([s isEqualToString:str]) {
+                        flag = 1;
+                        break;
+                    }
+                }
+                if (flag == 0) {
+                    [_pickerArray addObject:item.category_Fine];
+                }
+                flag = 0;
+            }
+            break;
         default:
             break;
     }
@@ -301,7 +315,7 @@ static NSUInteger choosenTag = 0;   //点了哪个查询分类
                     }
                 }
                 break;
-                
+
             default:
                 break;
         }
@@ -320,7 +334,13 @@ static NSUInteger choosenTag = 0;   //点了哪个查询分类
                 }
             }
             break;
-            
+        case 2:
+            for (OneItem *item in _dataArray) {
+                if ([item.category_Fine isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
+                    [_showArray addObject:item];
+                }
+            }
+            break;
         default:
             break;
     }
