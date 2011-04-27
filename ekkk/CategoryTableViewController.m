@@ -255,8 +255,15 @@ static NSUInteger choosenTag = 0;   //点了哪个查询分类
     PickerViewController *pickerView;
     NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"PickerViewController" owner:self options:nil];
     pickerView = [array objectAtIndex:0];
+    pickerView.backgroundColor = [UIColor clearColor];
+    
     pickerView.pickerArray = _pickerArray;
     pickerView.delegate = self;
+    
+    CGRect rect = pickerView.frame;
+    rect.origin.y = 156;
+    pickerView.frame = rect;
+    
     [self.view addSubview:pickerView];
                                                   
 //    [self generateActionSheet];
