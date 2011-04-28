@@ -17,25 +17,30 @@
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>		
-		<bank>上海浦东发展银行
-			<card>白金卡
+		<bank>
+			<bank_name>上海浦东发展银行</bank_name>
+			<card>
+				<card_name>白金卡</card_name>
 				<discount>午市自助餐8折优惠</discount>
 				<start_date>2010-12-1</start_date>
 				<end_date>2011-5-31</end_date>
 			</card>
-			<card>金卡
-				<discount>晚市自助餐9折优惠</discount>
+			<card>
+				<card_name>金卡</card_name>
+				<discount>午市自助餐9折优惠</discount>
 				<start_date>2010-12-1</start_date>
 				<end_date>2011-5-31</end_date>
 			</card>
 		</bank>
-		<bank>招商银行
-			<card>白金卡
-				<discount>午市自助餐8折优惠</discount>
-				<start_date>2010-9-1</start_date>
-				<end_date>2011-12-31</end_date>
+		<bank>
+			<bank_name>招商银行</bank_name>
+			<card>
+				<card_name>白金卡</card_name>
+				<discount>午市自助餐7折优惠</discount>
+				<start_date>2010-12-1</start_date>
+				<end_date>2011-5-31</end_date>
 			</card>
-		</bank>		
+		</bank>	
 		<hot>1</hot>
         </index>
 
@@ -51,31 +56,20 @@
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
-		<discount>刷浦发信用卡可享午市自助餐9折优惠</discount>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
 		<comments_General>4</comments_General>		
-		<bank>中国建设银行
-			<card>白金卡
+		<bank>
+			<bank_name>中国建设银行</bank_name>
+			<card>
+				<card_name>白金卡</card_name>
 				<discount>午市自助餐8折优惠</discount>
 				<start_date>2010-12-1</start_date>
 				<end_date>2011-5-31</end_date>
 			</card>
-			<card>金卡
-				<discount>晚市自助餐9折优惠</discount>
-				<start_date>2010-12-1</start_date>
-				<end_date>2011-5-31</end_date>
-			</card>
-		</bank>
-		<bank>招商银行
-			<card>白金卡
-				<discount>午市自助餐8折优惠</discount>
-				<start_date>2010-9-1</start_date>
-				<end_date>2011-12-31</end_date>
-			</card>
-		</bank>		
+		</bank>	
 		<hot>1</hot>
-</index>
+	</index>
 	

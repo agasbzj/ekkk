@@ -61,7 +61,6 @@
         [object setValue:oneItem.category_Fine forKey:@"category_Fine"];
         [object setValue:oneItem.seller forKey:@"seller"];
         [object setValue:oneItem.telephone forKey:@"telephone"];
-        [object setValue:oneItem.discount forKey:@"discount"];
         [object setValue:oneItem.details forKey:@"details"];
         [object setValue:oneItem.address forKey:@"address"];
         [object setValue:oneItem.latitude forKey:@"latitude"];
@@ -71,7 +70,7 @@
         [object setValue:oneItem.comments_General forKey:@"comments_General"];
         [object setValue:oneItem.comments_Enviroment forKey:@"comments_Enviroment"];
         [object setValue:oneItem.comments_Discount forKey:@"comments_Discount"];
-        [object setValue:oneItem.card_Bank forKey:@"card_Bank"];
+//        [object setValue:oneItem.card_Bank forKey:@"card_Bank"];
         [context save:&error];
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:@"NewDataSaved" object:self];

@@ -25,7 +25,6 @@
     NSNumber *latitude;         //经度
     NSNumber *longitude;        //纬度
     
-    NSString *discount;         //折扣
     NSString *details;          //描述
     NSDate *start_Date;          //开始日期
     NSDate *end_Date;            //结束日期
@@ -36,8 +35,10 @@
     NSString *comments_Service;          //评论
     NSString *comments_Discount;          //评论    
     NSString *comments_General;          //评论
-    NSString *card_Bank;                 //银行
-    
+    NSMutableArray *bank;                 //银行
+    NSMutableArray *card;
+//    NSString *discount;         //折扣
+
     CLLocationCoordinate2D coordinate;      //坐标
     
 }
@@ -55,7 +56,7 @@
 @property (nonatomic, retain) NSNumber *latitude;         //经度
 @property (nonatomic, retain) NSNumber *longitude;        //纬度
 
-@property (nonatomic, retain) NSString *discount;         //折扣
+//@property (nonatomic, retain) NSString *discount;         //折扣
 @property (nonatomic, retain) NSString *details;          //描述
 @property (nonatomic, retain) NSDate *start_Date;          //开始日期
 @property (nonatomic, retain) NSDate *end_Date;            //结束日期
@@ -67,8 +68,8 @@
 @property (nonatomic, retain) NSString *comments_Discount;          //评论    
 @property (nonatomic, retain) NSString *comments_General;          //评论
 
-@property (nonatomic, retain) NSString *card_Bank;        //银行
-
+@property (nonatomic, retain) NSMutableArray *bank;        //银行
+@property (nonatomic, retain) NSMutableArray *card;
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 
 @end

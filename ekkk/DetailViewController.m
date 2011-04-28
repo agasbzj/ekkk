@@ -94,7 +94,7 @@
     _comments_Enviroment.text = _oneItem.comments_Enviroment;
     _seller.text = _oneItem.seller;
     _category_Fine.text = _oneItem.category_Fine;
-    _card_Bank.text = _oneItem.card_Bank;
+//    _card_Bank.text = _oneItem.card_Bank;
     
     
 

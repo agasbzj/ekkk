@@ -56,7 +56,7 @@
         one.category_Fine = [oneObject valueForKey:@"category_Fine"];
         one.seller = [oneObject valueForKey:@"seller"];
         one.address = [oneObject valueForKey:@"address"];
-        one.discount = [oneObject valueForKey:@"discount"];
+//        one.discount = [oneObject valueForKey:@"discount"];
         one.telephone = [oneObject valueForKey:@"telephone"];
         one.latitude = [oneObject valueForKey:@"latitude"];
         one.longitude = [oneObject valueForKey:@"longitude"];
@@ -65,7 +65,7 @@
         one.comments_General = [oneObject valueForKey:@"comments_General"];
         one.comments_Enviroment = [oneObject valueForKey:@"comments_Enviroment"];
         one.comments_Discount = [oneObject valueForKey:@"comments_Discount"];
-        one.card_Bank = [oneObject valueForKey:@"card_Bank"];
+//        one.card_Bank = [oneObject valueForKey:@"card_Bank"];
         one.coordinate = [one coordinate];
         [_itemList addObject:one];
     }
@@ -88,7 +88,6 @@
         one.category_Coarse = [oneObject valueForKey:@"category_Coarse"];
         one.category_Fine = [oneObject valueForKey:@"category_Fine"];
         one.seller = [oneObject valueForKey:@"seller"];
-        one.discount = [oneObject valueForKey:@"discount"];
         one.telephone = [oneObject valueForKey:@"telephone"];
         one.latitude = [oneObject valueForKey:@"latitude"];
         one.longitude = [oneObject valueForKey:@"longitude"];
@@ -98,7 +97,7 @@
         one.comments_Discount = [oneObject valueForKey:@"comments_Discount"];
         one.comments_Service = [oneObject valueForKey:@"comments_Service"];
         one.comments_General = [oneObject valueForKey:@"comments_General"];
-        one.card_Bank = [oneObject valueForKey:@"card_Bank"];
+//        one.card_Bank = [oneObject valueForKey:@"card_Bank"];
         [_itemList addObject:one];
     }
     [fetchRequest release];

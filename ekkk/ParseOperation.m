@@ -7,7 +7,7 @@
 //
 
 #import "ParseOperation.h"
-
+#define kFileName @"Data.plist"
 
 @implementation ParseOperation
 @synthesize itemList;
@@ -31,6 +31,11 @@
 - (void)dealloc
 {
     [super dealloc];
+}
+
+- (NSURL *)applicationDocumentsDirectory
+{
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 #pragma mark - Element Name Define
@@ -61,13 +66,16 @@ static NSString *kCardBankElem = @"card_bank";
 //解析xml文件
 - (void)parseLocalXML {
     itemList = [[NSMutableArray alloc] initWithCapacity:50];
-    tbxml = [[TBXML tbxmlWithXMLFile:@"credit_information.xml"] retain];
+    tbxml = [[TBXML tbxmlWithXMLFile:@"credit_information-1.xml"] retain];
     TBXMLElement *root = tbxml.rootXMLElement; 
+    
+    NSMutableArray *tempArray = [[NSMutableArray alloc] init];
     
     if (root) {
         TBXMLElement *index = [TBXML childElementNamed:@"index" parentElement:root];
         while (index != nil) {
             OneItem *oneItem = [[OneItem alloc] init];
+            oneItem.bank = [[NSMutableArray alloc] init];
             
             TBXMLElement *city = [TBXML childElementNamed:kCityElem parentElement:index];
             oneItem.city = [TBXML textForElement:city];
@@ -96,17 +104,11 @@ static NSString *kCardBankElem = @"card_bank";
             TBXMLElement *hot = [TBXML childElementNamed:kHotElem parentElement:index];
             oneItem.hot = [TBXML textForElement:hot];
             
-            TBXMLElement *discount = [TBXML childElementNamed:kDiscountElem parentElement:index];
-            oneItem.discount = [TBXML textForElement:discount];
             
             TBXMLElement *details = [TBXML childElementNamed:kDetailsElem parentElement:index];
             oneItem.details = [TBXML textForElement:details];
 
-//            TBXMLElement *endDate = [TBXML childElementNamed:kEndDateElem parentElement:index];
-//            oneItem.end_Date = [TBXML textForElement:endDate];
-//            
-//            TBXMLElement *startDate = [TBXML childElementNamed:kStartDateElem parentElement:index];
-//            oneItem.start_Date = [TBXML textForElement:startDate];
+
             
             TBXMLElement *commentsEnviroment = [TBXML childElementNamed:kCommentsEnviromentElem parentElement:index];
             oneItem.comments_Enviroment = [TBXML textForElement:commentsEnviroment];
@@ -124,8 +126,31 @@ static NSString *kCardBankElem = @"card_bank";
             TBXMLElement *tel = [TBXML childElementNamed:kTelephoneElem parentElement:index];
             oneItem.telephone = [TBXML textForElement:tel];
             
-            TBXMLElement *bank = [TBXML childElementNamed:kCardBankElem parentElement:index];
-            oneItem.card_Bank = [TBXML textForElement:bank]; 
+
+            
+            TBXMLElement *bank = [TBXML childElementNamed:@"bank" parentElement:index];
+            
+            while (bank != nil) {
+                TBXMLElement *bank_name = [TBXML childElementNamed:@"bank_name" parentElement:bank];
+                NSString *bankName = [TBXML textForElement:bank_name];
+                
+                TBXMLElement *card = [TBXML childElementNamed:@"card" parentElement:bank];
+                
+                NSMutableArray *cardArray = [[NSMutableArray alloc] init];
+                while (card != nil) {
+                    TBXMLElement *card_name = [TBXML childElementNamed:@"card_name" parentElement:card];
+                    NSString *cardName = [TBXML textForElement:card_name];
+                    TBXMLElement *discount = [TBXML childElementNamed:@"discount" parentElement:card];
+                    NSString *discountS = [TBXML textForElement:discount];
+                    NSDictionary *cardDic = [NSDictionary dictionaryWithObjectsAndKeys:cardName, @"card_name",
+                                           discountS, @"discount" ,nil];
+                    [cardArray addObject:cardDic];
+                    card = [TBXML nextSiblingNamed:@"card" searchFromElement:card];
+                }
+                NSDictionary *bankDic = [NSDictionary dictionaryWithObjectsAndKeys:bankName, @"bank_name", cardArray, @"card", nil];
+                [oneItem.bank addObject:bankDic];
+                bank = [TBXML nextSiblingNamed:@"bank" searchFromElement:bank];
+            }
             
             TBXMLElement *latitude = [TBXML childElementNamed:kLatitudeElem parentElement:index];            
             NSNumber *lat = [NSNumber numberWithFloat:[[TBXML textForElement:latitude] floatValue]];            
@@ -143,6 +168,8 @@ static NSString *kCardBankElem = @"card_bank";
             [oneItem release];
             
             index = [TBXML nextSiblingNamed:@"index" searchFromElement:index];
+            
+            [tempArray addObject:oneItem.city];
         }
     }
     [tbxml release];
@@ -150,7 +177,35 @@ static NSString *kCardBankElem = @"card_bank";
 //        [[NSNotificationCenter defaultCenter] postNotificationName:@"LocalXMLParsed" object:self userInfo:[NSDictionary dictionaryWithObject:itemList forKey:@"Items"]];
     
 //    [self performSelectorOnMainThread:@selector(saveParsedItems:) withObject:itemList waitUntilDone:YES];
-
+    
+    NSMutableArray *arrayToSave = [[[NSMutableArray alloc] init] autorelease];
+    
+    for (OneItem *item in itemList) {
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:item.city, @"city",
+                             item.area, @"area",
+                             item.category_Fine, @"category_Fine",
+                             item.category_Coarse, @"category_Coarse",
+                             item.seller, @"seller",
+                             item.image, @"image",
+                             item.telephone, @"telephone",
+                             item.address, @"address",
+                             item.latitude, @"latitude",
+                             item.longitude, @"longitude",
+                             item.details, @"details",
+                             item.hot, @"hot",
+                             item.comments_Service, @"comments_Service",
+                             item.comments_General, @"comments_General",
+                             item.comments_Enviroment, @"comments_Enviroment",
+                             item.comments_Discount, @"comments_Discount",
+                             item.bank, @"bank",
+                             nil];
+        [arrayToSave addObject:dic];
+    }
+    
+    NSDictionary *dc = [NSDictionary dictionaryWithObject:arrayToSave forKey:@"data_Array"];
+    
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kFileName];
+    [dc writeToURL:storeURL atomically:YES];
 }
 
 - (void)saveParsedItems:(NSArray *)items {

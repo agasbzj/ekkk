@@ -116,7 +116,6 @@
     
     OneItem *item = [_dataArray objectAtIndex:indexPath.row];
     
-    cell.discountLable.text = item.discount;
     cell.sellerLabel.text = item.seller;
     cell.cityLabel.text = item.city;
     cell.areaLabel.text = item.area;

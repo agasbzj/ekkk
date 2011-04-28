@@ -11,6 +11,7 @@
 #import "OneItem.h"
 
 #define kFileName @"location.plist"
+#define kDataFileName @"Data.plist"
 #define DARK_BACKGROUND [UIColor colorWithRed:151.0/255.0 green:152.0/255.0 blue:155.0/255.0 alpha:1.0];
 #define LIGHT_BACKGROUND [UIColor colorWithRed:172.0/255.0 green:173.0/255.0 blue:175.0/255.0 alpha:1.0];
 
@@ -61,16 +62,23 @@ NSArray *temp;  //跟踪指针，用来释放。
     // Release any cached data, images, etc that aren't in use.
 }
 
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //别的表视图重写这个方法！！！！
 - (void)getData {
-    FetchDataController *fetchDataController = [[FetchDataController alloc] init];
+//    FetchDataController *fetchDataController = [[FetchDataController alloc] init];
+//    
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"hot = '1'"];    //设置查询格式
+//    [fetchDataController getDataByPredicate:predicate];
+//    temp = [[NSArray arrayWithArray:(NSArray *)fetchDataController.itemList] retain];   //把这里retain就没有崩溃了
+//    _dataArray = temp; 
+//    [fetchDataController release];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"hot = '1'"];    //设置查询格式
-    [fetchDataController getDataByPredicate:predicate];
-    temp = [[NSArray arrayWithArray:(NSArray *)fetchDataController.itemList] retain];   //把这里retain就没有崩溃了
-    _dataArray = temp; 
-    [fetchDataController release];
+    
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kDataFileName];
+    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfURL:storeURL];
+    _dataArray = [dic valueForKey:@"data_Array"];
 
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -177,7 +185,6 @@ NSArray *temp;  //跟踪指针，用来释放。
 
     OneItem *item = [_dataArray objectAtIndex:indexPath.row];
     
-    cell.discountLable.text = item.discount;
     cell.sellerLabel.text = item.seller;
     cell.cityLabel.text = item.city;
     cell.areaLabel.text = item.area;
