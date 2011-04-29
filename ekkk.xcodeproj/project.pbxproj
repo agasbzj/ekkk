@@ -77,6 +77,7 @@
 		41E364BC13646AC8001EFDC4 /* 招商银行.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E364AD13646AC8001EFDC4 /* 招商银行.png */; };
 		41E364BD13646AC8001EFDC4 /* 中国农业银行.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E364AE13646AC8001EFDC4 /* 中国农业银行.png */; };
 		A90AED1D135EB1BE002DEFD3 /* BanksAndCards.plist in Resources */ = {isa = PBXBuildFile; fileRef = A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */; };
+		A94AD54F136B06A80089D3AF /* credit_information.xml in Resources */ = {isa = PBXBuildFile; fileRef = A94AD54E136B06A80089D3AF /* credit_information.xml */; };
 		A9724E2F135C835E000982A3 /* NearbyCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9724E2E135C835E000982A3 /* NearbyCategory.plist */; };
 		A97DA87E1361BBC100994946 /* CategoryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A97DA87D1361BBC100994946 /* CategoryTableCell.m */; };
 		A97DA8801361BBD000994946 /* CategoryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97DA87F1361BBD000994946 /* CategoryTableCell.xib */; };
@@ -200,6 +201,7 @@
 		41E364AD13646AC8001EFDC4 /* 招商银行.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "招商银行.png"; sourceTree = "<group>"; };
 		41E364AE13646AC8001EFDC4 /* 中国农业银行.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "中国农业银行.png"; sourceTree = "<group>"; };
 		A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BanksAndCards.plist; sourceTree = "<group>"; };
+		A94AD54E136B06A80089D3AF /* credit_information.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = credit_information.xml; sourceTree = "<group>"; };
 		A9724E2E135C835E000982A3 /* NearbyCategory.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = NearbyCategory.plist; sourceTree = "<group>"; };
 		A97DA87C1361BBC100994946 /* CategoryTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableCell.h; sourceTree = "<group>"; };
 		A97DA87D1361BBC100994946 /* CategoryTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableCell.m; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 				41A037711358731D001D52A8 /* IndividualTableCell */,
 				4155F0E21355F61B00EE4A1C /* credit_information11.xml */,
 				A9C547D81369B1C300970170 /* credit_information-1.xml */,
+				A94AD54E136B06A80089D3AF /* credit_information.xml */,
 				41AB4F58135096850031E4D0 /* test.xml */,
 				A9BE3006134B215000DA6E86 /* ASIHttpRequest */,
 				41750E18134AFEDD00CFF97E /* ItemModel */,
@@ -687,6 +690,7 @@
 				41E364BD13646AC8001EFDC4 /* 中国农业银行.png in Resources */,
 				A9CE12331367E71E00C38610 /* PickerViewController.xib in Resources */,
 				A9C547D91369B1C300970170 /* credit_information-1.xml in Resources */,
+				A94AD54F136B06A80089D3AF /* credit_information.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

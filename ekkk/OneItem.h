@@ -38,7 +38,7 @@
     NSMutableArray *bank;                 //银行
     NSMutableArray *card;
 //    NSString *discount;         //折扣
-
+    NSString *source;
     CLLocationCoordinate2D coordinate;      //坐标
     
 }
@@ -70,6 +70,7 @@
 
 @property (nonatomic, retain) NSMutableArray *bank;        //银行
 @property (nonatomic, retain) NSMutableArray *card;
+@property (nonatomic, retain) NSString *source;
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 
 @end

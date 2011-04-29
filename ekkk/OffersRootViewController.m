@@ -183,11 +183,11 @@ NSArray *temp;  //跟踪指针，用来释放。
     }
     
 
-    OneItem *item = [_dataArray objectAtIndex:indexPath.row];
+//    OneItem *item = [_dataArray objectAtIndex:indexPath.row];
     
-    cell.sellerLabel.text = item.seller;
-    cell.cityLabel.text = item.city;
-    cell.areaLabel.text = item.area;
+//    cell.sellerLabel.text = item.seller;
+//    cell.cityLabel.text = item.city;
+//    cell.areaLabel.text = item.area;
     
     return cell;
 }
