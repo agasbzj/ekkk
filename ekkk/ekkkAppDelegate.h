@@ -32,9 +32,10 @@
 @property (nonatomic, retain, readonly) NSOperationQueue *interConnectOperationQueue;
 @property (nonatomic, retain) InterconnectWithServer *interconnectOperation;
 @property (nonatomic, retain) CLLocationManager *locationManager;
-@property (nonatomic, retain) NSArray *parsedItems;
+@property (nonatomic, retain, readonly) NSArray *parsedItems;
 
 @property (nonatomic, retain) IBOutlet UINavigationController *offerNavController;
+
 
 - (void)startStandardUpdates;
 //- (void)saveContext;

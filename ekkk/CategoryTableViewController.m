@@ -137,8 +137,8 @@ static bool pickerOpen = NO;    //是否已经打开了一个picker
     OneItem *item = [_showArray objectAtIndex:indexPath.row];
     
     cell.sellerLabel.text = item.seller;
-//    cell.cityLabel.text = item.city;
-//    cell.areaLabel.text = item.area;
+    cell.addressLabel.text = item.address;
+    cell.discountLabel.text = [[item.bank objectAtIndex:0] valueForKey:@"discount"];
     
     return cell;
 }

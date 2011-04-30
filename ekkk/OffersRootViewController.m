@@ -203,6 +203,11 @@ NSArray *temp;  //跟踪指针，用来释放。
     cell.discountLabel.text = [[item.bank objectAtIndex:0] valueForKey:@"discount"];
     cell.sourceLabel.text = item.source;
     
+    if (indexPath.row % 2 == 0) {
+        cell.layer.backgroundColor = [[UIColor colorWithRed:.3f green:.3f blue:.3f alpha:1.f] CGColor];
+    }
+    else cell.layer.backgroundColor = [[UIColor colorWithRed:.6f green:.6f blue:.6f alpha:1.f] CGColor];
+    
     return cell;
 }
 

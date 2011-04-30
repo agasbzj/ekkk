@@ -29,6 +29,8 @@
 
 @synthesize offerNavController = _offerNavController;
 
+
+
 - (NSURL *)locationDataFilePath {
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kLocationFileName];

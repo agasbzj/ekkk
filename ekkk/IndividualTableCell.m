@@ -11,10 +11,9 @@
 
 @implementation IndividualTableCell
 
-@synthesize ratingView = _ratingView;
+
 @synthesize sellerLabel = _sellerLabel;
-//@synthesize areaLabel = _areaLabel;
-//@synthesize cityLabel = _cityLabel;
+@synthesize distanceLabel = _distanceLabel;
 @synthesize imageSeller = _imageSeller;
 @synthesize imageBank = _imageBank;
 @synthesize discountLabel = _discountLabel;
@@ -38,9 +37,8 @@
 
 - (void)dealloc
 {
-    [_ratingView release];
-//    [_areaLabel release];
-//    [_cityLabel release];
+
+    [_distanceLabel release];
     [_sellerLabel release];
     [_discountLabel release];
     [_imageSeller release];
