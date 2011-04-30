@@ -18,7 +18,7 @@
     CLLocationManager *locationManager;
     NSOperationQueue *interConnectOperationQueue;
     InterconnectWithServer *interconnectOperation;
-    NSArray *_parsedItems;   //存放解析完回传过来的新数据，其中每个元素为OneItem类
+    NSMutableArray *_parsedItems;   //存放解析完回传过来的新数据，其中每个元素为OneItem类
     UINavigationController *_offerNavController;
 }
 
@@ -32,7 +32,7 @@
 @property (nonatomic, retain, readonly) NSOperationQueue *interConnectOperationQueue;
 @property (nonatomic, retain) InterconnectWithServer *interconnectOperation;
 @property (nonatomic, retain) CLLocationManager *locationManager;
-@property (nonatomic, retain, readonly) NSArray *parsedItems;
+@property (nonatomic, retain, readonly) NSMutableArray *parsedItems;
 
 @property (nonatomic, retain) IBOutlet UINavigationController *offerNavController;
 

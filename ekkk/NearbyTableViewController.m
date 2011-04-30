@@ -7,7 +7,7 @@
 //
 
 #import "NearbyTableViewController.h"
-#import "DetailViewController.h"
+#import "DetailController.h"
 #import "IndividualTableCell.h"
 #import "OneItem.h"
 
@@ -112,9 +112,7 @@
     
     IndividualTableCell *cell = (IndividualTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-//        [[NSBundle mainBundle] loadNibNamed:@"IndividualTableCell" owner:self options:nil];
-//        cell = _individualCell;
-//        self.individualCell = nil;
+
         NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"IndividualTableCell" owner:self options:nil];
         cell = [array objectAtIndex:0];
     
@@ -125,9 +123,8 @@
     OneItem *item = [_dataArray objectAtIndex:indexPath.row];
     
     cell.sellerLabel.text = item.seller;
-//    cell.cityLabel.text = item.city;
-//    cell.areaLabel.text = item.area;
-    
+    cell.addressLabel.text = item.address;
+    cell.discountLabel.text = [[item.bank objectAtIndex:0] valueForKey:@"discount"];    
     return cell;
 }
 
@@ -182,7 +179,7 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
-    DetailViewController *detailViewController = [[DetailViewController alloc] init];
+    DetailController *detailViewController = [[DetailController alloc] init];
     detailViewController.oneItem = [_dataArray objectAtIndex:indexPath.row];
     detailViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detailViewController animated:YES];

@@ -60,13 +60,14 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 //        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     }
     cell.textLabel.text = [_cardsArray objectAtIndex:indexPath.row];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [_tableView deselectRowAtIndexPath:indexPath animated:YES];
     UITableViewCell *cell = [_tableView cellForRowAtIndexPath:indexPath];
     NSString *selected = [_cardsArray objectAtIndex:indexPath.row];
     for (NSString *str in _selectedCards) {

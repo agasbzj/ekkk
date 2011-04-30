@@ -45,7 +45,7 @@
     return storeURL;
 }
 - (void)loadData {
-    NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:50];
+    [_parsedItems removeAllObjects];
     NSURL *url = [self itemDataFilePath];
     NSArray *tempArray = [[NSDictionary dictionaryWithContentsOfURL:url] valueForKey: @"data_Array"];
     
@@ -72,12 +72,11 @@
         oneItem.card = [dic valueForKey:@"card"];
         oneItem.source = [dic valueForKey:@"source"];
         oneItem.distance = [dic valueForKey:@"distance"];
-        [array addObject:oneItem];
+        [_parsedItems addObject:oneItem];
         [oneItem release];
     }
     
-    _parsedItems = [NSArray arrayWithArray:array];
-    [array release];
+
 }
 
 //写入解析完的数据
@@ -131,6 +130,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    _parsedItems = [[NSMutableArray alloc] initWithCapacity:50];
+
     [self loadData];
     //注册为观察者，用于接受新线程解析的数据。
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadItems:) name:@"LocalXMLParsed" object:nil];

@@ -9,6 +9,7 @@
 #import "DetailController.h"
 #import "DetailHeaderView.h"
 #import "DetailFooterView.h"
+#import "MapViewController.h"
 
 @implementation DetailController
 @synthesize tableView = _tableView;
@@ -38,12 +39,26 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+//实现点击显示地图按钮
+- (IBAction)showMap:(id)sender {
+    MapViewController *mapViewController = [[MapViewController alloc] init];
+    mapViewController.theItem = _oneItem;
+    [self.navigationController pushViewController:mapViewController animated:YES];
+    
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+
+    self.navigationItem.title = _oneItem.seller;
+    UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:@"地图" style:UIBarButtonItemStyleDone target:self action:@selector(showMap:)];
+    self.navigationItem.rightBarButtonItem = mapButton;
+    [mapButton release];
+    
     DetailHeaderView *headerView;
     NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"DetailHeaderView" owner:self options:nil];
     headerView = [array objectAtIndex:0];
@@ -121,6 +136,7 @@
     if (cell == nil) {
         if (section == 0) {
             cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier] autorelease];
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
         else if (section == 1) {
             cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
@@ -161,5 +177,13 @@
 
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0 && indexPath.row == 1) {
+        [_tableView deselectRowAtIndexPath:indexPath animated:YES];
+        [self showMap:nil];
+    }
+}
+
 
 @end

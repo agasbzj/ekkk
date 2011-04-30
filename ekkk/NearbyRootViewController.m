@@ -184,14 +184,21 @@
 
     NSDictionary *dic = [_categoryArray objectAtIndex:indexPath.row];
     NSString *str = [dic valueForKey:@"keyForSearch"];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category_Coarse = %@", str];
-    FetchDataController *fetchController = [[FetchDataController alloc] init];
-    [fetchController getDataByPredicate:predicate];
+    
+    NSMutableArray *showArray = [[NSMutableArray alloc] initWithCapacity:30];
+    ekkkAppDelegate *myDelegate = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSArray *allData = (NSArray *)myDelegate.parsedItems;
+    for (OneItem *item in allData) {
+        if ([str isEqualToString:item.category_Coarse]) {
+            [showArray addObject:item];
+        }
+    }
     
     NearbyTableViewController *nearbyTableViewController = [[NearbyTableViewController alloc] init];
-    nearbyTableViewController.dataArray = fetchController.itemList;
+    nearbyTableViewController.dataArray = showArray;
     [self.navigationController pushViewController:nearbyTableViewController animated:YES];
     [nearbyTableViewController release];
+    [showArray release];
 }
 
 

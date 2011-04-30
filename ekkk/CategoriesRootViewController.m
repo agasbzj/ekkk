@@ -9,7 +9,7 @@
 #import "CategoriesRootViewController.h"
 #import "CategoryTableViewController.h"
 #import "FetchDataController.h"
-#import "ekkkAppDelegate.h"
+//#import "ekkkAppDelegate.h"
 
 @implementation CategoriesRootViewController
 @synthesize categoryArray = _categoryArray;
@@ -117,7 +117,6 @@
     NSDictionary *dic = [_categoryArray objectAtIndex:indexPath.row];
     NSString *str = [dic valueForKey:@"keyForSearch"];
     NSMutableArray *showArray = [[NSMutableArray alloc] initWithCapacity:30];
-//    NSArray *array = [[[UIApplication sharedApplication] delegate] parsedItems];
     
     ekkkAppDelegate *myDelegate = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
     NSArray *allData = (NSArray *)myDelegate.parsedItems;
@@ -132,5 +131,6 @@
     categoryTableViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:categoryTableViewController animated:YES];
     [categoryTableViewController release];
+    [showArray release];
 }
 @end

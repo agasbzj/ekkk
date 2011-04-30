@@ -7,7 +7,7 @@
 //
 
 #import "CategoryTableViewController.h"
-#import "DetailViewController.h"
+#import "DetailController.h"
 #import "OneItem.h"
 #import "IndividualTableCell.h"
 #import "PickerViewController.h"
@@ -195,7 +195,7 @@ static bool pickerOpen = NO;    //是否已经打开了一个picker
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
-    DetailViewController *detailViewController = [[DetailViewController alloc] init];
+    DetailController *detailViewController = [[DetailController alloc] init];
     detailViewController.oneItem = [_dataArray objectAtIndex:indexPath.row];
 //    detailViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detailViewController animated:YES];
