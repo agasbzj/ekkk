@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4125CB44136B12910064A69A /* OffersTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4125CB42136B12900064A69A /* OffersTableCell.m */; };
+		4125CB45136B12910064A69A /* OffersTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4125CB43136B12910064A69A /* OffersTableCell.xib */; };
+		4137581D136BDBF900CDE06E /* DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4137581B136BDBF800CDE06E /* DetailController.m */; };
+		4137581E136BDBF900CDE06E /* DetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4137581C136BDBF900CDE06E /* DetailController.xib */; };
+		41375821136BDCB200CDE06E /* DetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41375820136BDCB000CDE06E /* DetailHeaderView.m */; };
+		41375824136BDCD400CDE06E /* DetailFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41375823136BDCD300CDE06E /* DetailFooterView.m */; };
+		41375826136BDCED00CDE06E /* DetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41375825136BDCEC00CDE06E /* DetailHeaderView.xib */; };
+		41375828136BDD1100CDE06E /* DetailFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41375827136BDD0F00CDE06E /* DetailFooterView.xib */; };
 		413F1D53135DC736000CDB11 /* CategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 413F1D51135DC736000CDB11 /* CategoryTableViewController.m */; };
 		413F1D54135DC736000CDB11 /* CategoryTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413F1D52135DC736000CDB11 /* CategoryTableViewController.xib */; };
-		4155F0E31355F61B00EE4A1C /* credit_information11.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4155F0E21355F61B00EE4A1C /* credit_information11.xml */; };
 		4155F0E61355F8A800EE4A1C /* Cards.m in Sources */ = {isa = PBXBuildFile; fileRef = 4155F0E51355F8A800EE4A1C /* Cards.m */; };
 		41750DCF134AF09300CFF97E /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 41750DCC134AF09300CFF97E /* NSDataAdditions.m */; };
 		41750DD0134AF09300CFF97E /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 41750DCE134AF09300CFF97E /* TBXML.m */; };
@@ -56,7 +63,6 @@
 		41A4D0911348CCC600D070BB /* CategoriesRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A4D08F1348CCC600D070BB /* CategoriesRootViewController.xib */; };
 		41A4D0951348CCE000D070BB /* CardsRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A4D0931348CCE000D070BB /* CardsRootViewController.m */; };
 		41A4D0961348CCE000D070BB /* CardsRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A4D0941348CCE000D070BB /* CardsRootViewController.xib */; };
-		41AB4F59135096850031E4D0 /* test.xml in Resources */ = {isa = PBXBuildFile; fileRef = 41AB4F58135096850031E4D0 /* test.xml */; };
 		41E36478136439C2001EFDC4 /* 图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E36473136439C2001EFDC4 /* 图标.png */; };
 		41E36479136439C2001EFDC4 /* 汇丰银行.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E36474136439C2001EFDC4 /* 汇丰银行.png */; };
 		41E3647B136439C2001EFDC4 /* 花旗银行.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E36476136439C2001EFDC4 /* 花旗银行.png */; };
@@ -104,17 +110,27 @@
 		A9BE30AC134B2EEC00DA6E86 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE309F134B2EEC00DA6E86 /* ASIHTTPRequest.m */; };
 		A9BE30AD134B2EEC00DA6E86 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE30A3134B2EEC00DA6E86 /* ASIInputStream.m */; };
 		A9BE30AE134B2EEC00DA6E86 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE30A5134B2EEC00DA6E86 /* ASINetworkQueue.m */; };
-		A9C547D91369B1C300970170 /* credit_information-1.xml in Resources */ = {isa = PBXBuildFile; fileRef = A9C547D81369B1C300970170 /* credit_information-1.xml */; };
 		A9CE12301367E70F00C38610 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CE122F1367E70F00C38610 /* PickerViewController.m */; };
 		A9CE12331367E71E00C38610 /* PickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CE12321367E71E00C38610 /* PickerViewController.xib */; };
 		A9D10E041352072D0014E03B /* FetchDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D10E021352072D0014E03B /* FetchDataController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4125CB41136B12900064A69A /* OffersTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffersTableCell.h; sourceTree = "<group>"; };
+		4125CB42136B12900064A69A /* OffersTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OffersTableCell.m; sourceTree = "<group>"; };
+		4125CB43136B12910064A69A /* OffersTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OffersTableCell.xib; sourceTree = "<group>"; };
+		4137581A136BDBF800CDE06E /* DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailController.h; sourceTree = "<group>"; };
+		4137581B136BDBF800CDE06E /* DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailController.m; sourceTree = "<group>"; };
+		4137581C136BDBF900CDE06E /* DetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailController.xib; sourceTree = "<group>"; };
+		4137581F136BDCAF00CDE06E /* DetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailHeaderView.h; sourceTree = "<group>"; };
+		41375820136BDCB000CDE06E /* DetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailHeaderView.m; sourceTree = "<group>"; };
+		41375822136BDCD200CDE06E /* DetailFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailFooterView.h; sourceTree = "<group>"; };
+		41375823136BDCD300CDE06E /* DetailFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailFooterView.m; sourceTree = "<group>"; };
+		41375825136BDCEC00CDE06E /* DetailHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailHeaderView.xib; sourceTree = "<group>"; };
+		41375827136BDD0F00CDE06E /* DetailFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailFooterView.xib; sourceTree = "<group>"; };
 		413F1D50135DC736000CDB11 /* CategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewController.h; sourceTree = "<group>"; };
 		413F1D51135DC736000CDB11 /* CategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewController.m; sourceTree = "<group>"; };
 		413F1D52135DC736000CDB11 /* CategoryTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewController.xib; sourceTree = "<group>"; };
-		4155F0E21355F61B00EE4A1C /* credit_information11.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = credit_information11.xml; sourceTree = "<group>"; };
 		4155F0E41355F8A800EE4A1C /* Cards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cards.h; sourceTree = "<group>"; };
 		4155F0E51355F8A800EE4A1C /* Cards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cards.m; sourceTree = "<group>"; };
 		41750DCB134AF09300CFF97E /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
@@ -180,7 +196,6 @@
 		41A4D0921348CCE000D070BB /* CardsRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardsRootViewController.h; sourceTree = "<group>"; };
 		41A4D0931348CCE000D070BB /* CardsRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsRootViewController.m; sourceTree = "<group>"; };
 		41A4D0941348CCE000D070BB /* CardsRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardsRootViewController.xib; sourceTree = "<group>"; };
-		41AB4F58135096850031E4D0 /* test.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test.xml; sourceTree = "<group>"; };
 		41E36473136439C2001EFDC4 /* 图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "图标.png"; sourceTree = "<group>"; };
 		41E36474136439C2001EFDC4 /* 汇丰银行.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "汇丰银行.png"; sourceTree = "<group>"; };
 		41E36476136439C2001EFDC4 /* 花旗银行.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "花旗银行.png"; sourceTree = "<group>"; };
@@ -249,7 +264,6 @@
 		A9BE30A4134B2EEC00DA6E86 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
 		A9BE30A5134B2EEC00DA6E86 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
 		A9BE30A6134B2EEC00DA6E86 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
-		A9C547D81369B1C300970170 /* credit_information-1.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "credit_information-1.xml"; sourceTree = "<group>"; };
 		A9CE122E1367E70F00C38610 /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
 		A9CE122F1367E70F00C38610 /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
 		A9CE12321367E71E00C38610 /* PickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerViewController.xib; sourceTree = "<group>"; };
@@ -305,6 +319,15 @@
 				41A0377713588555001D52A8 /* DetailViewController.xib */,
 				41750DDB134AF1D000CFF97E /* DetailViewController.h */,
 				41750DDC134AF1D000CFF97E /* DetailViewController.m */,
+				4137581A136BDBF800CDE06E /* DetailController.h */,
+				4137581B136BDBF800CDE06E /* DetailController.m */,
+				4137581C136BDBF900CDE06E /* DetailController.xib */,
+				4137581F136BDCAF00CDE06E /* DetailHeaderView.h */,
+				41375820136BDCB000CDE06E /* DetailHeaderView.m */,
+				41375825136BDCEC00CDE06E /* DetailHeaderView.xib */,
+				41375822136BDCD200CDE06E /* DetailFooterView.h */,
+				41375823136BDCD300CDE06E /* DetailFooterView.m */,
+				41375827136BDD0F00CDE06E /* DetailFooterView.xib */,
 			);
 			name = DetailView;
 			sourceTree = "<group>";
@@ -359,6 +382,9 @@
 				41A03775135874DF001D52A8 /* IndividualTableCell.xib */,
 				41A0377213587383001D52A8 /* RatingView.h */,
 				41A0377313587383001D52A8 /* RatingView.m */,
+				4125CB41136B12900064A69A /* OffersTableCell.h */,
+				4125CB42136B12900064A69A /* OffersTableCell.m */,
+				4125CB43136B12910064A69A /* OffersTableCell.xib */,
 			);
 			name = IndividualTableCell;
 			sourceTree = "<group>";
@@ -405,10 +431,7 @@
 			children = (
 				A9A46A211362FF4700964881 /* Manage */,
 				41A037711358731D001D52A8 /* IndividualTableCell */,
-				4155F0E21355F61B00EE4A1C /* credit_information11.xml */,
-				A9C547D81369B1C300970170 /* credit_information-1.xml */,
 				A94AD54E136B06A80089D3AF /* credit_information.xml */,
-				41AB4F58135096850031E4D0 /* test.xml */,
 				A9BE3006134B215000DA6E86 /* ASIHttpRequest */,
 				41750E18134AFEDD00CFF97E /* ItemModel */,
 				41750E0E134AFB6100CFF97E /* MapView */,
@@ -657,8 +680,6 @@
 				41750E06134AFAB600CFF97E /* png-0002.png in Resources */,
 				41750E0D134AFB5900CFF97E /* MapViewController.xib in Resources */,
 				41750E13134AFCAC00CFF97E /* Place_holder.png in Resources */,
-				41AB4F59135096850031E4D0 /* test.xml in Resources */,
-				4155F0E31355F61B00EE4A1C /* credit_information11.xml in Resources */,
 				41A03776135874DF001D52A8 /* IndividualTableCell.xib in Resources */,
 				41A0377813588555001D52A8 /* DetailViewController.xib in Resources */,
 				A9724E2F135C835E000982A3 /* NearbyCategory.plist in Resources */,
@@ -689,8 +710,11 @@
 				41E364BC13646AC8001EFDC4 /* 招商银行.png in Resources */,
 				41E364BD13646AC8001EFDC4 /* 中国农业银行.png in Resources */,
 				A9CE12331367E71E00C38610 /* PickerViewController.xib in Resources */,
-				A9C547D91369B1C300970170 /* credit_information-1.xml in Resources */,
 				A94AD54F136B06A80089D3AF /* credit_information.xml in Resources */,
+				4125CB45136B12910064A69A /* OffersTableCell.xib in Resources */,
+				4137581E136BDBF900CDE06E /* DetailController.xib in Resources */,
+				41375826136BDCED00CDE06E /* DetailHeaderView.xib in Resources */,
+				41375828136BDD1100CDE06E /* DetailFooterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,6 +762,10 @@
 				A9A46A331363021500964881 /* BankSelectViewController.m in Sources */,
 				A9A46A4613630D4A00964881 /* CardsSelectView.m in Sources */,
 				A9CE12301367E70F00C38610 /* PickerViewController.m in Sources */,
+				4125CB44136B12910064A69A /* OffersTableCell.m in Sources */,
+				4137581D136BDBF900CDE06E /* DetailController.m in Sources */,
+				41375821136BDCB200CDE06E /* DetailHeaderView.m in Sources */,
+				41375824136BDCD400CDE06E /* DetailFooterView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

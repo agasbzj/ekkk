@@ -8,7 +8,7 @@
 		<seller>大渔铁板烧</seller>
 		<image>http://img.cnbeta.com/topics/hardware.gif</image>
 		<telephone>021-61157396</telephone>
-		<address>上海市长宁路1018号龙之梦购物中心6楼</address>
+		<address>上海市长宁路1018号龙之梦购物中心6楼上海市长宁路1018号龙之梦购物中心6楼</address>
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
@@ -42,7 +42,7 @@
 			<discount>白金卡午市自助餐7折优惠</discount>
 		</bank>	
 		<source></source>
-		<hot>0</hot>
+		<hot>1</hot>
         </index>
         <index>1
 		<city>上海</city>
@@ -101,7 +101,7 @@
 			</card>
 			<discount>40RMB</discount>
 		</bank>
-		<source></source>
+		<source>Taobao</source>
 		<hot>1</hot>
         </index>
         <index>3

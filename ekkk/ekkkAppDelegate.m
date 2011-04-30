@@ -16,11 +16,11 @@
 
 @synthesize tabBarController=_tabBarController;
 
-@synthesize managedObjectContext=__managedObjectContext;
-
-@synthesize managedObjectModel=__managedObjectModel;
-
-@synthesize persistentStoreCoordinator=__persistentStoreCoordinator;
+//@synthesize managedObjectContext=__managedObjectContext;
+//
+//@synthesize managedObjectModel=__managedObjectModel;
+//
+//@synthesize persistentStoreCoordinator=__persistentStoreCoordinator;
 
 @synthesize locationManager;
 @synthesize interConnectOperationQueue;
@@ -31,48 +31,96 @@
 
 - (NSURL *)locationDataFilePath {
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kFileName];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kLocationFileName];
     NSLog(@"%@", storeURL);
     return storeURL;
 }
 
+- (NSURL *)itemDataFilePath {
+    
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kDataFileName];
+    NSLog(@"%@", storeURL);
+    return storeURL;
+}
+- (void)loadData {
+    NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:50];
+    NSURL *url = [self itemDataFilePath];
+    NSArray *tempArray = [[NSDictionary dictionaryWithContentsOfURL:url] valueForKey: @"data_Array"];
+    
+    for (NSDictionary *dic in tempArray) {
+        OneItem *oneItem = [[OneItem alloc] init];
+        oneItem.city = [dic valueForKey:@"city"];
+        oneItem.area = [dic valueForKey:@"area"];
+        oneItem.seller = [dic valueForKey:@"seller"];
+        oneItem.image = [dic valueForKey:@"image"];
+        oneItem.category_Fine = [dic valueForKey:@"category_Fine"];
+        oneItem.category_Coarse = [dic valueForKey:@"category_Coarse"];
+        oneItem.telephone = [dic valueForKey:@"telephone"];
+        oneItem.address = [dic valueForKey:@"address"];
+        oneItem.www_Address = [dic valueForKey:@"www_Address"];
+        oneItem.latitude = [dic valueForKey:@"latitude"];
+        oneItem.longitude = [dic valueForKey:@"longitude"];
+        oneItem.details = [dic valueForKey:@"details"];
+        oneItem.hot = [dic valueForKey:@"hot"];
+        oneItem.comments_General = [dic valueForKey:@"comments_General"];
+        oneItem.comments_Discount = [dic valueForKey:@"comments_Discount"];
+        oneItem.comments_Service = [dic valueForKey:@"comments_Service"];
+        oneItem.comments_Enviroment = [dic valueForKey:@"comments_Enviroment"];
+        oneItem.bank = [dic valueForKey:@"bank"];
+        oneItem.card = [dic valueForKey:@"card"];
+        oneItem.source = [dic valueForKey:@"source"];
+        oneItem.distance = [dic valueForKey:@"distance"];
+        [array addObject:oneItem];
+        [oneItem release];
+    }
+    
+    _parsedItems = [NSArray arrayWithArray:array];
+    [array release];
+}
+
 //写入解析完的数据
-- (void)saveItems:(NSNotification *)items {
+- (void)loadItems:(NSNotification *)items {
     
     //关闭状态栏小菊花
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     
-    _parsedItems = [[items userInfo] objectForKey:@"Items"];
+//    _parsedItems = [[items userInfo] objectForKey:@"Items"];
+    
 //    NSLog(@"%@", _parsedItems);
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"LocalXMLParsed" object:nil];
     
-    NSManagedObjectContext *context = [self managedObjectContext];
+//    NSManagedObjectContext *context = [self managedObjectContext];
+//    
+//    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ItemDetail" inManagedObjectContext:context];
+//    
+//    
+//    
+//    NSError *error;
+//    for (OneItem *oneItem in _parsedItems) {
+//        NSManagedObject *object = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+//        [object setValue:oneItem.city forKey:@"city"];
+//        [object setValue:oneItem.area forKey:@"area"];
+//        [object setValue:oneItem.category_Coarse forKey:@"category_Coarse"];
+//        [object setValue:oneItem.category_Fine forKey:@"category_Fine"];
+//        [object setValue:oneItem.seller forKey:@"seller"];
+//        [object setValue:oneItem.telephone forKey:@"telephone"];
+//        [object setValue:oneItem.details forKey:@"details"];
+//        [object setValue:oneItem.address forKey:@"address"];
+//        [object setValue:oneItem.latitude forKey:@"latitude"];
+//        [object setValue:oneItem.longitude forKey:@"longitude"];
+//        [object setValue:oneItem.hot forKey:@"hot"];
+//        [object setValue:oneItem.comments_Service forKey:@"comments_Service"];
+//        [object setValue:oneItem.comments_General forKey:@"comments_General"];
+//        [object setValue:oneItem.comments_Enviroment forKey:@"comments_Enviroment"];
+//        [object setValue:oneItem.comments_Discount forKey:@"comments_Discount"];
+////        [object setValue:oneItem.card_Bank forKey:@"card_Bank"];
+//        [context save:&error];
+//    }
     
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ItemDetail" inManagedObjectContext:context];
+    [self loadData];
     
     
-    
-    NSError *error;
-    for (OneItem *oneItem in _parsedItems) {
-        NSManagedObject *object = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-        [object setValue:oneItem.city forKey:@"city"];
-        [object setValue:oneItem.area forKey:@"area"];
-        [object setValue:oneItem.category_Coarse forKey:@"category_Coarse"];
-        [object setValue:oneItem.category_Fine forKey:@"category_Fine"];
-        [object setValue:oneItem.seller forKey:@"seller"];
-        [object setValue:oneItem.telephone forKey:@"telephone"];
-        [object setValue:oneItem.details forKey:@"details"];
-        [object setValue:oneItem.address forKey:@"address"];
-        [object setValue:oneItem.latitude forKey:@"latitude"];
-        [object setValue:oneItem.longitude forKey:@"longitude"];
-        [object setValue:oneItem.hot forKey:@"hot"];
-        [object setValue:oneItem.comments_Service forKey:@"comments_Service"];
-        [object setValue:oneItem.comments_General forKey:@"comments_General"];
-        [object setValue:oneItem.comments_Enviroment forKey:@"comments_Enviroment"];
-        [object setValue:oneItem.comments_Discount forKey:@"comments_Discount"];
-//        [object setValue:oneItem.card_Bank forKey:@"card_Bank"];
-        [context save:&error];
-    }
     [[NSNotificationCenter defaultCenter] postNotificationName:@"NewDataSaved" object:self];
     [interConnectOperationQueue release];
 }
@@ -81,8 +129,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self loadData];
     //注册为观察者，用于接受新线程解析的数据。
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveItems:) name:@"LocalXMLParsed" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadItems:) name:@"LocalXMLParsed" object:nil];
     
    //开始定位
     [self startStandardUpdates];
@@ -193,7 +242,7 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
-    [self saveContext];
+//    [self saveContext];
 }
 
 - (void)dealloc
@@ -202,9 +251,9 @@
     [locationManager release];
     [interConnectOperationQueue release];
     [_window release];
-    [__managedObjectContext release];
-    [__managedObjectModel release];
-    [__persistentStoreCoordinator release];
+//    [__managedObjectContext release];
+//    [__managedObjectModel release];
+//    [__persistentStoreCoordinator release];
     [_tabBarController release];
     [super dealloc];
 }
@@ -223,108 +272,108 @@
 }
 */
 
-#pragma mark - Core Data stack
-
-/**
- Returns the managed object context for the application.
- If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
- */
-- (NSManagedObjectContext *)managedObjectContext
-{
-    if (__managedObjectContext != nil)
-    {
-        return __managedObjectContext;
-    }
-    
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (coordinator != nil)
-    {
-        __managedObjectContext = [[NSManagedObjectContext alloc] init];
-        [__managedObjectContext setPersistentStoreCoordinator:coordinator];
-    }
-    return __managedObjectContext;
-}
-
-/**
- Returns the managed object model for the application.
- If the model doesn't already exist, it is created from the application's model.
- */
-- (NSManagedObjectModel *)managedObjectModel
-{
-    if (__managedObjectModel != nil)
-    {
-        return __managedObjectModel;
-    }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"ItemModel" withExtension:@"momd"];
-    __managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];    
-    return __managedObjectModel;
-}
-
-/**
- Returns the persistent store coordinator for the application.
- If the coordinator doesn't already exist, it is created and the application's store added to it.
- */
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
-{
-    if (__persistentStoreCoordinator != nil)
-    {
-        return __persistentStoreCoordinator;
-    }
-    
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"ItemModel.sqlite"];
-    
-    NSError *error = nil;
-    __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error])
-    {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-         
-         Typical reasons for an error here include:
-         * The persistent store is not accessible;
-         * The schema for the persistent store is incompatible with current managed object model.
-         Check the error message to determine what the actual problem was.
-         
-         
-         If the persistent store is not accessible, there is typically something wrong with the file path. Often, a file URL is pointing into the application's resources directory instead of a writeable directory.
-         
-         If you encounter schema incompatibility errors during development, you can reduce their frequency by:
-         * Simply deleting the existing store:
-         [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil]
-         
-         * Performing automatic lightweight migration by passing the following dictionary as the options parameter: 
-         [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption, [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
-         
-         Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
-         
-         */
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }    
-    
-    return __persistentStoreCoordinator;
-}
-
-- (void)saveContext
-{
-    NSError *error = nil;
-    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
-    if (managedObjectContext != nil)
-    {
-        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error])
-        {
-            /*
-             Replace this implementation with code to handle the error appropriately.
-             
-             abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-             */
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        } 
-    }
-}
+//#pragma mark - Core Data stack
+//
+///**
+// Returns the managed object context for the application.
+// If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
+// */
+//- (NSManagedObjectContext *)managedObjectContext
+//{
+//    if (__managedObjectContext != nil)
+//    {
+//        return __managedObjectContext;
+//    }
+//    
+//    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+//    if (coordinator != nil)
+//    {
+//        __managedObjectContext = [[NSManagedObjectContext alloc] init];
+//        [__managedObjectContext setPersistentStoreCoordinator:coordinator];
+//    }
+//    return __managedObjectContext;
+//}
+//
+///**
+// Returns the managed object model for the application.
+// If the model doesn't already exist, it is created from the application's model.
+// */
+//- (NSManagedObjectModel *)managedObjectModel
+//{
+//    if (__managedObjectModel != nil)
+//    {
+//        return __managedObjectModel;
+//    }
+//    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"ItemModel" withExtension:@"momd"];
+//    __managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];    
+//    return __managedObjectModel;
+//}
+//
+///**
+// Returns the persistent store coordinator for the application.
+// If the coordinator doesn't already exist, it is created and the application's store added to it.
+// */
+//- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
+//{
+//    if (__persistentStoreCoordinator != nil)
+//    {
+//        return __persistentStoreCoordinator;
+//    }
+//    
+//    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"ItemModel.sqlite"];
+//    
+//    NSError *error = nil;
+//    __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+//    if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error])
+//    {
+//        /*
+//         Replace this implementation with code to handle the error appropriately.
+//         
+//         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+//         
+//         Typical reasons for an error here include:
+//         * The persistent store is not accessible;
+//         * The schema for the persistent store is incompatible with current managed object model.
+//         Check the error message to determine what the actual problem was.
+//         
+//         
+//         If the persistent store is not accessible, there is typically something wrong with the file path. Often, a file URL is pointing into the application's resources directory instead of a writeable directory.
+//         
+//         If you encounter schema incompatibility errors during development, you can reduce their frequency by:
+//         * Simply deleting the existing store:
+//         [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil]
+//         
+//         * Performing automatic lightweight migration by passing the following dictionary as the options parameter: 
+//         [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption, [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
+//         
+//         Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
+//         
+//         */
+//        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+//        abort();
+//    }    
+//    
+//    return __persistentStoreCoordinator;
+//}
+//
+//- (void)saveContext
+//{
+//    NSError *error = nil;
+//    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+//    if (managedObjectContext != nil)
+//    {
+//        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error])
+//        {
+//            /*
+//             Replace this implementation with code to handle the error appropriately.
+//             
+//             abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+//             */
+//            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+//            abort();
+//        } 
+//    }
+//}
 
 #pragma mark - Application's Documents directory
 

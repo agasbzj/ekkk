@@ -61,6 +61,8 @@ static NSString *kCommentsDiscountElem = @"comments_Discount";
 static NSString *kCommentsGeneralElem = @"comments_General";
 static NSString *kHotElem = @"hot";
 static NSString *kSourceElem = @"source";
+static NSString *kDistanceElem = @"distance";
+
 #pragma mark - Parse Local XML File
 //解析xml文件
 - (void)parseLocalXML {
@@ -155,6 +157,9 @@ static NSString *kSourceElem = @"source";
             TBXMLElement *source = [TBXML childElementNamed:kSourceElem parentElement:index];
             oneItem.source = [TBXML textForElement:source];
             
+            TBXMLElement *distance = [TBXML childElementNamed:kDistanceElem parentElement:index];
+            oneItem.distance = [TBXML textForElement:distance];
+            
             TBXMLElement *latitude = [TBXML childElementNamed:kLatitudeElem parentElement:index];            
             NSNumber *lat = [NSNumber numberWithFloat:[[TBXML textForElement:latitude] floatValue]];            
             oneItem.latitude = lat;
@@ -202,6 +207,7 @@ static NSString *kSourceElem = @"source";
                              item.comments_Discount, @"comments_Discount",
                              item.bank, @"bank",
                              item.source, @"source",
+                             item.distance, @"distance",
                              nil];
         [arrayToSave addObject:dic];
     }

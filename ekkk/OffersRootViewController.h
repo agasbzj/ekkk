@@ -7,21 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FetchDataController.h"
-#import "IndividualTableCell.h"
-#import "DetailViewController.h"
+
 
 @interface OffersRootViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
     UITableView *_tableView;
     UISegmentedControl *_segmentedControl;
-    NSArray *_dataArray;
-    IndividualTableCell *_individualCell;
+    NSMutableArray *_dataArray;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *segmentedControl;
-@property (nonatomic, retain) NSArray *dataArray;
-@property (nonatomic, retain) IBOutlet IndividualTableCell *individualCell;
+@property (nonatomic, retain) NSMutableArray *dataArray;
+
 - (NSURL *)applicationDocumentsDirectory;
 - (NSURL *)locationDataFilePath;
 - (IBAction)switchCategory:(id)sender;

@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "InterconnectWithServer.h"
-#define kFileName @"location.plist"
+#define kLocationFileName @"location.plist"
+#define kDataFileName @"Data.plist"
 
 @interface ekkkAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, CLLocationManagerDelegate>
 {
@@ -25,9 +26,9 @@
 
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 
-@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
-@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+//@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
+//@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
+//@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, retain, readonly) NSOperationQueue *interConnectOperationQueue;
 @property (nonatomic, retain) InterconnectWithServer *interconnectOperation;
 @property (nonatomic, retain) CLLocationManager *locationManager;
@@ -36,8 +37,8 @@
 @property (nonatomic, retain) IBOutlet UINavigationController *offerNavController;
 
 - (void)startStandardUpdates;
-- (void)saveContext;
+//- (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 - (NSURL *)locationDataFilePath;
-- (void)saveItems:(NSNotification *)itemList;
+- (void)loadItems:(NSNotification *)itemList;
 @end

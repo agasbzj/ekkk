@@ -125,8 +125,8 @@
     OneItem *item = [_dataArray objectAtIndex:indexPath.row];
     
     cell.sellerLabel.text = item.seller;
-    cell.cityLabel.text = item.city;
-    cell.areaLabel.text = item.area;
+//    cell.cityLabel.text = item.city;
+//    cell.areaLabel.text = item.area;
     
     return cell;
 }

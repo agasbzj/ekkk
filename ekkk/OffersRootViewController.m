@@ -9,6 +9,8 @@
 
 #import "OffersRootViewController.h"
 #import "OneItem.h"
+#import "OffersTableCell.h"
+#import "DetailController.h"
 
 #define kFileName @"location.plist"
 #define kDataFileName @"Data.plist"
@@ -19,7 +21,7 @@
 @synthesize tableView = _tableView;
 @synthesize dataArray = _dataArray;
 @synthesize segmentedControl = _segmentedControl;
-@synthesize individualCell = _individualCell;
+
 
 NSArray *temp;  //跟踪指针，用来释放。
 
@@ -30,6 +32,12 @@ NSArray *temp;  //跟踪指针，用来释放。
     return storeURL;
 }
 
+- (NSURL *)itemDataFilePath {
+    
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kDataFileName];
+    NSLog(@"%@", storeURL);
+    return storeURL;
+}
 
 - (NSURL *)applicationDocumentsDirectory
 {
@@ -50,7 +58,6 @@ NSArray *temp;  //跟踪指针，用来释放。
     [_segmentedControl release];
     [_dataArray release];
     [_tableView release];
-    [_individualCell release];
     [super dealloc];
 }
 
@@ -75,11 +82,20 @@ NSArray *temp;  //跟踪指针，用来释放。
 //    _dataArray = temp; 
 //    [fetchDataController release];
     
-    
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kDataFileName];
-    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfURL:storeURL];
-    _dataArray = [dic valueForKey:@"data_Array"];
+//    
+//    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kDataFileName];
+//    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfURL:storeURL];
+//    _dataArray = [dic valueForKey:@"data_Array"];
 
+    [_dataArray removeAllObjects];
+    NSArray *allData = [[[UIApplication sharedApplication] delegate] parsedItems];
+    _dataArray = [[NSMutableArray alloc] initWithCapacity:30];
+    for (OneItem *item in allData) {
+        if ([item.hot isEqualToString:@"1"]) {
+            [_dataArray addObject:item];
+        }
+    }
+    
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -113,12 +129,12 @@ NSArray *temp;  //跟踪指针，用来释放。
         default:
             break;
     }
-    FetchDataController *fc = [[FetchDataController alloc] init];
-    [fc getDataByPredicate:pre];
-    _dataArray = nil;
-    _dataArray = [[NSArray arrayWithArray:(NSArray *)fc.itemList] retain];
-    [fc release];
-    [_tableView reloadData];
+//    FetchDataController *fc = [[FetchDataController alloc] init];
+//    [fc getDataByPredicate:pre];
+//    _dataArray = nil;
+//    _dataArray = [[NSArray arrayWithArray:(NSArray *)fc.itemList] retain];
+//    [fc release];
+//    [_tableView reloadData];
 }
 
 #pragma mark - View lifecycle
@@ -173,28 +189,26 @@ NSArray *temp;  //跟踪指针，用来释放。
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"CellIdentifier";
-    IndividualTableCell *cell = (IndividualTableCell *)[_tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    OffersTableCell *cell = (OffersTableCell *)[_tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-//        [[NSBundle mainBundle] loadNibNamed:@"IndividualTableCell" owner:self options:nil];
-//        cell = _individualCell;
-//        self.individualCell = nil;
-        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"IndividualTableCell" owner:self options:nil];
+
+        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"OffersTableCell" owner:self options:nil];
         cell = [array objectAtIndex:0];
     }
     
 
-//    OneItem *item = [_dataArray objectAtIndex:indexPath.row];
+    OneItem *item = [_dataArray objectAtIndex:indexPath.row];
     
-//    cell.sellerLabel.text = item.seller;
-//    cell.cityLabel.text = item.city;
-//    cell.areaLabel.text = item.area;
+    cell.sellerLabel.text = item.seller;
+    cell.discountLabel.text = [[item.bank objectAtIndex:0] valueForKey:@"discount"];
+    cell.sourceLabel.text = item.source;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     OneItem *item = [_dataArray objectAtIndex:indexPath.row];
-    DetailViewController *detailController = [[[DetailViewController alloc] init] autorelease];
+    DetailController *detailController = [[[DetailController alloc] init] autorelease];
     detailController.oneItem = item;    
     detailController.hidesBottomBarWhenPushed = YES;    //detail隐藏tabbar
     [self.navigationController pushViewController:detailController animated:YES];

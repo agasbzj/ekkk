@@ -1,24 +1,19 @@
 //
-//  IndividualTableCell.m
+//  OffersTableCell.m
 //  ekkk
 //
-//  Created by Wu Jianjun on 11-4-15.
+//  Created by Wu Jianjun on 11-4-29.
 //  Copyright 2011年 __MyCompanyName__. All rights reserved.
 //
 
-#import "IndividualTableCell.h"
+#import "OffersTableCell.h"
 
+@implementation OffersTableCell
 
-@implementation IndividualTableCell
-
-@synthesize ratingView = _ratingView;
 @synthesize sellerLabel = _sellerLabel;
-//@synthesize areaLabel = _areaLabel;
-//@synthesize cityLabel = _cityLabel;
-@synthesize imageSeller = _imageSeller;
-@synthesize imageBank = _imageBank;
 @synthesize discountLabel = _discountLabel;
-@synthesize addressLabel = _addressLabel;
+@synthesize sourceLabel = _sourceLabel;
+@synthesize image = _image;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -32,20 +27,17 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
 - (void)dealloc
 {
-    [_ratingView release];
-//    [_areaLabel release];
-//    [_cityLabel release];
     [_sellerLabel release];
     [_discountLabel release];
-    [_imageSeller release];
-    [_imageBank release];
-    [_addressLabel release];
+    [_image release];
+    [_sourceLabel release];
+
     [super dealloc];
 }
 
