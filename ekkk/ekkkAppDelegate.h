@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "InterconnectWithServer.h"
-#define kLocationFileName @"location.plist"
-#define kDataFileName @"Data.plist"
+#import "BankSelectViewController.h"
 
-@interface ekkkAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, CLLocationManagerDelegate>
+@interface ekkkAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, 
+                                        CLLocationManagerDelegate, UserCardsSelectedDelegate>
 {
 
     CLLocationManager *locationManager;

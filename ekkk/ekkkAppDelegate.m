@@ -9,23 +9,26 @@
 #import "ekkkAppDelegate.h"
 #import "InterconnectWithServer.h"
 
+#define kLocationFileName @"location.plist"
+#define kDataFileName @"Data.plist"
+#define kUserCardsFileName @"UserCards.plist"
+
 @implementation ekkkAppDelegate
 
-
 @synthesize window=_window;
-
 @synthesize tabBarController=_tabBarController;
-
-
-
 @synthesize locationManager;
 @synthesize interConnectOperationQueue;
 @synthesize parsedItems = _parsedItems;
 @synthesize interconnectOperation;
-
 @synthesize offerNavController = _offerNavController;
 @synthesize userCardsArray = _userCardsArray;
 
+- (NSURL *)userCardsFilePath {
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kUserCardsFileName];
+    NSLog(@"%@", storeURL);
+    return storeURL;
+}
 
 - (NSURL *)locationDataFilePath {
     
@@ -100,7 +103,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     _parsedItems = [[NSMutableArray alloc] initWithCapacity:50];
-
+//    _userCardsArray = [[NSMutableArray alloc] init];
+    _userCardsArray = [[[NSDictionary dictionaryWithContentsOfURL:[self userCardsFilePath]] valueForKey:@"cards"] retain];
+    
     [self loadData];
     //注册为观察者，用于接受新线程解析的数据。
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadItems:) name:@"LocalXMLParsed" object:nil];
@@ -219,6 +224,7 @@
 
 - (void)dealloc
 {
+    [_userCardsArray release];
     [_parsedItems release];
     [locationManager release];
     [interConnectOperationQueue release];
@@ -255,5 +261,14 @@
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
+#pragma mark - 
+- (void)userCardsSelected:(NSMutableArray *)userCards {
+    NSDictionary *dic = [NSDictionary dictionaryWithObject:userCards forKey:@"cards"];
+    [dic writeToURL:[self userCardsFilePath] atomically:YES];
+    //保存完数据要重新读取新数据
+    _userCardsArray = nil;
+    [_userCardsArray release];
+    _userCardsArray = [[[NSDictionary dictionaryWithContentsOfURL:[self userCardsFilePath]] valueForKey:@"cards"] retain];
+}
 
 @end

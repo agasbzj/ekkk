@@ -60,10 +60,18 @@
     UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     }
     cell.textLabel.text = [_cardsArray objectAtIndex:indexPath.row];
+    
+    //如果发现已经选择过的卡，则这一行有打勾标记
+    for (NSString *str in _selectedCards) {
+        if ([str isEqualToString:cell.textLabel.text] == YES) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+
+        }
+    }
+
     return cell;
 }
 
@@ -77,7 +85,8 @@
     NSString *selected = [_cardsArray objectAtIndex:indexPath.row];
     for (NSString *str in _selectedCards) {
         if ([str isEqualToString:cell.textLabel.text]) {
-
+            
+            //点击有打勾标记的行，则取消打勾标记，并把他从选择的卡的数组中移除
             cell.accessoryType = UITableViewCellAccessoryNone;
             [self.selectedCards removeObject:selected];
             NSLog(@"%@", _selectedCards);
@@ -92,7 +101,7 @@
 
 - (IBAction)ok:(id)sender {
     NSLog(@"%@", _selectedCards);
-    [delegate cardsSelected:nil isCancel:NO];
+    [delegate cardsSelected:_selectedCards isCancel:NO];
 }
 - (IBAction)cancel:(id)sender {
     [delegate cardsSelected:nil isCancel:YES];

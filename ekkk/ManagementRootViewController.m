@@ -8,7 +8,7 @@
 
 #import "ManagementRootViewController.h"
 #import "BankSelectViewController.h"
-
+#import "ekkkAppDelegate.h"
 @implementation ManagementRootViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -56,6 +56,13 @@
 
 - (IBAction)logIn:(id)sender {
     BankSelectViewController *bankSelectViewController = [[BankSelectViewController alloc] init];
+    ekkkAppDelegate *ekkkDele = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
+
+    bankSelectViewController.delegate = ekkkDele;
+    
+    //已保存的数据复制一份来进行修改
+    bankSelectViewController.userArray = ekkkDele.userCardsArray;
+    bankSelectViewController.readyToWriteArray = [[NSMutableArray alloc] initWithArray:bankSelectViewController.userArray copyItems:YES];
     [self presentModalViewController:bankSelectViewController animated:YES];
     [bankSelectViewController release];
 }
