@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardsSelectView.h"
 
-
-@interface BankSelectViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface BankSelectViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CardsSelectViewDelegate> {
     UITableView *_tableView;
     NSArray *_bankArray;
     

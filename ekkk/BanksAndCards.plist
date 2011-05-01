@@ -9,8 +9,8 @@
 			<string>中国工商银行</string>
 			<key>cards</key>
 			<array>
-				<string>g1</string>
-				<string>g2</string>
+				<string>金卡</string>
+				<string>白金卡</string>
 			</array>
 			<key>icon</key>
 			<string>中国工商银行.png</string>
@@ -20,8 +20,8 @@
 			<string>中国农业银行</string>
 			<key>cards</key>
 			<array>
-				<string>n1</string>
-				<string>n2</string>
+				<string>金卡</string>
+				<string>白金卡</string>
 			</array>
 			<key>icon</key>
 			<string>中国农业银行.png</string>
@@ -31,8 +31,8 @@
 			<string>中国银行</string>
 			<key>cards</key>
 			<array>
-				<string>z1</string>
-				<string>z2</string>
+				<string>金卡</string>
+				<string>白金卡</string>
 			</array>
 			<key>icon</key>
 			<string>中国银行.png</string>
@@ -42,8 +42,8 @@
 			<string>中国建设银行</string>
 			<key>cards</key>
 			<array>
-				<string>j1</string>
-				<string>j2</string>
+				<string>金卡</string>
+				<string>白金卡</string>
 			</array>
 			<key>icon</key>
 			<string>中国建设银行.png</string>
@@ -53,8 +53,8 @@
 			<string>上海浦东发展银行</string>
 			<key>cards</key>
 			<array>
-				<string>j1</string>
-				<string>j2</string>
+				<string>金卡</string>
+				<string>白金卡</string>
 			</array>
 			<key>icon</key>
 			<string>上海浦东发展银行.png</string>
@@ -64,8 +64,8 @@
 			<string>交通银行</string>
 			<key>cards</key>
 			<array>
-				<string>j1</string>
-				<string>j2</string>
+				<string>金卡</string>
+				<string>白金卡</string>
 			</array>
 			<key>icon</key>
 			<string>交通银行.png</string>
@@ -75,8 +75,8 @@
 			<string>深圳发展银行</string>
 			<key>cards</key>
 			<array>
-				<string>j1</string>
-				<string>j2</string>
+				<string>金卡</string>
+				<string>白金卡</string>
 			</array>
 			<key>icon</key>
 			<string>深圳发展银行.png</string>
@@ -86,8 +86,8 @@
 			<string>广东发展银行</string>
 			<key>cards</key>
 			<array>
-				<string>j1</string>
-				<string>j2</string>
+				<string>金卡</string>
+				<string>白金卡</string>
 			</array>
 			<key>icon</key>
 			<string>广东发展银行.png</string>
@@ -97,8 +97,8 @@
 			<string>中国光大银行</string>
 			<key>cards</key>
 			<array>
-				<string>j1</string>
-				<string>j2</string>
+				<string>金卡</string>
+				<string>白金卡</string>
 			</array>
 			<key>icon</key>
 			<string>中国光大银行.png</string>
@@ -108,8 +108,8 @@
 			<string>中国民生银行</string>
 			<key>cards</key>
 			<array>
-				<string>j1</string>
-				<string>j2</string>
+				<string>金卡</string>
+				<string>白金卡</string>
 			</array>
 			<key>icon</key>
 			<string>中国民生银行.png</string>
@@ -119,8 +119,8 @@
 			<string>华夏银行</string>
 			<key>cards</key>
 			<array>
-				<string>j1</string>
-				<string>j2</string>
+				<string>金卡</string>
+				<string>白金卡</string>
 			</array>
 			<key>icon</key>
 			<string>华夏银行.png</string>
@@ -130,8 +130,8 @@
 			<string>中信银行</string>
 			<key>cards</key>
 			<array>
-				<string>j1</string>
-				<string>j2</string>
+				<string>金卡</string>
+				<string>白金卡</string>
 			</array>
 			<key>icon</key>
 			<string>中信银行.png</string>
@@ -141,8 +141,8 @@
 			<string>中国平安银行</string>
 			<key>cards</key>
 			<array>
-				<string>j1</string>
-				<string>j2</string>
+				<string>金卡</string>
+				<string>白金卡</string>
 			</array>
 			<key>icon</key>
 			<string>中国平安银行.png</string>
@@ -152,8 +152,8 @@
 			<string>花旗银行</string>
 			<key>cards</key>
 			<array>
-				<string>j1</string>
-				<string>j2</string>
+				<string>金卡</string>
+				<string>白金卡</string>
 			</array>
 			<key>icon</key>
 			<string>花旗银行.png</string>
@@ -163,8 +163,8 @@
 			<string>汇丰银行</string>
 			<key>cards</key>
 			<array>
-				<string>j1</string>
-				<string>j2</string>
+				<string>金卡</string>
+				<string>白金卡</string>
 			</array>
 			<key>icon</key>
 			<string>汇丰银行.png</string>
@@ -174,8 +174,8 @@
 			<string>招商银行</string>
 			<key>cards</key>
 			<array>
-				<string>j1</string>
-				<string>j2</string>
+				<string>金卡</string>
+				<string>白金卡</string>
 			</array>
 			<key>icon</key>
 			<string>招商银行.png</string>

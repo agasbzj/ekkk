@@ -8,8 +8,7 @@
 
 #import "CategoriesRootViewController.h"
 #import "CategoryTableViewController.h"
-#import "FetchDataController.h"
-//#import "ekkkAppDelegate.h"
+#import "ekkkAppDelegate.h"
 
 @implementation CategoriesRootViewController
 @synthesize categoryArray = _categoryArray;

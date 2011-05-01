@@ -7,9 +7,8 @@
 //
 
 #import "NearbyRootViewController.h"
-#import "FetchDataController.h"
 #import "NearbyTableViewController.h"
-
+#import "ekkkAppDelegate.h"
 @implementation NearbyRootViewController
 
 @synthesize categoryArray = _categoryArray;

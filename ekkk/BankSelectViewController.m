@@ -7,7 +7,7 @@
 //
 
 #import "BankSelectViewController.h"
-#import "CardsSelectView.h"
+#define kCardsSelectViewTag 100
 
 @implementation BankSelectViewController
 @synthesize tableView = _tableView;
@@ -72,6 +72,8 @@
     }
     NSDictionary *dic = [_bankArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [dic valueForKey:@"bankName"];
+    cell.textLabel.textAlignment = UITextAlignmentCenter;
+    cell.imageView.image = [UIImage imageNamed:[dic valueForKey:@"icon"]];
     return cell;
 }
 
@@ -79,9 +81,21 @@
     NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"CardsSelectView" owner:self options:nil];
     CardsSelectView *cardsSelectView = [[CardsSelectView alloc] init];
     cardsSelectView = [array objectAtIndex:0];
+    cardsSelectView.tag = kCardsSelectViewTag;
+    cardsSelectView.delegate = self;
     cardsSelectView.cardsArray = [[_bankArray objectAtIndex:indexPath.row] valueForKey:@"cards"];
     cardsSelectView.selectedCards = [NSMutableArray arrayWithCapacity:3];
-    [self.view addSubview:cardsSelectView];
+    
+    
+    [self.view insertSubview:cardsSelectView belowSubview:self.view];
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [UIView beginAnimations:nil context:context];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES];
+    [UIView setAnimationDuration:.5f];
+    [self.view exchangeSubviewAtIndex:0 withSubviewAtIndex:1];
+    [UIView commitAnimations];
 }
 
 - (IBAction)ok:(id)sender {
@@ -90,5 +104,21 @@
 
 - (IBAction)cancel:(id)sender {
     [self dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark - CardsSelectView Delegate
+
+- (void)cardsSelected:(NSMutableArray *)cardsSelectedArray isCancel:(BOOL)isCancel{
+    if (isCancel == NO) {
+        //处理接收数据
+    }
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [UIView beginAnimations:nil context:context];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.view cache:YES];
+    [UIView setAnimationDuration:.5f];
+    [self.view exchangeSubviewAtIndex:0 withSubviewAtIndex:1];
+    [[self.view viewWithTag:kCardsSelectViewTag] removeFromSuperview];
+    [UIView commitAnimations];
 }
 @end

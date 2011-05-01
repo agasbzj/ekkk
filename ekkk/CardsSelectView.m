@@ -13,6 +13,7 @@
 @synthesize tableView = _tableView;
 @synthesize cardsArray = _cardsArray;
 @synthesize selectedCards = _selectedCards;
+@synthesize delegate;
 
 - (id)init {
     if ((self = [super init])) {
@@ -66,6 +67,10 @@
     return cell;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return @"请勾选您拥有的卡片";
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [_tableView deselectRowAtIndexPath:indexPath animated:YES];
     UITableViewCell *cell = [_tableView cellForRowAtIndexPath:indexPath];
@@ -87,9 +92,9 @@
 
 - (IBAction)ok:(id)sender {
     NSLog(@"%@", _selectedCards);
-    [self removeFromSuperview];
+    [delegate cardsSelected:nil isCancel:NO];
 }
 - (IBAction)cancel:(id)sender {
-    [self removeFromSuperview];
+    [delegate cardsSelected:nil isCancel:YES];
 }
 @end

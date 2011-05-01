@@ -20,20 +20,19 @@
     InterconnectWithServer *interconnectOperation;
     NSMutableArray *_parsedItems;   //存放解析完回传过来的新数据，其中每个元素为OneItem类
     UINavigationController *_offerNavController;
+    NSMutableArray *_userCardsArray;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 
-//@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
-//@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
-//@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
 @property (nonatomic, retain, readonly) NSOperationQueue *interConnectOperationQueue;
 @property (nonatomic, retain) InterconnectWithServer *interconnectOperation;
 @property (nonatomic, retain) CLLocationManager *locationManager;
 @property (nonatomic, retain, readonly) NSMutableArray *parsedItems;
-
+@property (nonatomic, retain) NSMutableArray *userCardsArray;
 @property (nonatomic, retain) IBOutlet UINavigationController *offerNavController;
 
 

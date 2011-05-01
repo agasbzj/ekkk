@@ -7,7 +7,7 @@
 //
 
 #import "CardsTableViewController.h"
-#import "DetailViewController.h"
+#import "DetailController.h"
 #import "IndividualTableCell.h"
 #import "OneItem.h"
 
@@ -174,7 +174,7 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
-    DetailViewController *detailViewController = [[DetailViewController alloc] init];
+    DetailController *detailViewController = [[DetailController alloc] init];
     detailViewController.oneItem = [_dataArray objectAtIndex:indexPath.row];
     detailViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detailViewController animated:YES];

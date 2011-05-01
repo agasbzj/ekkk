@@ -11,7 +11,7 @@
 #import "OneItem.h"
 #import "OffersTableCell.h"
 #import "DetailController.h"
-
+#import "ekkkAppDelegate.h"
 #define kFileName @"location.plist"
 #define kDataFileName @"Data.plist"
 #define DARK_BACKGROUND [UIColor colorWithRed:151.0/255.0 green:152.0/255.0 blue:155.0/255.0 alpha:1.0];
@@ -86,9 +86,11 @@ NSArray *temp;  //跟踪指针，用来释放。
 //    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kDataFileName];
 //    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfURL:storeURL];
 //    _dataArray = [dic valueForKey:@"data_Array"];
-
-    [_dataArray removeAllObjects];
-    NSArray *allData = [[[UIApplication sharedApplication] delegate] parsedItems];
+    if ([_dataArray count] > 0) {
+        [_dataArray removeAllObjects];
+    }
+    ekkkAppDelegate *ekkkDelegate = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSArray *allData = ekkkDelegate.parsedItems;
     _dataArray = [[NSMutableArray alloc] initWithCapacity:30];
     for (OneItem *item in allData) {
         if ([item.hot isEqualToString:@"1"]) {

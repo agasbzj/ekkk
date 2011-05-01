@@ -7,9 +7,8 @@
 //
 
 #import "CardsRootViewController.h"
-#import "FetchDataController.h"
 #import "CardsTableViewController.h"
-
+#import "ekkkAppDelegate.h"
 @implementation CardsRootViewController
 @synthesize tableView = _tableView;
 @synthesize bankArray = _bankArray;
@@ -116,15 +115,30 @@
     
     NSDictionary *dic = [_bankArray objectAtIndex:indexPath.row];
     NSString *str = [dic valueForKey:@"bankName"];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"card_Bank = %@", str];
-    FetchDataController *fetchController = [[FetchDataController alloc] init];
-    [fetchController getDataByPredicate:predicate];
+    NSMutableArray *showArray = [[NSMutableArray alloc] initWithCapacity:30];
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"card_Bank = %@", str];
+//    FetchDataController *fetchController = [[FetchDataController alloc] init];
+//    [fetchController getDataByPredicate:predicate];
+    
+    ekkkAppDelegate *myDelegate = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSArray *allData = (NSArray *)myDelegate.parsedItems;
+    for (OneItem *item in allData) {
+        for (NSDictionary *bankDic in item.bank) {
+            if ([[bankDic valueForKey:@"bank_name"] isEqualToString:str]) {
+                [showArray addObject:item];
+                break;
+            }
+        }
+
+    }
+    
     
     CardsTableViewController *cardsTableViewController = [[CardsTableViewController alloc] init];
-    cardsTableViewController.dataArray = fetchController.itemList;
+    cardsTableViewController.dataArray = showArray;
     cardsTableViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:cardsTableViewController animated:YES];
     [cardsTableViewController release];
+    [showArray release];
 }
 
 @end
