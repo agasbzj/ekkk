@@ -113,6 +113,8 @@
 		A9BE30AE134B2EEC00DA6E86 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE30A5134B2EEC00DA6E86 /* ASINetworkQueue.m */; };
 		A9CE12301367E70F00C38610 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CE122F1367E70F00C38610 /* PickerViewController.m */; };
 		A9CE12331367E71E00C38610 /* PickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CE12321367E71E00C38610 /* PickerViewController.xib */; };
+		A9D10201136D9C05007B5F0D /* PickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9D10200136D9C05007B5F0D /* PickerView.xib */; };
+		A9D10205136D9E1A007B5F0D /* PickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D10204136D9E1A007B5F0D /* PickerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -270,6 +272,9 @@
 		A9CE122E1367E70F00C38610 /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
 		A9CE122F1367E70F00C38610 /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
 		A9CE12321367E71E00C38610 /* PickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerViewController.xib; sourceTree = "<group>"; };
+		A9D10200136D9C05007B5F0D /* PickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerView.xib; sourceTree = "<group>"; };
+		A9D10203136D9E1A007B5F0D /* PickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerView.h; sourceTree = "<group>"; };
+		A9D10204136D9E1A007B5F0D /* PickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -481,6 +486,9 @@
 				A9CE122E1367E70F00C38610 /* PickerViewController.h */,
 				A9CE122F1367E70F00C38610 /* PickerViewController.m */,
 				A9CE12321367E71E00C38610 /* PickerViewController.xib */,
+				A9D10203136D9E1A007B5F0D /* PickerView.h */,
+				A9D10204136D9E1A007B5F0D /* PickerView.m */,
+				A9D10200136D9C05007B5F0D /* PickerView.xib */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -709,6 +717,7 @@
 				41375826136BDCED00CDE06E /* DetailHeaderView.xib in Resources */,
 				41375828136BDD1100CDE06E /* DetailFooterView.xib in Resources */,
 				A990487A136D5EE200306D37 /* ShowMyCardsViewController.xib in Resources */,
+				A9D10201136D9C05007B5F0D /* PickerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,6 +769,7 @@
 				41375821136BDCB200CDE06E /* DetailHeaderView.m in Sources */,
 				41375824136BDCD400CDE06E /* DetailFooterView.m in Sources */,
 				A9904879136D5EE200306D37 /* ShowMyCardsViewController.m in Sources */,
+				A9D10205136D9E1A007B5F0D /* PickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,7 +23,8 @@
 
 static NSUInteger choosenTag = 0;   //点了哪个查询分类
 static bool pickerOpen = NO;    //是否已经打开了一个picker
-
+static UIActionSheet *kActionSheet;
+static UIPickerView *kPicker;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -204,26 +205,37 @@ static bool pickerOpen = NO;    //是否已经打开了一个picker
 }
 
 - (void)generateActionSheet {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"请选择\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"好" otherButtonTitles:nil];
-    actionSheet.actionSheetStyle = UIActionSheetStyleAutomatic;
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"\n\n\n\n\n\n\n\n\n\n\n\n\n" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
 
+    PickerView *pickerView;
+    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"PickerView" owner:self options:nil];
+    pickerView = [array objectAtIndex:0];
+    pickerView.delegate = self;
+    pickerView.pickerDataArray = _pickerArray;
 
-    [actionSheet addSubview:_picker];
+    kPicker = pickerView.pickerView;
+    [actionSheet addSubview:pickerView];
     [actionSheet showInView:self.view];
-    
-    
+    CGRect rect = pickerView.pickerView.bounds;
+    rect.size.width = 320;
+    pickerView.pickerView.bounds = rect;
+    CGPoint point = pickerView.pickerView.center;
+    point.x = 160;
+    pickerView.pickerView.center = point;
+    kActionSheet = actionSheet;
     [actionSheet release];
 }
 
 - (IBAction)cityButtonPressed:(id)sender {
-    [self generateActionSheet];
+//    [self generateActionSheet];
     
 }
 
 - (IBAction)selectButtonPressed:(id)sender {
-    if (pickerOpen == YES) {
-        return;
-    }
+//    if (pickerOpen == YES) {
+//        return;
+//    }
     UIBarButtonItem *button = (UIBarButtonItem *)sender;
     [_pickerArray removeAllObjects];
     
@@ -264,27 +276,76 @@ static bool pickerOpen = NO;    //是否已经打开了一个picker
                 flag = 0;
             }
             break;
+        case 3:
+            for (OneItem *item in _dataArray) {
+                str = item.category_Coarse;
+                for (NSString *s in _pickerArray) {
+                    if ([s isEqualToString:str]) {
+                        flag = 1;
+                        break;
+                    }
+                }
+                if (flag == 0) {
+                    [_pickerArray addObject:item.category_Coarse];
+                }
+                flag = 0;
+            }
+        case 4:
+            for (OneItem *item in _dataArray) {
+                str = item.category_Coarse;
+                for (NSString *s in _pickerArray) {
+                    if ([s isEqualToString:str]) {
+                        flag = 1;
+                        break;
+                    }
+                }
+                if (flag == 0) {
+                    [_pickerArray addObject:item.category_Coarse];
+                }
+                flag = 0;
+            }
+        case 5:
+            for (OneItem *item in _dataArray) {
+                str = item.category_Coarse;
+                for (NSString *s in _pickerArray) {
+                    if ([s isEqualToString:str]) {
+                        flag = 1;
+                        break;
+                    }
+                }
+                if (flag == 0) {
+                    [_pickerArray addObject:item.category_Coarse];
+                }
+                flag = 0;
+            }
+            break;
         default:
             break;
     }
+//
+//    
+//    PickerViewController *pickerView;
+//    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"PickerViewController" owner:self options:nil];
+//    pickerView = [array objectAtIndex:0];
+//    pickerView.backgroundColor = [UIColor clearColor];
+//    
+//    pickerView.pickerArray = _pickerArray;
+//    pickerView.delegate = self;
+//    
+//    CGRect rect = pickerView.frame;
+//    rect.origin.y = 156;
+//    pickerView.frame = rect;
+//    
+//    [self.view addSubview:pickerView];
+//    pickerOpen = YES;
 
     
-    PickerViewController *pickerView;
-    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"PickerViewController" owner:self options:nil];
-    pickerView = [array objectAtIndex:0];
-    pickerView.backgroundColor = [UIColor clearColor];
     
-    pickerView.pickerArray = _pickerArray;
-    pickerView.delegate = self;
-    
-    CGRect rect = pickerView.frame;
-    rect.origin.y = 156;
-    pickerView.frame = rect;
-    
-    [self.view addSubview:pickerView];
-    pickerOpen = YES;
-                                                  
-//    [self generateActionSheet];
+    [self generateActionSheet];
+}
+
+- (void)buttonPressed:(NSUInteger)tag {
+    [kActionSheet dismissWithClickedButtonIndex:tag animated:YES];
 }
 
 
@@ -306,26 +367,77 @@ static bool pickerOpen = NO;    //是否已经打开了一个picker
 #pragma mark - Action Sheet
 
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == [actionSheet destructiveButtonIndex]) {
-        NSUInteger choosen = [_picker selectedRowInComponent:0];
-        [_showArray removeAllObjects];  //先清空要显示的数据
-        
-        //按点击的分类查询刷新数据
-        switch (choosenTag) {
-            case 1:
-                for (OneItem *item in _dataArray) {
-                    if ([item.city isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
-                        [_showArray addObject:item];
+//    if (buttonIndex == [actionSheet destructiveButtonIndex]) {
+//        NSUInteger choosen = [_picker selectedRowInComponent:0];
+//        [_showArray removeAllObjects];  //先清空要显示的数据
+//        
+//        //按点击的分类查询刷新数据
+//        switch (choosenTag) {
+//            case 1:
+//                for (OneItem *item in _dataArray) {
+//                    if ([item.city isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
+//                        [_showArray addObject:item];
+//                    }
+//                }
+//                break;
+//
+//            default:
+//                break;
+//        }
+//
+//        [_tableView reloadData];
+//    }
+
+    
+    NSUInteger choosen = [kPicker selectedRowInComponent:0];
+    switch (buttonIndex) {
+        case 1:
+            [_showArray removeAllObjects];
+            switch (choosenTag) {
+                case 1:
+                    for (OneItem *item in _dataArray) {
+                        if ([item.city isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
+                            [_showArray addObject:item];
+                        }
                     }
-                }
-                break;
+                    break;
+                case 2:
+                    for (OneItem *item in _dataArray) {
+                        if ([item.category_Fine isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
+                            [_showArray addObject:item];
+                        }
+                    }
+                case 3:
+                    for (OneItem *item in _dataArray) {
+                        if ([item.category_Coarse isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
+                            [_showArray addObject:item];
+                        }
+                    }
+                case 4:
+                    for (OneItem *item in _dataArray) {
+                        if ([item.category_Coarse isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
+                            [_showArray addObject:item];
+                        }
+                    }
+                case 5:
+                    for (OneItem *item in _dataArray) {
+                        if ([item.category_Coarse isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
+                            [_showArray addObject:item];
+                        }
+                    }
+                default:
+                    break;
+            }
 
-            default:
-                break;
-        }
-
-        [_tableView reloadData];
+            break;
+            
+        default:
+            break;
     }
+    
+    [_tableView reloadData];
+    kPicker = nil;
+    kActionSheet = nil;
 }
 
 - (void)selectedOneInPicker:(NSUInteger)choosen {

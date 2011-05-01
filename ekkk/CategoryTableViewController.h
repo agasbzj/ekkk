@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "PickerViewController.h"
+#import "PickerView.h"
 
 @class IndividualTableCell;
 
-@interface CategoryTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UIPickerViewDelegate, UIPickerViewDataSource, PickerViewDelegate> {
+@interface CategoryTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UIPickerViewDelegate, UIPickerViewDataSource, PickerViewDelegate, MyPickViewDelegate> {
     NSArray *_dataArray;    //初始传入的值
     NSMutableArray *_showArray;    //表视图用来显示的数据
     NSMutableArray *_pickerArray;

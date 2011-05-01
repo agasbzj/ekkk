@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1056</int>
-		<string key="IBDocument.SystemVersion">10J567</string>
+		<string key="IBDocument.SystemVersion">10J869</string>
 		<string key="IBDocument.InterfaceBuilderVersion">1306</string>
 		<string key="IBDocument.AppKitVersion">1038.35</string>
-		<string key="IBDocument.HIToolboxVersion">462.00</string>
+		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">301</string>
@@ -89,7 +89,8 @@
 								<reference key="IBUIToolbar" ref="739808447"/>
 								<int key="IBUISystemItemIdentifier">5</int>
 							</object>
-							<object class="IBUIBarButtonItem" id="22964640">
+							<object class="IBUIBarButtonItem" id="611935434">
+								<int key="IBUITag">3</int>
 								<string key="IBUITitle">分类</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIStyle">1</int>
@@ -100,7 +101,7 @@
 								<reference key="IBUIToolbar" ref="739808447"/>
 								<int key="IBUISystemItemIdentifier">5</int>
 							</object>
-							<object class="IBUIBarButtonItem" id="611935434">
+							<object class="IBUIBarButtonItem" id="22964640">
 								<int key="IBUITag">2</int>
 								<string key="IBUITitle">风格</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -113,6 +114,7 @@
 								<int key="IBUISystemItemIdentifier">5</int>
 							</object>
 							<object class="IBUIBarButtonItem" id="970329649">
+								<int key="IBUITag">4</int>
 								<string key="IBUITitle">排序</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIStyle">1</int>
@@ -124,6 +126,7 @@
 								<int key="IBUISystemItemIdentifier">5</int>
 							</object>
 							<object class="IBUIBarButtonItem" id="914627512">
+								<int key="IBUITag">5</int>
 								<string key="IBUITitle">卡种</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIStyle">1</int>
@@ -217,6 +220,14 @@
 					</object>
 					<int key="connectionID">42</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">selectButtonPressed:</string>
+						<reference key="source" ref="22964640"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">50</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -259,14 +270,14 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="48807137"/>
-							<reference ref="611935434"/>
 							<reference ref="970329649"/>
 							<reference ref="914627512"/>
 							<reference ref="22964640"/>
 							<reference ref="589672608"/>
-							<reference ref="220124663"/>
 							<reference ref="830507353"/>
 							<reference ref="800120591"/>
+							<reference ref="611935434"/>
+							<reference ref="220124663"/>
 						</object>
 						<reference key="parent" ref="613906815"/>
 					</object>
@@ -366,7 +377,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">49</int>
+			<int key="maxID">52</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
