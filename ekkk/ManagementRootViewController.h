@@ -12,5 +12,6 @@
 @interface ManagementRootViewController : UIViewController <UINavigationControllerDelegate> {
     
 }
-- (IBAction)logIn:(id)sender;
+- (IBAction)editMyCards:(id)sender;
+- (IBAction)showMyCards:(id)sender;
 @end

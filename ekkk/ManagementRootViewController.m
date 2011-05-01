@@ -9,6 +9,8 @@
 #import "ManagementRootViewController.h"
 #import "BankSelectViewController.h"
 #import "ekkkAppDelegate.h"
+#import "ShowMyCardsViewController.h"
+
 @implementation ManagementRootViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -54,7 +56,9 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)logIn:(id)sender {
+
+
+- (IBAction)editMyCards:(id)sender {
     BankSelectViewController *bankSelectViewController = [[BankSelectViewController alloc] init];
     ekkkAppDelegate *ekkkDele = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
 
@@ -65,6 +69,14 @@
     bankSelectViewController.readyToWriteArray = [[NSMutableArray alloc] initWithArray:bankSelectViewController.userArray copyItems:YES];
     [self presentModalViewController:bankSelectViewController animated:YES];
     [bankSelectViewController release];
+}
+
+- (IBAction)showMyCards:(id)sender {
+    ShowMyCardsViewController *showController = [[ShowMyCardsViewController alloc] init];
+    ekkkAppDelegate *ekkkDele = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
+    showController.dataArray = ekkkDele.userCardsArray;
+    [self presentModalViewController:showController animated:YES];
+    [showController release];
 }
 
 @end

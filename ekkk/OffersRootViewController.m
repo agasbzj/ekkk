@@ -73,16 +73,7 @@ NSArray *temp;  //跟踪指针，用来释放。
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //别的表视图重写这个方法！！！！
-- (void)getData {
-//    FetchDataController *fetchDataController = [[FetchDataController alloc] init];
-//    
-//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"hot = '1'"];    //设置查询格式
-//    [fetchDataController getDataByPredicate:predicate];
-//    temp = [[NSArray arrayWithArray:(NSArray *)fetchDataController.itemList] retain];   //把这里retain就没有崩溃了
-//    _dataArray = temp; 
-//    [fetchDataController release];
-    
-//    
+- (void)getData {    
 //    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kDataFileName];
 //    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfURL:storeURL];
 //    _dataArray = [dic valueForKey:@"data_Array"];
@@ -101,6 +92,48 @@ NSArray *temp;  //跟踪指针，用来释放。
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+- (void)getMyCardsData 
+{
+    if ([_dataArray count] > 0) 
+    {
+        [_dataArray removeAllObjects];
+    }
+    ekkkAppDelegate *ekkkDelegate = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSArray *allData = ekkkDelegate.parsedItems;
+    NSArray *myCards = ekkkDelegate.userCardsArray;
+    _dataArray = [[NSMutableArray alloc] initWithCapacity:30];
+    NSMutableArray *allMyCards = [[NSMutableArray alloc] initWithCapacity:10];
+    
+    //所有用户的卡，每一项是string
+    for (NSDictionary *dic in myCards)
+    {
+        [allMyCards addObjectsFromArray:[dic valueForKey:@"cards"]];
+    }
+    for (OneItem *item in allData) 
+    {
+        if ([item.hot isEqualToString:@"1"]) 
+        {
+            for (NSDictionary *bankDic in item.bank) 
+            {
+                NSArray *cardA = [bankDic valueForKey:@"card"];
+                for (NSDictionary *cardD in cardA) 
+                {
+                    NSString *str1 = [cardD valueForKey:@"card_name"];
+
+                    for (NSString *str2 in allMyCards) 
+                    {
+                        if ([str1 isEqualToString:str2] == YES) 
+                        {
+                            [_dataArray addObject:item];
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 - (void)reloadItemData {
     [self.tableView reloadData];
 }
@@ -114,29 +147,25 @@ NSArray *temp;  //跟踪指针，用来释放。
 }
 
 - (IBAction)switchCategory:(id)sender {
-    NSPredicate *pre;
+
     switch (_segmentedControl.selectedSegmentIndex) {
         case 0:
         {
-            pre = [NSPredicate predicateWithFormat:@"hot = '1'"];
+            [self getData];
             
             break;
         }
         case 1:
         {
-            pre = [NSPredicate predicateWithFormat:@"area = '人民广场'"];
+            [self getMyCardsData];
             break;
         }
             
         default:
             break;
     }
-//    FetchDataController *fc = [[FetchDataController alloc] init];
-//    [fc getDataByPredicate:pre];
-//    _dataArray = nil;
-//    _dataArray = [[NSArray arrayWithArray:(NSArray *)fc.itemList] retain];
-//    [fc release];
-//    [_tableView reloadData];
+
+    [_tableView reloadData];
 }
 
 #pragma mark - View lifecycle

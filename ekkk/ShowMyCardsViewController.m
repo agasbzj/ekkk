@@ -1,19 +1,17 @@
 //
-//  NearbyTableViewController.m
+//  ShowMyCardsViewController.m
 //  ekkk
 //
-//  Created by 卞 中杰 on 11-4-19.
+//  Created by 卞 中杰 on 11-5-1.
 //  Copyright 2011年 __MyCompanyName__. All rights reserved.
 //
 
-#import "NearbyTableViewController.h"
-#import "DetailController.h"
-#import "IndividualTableCell.h"
-#import "OneItem.h"
+#import "ShowMyCardsViewController.h"
 
-@implementation NearbyTableViewController
+
+@implementation ShowMyCardsViewController
 @synthesize dataArray = _dataArray;
-
+@synthesize tableView;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -25,6 +23,7 @@
 
 - (void)dealloc
 {
+    [tableView release];
     [_dataArray release];
     [super dealloc];
 }
@@ -37,41 +36,16 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)switchCards:(id)sender {
-    UISegmentedControl *seg = (UISegmentedControl *)sender;
-    switch (seg.selectedSegmentIndex) {
-        case 0:
-            
-            break;
-        case 1:
-            
-            break;
-        default:
-            break;
-    }
-    [self.tableView reloadData];
-}
-
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableView.rowHeight = 74;
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"All Cards", @"My Cards", nil]];
-    segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
-    segmentedControl.selectedSegmentIndex = 0;
-    [segmentedControl addTarget:self action:@selector(switchCards:) forControlEvents:UIControlEventValueChanged];
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithCustomView:segmentedControl];
-    self.navigationItem.rightBarButtonItem = button;
-    [button release];
 }
 
 - (void)viewDidUnload
@@ -112,35 +86,33 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return [_dataArray count];;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [_dataArray count];
+    return [[[_dataArray objectAtIndex:section] valueForKey:@"cards"] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     
-    IndividualTableCell *cell = (IndividualTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-
-        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"IndividualTableCell" owner:self options:nil];
-        cell = [array objectAtIndex:0];
-    
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
     // Configure the cell...
-    
-    OneItem *item = [_dataArray objectAtIndex:indexPath.row];
-    
-    cell.sellerLabel.text = item.seller;
-    cell.addressLabel.text = item.address;
-    cell.discountLabel.text = [[item.bank objectAtIndex:0] valueForKey:@"discount"];    
+    NSString *str = [[[_dataArray objectAtIndex:indexPath.section] valueForKey:@"cards"] objectAtIndex:indexPath.row];
+    cell.textLabel.text = str;
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSDictionary *dic = [_dataArray objectAtIndex:section];
+    return [dic valueForKey:@"bank_name"];
 }
 
 /*
@@ -194,12 +166,10 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
-    DetailController *detailViewController = [[DetailController alloc] init];
-    detailViewController.oneItem = [_dataArray objectAtIndex:indexPath.row];
-    detailViewController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-    
+}
+
+- (IBAction)goBack:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 @end
