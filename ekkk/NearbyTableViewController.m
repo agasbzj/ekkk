@@ -72,6 +72,7 @@
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithCustomView:segmentedControl];
     self.navigationItem.rightBarButtonItem = button;
     [button release];
+    [segmentedControl release];
 }
 
 - (void)viewDidUnload

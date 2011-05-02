@@ -44,7 +44,7 @@
     MapViewController *mapViewController = [[MapViewController alloc] init];
     mapViewController.theItem = _oneItem;
     [self.navigationController pushViewController:mapViewController animated:YES];
-    
+    [mapViewController release];
 }
 
 #pragma mark - View lifecycle

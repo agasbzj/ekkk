@@ -29,10 +29,10 @@
 
 - (void)dealloc
 {
+    [_bankArray release];
     [_userArray release];
     [_readyToWriteArray release];
     [_tableView release];
-    [_bankArray release];
     [super dealloc];
 }
 
@@ -54,7 +54,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     _bankArray = [[[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"BanksAndCards" ofType:@"plist"]] valueForKey:@"Banks"];
-
     
 }
 
@@ -154,7 +153,10 @@
                 NSDictionary *dic = [_readyToWriteArray objectAtIndex:i];
                 if ([[dic valueForKey:@"bank_name"] isEqualToString:[_currentBankDictionary valueForKey:@"bank_name"]] == YES) {
                     [_readyToWriteArray removeObject:dic];
-                    [_readyToWriteArray addObject:_currentBankDictionary];
+                    NSArray *tmp = [_currentBankDictionary objectForKey:@"cards"];
+                    if ([tmp count] > 0) {
+                        [_readyToWriteArray addObject:_currentBankDictionary];
+                    }
                     flag = 1;
                     break;
                 }

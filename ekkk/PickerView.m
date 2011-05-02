@@ -13,6 +13,7 @@
 @synthesize pickerView = _pickerView;
 @synthesize pickerDataArray = _pickerDataArray;
 @synthesize delegate;
+@synthesize selectedString;
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -35,6 +36,7 @@
 {
     [_pickerDataArray release];
     [_pickerView release];
+    [_selectedString release];
     [super dealloc];
 }
 
@@ -45,6 +47,10 @@
 //- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
 //    return 260;
 //}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    _selectedString = [_pickerDataArray objectAtIndex:row];
+}
 
 #pragma mark - Picker Data Source Delegate
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -58,6 +64,6 @@
 
 - (IBAction)buttonPressed:(id)sender {
     UIButton *button = (UIButton *)sender;
-    [delegate buttonPressed:button.tag];
+    [delegate buttonPressed:button.tag withStringInPicker:_selectedString];
 }
 @end

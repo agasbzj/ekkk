@@ -21,6 +21,8 @@
 @synthesize picker = _picker;
 @synthesize pickerArray = _pickerArray;
 
+@synthesize cityArray = _cityArray, categoryArray = _categoryArray, distanceArray = _distanceArray;
+
 static NSUInteger choosenTag = 0;   //点了哪个查询分类
 static bool pickerOpen = NO;    //是否已经打开了一个picker
 static UIActionSheet *kActionSheet;
@@ -37,6 +39,10 @@ static UIPickerView *kPicker;
 
 - (void)dealloc
 {
+    [_cityArray release];
+    [_categoryArray release];
+    [_distanceArray release];
+    
     [_picker release];
     [_showArray release];
     [_toolBar release];
@@ -51,6 +57,48 @@ static UIPickerView *kPicker;
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
+}
+
+//配置选取器用的各个array
+- (void)configPickerArray {
+    [_cityArray removeAllObjects];
+    [_categoryArray removeAllObjects];
+//    [_distanceArray removeAllObjects];
+    
+    NSInteger flag = 0;
+    NSString *str;
+    for (OneItem *item in _dataArray) {
+        str = item.city;
+        for (NSString *s in _cityArray) {
+            if ([s isEqualToString:str]) {
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 0) {
+            [_cityArray addObject:item.city];
+        }
+        flag = 0;
+    }
+    flag = 0;
+    str = nil;
+    
+    for (OneItem *item in _dataArray) {
+        str = item.category_Fine;
+        for (NSString *s in _categoryArray) {
+            if ([s isEqualToString:str] == YES) {
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 0) {
+            [_categoryArray addObject:item.category_Fine];
+        }
+        flag = 0;
+    }
+
+    
+    
 }
 
 #pragma mark - View lifecycle
@@ -73,6 +121,12 @@ static UIPickerView *kPicker;
     CGRect rect = _picker.bounds;
     rect.size.width = 280;
     _picker.bounds = rect;
+    
+    _categoryArray = [[NSMutableArray alloc] initWithCapacity:10];
+    _cityArray = [[NSMutableArray alloc] initWithCapacity:10];
+    _distanceArray = [[NSMutableArray alloc] initWithObjects:@"100", @"500", @"1000", @"3000", nil];
+    
+    [self configPickerArray];
 }
 
 - (void)viewDidUnload
@@ -212,7 +266,17 @@ static UIPickerView *kPicker;
     NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"PickerView" owner:self options:nil];
     pickerView = [array objectAtIndex:0];
     pickerView.delegate = self;
-    pickerView.pickerDataArray = _pickerArray;
+    switch (choosenTag) {
+        case 1:
+            pickerView.pickerDataArray = _cityArray;
+            break;
+        case 2:
+            pickerView.pickerDataArray = _categoryArray;
+            break;
+        default:
+            break;
+    }
+//    pickerView.pickerDataArray = _pickerArray;
 
     kPicker = pickerView.pickerView;
     [actionSheet addSubview:pickerView];
@@ -238,90 +302,93 @@ static UIPickerView *kPicker;
 //    }
     UIBarButtonItem *button = (UIBarButtonItem *)sender;
     [_pickerArray removeAllObjects];
-    
-    NSString *str;
-    NSInteger flag = 0;
-    
     choosenTag = button.tag;
     
-    //根据分类显示选取器内可供选择的数据
-    switch (choosenTag) {
-        case 1:
-            for (OneItem *item in _dataArray) {
-                str = item.city;
-                for (NSString *s in _pickerArray) {
-                    if ([s isEqualToString:str]) {
-                        flag = 1;
-                        break;
-                    }
-                }
-                if (flag == 0) {
-                    [_pickerArray addObject:item.city];
-                }
-                flag = 0;
-            }
-            break;
-        case 2:
-            for (OneItem *item in _dataArray) {
-                str = item.category_Fine;
-                for (NSString *s in _pickerArray) {
-                    if ([s isEqualToString:str]) {
-                        flag = 1;
-                        break;
-                    }
-                }
-                if (flag == 0) {
-                    [_pickerArray addObject:item.category_Fine];
-                }
-                flag = 0;
-            }
-            break;
-        case 3:
-            for (OneItem *item in _dataArray) {
-                str = item.category_Coarse;
-                for (NSString *s in _pickerArray) {
-                    if ([s isEqualToString:str]) {
-                        flag = 1;
-                        break;
-                    }
-                }
-                if (flag == 0) {
-                    [_pickerArray addObject:item.category_Coarse];
-                }
-                flag = 0;
-            }
-        case 4:
-            for (OneItem *item in _dataArray) {
-                str = item.category_Coarse;
-                for (NSString *s in _pickerArray) {
-                    if ([s isEqualToString:str]) {
-                        flag = 1;
-                        break;
-                    }
-                }
-                if (flag == 0) {
-                    [_pickerArray addObject:item.category_Coarse];
-                }
-                flag = 0;
-            }
-        case 5:
-            for (OneItem *item in _dataArray) {
-                str = item.category_Coarse;
-                for (NSString *s in _pickerArray) {
-                    if ([s isEqualToString:str]) {
-                        flag = 1;
-                        break;
-                    }
-                }
-                if (flag == 0) {
-                    [_pickerArray addObject:item.category_Coarse];
-                }
-                flag = 0;
-            }
-            break;
-        default:
-            break;
-    }
+//    NSString *str;
+//    NSInteger flag = 0;
+    
+
+    
+//    //根据分类显示选取器内可供选择的数据
+//    switch (choosenTag) {
+//        case 1:
+//            for (OneItem *item in _dataArray) {
+//                str = item.city;
+//                for (NSString *s in _pickerArray) {
+//                    if ([s isEqualToString:str]) {
+//                        flag = 1;
+//                        break;
+//                    }
+//                }
+//                if (flag == 0) {
+//                    [_pickerArray addObject:item.city];
+//                }
+//                flag = 0;
+//            }
+//            break;
+//        case 2:
+//            for (OneItem *item in _dataArray) {
+//                str = item.category_Fine;
+//                for (NSString *s in _pickerArray) {
+//                    if ([s isEqualToString:str] == YES) {
+//                        flag = 1;
+//                        break;
+//                    }
+//                }
+//                if (flag == 0) {
+//                    [_pickerArray addObject:item.category_Fine];
+//                }
+//                flag = 0;
+//            }
+//            break;
+//        case 3:
+//            for (OneItem *item in _dataArray) {
+//                str = item.category_Coarse;
+//                for (NSString *s in _pickerArray) {
+//                    if ([s isEqualToString:str]) {
+//                        flag = 1;
+//                        break;
+//                    }
+//                }
+//                if (flag == 0) {
+//                    [_pickerArray addObject:item.category_Coarse];
+//                }
+//                flag = 0;
+//            }
+//        case 4:
+//            for (OneItem *item in _dataArray) {
+//                str = item.category_Coarse;
+//                for (NSString *s in _pickerArray) {
+//                    if ([s isEqualToString:str]) {
+//                        flag = 1;
+//                        break;
+//                    }
+//                }
+//                if (flag == 0) {
+//                    [_pickerArray addObject:item.category_Coarse];
+//                }
+//                flag = 0;
+//            }
+//        case 5:
+//            for (OneItem *item in _dataArray) {
+//                str = item.category_Coarse;
+//                for (NSString *s in _pickerArray) {
+//                    if ([s isEqualToString:str]) {
+//                        flag = 1;
+//                        break;
+//                    }
+//                }
+//                if (flag == 0) {
+//                    [_pickerArray addObject:item.category_Coarse];
+//                }
+//                flag = 0;
+//            }
+//            break;
+//        default:
+//            break;
+//    }
+    
+    
 //
 //    
 //    PickerViewController *pickerView;
@@ -344,7 +411,10 @@ static UIPickerView *kPicker;
     [self generateActionSheet];
 }
 
-- (void)buttonPressed:(NSUInteger)tag {
+- (void)buttonPressed:(NSUInteger)tag withStringInPicker:(NSString *)string{
+    //更改按钮为选中的文字
+    UIBarButtonItem *barButton = (UIBarButtonItem *)[self.view viewWithTag:choosenTag];
+    [barButton setTitle:string];
     [kActionSheet dismissWithClickedButtonIndex:tag animated:YES];
 }
 
@@ -396,74 +466,78 @@ static UIPickerView *kPicker;
             switch (choosenTag) {
                 case 1:
                     for (OneItem *item in _dataArray) {
-                        if ([item.city isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
+                        if ([item.city isEqualToString:[_cityArray objectAtIndex:choosen]]) {
                             [_showArray addObject:item];
                         }
                     }
                     break;
                 case 2:
                     for (OneItem *item in _dataArray) {
-                        if ([item.category_Fine isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
+                        if ([item.category_Fine isEqualToString:[_categoryArray objectAtIndex:choosen]]) {
                             [_showArray addObject:item];
                         }
                     }
+                    break;
                 case 3:
                     for (OneItem *item in _dataArray) {
                         if ([item.category_Coarse isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
                             [_showArray addObject:item];
                         }
                     }
+                    break;
                 case 4:
                     for (OneItem *item in _dataArray) {
                         if ([item.category_Coarse isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
                             [_showArray addObject:item];
                         }
                     }
+                    break;
                 case 5:
                     for (OneItem *item in _dataArray) {
                         if ([item.category_Coarse isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
                             [_showArray addObject:item];
                         }
                     }
+                    break;
                 default:
                     break;
             }
-
+//            [_showArray retain];
+            [_tableView reloadData];
             break;
             
         default:
             break;
     }
     
-    [_tableView reloadData];
     kPicker = nil;
     kActionSheet = nil;
 }
 
-- (void)selectedOneInPicker:(NSUInteger)choosen {
-    pickerOpen = NO;
-    if (choosen == 10000) {
-        return;
-    }
-    [_showArray removeAllObjects];
-    switch (choosenTag) {
-        case 1:
-            for (OneItem *item in _dataArray) {
-                if ([item.city isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
-                    [_showArray addObject:item];
-                }
-            }
-            break;
-        case 2:
-            for (OneItem *item in _dataArray) {
-                if ([item.category_Fine isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
-                    [_showArray addObject:item];
-                }
-            }
-            break;
-        default:
-            break;
-    }
-    [_tableView reloadData];
-}
+//- (void)selectedOneInPicker:(NSUInteger)choosen {
+//    pickerOpen = NO;
+//    if (choosen == 10000) {
+//        return;
+//    }
+//    [_showArray removeAllObjects];
+//    switch (choosenTag) {
+//        case 1:
+//            for (OneItem *item in _dataArray) {
+//                if ([item.city isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
+//                    [_showArray addObject:item];
+//                }
+//            }
+//            break;
+//        case 2:
+//            for (OneItem *item in _dataArray) {
+//                if ([item.category_Fine isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
+//                    [_showArray addObject:item];
+//                }
+//            }
+//            break;
+//        default:
+//            break;
+//    }
+//    [_tableView reloadData];
+//}
 @end

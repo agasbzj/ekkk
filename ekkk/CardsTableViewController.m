@@ -117,8 +117,8 @@
     OneItem *item = [_dataArray objectAtIndex:indexPath.row];
     
     cell.sellerLabel.text = item.seller;
-//    cell.cityLabel.text = item.city;
-//    cell.areaLabel.text = item.area;
+    cell.addressLabel.text = item.address;
+    cell.discountLabel.text = [[item.bank objectAtIndex:0] valueForKey:@"discount"];   
     
     return cell;
 }

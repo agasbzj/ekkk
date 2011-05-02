@@ -131,13 +131,14 @@ static NSString *kDistanceElem = @"distance";
             
             TBXMLElement *bank = [TBXML childElementNamed:@"bank" parentElement:index];
             
+            NSMutableArray *cardArray = [[NSMutableArray alloc] init];
+
             while (bank != nil) {
                 TBXMLElement *bank_name = [TBXML childElementNamed:@"bank_name" parentElement:bank];
                 NSString *bankName = [TBXML textForElement:bank_name];
                 
                 TBXMLElement *card = [TBXML childElementNamed:@"card" parentElement:bank];
                 
-                NSMutableArray *cardArray = [[NSMutableArray alloc] init];
                 while (card != nil) {
                     TBXMLElement *card_name = [TBXML childElementNamed:@"card_name" parentElement:card];
                     NSString *cardName = [TBXML textForElement:card_name];
@@ -178,6 +179,7 @@ static NSString *kDistanceElem = @"distance";
             index = [TBXML nextSiblingNamed:@"index" searchFromElement:index];
             
             [tempArray addObject:oneItem.city];
+            [cardArray release];
         }
     }
     [tbxml release];

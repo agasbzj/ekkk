@@ -10,16 +10,18 @@
 
 @protocol MyPickViewDelegate
 
-- (void)buttonPressed:(NSUInteger)tag;
+- (void)buttonPressed:(NSUInteger)tag withStringInPicker:(NSString *)string;
 
 @end
 @interface PickerView : UIView <UIPickerViewDelegate, UIPickerViewDataSource>{
     UIPickerView *_pickerView;
     NSArray *_pickerDataArray;
+    NSString *_selectedString;
     id <MyPickViewDelegate> delegate;
 }
 @property (nonatomic, retain) NSArray *pickerDataArray;
 @property (nonatomic, retain) IBOutlet UIPickerView *pickerView;
+@property (nonatomic, retain) NSString *selectedString;
 @property (nonatomic, assign) id <MyPickViewDelegate> delegate;
 - (IBAction)buttonPressed:(id)sender;
 @end
