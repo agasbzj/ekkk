@@ -9,10 +9,13 @@
 #import "NearbyTableViewController.h"
 #import "DetailController.h"
 #import "IndividualTableCell.h"
-#import "OneItem.h"
+#import "ekkkAppDelegate.h"
+#import "MapViewController.h"
 
 @implementation NearbyTableViewController
 @synthesize dataArray = _dataArray;
+@synthesize nearbyArray = _nearbyArray;
+@synthesize oneItem = _oneItem;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,6 +29,8 @@
 - (void)dealloc
 {
     [_dataArray release];
+    [_nearbyArray release];
+    [_oneItem release];
     [super dealloc];
 }
 
@@ -41,9 +46,10 @@
     UISegmentedControl *seg = (UISegmentedControl *)sender;
     switch (seg.selectedSegmentIndex) {
         case 0:
-            
+            _dataArray = [[NSArray alloc] initWithArray:_nearbyArray];
             break;
         case 1:
+            [self getMyCardsData];
             
             break;
         default:
@@ -51,6 +57,56 @@
     }
     [self.tableView reloadData];
 }
+
+- (void)getMyCardsData 
+{
+//    if ([_dataArray count] > 0) 
+//    {
+//        [_dataArray removeAllObjects];
+//    }
+    
+    ekkkAppDelegate *ekkkDelegate = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSArray *allData = [[NSArray alloc] initWithArray:_nearbyArray];
+    NSArray *myCards = ekkkDelegate.userCardsArray;
+    _dataArray = [[NSMutableArray alloc] initWithCapacity:30];
+    NSMutableArray *allMyCards = [[NSMutableArray alloc] initWithCapacity:10];
+    
+    //所有用户的卡，每一项是string
+    for (NSDictionary *dic in myCards)
+    {
+        [allMyCards addObjectsFromArray:[dic valueForKey:@"cards"]];
+    }
+    
+    for (OneItem *item in allData) 
+    {
+            for (NSDictionary *bankDic in item.bank) 
+            {
+                NSArray *cardA = [bankDic valueForKey:@"card"];
+                for (NSDictionary *cardD in cardA) 
+                {
+                    NSString *str1 = [cardD valueForKey:@"card_name"];
+                    
+                    for (NSString *str2 in allMyCards) 
+                    {
+                        if ([str1 isEqualToString:str2] == YES) 
+                        {
+                            [_dataArray addObject:item];
+                            break;
+                        }
+                    }
+                }
+            }
+    }
+}
+
+//实现点击显示地图按钮
+//- (IBAction)showMap:(id)sender {
+//    MapViewController *mapViewController = [[MapViewController alloc] init];
+//    OneItem *item = [_dataArray objectAtIndex:indexPath.row];
+//    mapViewController.theItem = _item;
+//    [self.navigationController pushViewController:mapViewController animated:YES];
+//    [mapViewController release];
+//}
 
 #pragma mark - View lifecycle
 
@@ -64,16 +120,28 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //增加地图按钮
+//    UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:@"地图" style:UIBarButtonItemStyleDone target:self action:@selector(showMap:)];
+//    self.navigationItem.rightBarButtonItem = mapButton;
+//    [mapButton release];
     
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"All Cards", @"My Cards", nil]];
     segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
     segmentedControl.selectedSegmentIndex = 0;
     [segmentedControl addTarget:self action:@selector(switchCards:) forControlEvents:UIControlEventValueChanged];
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithCustomView:segmentedControl];
-    self.navigationItem.rightBarButtonItem = button;
-    [button release];
-    [segmentedControl release];
+//    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithCustomView:segmentedControl];
+//    self.navigationItem.rightBarButtonItem = button;
+//    [button release];
+//    [segmentedControl release];
+    self.navigationItem.titleView = segmentedControl;
 }
+
+//_segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"Hot", @"My Cards", nil]];
+//_segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
+//_segmentedControl.selectedSegmentIndex = 0;
+//
+//[_segmentedControl addTarget:self action:@selector(switchCategory:) forControlEvents:UIControlEventValueChanged];
+//self.navigationItem.titleView = _segmentedControl;
 
 - (void)viewDidUnload
 {
@@ -140,7 +208,8 @@
     
     cell.sellerLabel.text = item.seller;
     cell.addressLabel.text = item.address;
-    cell.discountLabel.text = [[item.bank objectAtIndex:0] valueForKey:@"discount"];    
+    cell.discountLabel.text = [[item.bank objectAtIndex:0] valueForKey:@"discount"];  
+    cell.distanceLabel.text = item.distance;
     return cell;
 }
 

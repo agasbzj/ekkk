@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "OneItem.h"
 
 @interface NearbyTableViewController : UITableViewController {
-    NSArray *_dataArray;
+    NSMutableArray *_dataArray;
+    NSMutableArray *_nearbyArray;
+    OneItem *_oneItem;
 }
-@property (nonatomic, retain) NSArray *dataArray;
+@property (nonatomic, retain) NSMutableArray *dataArray;
+@property (nonatomic, retain) NSMutableArray *nearbyArray;
+@property (nonatomic, retain) OneItem *oneItem;
 @end
