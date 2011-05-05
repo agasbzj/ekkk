@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RatingView.h"
 
 @interface DetailHeaderView : UIView {
     UILabel *_seller,*_category_Fine, *_comments_General, *_comments_Service, *_comments_Enviroment, *_comments_Discount;
     UIImageView *_imageView;
+    IBOutlet RatingView *_ratingView;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *seller;
@@ -20,5 +22,6 @@
 @property (nonatomic, retain) IBOutlet UILabel *comments_Enviroment;
 @property (nonatomic, retain) IBOutlet UILabel *comments_Discount;
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
+@property (nonatomic, retain) IBOutlet RatingView *ratingView;
 
 @end

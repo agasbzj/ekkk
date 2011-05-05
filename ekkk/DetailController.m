@@ -69,6 +69,7 @@
     headerView.comments_General.text = _oneItem.comments_General;
     headerView.comments_Enviroment.text = _oneItem.comments_Enviroment;
     headerView.comments_Discount.text = _oneItem.comments_Discount;
+    headerView.ratingView.rating = 4;
     
     _tableView.tableHeaderView = headerView;
     

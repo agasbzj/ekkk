@@ -8,30 +8,59 @@
 
 #import "RatingView.h"
 
+#define MAX_RATING 5.0
 
 @implementation RatingView
 
+- (void)_commonInit
+{
+    backgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"StarsBackground.png"]];
+    backgroundImageView.contentMode = UIViewContentModeLeft;
+    [self addSubview:backgroundImageView];
+    
+    foregroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"StarsForeground.png"]];
+    foregroundImageView.contentMode = UIViewContentModeLeft;
+    foregroundImageView.clipsToBounds = YES;
+    [self addSubview:foregroundImageView];
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
+    if (self = [super initWithFrame:frame])
+    {
+        [self _commonInit];
     }
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (id)initWithCoder:(NSCoder *)coder
 {
-    // Drawing code
+    if (self = [super initWithCoder:coder])
+    {
+        [self _commonInit];
+    }
+    
+    return self;
 }
-*/
+
+- (void)setRating:(float)newRating
+{
+    rating = newRating;
+    foregroundImageView.frame = CGRectMake(0.0, 0.0, backgroundImageView.frame.size.width * (rating / MAX_RATING), foregroundImageView.bounds.size.height);
+}
+
+- (float)rating
+{
+    return rating;
+}
 
 - (void)dealloc
 {
+    [backgroundImageView release];
+    [foregroundImageView release];
+    
     [super dealloc];
 }
 
 @end
+

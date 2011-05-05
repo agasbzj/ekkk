@@ -18,6 +18,7 @@
 @synthesize comments_Service = _comments_Service;
 @synthesize seller = _seller;
 @synthesize imageView = _imageView;
+@synthesize ratingView = _ratingView;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -39,6 +40,7 @@
 
 - (void)dealloc
 {
+    [_ratingView release];
     [_imageView release];
     [_comments_Service release];
     [_comments_General release];
