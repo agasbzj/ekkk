@@ -46,7 +46,9 @@
     UISegmentedControl *seg = (UISegmentedControl *)sender;
     switch (seg.selectedSegmentIndex) {
         case 0:
-            _dataArray = [[NSArray alloc] initWithArray:_nearbyArray];
+//            _dataArray = [[NSArray alloc] initWithArray:_nearbyArray];
+            _dataArray = _nearbyArray;
+            
             break;
         case 1:
             [self getMyCardsData];

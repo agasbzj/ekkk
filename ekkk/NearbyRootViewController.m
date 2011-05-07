@@ -196,6 +196,7 @@
 
     NearbyTableViewController *nearbyTableViewController = [[NearbyTableViewController alloc] init];
     nearbyTableViewController.nearbyArray = showArray;
+    nearbyTableViewController.dataArray = showArray;
     [self.navigationController pushViewController:nearbyTableViewController animated:YES];
     [nearbyTableViewController release];
     [showArray release];
