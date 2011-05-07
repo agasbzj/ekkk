@@ -102,13 +102,14 @@
 }
 
 //实现点击显示地图按钮
-//- (IBAction)showMap:(id)sender {
+//实现点击显示地图按钮
+- (IBAction)showMap:(id)sender {
 //    MapViewController *mapViewController = [[MapViewController alloc] init];
-//    OneItem *item = [_dataArray objectAtIndex:indexPath.row];
-//    mapViewController.theItem = _item;
+//    mapViewController.theItem = _oneItem;
 //    [self.navigationController pushViewController:mapViewController animated:YES];
 //    [mapViewController release];
-//}
+}
+
 
 #pragma mark - View lifecycle
 
@@ -123,9 +124,9 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     //增加地图按钮
-//    UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:@"地图" style:UIBarButtonItemStyleDone target:self action:@selector(showMap:)];
-//    self.navigationItem.rightBarButtonItem = mapButton;
-//    [mapButton release];
+    UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:@"地图" style:UIBarButtonItemStyleDone target:self action:@selector(showMap:)];
+    self.navigationItem.rightBarButtonItem = mapButton;
+    [mapButton release];
     
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"All Cards", @"My Cards", nil]];
     segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;

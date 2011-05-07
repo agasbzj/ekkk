@@ -131,6 +131,9 @@
     // Configure the cell...
     NSDictionary *dic = [_categoryArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [dic valueForKey:@"name"];
+    UIFont *font = [UIFont systemFontOfSize:14];
+    cell.detailTextLabel.font = font;
+    cell.textLabel.font = font;
     UIImage *icon = [UIImage imageNamed:[dic valueForKey:@"icon"]];
     cell.imageView.image = icon;                 
 

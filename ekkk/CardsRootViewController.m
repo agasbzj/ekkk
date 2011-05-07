@@ -102,7 +102,9 @@
     // Configure the cell...
     NSDictionary *dic = [_bankArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [dic valueForKey:@"bankName"];
-    
+    UIFont *font = [UIFont systemFontOfSize:14];
+    cell.detailTextLabel.font = font;
+    cell.textLabel.font = font;
     UIImage *icon = [UIImage imageNamed:[dic valueForKey:@"icon"]];
     cell.imageView.image = icon;                 
     
