@@ -12,9 +12,10 @@
 @implementation MapViewController
 @synthesize mapView = _mapView;
 @synthesize theItem = _theItem;
-
+@synthesize itemAnnotations = _itemAnnotations;
+@synthesize showItemAnnotations = _showItemAnnotations;
 @synthesize itemAnnotation = _itemAnnotation;
-
+@synthesize showMultiItems = _showMultiItems;
 //切换地图模式
 - (IBAction)setMapStyle:(id)sender {
     switch (((UISegmentedControl *)sender).selectedSegmentIndex) {
@@ -80,6 +81,8 @@
 
 - (void)dealloc
 {
+    [_itemAnnotations release];
+    [_showItemAnnotations release];
     [_mapView release];
     [super dealloc];
 }
@@ -92,19 +95,40 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-
+//定位一个位置
+- (void)locateOnePlace {
     [self startLocating:_theItem];
     _itemAnnotation = [[ItemAnnotation alloc] init];
     _itemAnnotation.seller = _theItem.seller;
     _itemAnnotation.address = _theItem.address;
     _itemAnnotation.coordinate = _theItem.coordinate;
     [self.mapView addAnnotation:_itemAnnotation];
+//    [self.mapView selectAnnotation:_itemAnnotation animated:YES];
+}
+
+//定位多个位置
+- (void)locationPlaces {
+    _showItemAnnotations = [[NSMutableArray alloc] initWithCapacity:20];
+    for (OneItem *theItem in _itemAnnotations) {
+        ItemAnnotation *item = [[[ItemAnnotation alloc] init] autorelease];
+        item.seller = theItem.seller;
+        item.address = theItem.address;
+        item.coordinate = theItem.coordinate;
+        [_showItemAnnotations addObject:item];
+    }
+    [self.mapView addAnnotations:_showItemAnnotations];
+}
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    if (_showMultiItems == YES) {
+        [self locationPlaces];
+    }
+    else
+        [self locateOnePlace];
     
     UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"地图", @"卫星", nil]];
     [seg addTarget:self action:@selector(setMapStyle:) forControlEvents:UIControlEventValueChanged];

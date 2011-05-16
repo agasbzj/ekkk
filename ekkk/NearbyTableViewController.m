@@ -42,23 +42,7 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)switchCards:(id)sender {
-    UISegmentedControl *seg = (UISegmentedControl *)sender;
-    switch (seg.selectedSegmentIndex) {
-        case 0:
-//            _dataArray = [[NSArray alloc] initWithArray:_nearbyArray];
-            _dataArray = _nearbyArray;
-            
-            break;
-        case 1:
-            [self getMyCardsData];
-            
-            break;
-        default:
-            break;
-    }
-    [self.tableView reloadData];
-}
+
 
 - (void)getMyCardsData 
 {
@@ -101,6 +85,24 @@
     }
 }
 
+- (void)switchCards:(id)sender {
+    UISegmentedControl *seg = (UISegmentedControl *)sender;
+    switch (seg.selectedSegmentIndex) {
+        case 0:
+            //            _dataArray = [[NSArray alloc] initWithArray:_nearbyArray];
+            _dataArray = _nearbyArray;
+            
+            break;
+        case 1:
+            [self getMyCardsData];
+            
+            break;
+        default:
+            break;
+    }
+    [self.tableView reloadData];
+}
+
 //实现点击显示地图按钮
 //实现点击显示地图按钮
 - (IBAction)showMap:(id)sender {
@@ -108,6 +110,12 @@
 //    mapViewController.theItem = _oneItem;
 //    [self.navigationController pushViewController:mapViewController animated:YES];
 //    [mapViewController release];
+    
+    MapViewController *mapViewController = [[MapViewController alloc] init];
+    mapViewController.showMultiItems = YES;
+    mapViewController.itemAnnotations = _dataArray;
+    [self.navigationController pushViewController:mapViewController animated:YES];
+    [mapViewController release];
 }
 
 
