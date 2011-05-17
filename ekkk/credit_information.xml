@@ -17,7 +17,7 @@
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
-		<comments_General>4</comments_General>		
+		<comments_General>3</comments_General>		
 		<bank>
 			<bank_name>上海浦东发展银行</bank_name>
 			<card>
@@ -91,7 +91,7 @@
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
-		<comments_General>4</comments_General>		
+		<comments_General>5</comments_General>		
 		<bank>
 			<bank_name></bank_name>
 			<card>
@@ -121,7 +121,7 @@
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
-		<comments_General>4</comments_General>		
+		<comments_General>3</comments_General>		
 		<bank>
 			<bank_name>上海浦东发展银行</bank_name>
 			<card>
@@ -156,7 +156,7 @@
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
-		<comments_General>4</comments_General>		
+		<comments_General>1</comments_General>		
 		<bank>
 			<bank_name>上海浦东发展银行</bank_name>
 			<card>

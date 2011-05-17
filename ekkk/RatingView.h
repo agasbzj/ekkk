@@ -15,6 +15,6 @@
     UIImageView *foregroundImageView;
 }
 
-@property float rating;
+@property (nonatomic, assign) float rating;
 
 @end
