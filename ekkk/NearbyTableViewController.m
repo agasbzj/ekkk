@@ -52,8 +52,8 @@
 //    }
     
     ekkkAppDelegate *ekkkDelegate = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSArray *allData = [[NSArray alloc] initWithArray:_nearbyArray];
-    NSArray *myCards = ekkkDelegate.userCardsArray;
+    NSArray *allData = [[NSArray alloc] initWithArray:_nearbyArray];    //所有附近item数组
+    NSArray *myCards = ekkkDelegate.userCardsArray; //我的卡数组
     _dataArray = [[NSMutableArray alloc] initWithCapacity:30];
     NSMutableArray *allMyCards = [[NSMutableArray alloc] initWithCapacity:10];
     
@@ -63,6 +63,8 @@
         [allMyCards addObjectsFromArray:[dic valueForKey:@"cards"]];
     }
     
+    BOOL isSameBank = NO;   //是否拥有某个银行的卡，如果有，则跳过该银行其他的卡的判断，否则会重复添加。
+    
     for (OneItem *item in allData) 
     {
             for (NSDictionary *bankDic in item.bank) 
@@ -70,16 +72,30 @@
                 NSArray *cardA = [bankDic valueForKey:@"card"];
                 for (NSDictionary *cardD in cardA) 
                 {
+                    
+                    
+                    //传入的数据中的卡
                     NSString *str1 = [cardD valueForKey:@"card_name"];
                     
+                    
+                    //我的卡
                     for (NSString *str2 in allMyCards) 
                     {
                         if ([str1 isEqualToString:str2] == YES) 
                         {
                             [_dataArray addObject:item];
+                            isSameBank = YES;
                             break;
                         }
                     }
+                    if (isSameBank == YES) {
+                        break;
+                    }
+
+                }
+                if (isSameBank == YES) {
+                    isSameBank = NO;
+                    continue;
                 }
             }
     }

@@ -194,7 +194,7 @@ static UIPickerView *kPicker;
     cell.sellerLabel.text = item.seller;
     cell.addressLabel.text = item.address;
     cell.discountLabel.text = [[item.bank objectAtIndex:0] valueForKey:@"discount"];
-    
+    cell.distanceLabel.text = item.distance;
     return cell;
 }
 
