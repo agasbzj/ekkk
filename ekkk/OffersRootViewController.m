@@ -109,6 +109,9 @@ NSArray *temp;  //跟踪指针，用来释放。
     {
         [allMyCards addObjectsFromArray:[dic valueForKey:@"cards"]];
     }
+    
+    BOOL isSameBank = NO;   //是否拥有某个银行的卡，如果有，则跳过该银行其他的卡的判断，否则会重复添加。
+
     for (OneItem *item in allData) 
     {
         if ([item.hot isEqualToString:@"1"]) 
@@ -125,9 +128,17 @@ NSArray *temp;  //跟踪指针，用来释放。
                         if ([str1 isEqualToString:str2] == YES) 
                         {
                             [_dataArray addObject:item];
+                            isSameBank = YES;
                             break;
                         }
                     }
+                    if (isSameBank == YES) {
+                        break;
+                    }
+                }
+                if (isSameBank == YES) {
+                    isSameBank = NO;
+                    continue;
                 }
             }
         }
