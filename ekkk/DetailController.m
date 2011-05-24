@@ -179,7 +179,7 @@
         UIFont *font = [UIFont systemFontOfSize:14];
         cell.textLabel.font = font;
 
-//        cell.textLabel.textColor = [UIColor orangeColor];
+        cell.textLabel.textColor = [UIColor orangeColor];
         cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [[_oneItem.bank objectAtIndex:row] valueForKey:@"bank_name"]]];
 
     }

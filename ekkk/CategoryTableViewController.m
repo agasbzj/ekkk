@@ -12,6 +12,7 @@
 #import "IndividualTableCell.h"
 #import "PickerViewController.h"
 #import "MapViewController.h"
+#import "ekkkAppDelegate.h"
 
 @implementation CategoryTableViewController
 
@@ -105,16 +106,58 @@ static UIPickerView *kPicker;
 
 //实现点击显示地图按钮
 - (IBAction)showMap:(id)sender {
-    //    MapViewController *mapViewController = [[MapViewController alloc] init];
-    //    mapViewController.theItem = _oneItem;
-    //    [self.navigationController pushViewController:mapViewController animated:YES];
-    //    [mapViewController release];
     
     MapViewController *mapViewController = [[MapViewController alloc] init];
     mapViewController.showMultiItems = YES;
-    mapViewController.itemAnnotations = _dataArray;
+    mapViewController.itemAnnotations = _showArray;
     [self.navigationController pushViewController:mapViewController animated:YES];
     [mapViewController release];
+}
+- (void)getMyCardsData 
+{
+    
+    ekkkAppDelegate *ekkkDelegate = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSArray *allData = [[NSArray alloc] initWithArray:_showArray];    //所有附近item数组
+    NSArray *myCards = ekkkDelegate.userCardsArray; //我的卡数组
+    _showArray = [[NSMutableArray alloc] initWithCapacity:30];
+    NSMutableArray *allMyCards = [[NSMutableArray alloc] initWithCapacity:10];
+    
+    //所有用户的卡，每一项是string
+    for (NSDictionary *dic in myCards)
+    {
+        [allMyCards addObjectsFromArray:[dic valueForKey:@"cards"]];
+    }
+    
+    for (OneItem *item in allData) 
+    {
+        for (NSDictionary *bankDic in item.bank) 
+        {
+            NSString *bankName = [bankDic valueForKey:@"bank_name"];
+            for (NSDictionary *dic in myCards) {
+                NSString *str2 = [dic valueForKey:@"bank_name"];
+                if ([bankName isEqualToString:str2]) {
+                    [_showArray addObject:item];
+                }
+            }
+        }
+    }
+}
+
+- (void)switchCards:(id)sender {
+    UISegmentedControl *seg = (UISegmentedControl *)sender;
+    switch (seg.selectedSegmentIndex) {
+        case 0:
+//            _showArray = _showArray;
+            
+            break;
+        case 1:
+            [self getMyCardsData];
+            
+            break;
+        default:
+            break;
+    }
+    [self.tableView reloadData];
 }
 
 #pragma mark - View lifecycle
@@ -149,6 +192,13 @@ static UIPickerView *kPicker;
     _distanceArray = [[NSMutableArray alloc] initWithObjects:@"100", @"500", @"1000", @"3000", nil];
     
     [self configPickerArray];
+    
+    //分栏符
+    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"All Cards", @"My Cards", nil]];
+    segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
+    segmentedControl.selectedSegmentIndex = 0;
+    [segmentedControl addTarget:self action:@selector(switchCards:) forControlEvents:UIControlEventValueChanged];
+    self.navigationItem.titleView = segmentedControl;
 }
 
 - (void)viewDidUnload
