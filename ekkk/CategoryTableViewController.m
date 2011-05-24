@@ -480,19 +480,12 @@ static UIPickerView *kPicker;
                     break;
                 case 3:
                     for (OneItem *item in _dataArray) {
-                        if ([item.category_Coarse isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
+                        if ([item.distance isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
                             [_showArray addObject:item];
                         }
                     }
                     break;
                 case 4:
-                    for (OneItem *item in _dataArray) {
-                        if ([item.category_Coarse isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
-                            [_showArray addObject:item];
-                        }
-                    }
-                    break;
-                case 5:
                     for (OneItem *item in _dataArray) {
                         if ([item.category_Coarse isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
                             [_showArray addObject:item];
