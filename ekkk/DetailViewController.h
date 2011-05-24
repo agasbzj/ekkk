@@ -10,6 +10,7 @@
 #import "OneItem.h"
 #import "MapViewController.h"
 
+
 @interface DetailViewController : UIViewController {
     OneItem *_oneItem;
     UILabel *_seller, *_category_Fine, *_comments_General, *_comments_Service, *_comments_Enviroment, *_comments_Discount, *_telephone, *_address,*_card_Bank;

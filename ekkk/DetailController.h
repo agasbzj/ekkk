@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "OneItem.h"
+#import "DetailFooterView.h"
+#import <MessageUI/MFMailComposeViewController.h>
+#import <MessageUI/MessageUI.h>
 
-@interface DetailController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface DetailController : UIViewController <UITableViewDataSource, UITableViewDelegate, DetailFooterViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate> {
     UITableView *_tableView;
     OneItem *_oneItem;
 }

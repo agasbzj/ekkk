@@ -80,6 +80,7 @@
     NSArray *array2 = [[NSBundle mainBundle] loadNibNamed:@"DetailFooterView" owner:self options:nil];
     DetailFooterView *footerView;
     footerView = [array2 objectAtIndex:0];
+    footerView.delegate = self;
     footerView.backgroundColor = [UIColor clearColor];
     footerView.textView.text = _oneItem.details;
 
@@ -92,6 +93,13 @@
     
     
     
+}
+- (void)shareButtonPressed
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消分享" destructiveButtonTitle:nil otherButtonTitles:@"通过新浪微博分享", @"通过Email分享", @"通过短信分享", nil];
+    actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+    [actionSheet showInView:self.view];
+    [actionSheet release];
 }
 
 - (void)viewDidUnload
@@ -186,5 +194,66 @@
     }
 }
 
+#pragma mark - Mail Delegate
+- (void)sendMail:(id)sender{
+
+    MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+    picker.mailComposeDelegate = self;
+    [picker setSubject:[NSString stringWithFormat:@"分享:%@", _oneItem.seller]];
+    
+    [picker setMessageBody:@"I found this great deal from ekkk.com" isHTML:NO];
+    
+    
+    [self presentModalViewController:picker animated:YES];
+    [picker release];
+    
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error 
+{	
+    
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark - SMS sharing
+
+- (void)displaySMS {
+    NSString *message = [NSString stringWithFormat:@"Share:%@", _oneItem.seller];
+    MFMessageComposeViewController *picker = [[MFMessageComposeViewController alloc] init];
+    picker.messageComposeDelegate= self;
+    picker.navigationBar.tintColor= [UIColor blackColor];
+    picker.body = message; // 默认信息内容
+    // 默认收件人(可多个)
+    //picker.recipients = [NSArray arrayWithObject:@"12345678901", nil];
+    [self presentModalViewController:picker animated:YES];
+    [picker release];
+}
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
+    
+    NSString*msg;
+    
+    NSLog(@"发送结果：%@", msg);
+    
+    [self dismissModalViewControllerAnimated:YES]; 
+}
+
+#pragma mark - ActionSheet Delegate 
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    NSLog(@"%d", buttonIndex);
+    switch (buttonIndex) {
+        case 0:
+//          [self.view addSubview: sinaWeiboView];
+            break;
+        case 1:
+            [self sendMail:nil];            
+            break;
+        case 2:
+            [self displaySMS];
+            break;
+        default:
+            break;
+    }
+}
 
 @end

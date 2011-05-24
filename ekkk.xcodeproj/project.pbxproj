@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		411FA7E7138BDBC3001C27B3 /* SinaWeiboView.m in Sources */ = {isa = PBXBuildFile; fileRef = 411FA7E6138BDBC3001C27B3 /* SinaWeiboView.m */; };
+		411FA7F1138BDDBC001C27B3 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411FA7F0138BDDBC001C27B3 /* MessageUI.framework */; };
 		4125CB44136B12910064A69A /* OffersTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4125CB42136B12900064A69A /* OffersTableCell.m */; };
 		4125CB45136B12910064A69A /* OffersTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4125CB43136B12910064A69A /* OffersTableCell.xib */; };
 		4137581D136BDBF900CDE06E /* DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4137581B136BDBF800CDE06E /* DetailController.m */; };
@@ -116,6 +118,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		411FA7E5138BDBC3001C27B3 /* SinaWeiboView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboView.h; sourceTree = "<group>"; };
+		411FA7E6138BDBC3001C27B3 /* SinaWeiboView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboView.m; sourceTree = "<group>"; };
+		411FA7F0138BDDBC001C27B3 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		4125CB41136B12900064A69A /* OffersTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffersTableCell.h; sourceTree = "<group>"; };
 		4125CB42136B12900064A69A /* OffersTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OffersTableCell.m; sourceTree = "<group>"; };
 		4125CB43136B12910064A69A /* OffersTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OffersTableCell.xib; sourceTree = "<group>"; };
@@ -278,6 +283,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				411FA7F1138BDDBC001C27B3 /* MessageUI.framework in Frameworks */,
 				A986BAA113647A2C0085433E /* QuartzCore.framework in Frameworks */,
 				41750DD5134AF0C500CFF97E /* CoreLocation.framework in Frameworks */,
 				A9BE3092134B2E5000DA6E86 /* MobileCoreServices.framework in Frameworks */,
@@ -294,6 +300,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		411FA7E3138BDB56001C27B3 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				411FA7E5138BDBC3001C27B3 /* SinaWeiboView.h */,
+				411FA7E6138BDBC3001C27B3 /* SinaWeiboView.m */,
+			);
+			name = Share;
+			sourceTree = "<group>";
+		};
 		41750DCA134AF09300CFF97E /* TBXML */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +417,7 @@
 		41A4D0571348CB9A00D070BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				411FA7F0138BDDBC001C27B3 /* MessageUI.framework */,
 				A986BAA013647A2B0085433E /* QuartzCore.framework */,
 				A981565E135969570056396A /* CoreLocation.framework */,
 				A9BE3091134B2E5000DA6E86 /* MobileCoreServices.framework */,
@@ -421,6 +437,7 @@
 		41A4D05E1348CB9A00D070BB /* ekkk */ = {
 			isa = PBXGroup;
 			children = (
+				411FA7E3138BDB56001C27B3 /* Share */,
 				A9A46A211362FF4700964881 /* Manage */,
 				41A037711358731D001D52A8 /* IndividualTableCell */,
 				A94AD54E136B06A80089D3AF /* credit_information.xml */,
@@ -762,6 +779,7 @@
 				41375824136BDCD400CDE06E /* DetailFooterView.m in Sources */,
 				A9904879136D5EE200306D37 /* ShowMyCardsViewController.m in Sources */,
 				A9D10205136D9E1A007B5F0D /* PickerView.m in Sources */,
+				411FA7E7138BDBC3001C27B3 /* SinaWeiboView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

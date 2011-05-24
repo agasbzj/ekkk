@@ -1,20 +1,15 @@
 //
-//  DetailFooterView.m
+//  SinaWeiboView.m
 //  ekkk
 //
-//  Created by Wu Jianjun on 11-4-30.
+//  Created by Wu Jianjun on 11-5-24.
 //  Copyright 2011年 __MyCompanyName__. All rights reserved.
 //
 
-#import "DetailFooterView.h"
+#import "SinaWeiboView.h"
 
 
-@implementation DetailFooterView
-@synthesize textView = _textView;
-@synthesize label = _label;
-@synthesize leftButton = _leftButton;
-@synthesize rightButton = _rightButton;
-@synthesize delegate;
+@implementation SinaWeiboView
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -36,17 +31,7 @@
 
 - (void)dealloc
 {
-    [_leftButton release];
-    [_rightButton release];
-    [_textView release];
-    [_label release];
     [super dealloc];
-}
-
-- (IBAction)shareButton:(id)sender
-{
-    [delegate shareButtonPressed];
-
 }
 
 @end
