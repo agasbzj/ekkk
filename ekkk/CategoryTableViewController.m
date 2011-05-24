@@ -10,7 +10,6 @@
 #import "DetailController.h"
 #import "OneItem.h"
 #import "IndividualTableCell.h"
-#import "PickerViewController.h"
 #import "MapViewController.h"
 #import "ekkkAppDelegate.h"
 
@@ -24,10 +23,10 @@
 @synthesize picker = _picker;
 @synthesize pickerArray = _pickerArray;
 
-@synthesize cityArray = _cityArray, categoryArray = _categoryArray, distanceArray = _distanceArray;
+@synthesize cityArray = _cityArray, categoryArray = _categoryArray, distanceArray = _distanceArray, sortbyArray = _sortbyArray;
 
 static NSUInteger choosenTag = 0;   //点了哪个查询分类
-static bool pickerOpen = NO;    //是否已经打开了一个picker
+//static bool pickerOpen = NO;    //是否已经打开了一个picker
 static UIActionSheet *kActionSheet;
 static UIPickerView *kPicker;
 - (id)initWithStyle:(UITableViewStyle)style
@@ -45,7 +44,7 @@ static UIPickerView *kPicker;
     [_cityArray release];
     [_categoryArray release];
     [_distanceArray release];
-    
+    [_sortbyArray release];
     [_picker release];
     [_showArray release];
     [_toolBar release];
@@ -190,7 +189,7 @@ static UIPickerView *kPicker;
     _categoryArray = [[NSMutableArray alloc] initWithCapacity:10];
     _cityArray = [[NSMutableArray alloc] initWithCapacity:10];
     _distanceArray = [[NSMutableArray alloc] initWithObjects:@"100", @"500", @"1000", @"3000", nil];
-    
+    _sortbyArray = [[NSMutableArray alloc] initWithObjects:@"按环境", @"按服务",  @"按折扣", @"按综合", nil];
     [self configPickerArray];
     
     //分栏符
@@ -344,6 +343,12 @@ static UIPickerView *kPicker;
             break;
         case 2:
             pickerView.pickerDataArray = _categoryArray;
+            break;
+        case 3:
+            pickerView.pickerDataArray = _distanceArray;
+            break;
+        case 4:
+            pickerView.pickerDataArray = _sortbyArray;
             break;
         default:
             break;
@@ -552,24 +557,59 @@ static UIPickerView *kPicker;
                     break;
                 case 3:
                     for (OneItem *item in _dataArray) {
-                        if ([item.category_Coarse isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
+                        if ([item.distance intValue] <= [[_distanceArray objectAtIndex:choosen] intValue]) {
                             [_showArray addObject:item];
                         }
                     }
                     break;
                 case 4:
                     for (OneItem *item in _dataArray) {
-                        if ([item.category_Coarse isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
-                            [_showArray addObject:item];
-                        }
+//                        if ([item.category_Coarse isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
+//                            [_showArray addObject:item];
+//                        }
                     }
-                    break;
-                case 5:
-                    for (OneItem *item in _dataArray) {
-                        if ([item.category_Coarse isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
-                            [_showArray addObject:item];
-                        }
+
+                    NSString *key;
+                    switch (choosen) {
+                        case 0:
+                            key = @"comments_Enviroment";
+                            break;
+                        case 1:
+                            key = @"comments_Service";
+                            break;
+                        case 2:
+                            key = @"comments_Discount";
+                            break;
+                        case 3:
+                            key = @"comments_General";
+                            break;
+                        default:
+                            break;
                     }
+//                    NSSortDescriptor *sorter = [NSSortDescriptor sortDescriptorWithKey:key ascending:NO];
+//                    NSArray *disc = [NSArray arrayWithObjects:sorter, nil];
+//                    NSArray *result = [_dataArray sortedArrayUsingDescriptors:disc];
+//                    for (OneItem *item in result) {
+//                        [_showArray addObject:item];
+//                    }
+//                    for (OneItem *item in _dataArray) {
+//                        [_showArray addObject:item];
+//                    }
+//                    int lenth = [_showArray count];
+//                    int k = 0;
+//                    for (int i = lenth - 1; i > 0; i = k) {
+//                        for (int j = 0, k = 0; j < i; j++) {
+//                            float first = [[[_showArray objectAtIndex:j] valueForKey:key] floatValue];
+//                            float second = [[[_showArray objectAtIndex:j+1] valueForKey:key] floatValue];
+//                            if (first <= second) {
+//                                [_showArray exchangeObjectAtIndex:j withObjectAtIndex:j+1];
+//                            }
+//                            k = j;
+//                        }
+//                    }
+//                    NSSortDescriptor *disc = [[NSSortDescriptor alloc] initWithKey:key ascending:NO];
+//                    NSArray *array = [NSArray arrayWithObject:disc];
+//                    _showArray = (NSMutableArray *)[_dataArray sortedArrayUsingDescriptors:array];
                     break;
                 default:
                     break;
@@ -585,6 +625,8 @@ static UIPickerView *kPicker;
     kPicker = nil;
     kActionSheet = nil;
 }
+                                  
+
 
 //- (void)selectedOneInPicker:(NSUInteger)choosen {
 //    pickerOpen = NO;

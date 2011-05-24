@@ -111,8 +111,6 @@
 		A9BE30AC134B2EEC00DA6E86 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE309F134B2EEC00DA6E86 /* ASIHTTPRequest.m */; };
 		A9BE30AD134B2EEC00DA6E86 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE30A3134B2EEC00DA6E86 /* ASIInputStream.m */; };
 		A9BE30AE134B2EEC00DA6E86 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE30A5134B2EEC00DA6E86 /* ASINetworkQueue.m */; };
-		A9CE12301367E70F00C38610 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CE122F1367E70F00C38610 /* PickerViewController.m */; };
-		A9CE12331367E71E00C38610 /* PickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CE12321367E71E00C38610 /* PickerViewController.xib */; };
 		A9D10201136D9C05007B5F0D /* PickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9D10200136D9C05007B5F0D /* PickerView.xib */; };
 		A9D10205136D9E1A007B5F0D /* PickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D10204136D9E1A007B5F0D /* PickerView.m */; };
 /* End PBXBuildFile section */
@@ -270,9 +268,6 @@
 		A9BE30A4134B2EEC00DA6E86 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
 		A9BE30A5134B2EEC00DA6E86 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
 		A9BE30A6134B2EEC00DA6E86 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
-		A9CE122E1367E70F00C38610 /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
-		A9CE122F1367E70F00C38610 /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
-		A9CE12321367E71E00C38610 /* PickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerViewController.xib; sourceTree = "<group>"; };
 		A9D10200136D9C05007B5F0D /* PickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerView.xib; sourceTree = "<group>"; };
 		A9D10203136D9E1A007B5F0D /* PickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerView.h; sourceTree = "<group>"; };
 		A9D10204136D9E1A007B5F0D /* PickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerView.m; sourceTree = "<group>"; };
@@ -496,9 +491,6 @@
 				A97DA87C1361BBC100994946 /* CategoryTableCell.h */,
 				A97DA87D1361BBC100994946 /* CategoryTableCell.m */,
 				A97DA87F1361BBD000994946 /* CategoryTableCell.xib */,
-				A9CE122E1367E70F00C38610 /* PickerViewController.h */,
-				A9CE122F1367E70F00C38610 /* PickerViewController.m */,
-				A9CE12321367E71E00C38610 /* PickerViewController.xib */,
 				A9D10203136D9E1A007B5F0D /* PickerView.h */,
 				A9D10204136D9E1A007B5F0D /* PickerView.m */,
 				A9D10200136D9C05007B5F0D /* PickerView.xib */,
@@ -706,7 +698,6 @@
 				41E36479136439C2001EFDC4 /* 汇丰银行.png in Resources */,
 				41E3647B136439C2001EFDC4 /* 花旗银行.png in Resources */,
 				41E3647C136439C2001EFDC4 /* 俏江南.png in Resources */,
-				A9CE12331367E71E00C38610 /* PickerViewController.xib in Resources */,
 				A94AD54F136B06A80089D3AF /* credit_information.xml in Resources */,
 				4125CB45136B12910064A69A /* OffersTableCell.xib in Resources */,
 				4137581E136BDBF900CDE06E /* DetailController.xib in Resources */,
@@ -772,7 +763,6 @@
 				A9A46A261363004100964881 /* ManagementRootViewController.m in Sources */,
 				A9A46A331363021500964881 /* BankSelectViewController.m in Sources */,
 				A9A46A4613630D4A00964881 /* CardsSelectView.m in Sources */,
-				A9CE12301367E70F00C38610 /* PickerViewController.m in Sources */,
 				4125CB44136B12910064A69A /* OffersTableCell.m in Sources */,
 				4137581D136BDBF900CDE06E /* DetailController.m in Sources */,
 				41375821136BDCB200CDE06E /* DetailHeaderView.m in Sources */,

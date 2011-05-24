@@ -23,7 +23,7 @@
 
     UIPickerView *_picker;
     
-    NSMutableArray *_cityArray, *_categoryArray, *_distanceArray;
+    NSMutableArray *_cityArray, *_categoryArray, *_distanceArray, *_sortbyArray;
     
 }
 @property (nonatomic, retain) NSArray *dataArray;
@@ -35,7 +35,7 @@
 @property (nonatomic, retain) NSMutableArray *cityArray;
 @property (nonatomic, retain) NSMutableArray *categoryArray;
 @property (nonatomic, retain) NSMutableArray *distanceArray;
-
+@property (nonatomic, retain) NSMutableArray *sortbyArray;
 @property (nonatomic, retain) UIPickerView *picker;
 - (IBAction)cityButtonPressed:(id)sender;
 - (IBAction)selectButtonPressed:(id)sender;
