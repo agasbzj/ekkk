@@ -12,12 +12,12 @@
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>111.2345</longitude>
-		<distance>450m</distance>
+		<distance>450</distance>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
 		<comments_Discount>4</comments_Discount>
-		<comments_General>3</comments_General>		
+		<comments_General>3.5</comments_General>		
 		<bank>
 			<bank_name>上海浦东发展银行</bank_name>
 			<card>
@@ -116,7 +116,7 @@
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>45.214567</latitude>
 		<longitude>121.2345</longitude>
-		<distance>450m</distance>
+		<distance>450</distance>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
@@ -151,7 +151,7 @@
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>29.2345</longitude>
-		<distance>450m</distance>
+		<distance>450</distance>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
@@ -181,7 +181,7 @@
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>11.2345</longitude>
-		<distance>450m</distance>
+		<distance>450</distance>
 		<details>大名鼎鼎的大渔在龙之梦开的分店，主营日式铁板烧，品种丰富，自助式的消费也很过瘾。整个餐厅装修得带有日式风格，黑白色调的大厅宽敞舒适，整面的落地玻璃窗可以看到街上的人来人往，感觉很舒适。</details>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
@@ -211,7 +211,7 @@
 		<www_address>http://www.qiaojiangnan.com</www_address>
 		<latitude>38.214567</latitude>
 		<longitude>121.2345</longitude>
-		<distance>450m</distance>
+		<distance>450</distance>
 		<details>Thinkpad笔记本电脑，13寸显示器，白色，12小时待机</details>
 		<comments_Enviroment>4</comments_Enviroment>
 		<comments_Service>4</comments_Service>
