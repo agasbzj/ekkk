@@ -11,6 +11,8 @@
 #import "OneItem.h"
 #import "IndividualTableCell.h"
 #import "PickerViewController.h"
+#import "MapViewController.h"
+
 @implementation CategoryTableViewController
 
 @synthesize dataArray = _dataArray;
@@ -101,11 +103,31 @@ static UIPickerView *kPicker;
     
 }
 
+//实现点击显示地图按钮
+- (IBAction)showMap:(id)sender {
+    //    MapViewController *mapViewController = [[MapViewController alloc] init];
+    //    mapViewController.theItem = _oneItem;
+    //    [self.navigationController pushViewController:mapViewController animated:YES];
+    //    [mapViewController release];
+    
+    MapViewController *mapViewController = [[MapViewController alloc] init];
+    mapViewController.showMultiItems = YES;
+    mapViewController.itemAnnotations = _dataArray;
+    [self.navigationController pushViewController:mapViewController animated:YES];
+    [mapViewController release];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //增加地图按钮
+    UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:@"地图" style:UIBarButtonItemStyleDone target:self action:@selector(showMap:)];
+    self.navigationItem.rightBarButtonItem = mapButton;
+    [mapButton release];
+    
     _showArray = [[NSMutableArray alloc] initWithArray:_dataArray];
     _pickerArray = [[NSMutableArray alloc] initWithCapacity:10];
     self.tableView.rowHeight = 74;  
