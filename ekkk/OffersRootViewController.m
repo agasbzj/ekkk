@@ -110,35 +110,48 @@ NSArray *temp;  //跟踪指针，用来释放。
         [allMyCards addObjectsFromArray:[dic valueForKey:@"cards"]];
     }
     
-    BOOL isSameBank = NO;   //是否拥有某个银行的卡，如果有，则跳过该银行其他的卡的判断，否则会重复添加。
-
+//    BOOL isSameBank = NO;   //是否拥有某个银行的卡，如果有，则跳过该银行其他的卡的判断，否则会重复添加。
+//
+//    for (OneItem *item in allData) 
+//    {
+//        if ([item.hot isEqualToString:@"1"]) 
+//        {
+//            for (NSDictionary *bankDic in item.bank) 
+//            {
+//                NSArray *cardA = [bankDic valueForKey:@"card"];
+//                for (NSDictionary *cardD in cardA) 
+//                {
+//                    NSString *str1 = [cardD valueForKey:@"card_name"];
+//
+//                    for (NSString *str2 in allMyCards) 
+//                    {
+//                        if ([str1 isEqualToString:str2] == YES) 
+//                        {
+//                            [_dataArray addObject:item];
+//                            isSameBank = YES;
+//                            break;
+//                        }
+//                    }
+//                    if (isSameBank == YES) {
+//                        break;
+//                    }
+//                }
+//                if (isSameBank == YES) {
+//                    isSameBank = NO;
+//                    continue;
+//                }
+//            }
+//        }
+//    }
     for (OneItem *item in allData) 
     {
-        if ([item.hot isEqualToString:@"1"]) 
+        for (NSDictionary *bankDic in item.bank) 
         {
-            for (NSDictionary *bankDic in item.bank) 
-            {
-                NSArray *cardA = [bankDic valueForKey:@"card"];
-                for (NSDictionary *cardD in cardA) 
-                {
-                    NSString *str1 = [cardD valueForKey:@"card_name"];
-
-                    for (NSString *str2 in allMyCards) 
-                    {
-                        if ([str1 isEqualToString:str2] == YES) 
-                        {
-                            [_dataArray addObject:item];
-                            isSameBank = YES;
-                            break;
-                        }
-                    }
-                    if (isSameBank == YES) {
-                        break;
-                    }
-                }
-                if (isSameBank == YES) {
-                    isSameBank = NO;
-                    continue;
+            NSString *bankName = [bankDic valueForKey:@"bank_name"];
+            for (NSDictionary *dic in myCards) {
+                NSString *str2 = [dic valueForKey:@"bank_name"];
+                if ([bankName isEqualToString:str2]) {
+                    [_dataArray addObject:item];
                 }
             }
         }
