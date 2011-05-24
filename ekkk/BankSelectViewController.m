@@ -129,7 +129,14 @@
 
 - (IBAction)ok:(id)sender {
     //发送给代理（ekkkappdelegate），让代理来保存数据
-    [delegate userCardsSelected:_readyToWriteArray];
+    NSMutableArray *array = _readyToWriteArray;
+    for (NSDictionary *dic in array) {
+        NSArray *cards = [dic valueForKey:@"cards"];
+        if ([cards count] == 0) {
+            [array removeObject:dic];
+        }
+    }
+    [delegate userCardsSelected:array];
     [self dismissModalViewControllerAnimated:YES];
 }
 
