@@ -322,7 +322,7 @@ static UIPickerView *kPicker;
      [detailViewController release];
      */
     DetailController *detailViewController = [[DetailController alloc] init];
-    detailViewController.oneItem = [_dataArray objectAtIndex:indexPath.row];
+    detailViewController.oneItem = [_showArray objectAtIndex:indexPath.row];
 //    detailViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
@@ -567,8 +567,11 @@ static UIPickerView *kPicker;
 //                        if ([item.category_Coarse isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
 //                            [_showArray addObject:item];
 //                        }
+                        [_showArray addObject:item];
                     }
-
+                    
+                    //冒泡法，降序排序
+                    
                     NSString *key;
                     switch (choosen) {
                         case 0:
@@ -586,35 +589,21 @@ static UIPickerView *kPicker;
                         default:
                             break;
                     }
-//                    NSSortDescriptor *sorter = [NSSortDescriptor sortDescriptorWithKey:key ascending:NO];
-//                    NSArray *disc = [NSArray arrayWithObjects:sorter, nil];
-//                    NSArray *result = [_dataArray sortedArrayUsingDescriptors:disc];
-//                    for (OneItem *item in result) {
-//                        [_showArray addObject:item];
-//                    }
-//                    for (OneItem *item in _dataArray) {
-//                        [_showArray addObject:item];
-//                    }
-//                    int lenth = [_showArray count];
-//                    int k = 0;
-//                    for (int i = lenth - 1; i > 0; i = k) {
-//                        for (int j = 0, k = 0; j < i; j++) {
-//                            float first = [[[_showArray objectAtIndex:j] valueForKey:key] floatValue];
-//                            float second = [[[_showArray objectAtIndex:j+1] valueForKey:key] floatValue];
-//                            if (first <= second) {
-//                                [_showArray exchangeObjectAtIndex:j withObjectAtIndex:j+1];
-//                            }
-//                            k = j;
-//                        }
-//                    }
-//                    NSSortDescriptor *disc = [[NSSortDescriptor alloc] initWithKey:key ascending:NO];
-//                    NSArray *array = [NSArray arrayWithObject:disc];
-//                    _showArray = (NSMutableArray *)[_dataArray sortedArrayUsingDescriptors:array];
+                    float a =0, b = 0;
+                    int n = [_showArray count];
+                    for (int i = 1; i < n; i++) {
+                        for (int j = 0; j < n - 1; j++) {
+                            a = [[[_showArray objectAtIndex:j] valueForKey:key] floatValue];
+                            b = [[[_showArray objectAtIndex:j+1] valueForKey:key] floatValue];
+                            if (a < b) {
+                                [_showArray exchangeObjectAtIndex:j withObjectAtIndex:j+1];
+                            }
+                        }
+                    }
                     break;
                 default:
                     break;
             }
-//            [_showArray retain];
             [_tableView reloadData];
             break;
             
