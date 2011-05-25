@@ -211,6 +211,9 @@
     cell.addressLabel.text = item.address;
     cell.discountLabel.text = [[item.bank objectAtIndex:0] valueForKey:@"discount"];  
     cell.distanceLabel.text = item.distance;
+    
+//    UIImageView *img = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"图标.png"]];
+//    [cell insertSubview:img atIndex:0];
     return cell;
 }
 

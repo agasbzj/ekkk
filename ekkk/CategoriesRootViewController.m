@@ -122,7 +122,8 @@
     ekkkAppDelegate *myDelegate = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
     NSArray *allData = (NSArray *)myDelegate.parsedItems;
     for (OneItem *item in allData) {
-        if ([str isEqualToString:item.category_Coarse]) {
+         //这里的数据源范围是所有非hot的数据，这样可以做到offers的数据源和其他信用卡的数据源共用一个xml文件的同种类型的记录，方便解析和数据model；
+        if ([str isEqualToString:item.category_Coarse] & [item.hot isEqualToString:@"0"])  {
             [showArray addObject:item];
         }
     }
