@@ -592,7 +592,7 @@ static UIPickerView *kPicker;
                     float a =0, b = 0;
                     int n = [_showArray count];
                     for (int i = 1; i < n; i++) {
-                        for (int j = 0; j < n - 1; j++) {
+                        for (int j = 0; j < n - i; j++) {
                             a = [[[_showArray objectAtIndex:j] valueForKey:key] floatValue];
                             b = [[[_showArray objectAtIndex:j+1] valueForKey:key] floatValue];
                             if (a < b) {
