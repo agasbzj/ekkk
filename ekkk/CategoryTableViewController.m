@@ -123,7 +123,7 @@ static NSString *kBySortKey = @"all";
     ekkkAppDelegate *ekkkDelegate = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
     NSArray *allData = [[NSArray alloc] initWithArray:_showArray];    //所有附近item数组
     NSArray *myCards = ekkkDelegate.userCardsArray; //我的卡数组
-    _showArray = [[NSMutableArray alloc] initWithCapacity:30];
+//    _showArray = [[NSMutableArray alloc] initWithCapacity:30];
     NSMutableArray *allMyCards = [[NSMutableArray alloc] initWithCapacity:10];
     
     //所有用户的卡，每一项是string
@@ -132,36 +132,43 @@ static NSString *kBySortKey = @"all";
         [allMyCards addObjectsFromArray:[dic valueForKey:@"cards"]];
     }
     
-    for (OneItem *item in allData) 
+    int i = 0, flag = 0;
+    while (i < [_showArray count]) 
     {
+        OneItem *item = [_showArray objectAtIndex:i];
         for (NSDictionary *bankDic in item.bank) 
         {
             NSString *bankName = [bankDic valueForKey:@"bank_name"];
             for (NSDictionary *dic in myCards) {
                 NSString *str2 = [dic valueForKey:@"bank_name"];
                 if ([bankName isEqualToString:str2]) {
-                    [_showArray addObject:item];
+                    flag = 1;
                 }
             }
+
         }
+        if (!flag) {
+            [_showArray removeObject:item];    
+            continue;
+        }
+        flag = 0;
+        i++;
     }
+    [self.tableView reloadData];
 }
 
 - (void)switchCards:(id)sender {
     UISegmentedControl *seg = (UISegmentedControl *)sender;
     switch (seg.selectedSegmentIndex) {
         case 0:
-//            _showArray = _showArray;
-            
+            [self sortTableViewWithCategory:kByCategory range:kByRange sortby:kBySortKey];
             break;
         case 1:
             [self getMyCardsData];
-            
             break;
         default:
             break;
     }
-    [self.tableView reloadData];
 }
 
 #pragma mark - View lifecycle
@@ -520,35 +527,7 @@ static NSString *kBySortKey = @"all";
 
 - (void)sortTableViewWithCategory:(NSString *)categoryKey range:(NSString *)range sortby:(NSString *)sortKey {
     [_showArray removeAllObjects];
-//    [_showArray addObjectsFromArray:_dataArray];
-//    _showArray = (NSMutableArray *)_dataArray;
-//    if (![categoryKey isEqualToString:@""]) {
-//        for (OneItem *item in _showArray) {
-//            if (![item.category_Fine isEqualToString:categoryKey]) {
-//                [_showArray removeObject:item];
-//            }
-//        }
-//    }
-//    if (![rang isEqualToString:@""]) {
-//        for (OneItem *item in _showArray) {
-//            if ([item.distance intValue] > [rang intValue]) {
-//                [_showArray removeObject:item];
-//            }
-//        }
-//    }
-//    if (![sortKey isEqualToString:@""]) {
-//        float a =0, b = 0;
-//        int n = [_showArray count];
-//        for (int i = 1; i < n; i++) {
-//            for (int j = 0; j < n - i; j++) {
-//                a = [[[_showArray objectAtIndex:j] valueForKey:sortKey] floatValue];
-//                b = [[[_showArray objectAtIndex:j+1] valueForKey:sortKey] floatValue];
-//                if (a < b) {
-//                    [_showArray exchangeObjectAtIndex:j withObjectAtIndex:j+1];
-//                }
-//            }
-//        }
-//    }
+
     
     if (![categoryKey isEqualToString:@"all"] && ![range isEqualToString:@"all"]) {
         for (OneItem *item in _dataArray) {
@@ -573,6 +552,8 @@ static NSString *kBySortKey = @"all";
             }
         }
     }
+    else
+        [_showArray addObjectsFromArray:_dataArray];
     
     if (![sortKey isEqualToString:@"all"]) {
         float a =0, b = 0;
