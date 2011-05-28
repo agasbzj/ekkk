@@ -187,7 +187,13 @@
             {
                 BankSelectViewController *bankSetViewController = [[BankSelectViewController alloc] init];
                 bankSetViewController.hidesBottomBarWhenPushed = YES;
-
+                ekkkAppDelegate *ekkkDele = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
+                
+                bankSetViewController.delegate = ekkkDele;
+                
+                //已保存的数据复制一份来进行修改
+                bankSetViewController.userArray = ekkkDele.userCardsArray;
+                bankSetViewController.readyToWriteArray = [[NSMutableArray alloc] initWithArray:bankSetViewController.userArray copyItems:YES];
                 [self.navigationController pushViewController:bankSetViewController animated:YES];
                 [bankSetViewController release];
                 break;
@@ -196,7 +202,8 @@
             {
                 ShowMyCardsViewController *showCardsController = [[ShowMyCardsViewController alloc] init];
                 showCardsController.hidesBottomBarWhenPushed = YES;
-
+                ekkkAppDelegate *ekkkDele = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
+                showCardsController.dataArray = ekkkDele.userCardsArray;
                 [self.navigationController pushViewController:showCardsController animated:YES];
                 [showCardsController release];
                 break;

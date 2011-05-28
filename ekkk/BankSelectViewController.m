@@ -137,7 +137,7 @@
         }
     }
     [delegate userCardsSelected:array];
-    [self dismissModalViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)cancel:(id)sender {
