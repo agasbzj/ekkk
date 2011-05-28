@@ -30,9 +30,9 @@ static NSUInteger choosenTag = 0;   //点了哪个查询分类
 static UIActionSheet *kActionSheet;
 static UIPickerView *kPicker;
 
-static NSString *kByCategory = @"all";
-static NSString *kByRange = @"all";
-static NSString *kBySortKey = @"all";
+static NSString *kByCategory = @"all";  //风味筛选字段
+static NSString *kByRange = @"all"; //距离筛选字段
+static NSString *kBySortKey = @"all";   //排序字段
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -525,6 +525,7 @@ static NSString *kBySortKey = @"all";
 
 #pragma mark - Action Sheet
 
+//筛选和排序
 - (void)sortTableViewWithCategory:(NSString *)categoryKey range:(NSString *)range sortby:(NSString *)sortKey {
     [_showArray removeAllObjects];
 
