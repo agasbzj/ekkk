@@ -29,6 +29,11 @@ static NSUInteger choosenTag = 0;   //点了哪个查询分类
 //static bool pickerOpen = NO;    //是否已经打开了一个picker
 static UIActionSheet *kActionSheet;
 static UIPickerView *kPicker;
+
+static NSString *kByCategory = @"all";
+static NSString *kByRange = @"all";
+static NSString *kBySortKey = @"all";
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -118,7 +123,7 @@ static UIPickerView *kPicker;
     ekkkAppDelegate *ekkkDelegate = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
     NSArray *allData = [[NSArray alloc] initWithArray:_showArray];    //所有附近item数组
     NSArray *myCards = ekkkDelegate.userCardsArray; //我的卡数组
-    _showArray = [[NSMutableArray alloc] initWithCapacity:30];
+//    _showArray = [[NSMutableArray alloc] initWithCapacity:30];
     NSMutableArray *allMyCards = [[NSMutableArray alloc] initWithCapacity:10];
     
     //所有用户的卡，每一项是string
@@ -127,36 +132,43 @@ static UIPickerView *kPicker;
         [allMyCards addObjectsFromArray:[dic valueForKey:@"cards"]];
     }
     
-    for (OneItem *item in allData) 
+    int i = 0, flag = 0;
+    while (i < [_showArray count]) 
     {
+        OneItem *item = [_showArray objectAtIndex:i];
         for (NSDictionary *bankDic in item.bank) 
         {
             NSString *bankName = [bankDic valueForKey:@"bank_name"];
             for (NSDictionary *dic in myCards) {
                 NSString *str2 = [dic valueForKey:@"bank_name"];
                 if ([bankName isEqualToString:str2]) {
-                    [_showArray addObject:item];
+                    flag = 1;
                 }
             }
+
         }
+        if (!flag) {
+            [_showArray removeObject:item];    
+            continue;
+        }
+        flag = 0;
+        i++;
     }
+    [self.tableView reloadData];
 }
 
 - (void)switchCards:(id)sender {
     UISegmentedControl *seg = (UISegmentedControl *)sender;
     switch (seg.selectedSegmentIndex) {
         case 0:
-//            _showArray = _showArray;
-            
+            [self sortTableViewWithCategory:kByCategory range:kByRange sortby:kBySortKey];
             break;
         case 1:
             [self getMyCardsData];
-            
             break;
         default:
             break;
     }
-    [self.tableView reloadData];
 }
 
 #pragma mark - View lifecycle
@@ -513,6 +525,54 @@ static UIPickerView *kPicker;
 
 #pragma mark - Action Sheet
 
+- (void)sortTableViewWithCategory:(NSString *)categoryKey range:(NSString *)range sortby:(NSString *)sortKey {
+    [_showArray removeAllObjects];
+
+    
+    if (![categoryKey isEqualToString:@"all"] && ![range isEqualToString:@"all"]) {
+        for (OneItem *item in _dataArray) {
+            if ([item.category_Fine isEqualToString:categoryKey] && [item.distance intValue] <= [range intValue]) {
+                [_showArray addObject:item];
+            }
+        }
+
+    }
+    
+    else if ([categoryKey isEqualToString:@"all"] && ![range isEqualToString:@"all"]) {
+        for (OneItem *item in _dataArray) {
+            if ([item.distance intValue] <= [kByRange intValue]) {
+                [_showArray addObject:item];
+            }
+        }
+    }
+    else if (![categoryKey isEqualToString:@"all"] && [range isEqualToString:@"all"]) {
+        for (OneItem *item in _dataArray) {
+            if ([item.category_Fine isEqualToString:categoryKey]) {
+                [_showArray addObject:item];
+            }
+        }
+    }
+    else
+        [_showArray addObjectsFromArray:_dataArray];
+    
+    if (![sortKey isEqualToString:@"all"]) {
+        float a =0, b = 0;
+        int n = [_showArray count];
+        for (int i = 1; i < n; i++) {
+            for (int j = 0; j < n - i; j++) {
+                a = [[[_showArray objectAtIndex:j] valueForKey:sortKey] floatValue];
+                b = [[[_showArray objectAtIndex:j+1] valueForKey:sortKey] floatValue];
+                if (a < b) {
+                    [_showArray exchangeObjectAtIndex:j withObjectAtIndex:j+1];
+                }
+            }
+        }
+    }
+    
+    [self.tableView reloadData];
+    
+}
+    
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
 //    if (buttonIndex == [actionSheet destructiveButtonIndex]) {
 //        NSUInteger choosen = [_picker selectedRowInComponent:0];
@@ -535,43 +595,39 @@ static UIPickerView *kPicker;
 //        [_tableView reloadData];
 //    }
 
-    
     NSUInteger choosen = [kPicker selectedRowInComponent:0];
     switch (buttonIndex) {
         case 1:
-            [_showArray removeAllObjects];
+//            [_showArray removeAllObjects];
             switch (choosenTag) {
                 case 1:
-                    for (OneItem *item in _dataArray) {
-                        if ([item.city isEqualToString:[_cityArray objectAtIndex:choosen]]) {
-                            [_showArray addObject:item];
-                        }
-                    }
-                    break;
-                case 2:
-                    for (OneItem *item in _dataArray) {
-                        if ([item.category_Fine isEqualToString:[_categoryArray objectAtIndex:choosen]]) {
-                            [_showArray addObject:item];
-                        }
-                    }
-                    break;
-                case 3:
-                    for (OneItem *item in _dataArray) {
-                        if ([item.distance intValue] <= [[_distanceArray objectAtIndex:choosen] intValue]) {
-                            [_showArray addObject:item];
-                        }
-                    }
-                    break;
-                case 4:
-                    for (OneItem *item in _dataArray) {
-//                        if ([item.category_Coarse isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
+//                    for (OneItem *item in _dataArray) {
+//                        if ([item.city isEqualToString:[_cityArray objectAtIndex:choosen]]) {
 //                            [_showArray addObject:item];
 //                        }
-                        [_showArray addObject:item];
-                    }
+//                    }
                     
-                    //冒泡法，降序排序
-                    
+                    break;
+                case 2:
+//                    for (OneItem *item in _dataArray) {
+//                        if ([item.category_Fine isEqualToString:[_categoryArray objectAtIndex:choosen]]) {
+//                            [_showArray addObject:item];
+//                        }
+//                    }
+                    kByCategory = [_categoryArray objectAtIndex:choosen];
+                    break;
+                case 3:
+//                    for (OneItem *item in _dataArray) {
+//                        if ([item.distance intValue] <= [[_distanceArray objectAtIndex:choosen] intValue]) {
+//                            [_showArray addObject:item];
+//                        }
+//                    }
+                    kByRange = [_distanceArray objectAtIndex:choosen];
+                    break;
+                case 4:
+                    kBySortKey = @"all";
+//                    //冒泡法，降序排序
+//                    
                     NSString *key;
                     switch (choosen) {
                         case 0:
@@ -589,27 +645,18 @@ static UIPickerView *kPicker;
                         default:
                             break;
                     }
-                    float a =0, b = 0;
-                    int n = [_showArray count];
-                    for (int i = 1; i < n; i++) {
-                        for (int j = 0; j < n - i; j++) {
-                            a = [[[_showArray objectAtIndex:j] valueForKey:key] floatValue];
-                            b = [[[_showArray objectAtIndex:j+1] valueForKey:key] floatValue];
-                            if (a < b) {
-                                [_showArray exchangeObjectAtIndex:j withObjectAtIndex:j+1];
-                            }
-                        }
-                    }
+                    kBySortKey = key;
+
                     break;
                 default:
                     break;
             }
-            [_tableView reloadData];
             break;
             
         default:
             break;
     }
+    [self sortTableViewWithCategory:kByCategory range:kByRange sortby:kBySortKey];
     
     kPicker = nil;
     kActionSheet = nil;

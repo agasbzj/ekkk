@@ -504,6 +504,7 @@
 							<reference ref="162340055"/>
 						</object>
 						<reference key="parent" ref="1034742383"/>
+						<string key="objectName">Management Root View Controller - Manage</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">178</int>
