@@ -36,7 +36,7 @@
 }
 
 - (IBAction)back:(id)sender {
-    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     [self.navigationController popViewControllerAnimated:YES];
 }
 

@@ -60,6 +60,7 @@
 		41A0377413587383001D52A8 /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A0377313587383001D52A8 /* RatingView.m */; };
 		41A03776135874DF001D52A8 /* IndividualTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A03775135874DF001D52A8 /* IndividualTableCell.xib */; };
 		41A0377813588555001D52A8 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A0377713588555001D52A8 /* DetailViewController.xib */; };
+		41A34B3B1391490E00715CB4 /* barimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A34B3A1391490E00715CB4 /* barimage.png */; };
 		41A4D0591348CB9A00D070BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A4D0581348CB9A00D070BB /* UIKit.framework */; };
 		41A4D05B1348CB9A00D070BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A4D05A1348CB9A00D070BB /* Foundation.framework */; };
 		41A4D05D1348CB9A00D070BB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A4D05C1348CB9A00D070BB /* CoreGraphics.framework */; };
@@ -187,6 +188,7 @@
 		41A0377313587383001D52A8 /* RatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingView.m; sourceTree = "<group>"; };
 		41A03775135874DF001D52A8 /* IndividualTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndividualTableCell.xib; sourceTree = "<group>"; };
 		41A0377713588555001D52A8 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		41A34B3A1391490E00715CB4 /* barimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barimage.png; sourceTree = "<group>"; };
 		41A4D0541348CB9A00D070BB /* ekkk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ekkk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A4D0581348CB9A00D070BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		41A4D05A1348CB9A00D070BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -536,6 +538,7 @@
 		41A4D0971348CDD700D070BB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				41A34B3A1391490E00715CB4 /* barimage.png */,
 				41BEF19E1371A7E8009DF1A9 /* StarsBackground.png */,
 				4182735413723B75002288B4 /* 招商银行.png */,
 				4182735513723B75002288B4 /* 中国工商银行.png */,
@@ -718,6 +721,7 @@
 				4182736713723B75002288B4 /* 中国银行.png in Resources */,
 				4182736813723B75002288B4 /* 中信银行.png in Resources */,
 				4182736913723B75002288B4 /* 上海浦东发展银行.png in Resources */,
+				41A34B3B1391490E00715CB4 /* barimage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
