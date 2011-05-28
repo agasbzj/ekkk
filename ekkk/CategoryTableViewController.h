@@ -37,7 +37,6 @@
 @property (nonatomic, retain) NSMutableArray *distanceArray;
 @property (nonatomic, retain) NSMutableArray *sortbyArray;
 @property (nonatomic, retain) UIPickerView *picker;
-- (IBAction)cityButtonPressed:(id)sender;
 - (IBAction)selectButtonPressed:(id)sender;
 - (void)sortTableViewWithCategory:(NSString *)categoryKey range:(NSString *)range sortby:(NSString *)sortKey;
 @end

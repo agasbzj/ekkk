@@ -177,6 +177,10 @@ static NSString *kBySortKey = @"all";   //排序字段
 {
     [super viewDidLoad];
     
+//    UIImageView *barImageView = [[UIImageView alloc] initWithFrame:CGRectMake(320, 44, 0, 0)];
+//    [barImageView setImage:[UIImage imageNamed:@"barimage.png"]];
+//    [self.view addSubview:barImageView];
+    
     //增加地图按钮
     UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:@"地图" style:UIBarButtonItemStyleDone target:self action:@selector(showMap:)];
     self.navigationItem.rightBarButtonItem = mapButton;
@@ -380,16 +384,13 @@ static NSString *kBySortKey = @"all";   //排序字段
     [actionSheet release];
 }
 
-- (IBAction)cityButtonPressed:(id)sender {
-//    [self generateActionSheet];
-    
-}
+
 
 - (IBAction)selectButtonPressed:(id)sender {
 //    if (pickerOpen == YES) {
 //        return;
 //    }
-    UIBarButtonItem *button = (UIBarButtonItem *)sender;
+    UIButton *button = (UIButton *)sender;
     [_pickerArray removeAllObjects];
     choosenTag = button.tag;
     
@@ -502,8 +503,13 @@ static NSString *kBySortKey = @"all";   //排序字段
 
 - (void)buttonPressed:(NSUInteger)tag withStringInPicker:(NSString *)string{
     //更改按钮为选中的文字
-    UIBarButtonItem *barButton = (UIBarButtonItem *)[self.view viewWithTag:choosenTag];
-    [barButton setTitle:string];
+    UIButton *barButton = (UIButton *)[self.view viewWithTag:choosenTag];
+    if (tag == 1) {
+        if (choosenTag == 3) {
+            string = [NSString stringWithFormat:@"%@米", string];
+        }
+        [barButton setTitle:string forState:UIControlStateNormal];
+    }
     [kActionSheet dismissWithClickedButtonIndex:tag animated:YES];
 }
 
@@ -665,30 +671,5 @@ static NSString *kBySortKey = @"all";   //排序字段
                                   
 
 
-//- (void)selectedOneInPicker:(NSUInteger)choosen {
-//    pickerOpen = NO;
-//    if (choosen == 10000) {
-//        return;
-//    }
-//    [_showArray removeAllObjects];
-//    switch (choosenTag) {
-//        case 1:
-//            for (OneItem *item in _dataArray) {
-//                if ([item.city isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
-//                    [_showArray addObject:item];
-//                }
-//            }
-//            break;
-//        case 2:
-//            for (OneItem *item in _dataArray) {
-//                if ([item.category_Fine isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
-//                    [_showArray addObject:item];
-//                }
-//            }
-//            break;
-//        default:
-//            break;
-//    }
-//    [_tableView reloadData];
-//}
+
 @end

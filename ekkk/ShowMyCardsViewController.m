@@ -169,7 +169,7 @@
 }
 
 - (IBAction)goBack:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

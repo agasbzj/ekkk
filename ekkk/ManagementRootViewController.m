@@ -12,6 +12,7 @@
 #import "ShowMyCardsViewController.h"
 
 @implementation ManagementRootViewController
+@synthesize tableView = _tableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,6 +25,7 @@
 
 - (void)dealloc
 {
+    [_tableView release];
     [super dealloc];
 }
 
@@ -77,6 +79,142 @@
     showController.dataArray = ekkkDele.userCardsArray;
     [self presentModalViewController:showController animated:YES];
     [showController release];
+}
+
+#pragma mark - tableView Delegate
+#pragma mark - TableView
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+
+    return 3;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    switch (section) {
+        case 0:
+            return 2;
+            break;
+        case 1:
+            return 1;
+            break;
+        case 2:
+            return 2;
+            break;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSUInteger section = [indexPath section];
+    NSUInteger row = [indexPath row];
+    
+    static NSString *CellIdentifier = @"CellIdentifer";
+    UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+//        if (section == 0) {
+//            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+//            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//        }
+//        else if (section == 1) {
+//            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+//        }
+//        else if (section == 2) {
+//            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+//        }
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
+    if (section == 0) {
+        switch (row) {
+            case 0:
+                break;
+            case 1:
+                break;
+            default:
+                break;
+        }
+
+    }
+    else if (section == 1) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.textLabel.text = @"创建新帐户";
+       cell.textLabel.textAlignment = UITextAlignmentLeft;
+        UIFont *font = [UIFont systemFontOfSize:14];
+        cell.textLabel.font = font;
+        
+    }
+    else if (section == 2) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.textLabel.textAlignment = UITextAlignmentLeft;
+        UIFont *font = [UIFont systemFontOfSize:14];
+        cell.textLabel.font = font;
+        switch (row) {
+            case 0:
+                cell.textLabel.text = @"设置我的卡片";
+                break;
+            case 1:
+                cell.textLabel.text = @"实现我的卡片";
+                
+            default:
+                break;
+        }
+        
+    }
+    return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    switch (section) {
+        case 0:
+            return @"用户登录：";
+            break;
+        case 1:
+            return @"用户注册：";
+            break;
+        case 2:
+            return @"卡片管理：";
+            break;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+//        [_tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    }
+    
+    if (indexPath.section == 2) {
+        switch (indexPath.row) {
+            case 0:
+            {
+                BankSelectViewController *bankSetViewController = [[BankSelectViewController alloc] init];
+                bankSetViewController.hidesBottomBarWhenPushed = YES;
+
+                [self.navigationController pushViewController:bankSetViewController animated:YES];
+                [bankSetViewController release];
+                break;
+            }
+            case 1:
+            {
+                ShowMyCardsViewController *showCardsController = [[ShowMyCardsViewController alloc] init];
+                showCardsController.hidesBottomBarWhenPushed = YES;
+
+                [self.navigationController pushViewController:showCardsController animated:YES];
+                [showCardsController release];
+                break;
+            }
+            default:
+                break;
+        }
+        
+    }
+    [_tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return YES;
+    }
+    else return NO;
 }
 
 @end
