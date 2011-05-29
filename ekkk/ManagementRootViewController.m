@@ -99,6 +99,9 @@
         case 2:
             return 2;
             break;
+        default:
+            return 0;
+            break;
     }
 }
 
@@ -171,6 +174,9 @@
             break;
         case 2:
             return @"卡片管理：";
+            break;
+        default:
+            return nil;
             break;
     }
 }

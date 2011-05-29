@@ -48,9 +48,10 @@
 //    return 260;
 //}
 
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    _selectedString = [_pickerDataArray objectAtIndex:row];
-}
+
+//- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+//    _selectedString = [_pickerDataArray objectAtIndex:row];
+//}
 
 #pragma mark - Picker Data Source Delegate
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -63,6 +64,9 @@
 }
 
 - (IBAction)buttonPressed:(id)sender {
+    NSInteger row = [_pickerView selectedRowInComponent:0];
+    _selectedString = [_pickerDataArray objectAtIndex:row];
+    
     UIButton *button = (UIButton *)sender;
     [delegate buttonPressed:button.tag withStringInPicker:_selectedString];
 }

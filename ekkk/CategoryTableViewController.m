@@ -121,7 +121,7 @@ static NSString *kBySortKey = @"all";   //排序字段
 {
     
     ekkkAppDelegate *ekkkDelegate = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSArray *allData = [[NSArray alloc] initWithArray:_showArray];    //所有附近item数组
+//    NSArray *allData = [[NSArray alloc] initWithArray:_showArray];    //所有附近item数组
     NSArray *myCards = ekkkDelegate.userCardsArray; //我的卡数组
 //    _showArray = [[NSMutableArray alloc] initWithCapacity:30];
     NSMutableArray *allMyCards = [[NSMutableArray alloc] initWithCapacity:10];
@@ -345,6 +345,7 @@ static NSString *kBySortKey = @"all";   //排序字段
     
 }
 
+//生成、配置anction sheet， 包括其中的选取器
 - (void)generateActionSheet {
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"\n\n\n\n\n\n\n\n\n\n\n\n\n" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
     actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
@@ -354,9 +355,9 @@ static NSString *kBySortKey = @"all";   //排序字段
     pickerView = [array objectAtIndex:0];
     pickerView.delegate = self;
     switch (choosenTag) {
-        case 1:
-            pickerView.pickerDataArray = _cityArray;
-            break;
+//        case 1:
+//            pickerView.pickerDataArray = _cityArray;
+//            break;
         case 2:
             pickerView.pickerDataArray = _categoryArray;
             break;
