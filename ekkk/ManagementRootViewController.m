@@ -154,7 +154,7 @@
                 cell.textLabel.text = @"设置我的卡片";
                 break;
             case 1:
-                cell.textLabel.text = @"实现我的卡片";
+                cell.textLabel.text = @"显示我的卡片";
                 
             default:
                 break;

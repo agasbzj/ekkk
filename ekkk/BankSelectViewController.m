@@ -82,10 +82,15 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
+    
     NSDictionary *dic = [_bankArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [dic valueForKey:@"bankName"];
-    cell.textLabel.textAlignment = UITextAlignmentCenter;
-    cell.imageView.image = [UIImage imageNamed:[dic valueForKey:@"icon"]];
+    UIFont *font = [UIFont systemFontOfSize:14];
+    cell.detailTextLabel.font = font;
+    cell.textLabel.font = font;
+    UIImage *icon = [UIImage imageNamed:[dic valueForKey:@"icon"]];
+    cell.imageView.image = icon;  
+    
     return cell;
 }
 
