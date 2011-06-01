@@ -288,7 +288,7 @@ static NSString *kBySortKey = @"all";   //排序字段
     if (cell == nil) {
         NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"IndividualTableCell" owner:self options:nil];
         cell = [array objectAtIndex:0];
-        
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
     
     // Configure the cell...

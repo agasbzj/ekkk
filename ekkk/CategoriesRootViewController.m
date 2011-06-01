@@ -48,7 +48,6 @@
     self.tableView.rowHeight = 60;  //根据类别数量配置行高
     self.tableView.scrollEnabled = NO; //不允许滚动
     
-    
     //获得plist下的内容
     NSString *path = [[NSBundle mainBundle] pathForResource:@"NearbyCategory" ofType:@"plist"];
     _plistKey = [[NSDictionary alloc] initWithContentsOfFile:path];
@@ -94,7 +93,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-        
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     

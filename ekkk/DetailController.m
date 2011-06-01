@@ -144,7 +144,8 @@
     UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         if (section == 0) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier] autorelease];
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+            cell.imageView.image = indexPath.row == 0 ? [UIImage imageNamed:@"VoIP-Alt.png"] : [UIImage imageNamed:@"Home.png"];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
         else if (section == 1) {
@@ -155,13 +156,18 @@
     if (section == 0) {
         switch (row) {
             case 0:
-                cell.textLabel.text = @"电话:";
-                cell.detailTextLabel.text = _oneItem.telephone;
+            {
+                NSString *telText = [NSString stringWithFormat:@"电话：%@", _oneItem.telephone];
+                cell.textLabel.text = telText;
+//                cell.detailTextLabel.text = _oneItem.telephone;
                 break;
+            }
             case 1:
-                cell.textLabel.text = @"地址:";
-                cell.detailTextLabel.text = _oneItem.address;
-                
+            {
+                NSString *telText = [NSString stringWithFormat:@"地址：%@", _oneItem.address];
+                cell.textLabel.text = telText;
+//                cell.detailTextLabel.text = _oneItem.address;
+            }
             default:
                 break;
         }

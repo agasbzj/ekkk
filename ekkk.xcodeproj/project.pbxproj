@@ -86,6 +86,15 @@
 		A9724E2F135C835E000982A3 /* NearbyCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9724E2E135C835E000982A3 /* NearbyCategory.plist */; };
 		A97DA87E1361BBC100994946 /* CategoryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A97DA87D1361BBC100994946 /* CategoryTableCell.m */; };
 		A97DA8801361BBD000994946 /* CategoryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97DA87F1361BBD000994946 /* CategoryTableCell.xib */; };
+		A97F2824139662AE00368180 /* Search.png in Resources */ = {isa = PBXBuildFile; fileRef = A97F2823139662AE00368180 /* Search.png */; };
+		A97F2826139662CB00368180 /* VoIP-Alt.png in Resources */ = {isa = PBXBuildFile; fileRef = A97F2825139662CB00368180 /* VoIP-Alt.png */; };
+		A97F2834139663DE00368180 /* Limewire.png in Resources */ = {isa = PBXBuildFile; fileRef = A97F282F139663DE00368180 /* Limewire.png */; };
+		A97F2835139663DE00368180 /* Contact.png in Resources */ = {isa = PBXBuildFile; fileRef = A97F2830139663DE00368180 /* Contact.png */; };
+		A97F2836139663DE00368180 /* Earth.png in Resources */ = {isa = PBXBuildFile; fileRef = A97F2831139663DE00368180 /* Earth.png */; };
+		A97F2837139663DE00368180 /* Favorites.png in Resources */ = {isa = PBXBuildFile; fileRef = A97F2832139663DE00368180 /* Favorites.png */; };
+		A97F2838139663DE00368180 /* Finder.png in Resources */ = {isa = PBXBuildFile; fileRef = A97F2833139663DE00368180 /* Finder.png */; };
+		A97F283A1396645800368180 /* Slideshow.png in Resources */ = {isa = PBXBuildFile; fileRef = A97F28391396645700368180 /* Slideshow.png */; };
+		A97F283C1396662B00368180 /* Home.png in Resources */ = {isa = PBXBuildFile; fileRef = A97F283B1396662B00368180 /* Home.png */; };
 		A981566A13598B300056396A /* ItemAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A981566913598B300056396A /* ItemAnnotation.m */; };
 		A986BAA113647A2C0085433E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A986BAA013647A2B0085433E /* QuartzCore.framework */; };
 		A9904879136D5EE200306D37 /* ShowMyCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9904877136D5EE200306D37 /* ShowMyCardsViewController.m */; };
@@ -226,6 +235,15 @@
 		A97DA87C1361BBC100994946 /* CategoryTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableCell.h; sourceTree = "<group>"; };
 		A97DA87D1361BBC100994946 /* CategoryTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableCell.m; sourceTree = "<group>"; };
 		A97DA87F1361BBD000994946 /* CategoryTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableCell.xib; sourceTree = "<group>"; };
+		A97F2823139662AE00368180 /* Search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Search.png; sourceTree = "<group>"; };
+		A97F2825139662CB00368180 /* VoIP-Alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoIP-Alt.png"; sourceTree = "<group>"; };
+		A97F282F139663DE00368180 /* Limewire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Limewire.png; sourceTree = "<group>"; };
+		A97F2830139663DE00368180 /* Contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Contact.png; sourceTree = "<group>"; };
+		A97F2831139663DE00368180 /* Earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Earth.png; sourceTree = "<group>"; };
+		A97F2832139663DE00368180 /* Favorites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Favorites.png; sourceTree = "<group>"; };
+		A97F2833139663DE00368180 /* Finder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Finder.png; sourceTree = "<group>"; };
+		A97F28391396645700368180 /* Slideshow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Slideshow.png; sourceTree = "<group>"; };
+		A97F283B1396662B00368180 /* Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home.png; sourceTree = "<group>"; };
 		A981565E135969570056396A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A981566813598B2F0056396A /* ItemAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemAnnotation.h; sourceTree = "<group>"; };
 		A981566913598B300056396A /* ItemAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemAnnotation.m; sourceTree = "<group>"; };
@@ -545,6 +563,7 @@
 		41A4D0971348CDD700D070BB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A97F281F1396629B00368180 /* Icons */,
 				A9DBA3CE1395E0F500FA2770 /* Buttons */,
 				41A34B3A1391490E00715CB4 /* barimage.png */,
 				41BEF19E1371A7E8009DF1A9 /* StarsBackground.png */,
@@ -577,6 +596,22 @@
 				41750DFC134AFAB600CFF97E /* png-0002.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		A97F281F1396629B00368180 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				A97F283B1396662B00368180 /* Home.png */,
+				A97F28391396645700368180 /* Slideshow.png */,
+				A97F282F139663DE00368180 /* Limewire.png */,
+				A97F2830139663DE00368180 /* Contact.png */,
+				A97F2831139663DE00368180 /* Earth.png */,
+				A97F2832139663DE00368180 /* Favorites.png */,
+				A97F2833139663DE00368180 /* Finder.png */,
+				A97F2825139662CB00368180 /* VoIP-Alt.png */,
+				A97F2823139662AE00368180 /* Search.png */,
+			);
+			name = Icons;
 			sourceTree = "<group>";
 		};
 		A9A46A211362FF4700964881 /* Manage */ = {
@@ -752,6 +787,15 @@
 				A9DBA3D21395E11300FA2770 /* whiteButton.png in Resources */,
 				A9DBA3D31395E11300FA2770 /* blueButton.png in Resources */,
 				A9DBA3D91395E9F000FA2770 /* RegisterViewController.xib in Resources */,
+				A97F2824139662AE00368180 /* Search.png in Resources */,
+				A97F2826139662CB00368180 /* VoIP-Alt.png in Resources */,
+				A97F2834139663DE00368180 /* Limewire.png in Resources */,
+				A97F2835139663DE00368180 /* Contact.png in Resources */,
+				A97F2836139663DE00368180 /* Earth.png in Resources */,
+				A97F2837139663DE00368180 /* Favorites.png in Resources */,
+				A97F2838139663DE00368180 /* Finder.png in Resources */,
+				A97F283A1396645800368180 /* Slideshow.png in Resources */,
+				A97F283C1396662B00368180 /* Home.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
