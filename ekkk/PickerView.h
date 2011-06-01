@@ -17,11 +17,15 @@
     UIPickerView *_pickerView;
     NSArray *_pickerDataArray;
     NSString *_selectedString;
+    UIButton *_confirmButton;
+    UIButton *_cancelButton;
     id <MyPickViewDelegate> delegate;
 }
 @property (nonatomic, retain) NSArray *pickerDataArray;
 @property (nonatomic, retain) IBOutlet UIPickerView *pickerView;
 @property (nonatomic, retain) NSString *selectedString;
+@property (nonatomic, retain) IBOutlet UIButton *confirmButton;
+@property (nonatomic, retain) IBOutlet UIButton *cancelButton;
 @property (nonatomic, assign) id <MyPickViewDelegate> delegate;
 - (IBAction)buttonPressed:(id)sender;
 @end

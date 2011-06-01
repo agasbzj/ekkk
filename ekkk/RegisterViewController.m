@@ -1,31 +1,32 @@
 //
-//  ShowMyCardsViewController.m
+//  RegisterViewController.m
 //  ekkk
 //
-//  Created by 卞 中杰 on 11-5-1.
+//  Created by 卞 中杰 on 11-6-1.
 //  Copyright 2011年 __MyCompanyName__. All rights reserved.
 //
 
-#import "ShowMyCardsViewController.h"
+#import "RegisterViewController.h"
 
 
-@implementation ShowMyCardsViewController
-@synthesize dataArray = _dataArray;
-@synthesize tableView;
+@implementation RegisterViewController
 
-//- (id)initWithStyle:(UITableViewStyle)style
-//{
-//    self = [super initWithStyle:style];
-//    if (self) {
-//        // Custom initialization
-//    }
-//    return self;
-//}
+#pragma mark -
+#pragma mark UIViewController delegate methods
+
+
+
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 - (void)dealloc
 {
-    [tableView release];
-    [_dataArray release];
     [super dealloc];
 }
 
@@ -42,6 +43,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -58,7 +60,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.navigationItem.title = @"显示我的卡片";
+    self.navigationItem.title = @"用户注册";
     [super viewWillAppear:animated];
 }
 
@@ -87,34 +89,30 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return [_dataArray count];;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [[[_dataArray objectAtIndex:section] valueForKey:@"cards"] count];
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
     // Configure the cell...
-    NSString *str = [[[_dataArray objectAtIndex:indexPath.section] valueForKey:@"cards"] objectAtIndex:indexPath.row];
-    cell.textLabel.text = str;
+    
     return cell;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    NSDictionary *dic = [_dataArray objectAtIndex:section];
-    return [dic valueForKey:@"bank_name"];
 }
 
 /*
@@ -168,10 +166,6 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
-}
-
-- (IBAction)goBack:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

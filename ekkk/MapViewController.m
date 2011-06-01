@@ -16,6 +16,33 @@
 @synthesize showItemAnnotations = _showItemAnnotations;
 @synthesize itemAnnotation = _itemAnnotation;
 @synthesize showMultiItems = _showMultiItems;
+
+#pragma mark UIViewController delegate methods
+
+// called after this controller's view was dismissed, covered or otherwise hidden
+- (void)viewWillDisappear:(BOOL)animated
+{		
+	// restore the nav bar and status bar color to default
+	self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+    [super viewWillDisappear:animated];
+}
+
+// called after this controller's view will appear
+- (void)viewWillAppear:(BOOL)animated
+{		
+	// for aesthetic reasons (the background is black), make the nav bar black for this particular page
+	self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+	
+	// match the status bar with the nav bar
+	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackTranslucent;
+    
+    if (_showMultiItems == NO) {
+        self.navigationItem.title = _theItem.seller;
+    }
+    [super viewWillAppear:animated];
+}
+
 //切换地图模式
 - (IBAction)setMapStyle:(id)sender {
     switch (((UISegmentedControl *)sender).selectedSegmentIndex) {
@@ -140,9 +167,9 @@
     self.navigationItem.rightBarButtonItem = segItem;
     [segItem release];
     
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(back:)];
-    self.navigationItem.leftBarButtonItem = backButton;
-    [backButton release];
+//    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(back:)];
+//    self.navigationItem.leftBarButtonItem = backButton;
+//    [backButton release];
     
     self.navigationItem.title = _theItem.seller;
     

@@ -118,7 +118,8 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<object class="IBUIBarButtonItem" id="569259503">
 								<string key="IBUITitle">返回</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<int key="IBUIStyle">1</int>
+								<float key="IBUIWidth">100</float>
+								<int key="IBUIStyle">2</int>
 								<reference key="IBUIToolbar" ref="455952062"/>
 							</object>
 							<object class="IBUIBarButtonItem" id="184109868">
@@ -297,7 +298,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<object class="IBPartialClassDescription">
 					<string key="className">ShowMyCardsViewController</string>
-					<string key="superclassName">UITableViewController</string>
+					<string key="superclassName">UIViewController</string>
 					<object class="NSMutableDictionary" key="actions">
 						<string key="NS.key.0">goBack:</string>
 						<string key="NS.object.0">id</string>

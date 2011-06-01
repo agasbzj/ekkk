@@ -10,6 +10,7 @@
 #import "BankSelectViewController.h"
 #import "ekkkAppDelegate.h"
 #import "ShowMyCardsViewController.h"
+#import "RegisterViewController.h"
 
 @implementation ManagementRootViewController
 @synthesize tableView = _tableView;
@@ -138,6 +139,7 @@
     }
     else if (section == 1) {
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
         cell.textLabel.text = @"创建新帐户";
        cell.textLabel.textAlignment = UITextAlignmentLeft;
         UIFont *font = [UIFont systemFontOfSize:14];
@@ -146,6 +148,7 @@
     }
     else if (section == 2) {
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.textAlignment = UITextAlignmentLeft;
         UIFont *font = [UIFont systemFontOfSize:14];
         cell.textLabel.font = font;
@@ -187,6 +190,11 @@
 
     }
     
+    if (indexPath.section == 1) {
+        RegisterViewController *registerViewController = [[RegisterViewController alloc] init];
+        [self.navigationController pushViewController:registerViewController animated:YES];
+        [registerViewController release];
+    }
     if (indexPath.section == 2) {
         switch (indexPath.row) {
             case 0:

@@ -14,6 +14,9 @@
 @synthesize pickerDataArray = _pickerDataArray;
 @synthesize delegate;
 @synthesize selectedString;
+@synthesize confirmButton = _confirmButton;
+@synthesize cancelButton = _cancelButton;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -37,6 +40,8 @@
     [_pickerDataArray release];
     [_pickerView release];
     [_selectedString release];
+    [_confirmButton release];
+    [_cancelButton release];
     [super dealloc];
 }
 

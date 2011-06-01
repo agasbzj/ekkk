@@ -24,6 +24,7 @@
     UIPickerView *_picker;
     
     NSMutableArray *_cityArray, *_categoryArray, *_distanceArray, *_sortbyArray;
+    UIButton *_categoryButton, *_distanceButton, *_sortButton;
     
 }
 @property (nonatomic, retain) NSArray *dataArray;
@@ -32,6 +33,9 @@
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet UIToolbar *toolBar;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *cityButton;
+@property (nonatomic, retain) IBOutlet UIButton *categoryButton;
+@property (nonatomic, retain) IBOutlet UIButton *distanceButton;
+@property (nonatomic, retain) IBOutlet UIButton *sortButton;
 @property (nonatomic, retain) NSMutableArray *cityArray;
 @property (nonatomic, retain) NSMutableArray *categoryArray;
 @property (nonatomic, retain) NSMutableArray *distanceArray;

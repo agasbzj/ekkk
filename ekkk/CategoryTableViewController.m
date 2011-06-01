@@ -24,6 +24,9 @@
 @synthesize pickerArray = _pickerArray;
 
 @synthesize cityArray = _cityArray, categoryArray = _categoryArray, distanceArray = _distanceArray, sortbyArray = _sortbyArray;
+@synthesize categoryButton = _categoryButton;
+@synthesize distanceButton = _distanceButton;
+@synthesize sortButton = _sortButton;
 
 static NSUInteger choosenTag = 0;   //点了哪个查询分类
 //static bool pickerOpen = NO;    //是否已经打开了一个picker
@@ -55,6 +58,9 @@ static NSString *kBySortKey = @"all";   //排序字段
     [_toolBar release];
     [_dataArray release];
     [_pickerArray release];
+    [_categoryButton release];
+    [_sortButton release];
+    [_distanceButton release];
     [super dealloc];
 }
 
@@ -171,6 +177,13 @@ static NSString *kBySortKey = @"all";   //排序字段
     }
 }
 
+
+- (void)setButton:(UIButton *)button withImageNamed:(NSString *)fileName {
+    UIImage *oriImage = [UIImage imageNamed:fileName];
+    UIImage *stretchableButtonImage = [oriImage stretchableImageWithLeftCapWidth:12 topCapHeight:0];
+    [button setBackgroundImage:stretchableButtonImage forState:UIControlStateNormal];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -180,6 +193,10 @@ static NSString *kBySortKey = @"all";   //排序字段
 //    UIImageView *barImageView = [[UIImageView alloc] initWithFrame:CGRectMake(320, 44, 0, 0)];
 //    [barImageView setImage:[UIImage imageNamed:@"barimage.png"]];
 //    [self.view addSubview:barImageView];
+    
+    [self setButton:_categoryButton withImageNamed:@"whiteButton.png"];
+    [self setButton:_distanceButton withImageNamed:@"whiteButton.png"];
+    [self setButton:_sortButton withImageNamed:@"whiteButton.png"];
     
     //增加地图按钮
     UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:@"地图" style:UIBarButtonItemStyleDone target:self action:@selector(showMap:)];
@@ -345,6 +362,8 @@ static NSString *kBySortKey = @"all";   //排序字段
     
 }
 
+
+
 //生成、配置anction sheet， 包括其中的选取器
 - (void)generateActionSheet {
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"\n\n\n\n\n\n\n\n\n\n\n\n\n" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
@@ -354,6 +373,11 @@ static NSString *kBySortKey = @"all";   //排序字段
     NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"PickerView" owner:self options:nil];
     pickerView = [array objectAtIndex:0];
     pickerView.delegate = self;
+    
+    [self setButton:pickerView.confirmButton withImageNamed:@"blueButton.png"];
+    [self setButton:pickerView.cancelButton withImageNamed:@"whiteButton.png"];
+
+    
     switch (choosenTag) {
 //        case 1:
 //            pickerView.pickerDataArray = _cityArray;
