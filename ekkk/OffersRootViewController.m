@@ -198,7 +198,9 @@ NSArray *temp;  //跟踪指针，用来释放。
 {
     [super viewDidLoad];
     self.tableView.rowHeight = 74;  //设置每个cell行高
-    
+    self.tableView.backgroundColor = [UIColor blackColor];
+    self.tableView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 //    self.navigationController.navigationBarHidden = YES;
     
     //观察新数据是否保持完毕
@@ -249,6 +251,10 @@ NSArray *temp;  //跟踪指针，用来释放。
 
         NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"OffersTableCell" owner:self options:nil];
         cell = [array objectAtIndex:0];
+        cell.backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"img-offers-cellBackground.png"]] autorelease];
+        cell.selectionStyle = UITableViewCellEditingStyleNone;
+        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+
     }
     
 

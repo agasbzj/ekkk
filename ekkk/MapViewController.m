@@ -24,7 +24,7 @@
 {		
 	// restore the nav bar and status bar color to default
 	self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackOpaque;
     [super viewWillDisappear:animated];
 }
 

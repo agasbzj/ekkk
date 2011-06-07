@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-
 @interface RegisterViewController : UITableViewController {
     
+@private
+    NSString *_userName;
+    NSString *_password;
+    NSString *_email;
 }
-
+@property (nonatomic, retain) NSString *userName;
+@property (nonatomic, retain) NSString *password;
+@property (nonatomic, retain) NSString *email;
 @end

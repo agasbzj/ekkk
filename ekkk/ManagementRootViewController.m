@@ -191,7 +191,8 @@
     }
     
     if (indexPath.section == 1) {
-        RegisterViewController *registerViewController = [[RegisterViewController alloc] init];
+        RegisterViewController *registerViewController = [[RegisterViewController alloc] initWithStyle:UITableViewStyleGrouped];
+        registerViewController.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:registerViewController animated:YES];
         [registerViewController release];
     }
