@@ -11,6 +11,7 @@
 #import "ekkkAppDelegate.h"
 #import "ShowMyCardsViewController.h"
 #import "RegisterViewController.h"
+#import "TextFieldTableViewCell.h"
 
 @implementation ManagementRootViewController
 @synthesize tableView = _tableView;
@@ -123,7 +124,11 @@
 //        else if (section == 2) {
 //            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 //        }
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        if (section == 0) 
+            cell = [[(TextFieldTableViewCell *)[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        
+        else
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
     if (section == 0) {

@@ -42,6 +42,6 @@
 @property (nonatomic, retain) NSMutableArray *sortbyArray;
 @property (nonatomic, retain) UIPickerView *picker;
 - (IBAction)selectButtonPressed:(id)sender;
-- (void)sortTableViewWithCategory:(NSString *)categoryKey range:(NSString *)range sortby:(NSString *)sortKey;
+- (void)sortTableViewWithCategory;
 @end
 

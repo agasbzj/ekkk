@@ -34,7 +34,7 @@ static UIActionSheet *kActionSheet;
 static UIPickerView *kPicker;
 
 static NSString *kByCategory = @"all";  //风味筛选字段
-static NSString *kByRange = @"all"; //距离筛选字段
+static NSString *kByRange = @"all";     //距离筛选字段
 static NSString *kBySortKey = @"all";   //排序字段
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -557,43 +557,59 @@ static NSString *kBySortKey = @"all";   //排序字段
 #pragma mark - Action Sheet
 
 //筛选和排序
-- (void)sortTableViewWithCategory:(NSString *)categoryKey range:(NSString *)range sortby:(NSString *)sortKey {
+- (void)sortTableViewWithCategory {
     [_showArray removeAllObjects];
+    
+    for (OneItem *item in _dataArray) {
+        
+        if (![kByCategory isEqualToString:@"all"]) {
+            if (![item.category_Fine isEqualToString:kByCategory]) {
+                continue;
+            }
+        }
+        if (![kByRange isEqualToString:@"all"]) {
+            if ([item.distance intValue] >= [kByRange intValue]) {
+                continue;
+            }
+        }
+        [_showArray addObject:item];
+    }
+    
 
     
-    if (![categoryKey isEqualToString:@"all"] && ![range isEqualToString:@"all"]) {
-        for (OneItem *item in _dataArray) {
-            if ([item.category_Fine isEqualToString:categoryKey] && [item.distance intValue] <= [range intValue]) {
-                [_showArray addObject:item];
-            }
-        }
-
-    }
+//    if (![categoryKey isEqualToString:@"all"] && ![range isEqualToString:@"all"]) {
+//        for (OneItem *item in _dataArray) {
+//            if ([item.category_Fine isEqualToString:categoryKey] && [item.distance intValue] <= [range intValue]) {
+//                [_showArray addObject:item];
+//            }
+//        }
+//
+//    }
+//    
+//    else if ([categoryKey isEqualToString:@"all"] && ![range isEqualToString:@"all"]) {
+//        for (OneItem *item in _dataArray) {
+//            if ([item.distance intValue] <= [kByRange intValue]) {
+//                [_showArray addObject:item];
+//            }
+//        }
+//    }
+//    else if (![categoryKey isEqualToString:@"all"] && [range isEqualToString:@"all"]) {
+//        for (OneItem *item in _dataArray) {
+//            if ([item.category_Fine isEqualToString:categoryKey]) {
+//                [_showArray addObject:item];
+//            }
+//        }
+//    }
+//    else
+//        [_showArray addObjectsFromArray:_dataArray];
     
-    else if ([categoryKey isEqualToString:@"all"] && ![range isEqualToString:@"all"]) {
-        for (OneItem *item in _dataArray) {
-            if ([item.distance intValue] <= [kByRange intValue]) {
-                [_showArray addObject:item];
-            }
-        }
-    }
-    else if (![categoryKey isEqualToString:@"all"] && [range isEqualToString:@"all"]) {
-        for (OneItem *item in _dataArray) {
-            if ([item.category_Fine isEqualToString:categoryKey]) {
-                [_showArray addObject:item];
-            }
-        }
-    }
-    else
-        [_showArray addObjectsFromArray:_dataArray];
-    
-    if (![sortKey isEqualToString:@"all"]) {
+    if (![kBySortKey isEqualToString:@"all"] && [_showArray count] > 1) {
         float a =0, b = 0;
         int n = [_showArray count];
         for (int i = 1; i < n; i++) {
             for (int j = 0; j < n - i; j++) {
-                a = [[[_showArray objectAtIndex:j] valueForKey:sortKey] floatValue];
-                b = [[[_showArray objectAtIndex:j+1] valueForKey:sortKey] floatValue];
+                a = [[[_showArray objectAtIndex:j] valueForKey:kBySortKey] floatValue];
+                b = [[[_showArray objectAtIndex:j+1] valueForKey:kBySortKey] floatValue];
                 if (a < b) {
                     [_showArray exchangeObjectAtIndex:j withObjectAtIndex:j+1];
                 }
@@ -633,33 +649,20 @@ static NSString *kBySortKey = @"all";   //排序字段
 //            [_showArray removeAllObjects];
             switch (choosenTag) {
                 case 1:
-//                    for (OneItem *item in _dataArray) {
-//                        if ([item.city isEqualToString:[_cityArray objectAtIndex:choosen]]) {
-//                            [_showArray addObject:item];
-//                        }
-//                    }
+
                     
                     break;
                 case 2:
-//                    for (OneItem *item in _dataArray) {
-//                        if ([item.category_Fine isEqualToString:[_categoryArray objectAtIndex:choosen]]) {
-//                            [_showArray addObject:item];
-//                        }
-//                    }
+
                     kByCategory = [_categoryArray objectAtIndex:choosen];
                     break;
                 case 3:
-//                    for (OneItem *item in _dataArray) {
-//                        if ([item.distance intValue] <= [[_distanceArray objectAtIndex:choosen] intValue]) {
-//                            [_showArray addObject:item];
-//                        }
-//                    }
+
                     kByRange = [_distanceArray objectAtIndex:choosen];
                     break;
                 case 4:
                     kBySortKey = @"all";
-//                    //冒泡法，降序排序
-//                    
+                   
                     NSString *key;
                     switch (choosen) {
                         case 0:
@@ -688,7 +691,7 @@ static NSString *kBySortKey = @"all";   //排序字段
         default:
             break;
     }
-    [self sortTableViewWithCategory:kByCategory range:kByRange sortby:kBySortKey];
+    [self sortTableViewWithCategory];
     
     kPicker = nil;
     kActionSheet = nil;

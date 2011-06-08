@@ -9,11 +9,6 @@
 #import "RegisterViewController.h"
 #import "TextFieldTableViewCell.h"
 
-#define kUserNameTag 1
-#define kPasswordTag 2
-#define kPasswordConfirmTag 3
-#define kEmailTag 4
-
 
 @implementation RegisterViewController
 @synthesize userName = _userName;
@@ -22,6 +17,7 @@
 #pragma mark -
 #pragma mark UIViewController delegate methods
 
+//用于核对密码
 static NSString *confirmPassword = @"";
 
 // called after this controller's view was dismissed, covered or otherwise hidden
