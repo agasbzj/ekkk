@@ -7,7 +7,6 @@
 //
 
 #import "RegisterViewController.h"
-#import "TextFieldTableViewCell.h"
 
 
 @implementation RegisterViewController
@@ -162,6 +161,10 @@ static NSString *confirmPassword = @"";
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)hideKeyboard {
+    [self.view becomeFirstResponder];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -210,36 +213,42 @@ static NSString *confirmPassword = @"";
 {
     static NSString *CellIdentifier = @"Cell";
     
-    TextFieldTableViewCell *cell = (TextFieldTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[TextFieldTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    cell.textField.returnKeyType = UIReturnKeyDone;
-    
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(20, 0, 280, 44)];
+
+    textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    textField.borderStyle = UITextBorderStyleNone;
+    textField.backgroundColor = [UIColor clearColor];
+    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    textField.keyboardAppearance = UIKeyboardAppearanceAlert;
+    textField.returnKeyType = UIReturnKeyDone;
+    [textField addTarget:self action:@selector(hideKeyboard) forControlEvents:UIControlEventEditingDidEndOnExit];   
+    [cell.contentView addSubview:textField];
     switch (indexPath.section) {
         case 0:
-//            cell.tag = 1;
-            cell.textField.keyboardType = UIKeyboardTypeAlphabet;
-            cell.textField.tag = 1;
-            cell.textField.placeholder = @"用户名为6到12个字符";
+            textField.keyboardType = UIKeyboardTypeAlphabet;
+            textField.tag = 1;
+            textField.placeholder = @"用户名为6到12个字符";
             break;
         case 1:
         {
-            cell.textField.secureTextEntry = YES;
-            cell.textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+            textField.secureTextEntry = YES;
+            textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
             switch (indexPath.row) {
                 case 0:
                 {
-//                    cell.tag = 2;
-                    cell.textField.tag = 2;
-                    cell.textField.placeholder = @"请输入密码";
+                    textField.tag = 2;
+                    textField.placeholder = @"请输入密码";
                     break;
                 }
                 case 1:
                 {
-//                    cell.tag = 3;
-                    cell.textField.tag = 3;
-                    cell.textField.placeholder = @"请确认密码";
+                    textField.tag = 3;
+                    textField.placeholder = @"请确认密码";
                     break;
                 }
                 default:
@@ -249,10 +258,9 @@ static NSString *confirmPassword = @"";
         }
         case 2:
         {
-//            cell.tag = 4;
-            cell.textField.tag = 4;
-            cell.textField.keyboardType = UIKeyboardTypeEmailAddress;
-            cell.textField.placeholder = @"Email地址将用于帐号激活";
+            textField.tag = 4;
+            textField.keyboardType = UIKeyboardTypeEmailAddress;
+            textField.placeholder = @"Email地址将用于帐号激活";
             break;
         }
         default:

@@ -6,6 +6,8 @@
 //  Copyright 2011年 __MyCompanyName__. All rights reserved.
 //
 
+//用户设置选择银行界面
+
 #import <UIKit/UIKit.h>
 #import "CardsSelectView.h"
 

@@ -84,7 +84,6 @@
 		A90AED1D135EB1BE002DEFD3 /* BanksAndCards.plist in Resources */ = {isa = PBXBuildFile; fileRef = A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */; };
 		A94AD54F136B06A80089D3AF /* credit_information.xml in Resources */ = {isa = PBXBuildFile; fileRef = A94AD54E136B06A80089D3AF /* credit_information.xml */; };
 		A9724E2F135C835E000982A3 /* NearbyCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9724E2E135C835E000982A3 /* NearbyCategory.plist */; };
-		A97354BF139E4EAA00895C00 /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A97354BE139E4EAA00895C00 /* TextFieldTableViewCell.m */; };
 		A97354C2139E4F2900895C00 /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97354C1139E4F2900895C00 /* TextCell.xib */; };
 		A97DA87E1361BBC100994946 /* CategoryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A97DA87D1361BBC100994946 /* CategoryTableCell.m */; };
 		A97DA8801361BBD000994946 /* CategoryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97DA87F1361BBD000994946 /* CategoryTableCell.xib */; };
@@ -123,6 +122,8 @@
 		A9BE30AC134B2EEC00DA6E86 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE309F134B2EEC00DA6E86 /* ASIHTTPRequest.m */; };
 		A9BE30AD134B2EEC00DA6E86 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE30A3134B2EEC00DA6E86 /* ASIInputStream.m */; };
 		A9BE30AE134B2EEC00DA6E86 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE30A5134B2EEC00DA6E86 /* ASINetworkQueue.m */; };
+		A9D088DE13A1C92E00C86075 /* LoginAndRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D088DD13A1C92E00C86075 /* LoginAndRegisterView.m */; };
+		A9D088E313A1D5C300C86075 /* UserInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D088E213A1D5C300C86075 /* UserInfoView.m */; };
 		A9D10201136D9C05007B5F0D /* PickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9D10200136D9C05007B5F0D /* PickerView.xib */; };
 		A9D10205136D9E1A007B5F0D /* PickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D10204136D9E1A007B5F0D /* PickerView.m */; };
 		A9DBA3D21395E11300FA2770 /* whiteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A9DBA3D01395E11300FA2770 /* whiteButton.png */; };
@@ -235,8 +236,6 @@
 		A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BanksAndCards.plist; sourceTree = "<group>"; };
 		A94AD54E136B06A80089D3AF /* credit_information.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = credit_information.xml; sourceTree = "<group>"; };
 		A9724E2E135C835E000982A3 /* NearbyCategory.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = NearbyCategory.plist; sourceTree = "<group>"; };
-		A97354BD139E4EAA00895C00 /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewCell.h; sourceTree = "<group>"; };
-		A97354BE139E4EAA00895C00 /* TextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldTableViewCell.m; sourceTree = "<group>"; };
 		A97354C1139E4F2900895C00 /* TextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
 		A97DA87C1361BBC100994946 /* CategoryTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableCell.h; sourceTree = "<group>"; };
 		A97DA87D1361BBC100994946 /* CategoryTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableCell.m; sourceTree = "<group>"; };
@@ -297,6 +296,10 @@
 		A9BE30A4134B2EEC00DA6E86 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
 		A9BE30A5134B2EEC00DA6E86 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
 		A9BE30A6134B2EEC00DA6E86 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
+		A9D088DC13A1C92E00C86075 /* LoginAndRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAndRegisterView.h; sourceTree = "<group>"; };
+		A9D088DD13A1C92E00C86075 /* LoginAndRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAndRegisterView.m; sourceTree = "<group>"; };
+		A9D088E113A1D5C300C86075 /* UserInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoView.h; sourceTree = "<group>"; };
+		A9D088E213A1D5C300C86075 /* UserInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoView.m; sourceTree = "<group>"; };
 		A9D10200136D9C05007B5F0D /* PickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerView.xib; sourceTree = "<group>"; };
 		A9D10203136D9E1A007B5F0D /* PickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerView.h; sourceTree = "<group>"; };
 		A9D10204136D9E1A007B5F0D /* PickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerView.m; sourceTree = "<group>"; };
@@ -465,7 +468,6 @@
 		41A4D05E1348CB9A00D070BB /* ekkk */ = {
 			isa = PBXGroup;
 			children = (
-				A9DBA3D41395E9C100FA2770 /* Register */,
 				411FA7E3138BDB56001C27B3 /* Share */,
 				A9A46A211362FF4700964881 /* Manage */,
 				41A037711358731D001D52A8 /* IndividualTableCell */,
@@ -625,6 +627,8 @@
 		A9A46A211362FF4700964881 /* Manage */ = {
 			isa = PBXGroup;
 			children = (
+				A9D088E013A1D59F00C86075 /* UserInfo */,
+				A9DBA3D41395E9C100FA2770 /* Register */,
 				A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */,
 				A9A46A231363004100964881 /* ManagementRootViewController.h */,
 				A9A46A241363004100964881 /* ManagementRootViewController.m */,
@@ -672,6 +676,15 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		A9D088E013A1D59F00C86075 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				A9D088E113A1D5C300C86075 /* UserInfoView.h */,
+				A9D088E213A1D5C300C86075 /* UserInfoView.m */,
+			);
+			name = UserInfo;
+			sourceTree = "<group>";
+		};
 		A9DBA3CE1395E0F500FA2770 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
@@ -687,9 +700,9 @@
 				A9DBA3D51395E9F000FA2770 /* RegisterViewController.h */,
 				A9DBA3D61395E9F000FA2770 /* RegisterViewController.m */,
 				A9DBA3D71395E9F000FA2770 /* RegisterViewController.xib */,
-				A97354BD139E4EAA00895C00 /* TextFieldTableViewCell.h */,
-				A97354BE139E4EAA00895C00 /* TextFieldTableViewCell.m */,
 				A97354C1139E4F2900895C00 /* TextCell.xib */,
+				A9D088DC13A1C92E00C86075 /* LoginAndRegisterView.h */,
+				A9D088DD13A1C92E00C86075 /* LoginAndRegisterView.m */,
 			);
 			name = Register;
 			sourceTree = "<group>";
@@ -861,7 +874,8 @@
 				A9D10205136D9E1A007B5F0D /* PickerView.m in Sources */,
 				411FA7E7138BDBC3001C27B3 /* SinaWeiboView.m in Sources */,
 				A9DBA3D81395E9F000FA2770 /* RegisterViewController.m in Sources */,
-				A97354BF139E4EAA00895C00 /* TextFieldTableViewCell.m in Sources */,
+				A9D088DE13A1C92E00C86075 /* LoginAndRegisterView.m in Sources */,
+				A9D088E313A1D5C300C86075 /* UserInfoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

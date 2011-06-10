@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoginAndRegisterView.h"
 
-
-@interface ManagementRootViewController : UIViewController <UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource> {
+@interface ManagementRootViewController : UIViewController <UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource, LoginAndRegisterViewDelegate> {
     UITableView *_tableView;
 }
 - (IBAction)editMyCards:(id)sender;
 - (IBAction)showMyCards:(id)sender;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
+
+- (void)login;
+- (void)logout;
 @end

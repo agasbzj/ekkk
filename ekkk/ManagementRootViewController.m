@@ -11,10 +11,12 @@
 #import "ekkkAppDelegate.h"
 #import "ShowMyCardsViewController.h"
 #import "RegisterViewController.h"
-#import "TextFieldTableViewCell.h"
+#import "UserInfoView.h"
 
 @implementation ManagementRootViewController
 @synthesize tableView = _tableView;
+
+static UIBarButtonItem *loginAndOutButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,12 +41,59 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+
+
+- (void)login {
+    UserInfoView *userInfoView = [[UserInfoView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+    userInfoView.alpha = 0.f;
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [UIView beginAnimations:nil context:context];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView setAnimationDuration:.5f];
+    [self.tableView setTableHeaderView:userInfoView];
+    userInfoView.alpha = 1.f;
+    [loginAndOutButton setTitle:@"登出"];
+    [loginAndOutButton setAction:@selector(logout)];
+    [UIView commitAnimations];
+    
+    [userInfoView release];
+}
+
+- (void)logout {
+    LoginAndRegisterView *loginView = [[LoginAndRegisterView alloc] initWithFrame:CGRectMake(0, 0, 320, 240)];
+    loginView.delegate = self;
+    loginView.alpha = 0.f;
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [UIView beginAnimations:nil context:context];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView setAnimationDuration:.5f];
+    [self.tableView setTableHeaderView:loginView];
+    loginView.alpha = 1.f;
+    [loginAndOutButton setTitle:@"登录"];
+    [loginAndOutButton setAction:@selector(login)];
+    [UIView commitAnimations];
+    
+    [loginView release];
+
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    LoginAndRegisterView *loginView = [[LoginAndRegisterView alloc] initWithFrame:CGRectMake(0, 0, 320, 240)];
+    loginView.delegate = self;
+    [self.tableView setTableHeaderView:loginView];
+    [loginView release];
+    
+    UIBarButtonItem *loginButton = [[UIBarButtonItem alloc] initWithTitle:@"登录" style:UIBarButtonItemStyleBordered target:self action:@selector(login)];
+    loginAndOutButton = loginButton;
+    self.navigationItem.rightBarButtonItem = loginButton;
+    [loginButton release];
+    
 }
 
 - (void)viewDidUnload
@@ -87,7 +136,7 @@
 #pragma mark - TableView
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 3;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -95,12 +144,7 @@
         case 0:
             return 2;
             break;
-        case 1:
-            return 1;
-            break;
-        case 2:
-            return 2;
-            break;
+
         default:
             return 0;
             break;
@@ -114,44 +158,10 @@
     static NSString *CellIdentifier = @"CellIdentifer";
     UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-//        if (section == 0) {
-//            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-//            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//        }
-//        else if (section == 1) {
-//            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-//        }
-//        else if (section == 2) {
-//            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-//        }
-        if (section == 0) 
-            cell = [[(TextFieldTableViewCell *)[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-        
-        else
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
     if (section == 0) {
-        switch (row) {
-            case 0:
-                break;
-            case 1:
-                break;
-            default:
-                break;
-        }
-
-    }
-    else if (section == 1) {
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-        cell.textLabel.text = @"创建新帐户";
-       cell.textLabel.textAlignment = UITextAlignmentLeft;
-        UIFont *font = [UIFont systemFontOfSize:14];
-        cell.textLabel.font = font;
-        
-    }
-    else if (section == 2) {
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.textAlignment = UITextAlignmentLeft;
@@ -167,22 +177,19 @@
             default:
                 break;
         }
-        
+
     }
+
+
     return cell;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return @"用户登录：";
-            break;
-        case 1:
-            return @"用户注册：";
-            break;
-        case 2:
             return @"卡片管理：";
             break;
+
         default:
             return nil;
             break;
@@ -191,17 +198,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-//        [_tableView deselectRowAtIndexPath:indexPath animated:YES];
-
-    }
-    
-    if (indexPath.section == 1) {
-        RegisterViewController *registerViewController = [[RegisterViewController alloc] initWithStyle:UITableViewStyleGrouped];
-        registerViewController.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:registerViewController animated:YES];
-        [registerViewController release];
-    }
-    if (indexPath.section == 2) {
         switch (indexPath.row) {
             case 0:
             {
@@ -231,17 +227,20 @@
             default:
                 break;
         }
-        
+    
+            
     }
     [_tableView deselectRowAtIndexPath:indexPath animated:YES];
 
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        return YES;
-    }
-    else return NO;
+
+#pragma mark - 
+- (void)pushRegisterViewController {
+    RegisterViewController *registerViewController = [[RegisterViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    registerViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:registerViewController animated:YES];
+    [registerViewController release];
 }
 
 @end

@@ -6,6 +6,8 @@
 //  Copyright 2011年 __MyCompanyName__. All rights reserved.
 //
 
+//显示用户拥有的卡片界面
+
 #import <UIKit/UIKit.h>
 
 

@@ -167,7 +167,7 @@ static NSString *kBySortKey = @"all";   //排序字段
     UISegmentedControl *seg = (UISegmentedControl *)sender;
     switch (seg.selectedSegmentIndex) {
         case 0:
-            [self sortTableViewWithCategory:kByCategory range:kByRange sortby:kBySortKey];
+            [self sortTableViewWithCategory];
             break;
         case 1:
             [self getMyCardsData];
