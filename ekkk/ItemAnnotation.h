@@ -13,14 +13,16 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MKAnnotation.h>
 
+@class OneItem;
 @interface ItemAnnotation : NSObject <MKAnnotation>{
     CLLocationCoordinate2D coordinate;
     NSString *_seller;
     NSString *_address;
+    OneItem *_theItem;
 }
 
 @property (nonatomic, retain) NSString *seller;
 @property (nonatomic, retain) NSString *address;
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
-
+@property (nonatomic, retain) OneItem *theItem;
 @end

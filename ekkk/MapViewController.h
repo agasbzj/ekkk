@@ -15,7 +15,7 @@
     OneItem *_theItem;
     ItemAnnotation *_itemAnnotation;    //显示的单个标记
     BOOL _showMultiItems;    //是否显示多个标记
-    NSArray *_itemAnnotations;  //传入的所有标记
+    NSArray *_itemAnnotations;  //传入的所有标记（OneItem* ）
     NSMutableArray *_showItemAnnotations;   //显示的所有标记
 }
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;

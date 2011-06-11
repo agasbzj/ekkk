@@ -7,7 +7,7 @@
 //
 
 #import "MapViewController.h"
-
+#import "DetailController.h"
 
 @implementation MapViewController
 @synthesize mapView = _mapView;
@@ -18,6 +18,8 @@
 @synthesize showMultiItems = _showMultiItems;
 
 #pragma mark UIViewController delegate methods
+
+static NSInteger kItemIndex = -1;
 
 // called after this controller's view was dismissed, covered or otherwise hidden
 - (void)viewWillDisappear:(BOOL)animated
@@ -157,6 +159,7 @@
         item.seller = theItem.seller;
         item.address = theItem.address;
         item.coordinate = theItem.coordinate;
+        item.theItem = theItem;
         [_showItemAnnotations addObject:item];
     }
     [self.mapView addAnnotations:_showItemAnnotations];
@@ -215,6 +218,21 @@
 //点击了一个大头针的详细标记后，切换到对应item的detail页面。
 - (void)showDetailWithItem:(OneItem *)theItem {
     NSLog(@"Annotation Detail Tapped!");
+
+
+    DetailController *detailController = [[DetailController alloc] init];
+    detailController.oneItem = theItem;
+    [self.navigationController pushViewController:detailController animated:YES];
+    [detailController release];
+
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    DetailController *detailController = [[DetailController alloc] init];
+    ItemAnnotation *itemAnnotation = view.annotation;
+    detailController.oneItem = itemAnnotation.theItem;
+    [self.navigationController pushViewController:detailController animated:YES];
+    [detailController release];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <MKAnnotation>)annotation {
@@ -235,11 +253,14 @@
         // note: you can assign a specific call out accessory view, or as MKMapViewDelegate you can implement:
         //  - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
         //
-        UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        [rightButton addTarget:self
-                        action:@selector(showDetailWithItem:)
-              forControlEvents:UIControlEventTouchUpInside];
-        customPinView.rightCalloutAccessoryView = rightButton;
+        if (_showMultiItems) {
+            UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//            [rightButton addTarget:self
+//                            action:@selector(showDetailWithItem:)
+//                  forControlEvents:UIControlEventTouchUpInside];
+            customPinView.rightCalloutAccessoryView = rightButton;
+        }
+
         
         return customPinView;
     }

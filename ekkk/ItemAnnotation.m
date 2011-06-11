@@ -7,17 +7,18 @@
 //
 
 #import "ItemAnnotation.h"
-
+#import "OneItem.h"
 
 @implementation ItemAnnotation
 @synthesize seller = _seller;
 @synthesize address = _address;
 @synthesize coordinate;
-
+@synthesize theItem = _theItem;
 
 - (void)dealloc {
     [_seller release];
     [_address release];
+    [_theItem release];
     [super dealloc];
 }
 

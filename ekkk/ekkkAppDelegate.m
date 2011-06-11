@@ -110,18 +110,7 @@
     //注册为观察者，用于接受新线程解析的数据。
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadItems:) name:@"LocalXMLParsed" object:nil];
     
-    
-    ////////////////////////////////////////////////////////////////////////////////////////
-    //用于调试，删除之
-    //新建线程
-//    interConnectOperationQueue = [NSOperationQueue new];
-//    
-//    //定位完成开始和服务器交互
-//    interconnectOperation = [[[InterconnectWithServer alloc] initWithCoordinate:nil] autorelease];
-//    [self.interConnectOperationQueue addOperation: interconnectOperation];
-    ////////////////////////////////////////////////////////////////////////////////////////
-    
-    
+
    //开始定位
     [self startStandardUpdates];
     
@@ -142,7 +131,7 @@
         locationManager = [[CLLocationManager alloc] init];
     
     locationManager.delegate = self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
     // Set a movement threshold for new events.
     locationManager.distanceFilter = kCLHeadingFilterNone;

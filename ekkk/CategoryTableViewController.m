@@ -114,7 +114,7 @@ static NSString *kBySortKey = @"all";   //排序字段
     
 }
 
-//实现点击显示地图按钮
+//实现点击显示地图按钮，于地图上显示当前页面所有标记
 - (IBAction)showMap:(id)sender {
     
     MapViewController *mapViewController = [[MapViewController alloc] init];
