@@ -83,7 +83,8 @@
     footerView.delegate = self;
     footerView.backgroundColor = [UIColor clearColor];
     footerView.textView.text = _oneItem.details;
-
+    footerView.textView.backgroundColor = [UIColor colorWithRed:0.945 green:0.945 blue:0.945 alpha:.5f];
+    footerView.textView.layer.cornerRadius = 5.f;
     
     footerView.label.layer.cornerRadius = 10.f;
     footerView.leftButton.layer.cornerRadius = 10.f;

@@ -80,6 +80,8 @@
     }
 }
 
+
+
 - (void)animateToWorld:(OneItem *)item
 {    
     MKCoordinateRegion current = _mapView.region;
@@ -95,6 +97,18 @@
     region.span = span;
     [_mapView setRegion:region animated:YES];
     
+}
+
+- (void)gotoLocation
+{
+    // start off by default in San Francisco
+    MKCoordinateRegion newRegion;
+    newRegion.center.latitude = 37.786996;
+    newRegion.center.longitude = -122.440100;
+    newRegion.span.latitudeDelta = 0.112872;
+    newRegion.span.longitudeDelta = 0.109863;
+    
+    [self.mapView setRegion:newRegion animated:YES];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -129,6 +143,8 @@
     _itemAnnotation.seller = _theItem.seller;
     _itemAnnotation.address = _theItem.address;
     _itemAnnotation.coordinate = _theItem.coordinate;
+    
+    
     [self.mapView addAnnotation:_itemAnnotation];
 //    [self.mapView selectAnnotation:_itemAnnotation animated:YES];
 }
@@ -190,5 +206,49 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+
+
+#pragma mark -
+#pragma mark MKMapViewDelegate
+
+//点击了一个大头针的详细标记后，切换到对应item的detail页面。
+- (void)showDetailWithItem:(OneItem *)theItem {
+    NSLog(@"Annotation Detail Tapped!");
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <MKAnnotation>)annotation {
+    // try to dequeue an existing pin view first
+    static NSString* AnnotationIdentifier = @"AnnotationIdentifier";
+    MKPinAnnotationView* pinView = (MKPinAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationIdentifier];
+    if (!pinView)
+    {
+        // if an existing pin view was not available, create one
+        MKPinAnnotationView* customPinView = [[[MKPinAnnotationView alloc]
+                                               initWithAnnotation:annotation reuseIdentifier:AnnotationIdentifier] autorelease];
+        customPinView.pinColor = MKPinAnnotationColorRed;
+        customPinView.animatesDrop = YES;
+        customPinView.canShowCallout = YES;
+        
+        // add a detail disclosure button to the callout which will open a new view controller page
+        //
+        // note: you can assign a specific call out accessory view, or as MKMapViewDelegate you can implement:
+        //  - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
+        //
+        UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        [rightButton addTarget:self
+                        action:@selector(showDetailWithItem:)
+              forControlEvents:UIControlEventTouchUpInside];
+        customPinView.rightCalloutAccessoryView = rightButton;
+        
+        return customPinView;
+    }
+    else
+    {
+        pinView.annotation = annotation;
+    }
+    return pinView;
+}
+
 
 @end
