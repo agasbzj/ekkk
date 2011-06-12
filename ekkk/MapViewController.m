@@ -19,7 +19,8 @@
 
 #pragma mark UIViewController delegate methods
 
-static NSInteger kItemIndex = -1;
+static NSInteger kItemIndex = 0;
+static UIProgressView *kProgressView = nil;
 
 // called after this controller's view was dismissed, covered or otherwise hidden
 - (void)viewWillDisappear:(BOOL)animated
@@ -164,6 +165,64 @@ static NSInteger kItemIndex = -1;
     }
     [self.mapView addAnnotations:_showItemAnnotations];
 }
+
+- (void)reflashArrayWithButton:(id)sender {
+    UIBarButtonItem *button = (UIBarButtonItem *)sender;
+    NSInteger maxCount = [_itemAnnotations count];
+    float fMaxCount = 10.f / (float)maxCount;
+    if (maxCount <= 10) {
+        return;
+    }
+    switch (button.tag) {
+        case 1:
+        {
+            if (kItemIndex == 0) {
+                break;
+            }
+            kItemIndex--;
+            [self.mapView removeAnnotations:self.mapView.annotations];
+            [_showItemAnnotations removeAllObjects];
+            for (int i = kItemIndex * 10; (i < kItemIndex * 10 + 10) && (i < [_itemAnnotations count]); i++) {
+                OneItem *oneItem = [_itemAnnotations objectAtIndex:i];
+                ItemAnnotation *item = [[[ItemAnnotation alloc] init] autorelease];
+                item.seller = oneItem.seller;
+                item.address = oneItem.address;
+                item.coordinate = oneItem.coordinate;
+                item.theItem = oneItem;
+                [_showItemAnnotations addObject:item];
+            }
+            [self.mapView addAnnotations:_showItemAnnotations];
+            kProgressView.progress -= fMaxCount;
+            break;
+        }
+        case 2:
+        {    
+            if (kItemIndex == [_itemAnnotations count] / 10) {
+                break;
+            }
+            kItemIndex++;
+            [self.mapView removeAnnotations:self.mapView.annotations];
+            [_showItemAnnotations removeAllObjects];
+            for (int i = kItemIndex * 10; (i < kItemIndex * 10 + 10) && (i < [_itemAnnotations count]); i++) {
+                OneItem *oneItem = [_itemAnnotations objectAtIndex:i];
+                ItemAnnotation *item = [[[ItemAnnotation alloc] init] autorelease];
+                item.seller = oneItem.seller;
+                item.address = oneItem.address;
+                item.coordinate = oneItem.coordinate;
+                item.theItem = oneItem;
+                [_showItemAnnotations addObject:item];
+
+            }
+            [self.mapView addAnnotations:_showItemAnnotations];
+            kProgressView.progress += fMaxCount;
+            break;
+        }
+            
+        default:
+            break;
+    }
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -176,6 +235,8 @@ static NSInteger kItemIndex = -1;
     else
         [self locateOnePlace];
     
+    NSInteger maxCount = [_itemAnnotations count];
+    
     UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"地图", @"卫星", nil]];
     [seg addTarget:self action:@selector(setMapStyle:) forControlEvents:UIControlEventValueChanged];
     seg.segmentedControlStyle = UISegmentedControlStyleBar;
@@ -186,14 +247,46 @@ static NSInteger kItemIndex = -1;
     self.navigationItem.rightBarButtonItem = segItem;
     [segItem release];
     
-//    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(back:)];
-//    self.navigationItem.leftBarButtonItem = backButton;
-//    [backButton release];
+//    self.navigationItem.prompt = @"点击图钉以显示详细信息";
     
     self.navigationItem.title = _theItem.seller;
     
-//    self.navigationController.navigationBar.translucent = YES;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    
+    if (_showMultiItems) {
+        UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 436, 320, 44)];
+        toolBar.barStyle = UIBarStyleBlackTranslucent;
+        
+        UIBarButtonItem *last = [[UIBarButtonItem alloc] initWithTitle:@"前10个" style:UIBarButtonItemStyleBordered target:self action:@selector(reflashArrayWithButton:)];
+        last.tag = 1;
+        
+        UIBarButtonItem *flexLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+        
+//        UIBarButtonItem *info = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"显示第1～%d个", [_itemAnnotations count] > 10 ? 10 : [_itemAnnotations count]] style:UIBarButtonItemStylePlain target:self action:nil];
+        
+        UIProgressView *progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar];
+        progressView.progress = (10.f / (float)maxCount) >= 1 ? 1.f : (10.f / (float)maxCount);
+        kProgressView = progressView;
+        UIBarButtonItem *progressItem = [[UIBarButtonItem alloc] initWithCustomView:progressView];
+        [progressView release];
+        
+        
+        UIBarButtonItem *flexRight = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+        
+        UIBarButtonItem *next = [[UIBarButtonItem alloc] initWithTitle:@"后10个" style:UIBarButtonItemStyleBordered target:self action:@selector(reflashArrayWithButton:)];
+        next.tag = 2;
+        
+        [toolBar setItems:[NSArray arrayWithObjects:last, flexLeft, progressItem, flexRight, next, nil] animated:YES];
+        [self.mapView addSubview:toolBar];
+        
+        [toolBar release];
+        [last release];
+        [flexRight release];
+//        [info release];
+        [progressItem release];
+        [flexLeft release];
+        [next release];
+    }
     
 }
 

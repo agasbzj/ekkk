@@ -36,16 +36,8 @@ static UIPickerView *kPicker;
 static NSString *kByCategory = @"all";  //风味筛选字段
 static NSString *kByRange = @"all";     //距离筛选字段
 static NSString *kBySortKey = @"all";   //排序字段
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-      
-    }
-    return self;
-}
+static UIBarButtonItem *kMapButton = nil;
+static UISegmentedControl *kSegmentedControl = nil; //切换控制 
 
 - (void)dealloc
 {
@@ -160,6 +152,9 @@ static NSString *kBySortKey = @"all";   //排序字段
         flag = 0;
         i++;
     }
+    
+    //没有结果的话，禁用“地图”按钮，否则启用“地图”按钮
+    kMapButton.enabled = [_showArray count] > 0 ? YES : NO;
     [self.tableView reloadData];
 }
 
@@ -200,8 +195,11 @@ static NSString *kBySortKey = @"all";   //排序字段
     
     //增加地图按钮
     UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:@"地图" style:UIBarButtonItemStyleDone target:self action:@selector(showMap:)];
+    kMapButton = mapButton;
     self.navigationItem.rightBarButtonItem = mapButton;
     [mapButton release];
+    
+    
     
     _showArray = [[NSMutableArray alloc] initWithArray:_dataArray];
     _pickerArray = [[NSMutableArray alloc] initWithCapacity:10];
@@ -227,6 +225,7 @@ static NSString *kBySortKey = @"all";   //排序字段
     
     //分栏符
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"All Cards", @"My Cards", nil]];
+    kSegmentedControl = segmentedControl;
     segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
     segmentedControl.selectedSegmentIndex = 0;
     [segmentedControl addTarget:self action:@selector(switchCards:) forControlEvents:UIControlEventValueChanged];
@@ -398,12 +397,7 @@ static NSString *kBySortKey = @"all";   //排序字段
     kPicker = pickerView.pickerView;
     [actionSheet addSubview:pickerView];
     [actionSheet showInView:self.view];
-//    CGRect rect = pickerView.pickerView.bounds;
-//    rect.size.width = 320;
-//    pickerView.pickerView.bounds = rect;
-//    CGPoint point = pickerView.pickerView.center;
-//    point.x = 160;
-//    pickerView.pickerView.center = point;
+
     kActionSheet = actionSheet;
     [actionSheet release];
 }
@@ -411,116 +405,11 @@ static NSString *kBySortKey = @"all";   //排序字段
 
 
 - (IBAction)selectButtonPressed:(id)sender {
-//    if (pickerOpen == YES) {
-//        return;
-//    }
+
     UIButton *button = (UIButton *)sender;
     [_pickerArray removeAllObjects];
     choosenTag = button.tag;
-    
-//    NSString *str;
-//    NSInteger flag = 0;
-    
-
-    
-//    //根据分类显示选取器内可供选择的数据
-//    switch (choosenTag) {
-//        case 1:
-//            for (OneItem *item in _dataArray) {
-//                str = item.city;
-//                for (NSString *s in _pickerArray) {
-//                    if ([s isEqualToString:str]) {
-//                        flag = 1;
-//                        break;
-//                    }
-//                }
-//                if (flag == 0) {
-//                    [_pickerArray addObject:item.city];
-//                }
-//                flag = 0;
-//            }
-//            break;
-//        case 2:
-//            for (OneItem *item in _dataArray) {
-//                str = item.category_Fine;
-//                for (NSString *s in _pickerArray) {
-//                    if ([s isEqualToString:str] == YES) {
-//                        flag = 1;
-//                        break;
-//                    }
-//                }
-//                if (flag == 0) {
-//                    [_pickerArray addObject:item.category_Fine];
-//                }
-//                flag = 0;
-//            }
-//            break;
-//        case 3:
-//            for (OneItem *item in _dataArray) {
-//                str = item.category_Coarse;
-//                for (NSString *s in _pickerArray) {
-//                    if ([s isEqualToString:str]) {
-//                        flag = 1;
-//                        break;
-//                    }
-//                }
-//                if (flag == 0) {
-//                    [_pickerArray addObject:item.category_Coarse];
-//                }
-//                flag = 0;
-//            }
-//        case 4:
-//            for (OneItem *item in _dataArray) {
-//                str = item.category_Coarse;
-//                for (NSString *s in _pickerArray) {
-//                    if ([s isEqualToString:str]) {
-//                        flag = 1;
-//                        break;
-//                    }
-//                }
-//                if (flag == 0) {
-//                    [_pickerArray addObject:item.category_Coarse];
-//                }
-//                flag = 0;
-//            }
-//        case 5:
-//            for (OneItem *item in _dataArray) {
-//                str = item.category_Coarse;
-//                for (NSString *s in _pickerArray) {
-//                    if ([s isEqualToString:str]) {
-//                        flag = 1;
-//                        break;
-//                    }
-//                }
-//                if (flag == 0) {
-//                    [_pickerArray addObject:item.category_Coarse];
-//                }
-//                flag = 0;
-//            }
-//            break;
-//        default:
-//            break;
-//    }
-    
-    
-//
-//    
-//    PickerViewController *pickerView;
-//    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"PickerViewController" owner:self options:nil];
-//    pickerView = [array objectAtIndex:0];
-//    pickerView.backgroundColor = [UIColor clearColor];
-//    
-//    pickerView.pickerArray = _pickerArray;
-//    pickerView.delegate = self;
-//    
-//    CGRect rect = pickerView.frame;
-//    rect.origin.y = 156;
-//    pickerView.frame = rect;
-//    
-//    [self.view addSubview:pickerView];
-//    pickerOpen = YES;
-
-    
+     
     
     [self generateActionSheet];
 }
@@ -574,33 +463,10 @@ static NSString *kBySortKey = @"all";   //排序字段
         [_showArray addObject:item];
     }
     
-
+    if (kSegmentedControl.selectedSegmentIndex == 1) {
+        [self getMyCardsData];
+    }
     
-//    if (![categoryKey isEqualToString:@"all"] && ![range isEqualToString:@"all"]) {
-//        for (OneItem *item in _dataArray) {
-//            if ([item.category_Fine isEqualToString:categoryKey] && [item.distance intValue] <= [range intValue]) {
-//                [_showArray addObject:item];
-//            }
-//        }
-//
-//    }
-//    
-//    else if ([categoryKey isEqualToString:@"all"] && ![range isEqualToString:@"all"]) {
-//        for (OneItem *item in _dataArray) {
-//            if ([item.distance intValue] <= [kByRange intValue]) {
-//                [_showArray addObject:item];
-//            }
-//        }
-//    }
-//    else if (![categoryKey isEqualToString:@"all"] && [range isEqualToString:@"all"]) {
-//        for (OneItem *item in _dataArray) {
-//            if ([item.category_Fine isEqualToString:categoryKey]) {
-//                [_showArray addObject:item];
-//            }
-//        }
-//    }
-//    else
-//        [_showArray addObjectsFromArray:_dataArray];
     
     if (![kBySortKey isEqualToString:@"all"] && [_showArray count] > 1) {
         float a =0, b = 0;
@@ -616,31 +482,14 @@ static NSString *kBySortKey = @"all";   //排序字段
         }
     }
     
+    //没有结果的话，禁用“地图”按钮，否则启用“地图”按钮
+    kMapButton.enabled = [_showArray count] > 0 ? YES : NO;
     [self.tableView reloadData];
     
 }
     
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
-//    if (buttonIndex == [actionSheet destructiveButtonIndex]) {
-//        NSUInteger choosen = [_picker selectedRowInComponent:0];
-//        [_showArray removeAllObjects];  //先清空要显示的数据
-//        
-//        //按点击的分类查询刷新数据
-//        switch (choosenTag) {
-//            case 1:
-//                for (OneItem *item in _dataArray) {
-//                    if ([item.city isEqualToString:[_pickerArray objectAtIndex:choosen]]) {
-//                        [_showArray addObject:item];
-//                    }
-//                }
-//                break;
-//
-//            default:
-//                break;
-//        }
-//
-//        [_tableView reloadData];
-//    }
+
 
     NSUInteger choosen = [kPicker selectedRowInComponent:0];
     switch (buttonIndex) {
