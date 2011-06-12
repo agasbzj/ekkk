@@ -245,7 +245,6 @@ static NSInteger kItemIndex = -1;
         MKPinAnnotationView* customPinView = [[[MKPinAnnotationView alloc]
                                                initWithAnnotation:annotation reuseIdentifier:AnnotationIdentifier] autorelease];
         customPinView.pinColor = MKPinAnnotationColorRed;
-        customPinView.animatesDrop = YES;
         customPinView.canShowCallout = YES;
         
         // add a detail disclosure button to the callout which will open a new view controller page
@@ -255,13 +254,12 @@ static NSInteger kItemIndex = -1;
         //
         if (_showMultiItems) {
             UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-//            [rightButton addTarget:self
-//                            action:@selector(showDetailWithItem:)
-//                  forControlEvents:UIControlEventTouchUpInside];
             customPinView.rightCalloutAccessoryView = rightButton;
         }
+        else 
+            customPinView.animatesDrop = YES;
 
-        
+
         return customPinView;
     }
     else
