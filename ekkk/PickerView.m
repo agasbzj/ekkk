@@ -22,6 +22,33 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        _pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 44, 320, 216)];
+        _pickerView.delegate = self;
+        _pickerView.dataSource = self;
+        _pickerView.showsSelectionIndicator = YES;
+        [self addSubview:_pickerView];
+        [_pickerView release];
+        
+        UIImage *oriImage = [UIImage imageNamed:@"blueButton.png"];
+        UIImage *stretchableButtonImage = [oriImage stretchableImageWithLeftCapWidth:12 topCapHeight:0];
+        _confirmButton = [[UIButton alloc] initWithFrame:CGRectMake(180, 4, 120, 37)];
+        _confirmButton.tag = 1;
+        [_confirmButton setTitle:@"确定" forState:UIControlStateNormal];
+        [_confirmButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [_confirmButton setBackgroundImage:stretchableButtonImage forState:UIControlStateNormal];
+        [self addSubview:_confirmButton];
+        [_confirmButton release];
+        
+        UIImage *whiteImage = [UIImage imageNamed:@"whiteButton.png"];
+        UIImage *stretchableButtonImage2 = [whiteImage stretchableImageWithLeftCapWidth:12 topCapHeight:0];
+        _cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 4, 120, 37)];
+        _cancelButton.tag = 2;
+        [_cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_cancelButton setTitle:@"取消" forState:UIControlStateNormal];
+        [_cancelButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [_cancelButton setBackgroundImage:stretchableButtonImage2 forState:UIControlStateNormal];
+        [self addSubview:_cancelButton];
+        [_cancelButton release];
     }
     return self;
 }
@@ -38,10 +65,7 @@
 - (void)dealloc
 {
     [_pickerDataArray release];
-    [_pickerView release];
     [_selectedString release];
-    [_confirmButton release];
-    [_cancelButton release];
     [super dealloc];
 }
 

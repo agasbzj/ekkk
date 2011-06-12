@@ -369,9 +369,9 @@ static NSString *kBySortKey = @"all";   //排序字段
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"\n\n\n\n\n\n\n\n\n\n\n\n\n" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
     actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
 
-    PickerView *pickerView;
-    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"PickerView" owner:self options:nil];
-    pickerView = [array objectAtIndex:0];
+    PickerView *pickerView = [[PickerView alloc] initWithFrame:CGRectMake(0, 0, 320, 260)];
+//    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"PickerView" owner:self options:nil];
+//    pickerView = [array objectAtIndex:0];
     pickerView.delegate = self;
     
     [self setButton:pickerView.confirmButton withImageNamed:@"blueButton.png"];
@@ -394,17 +394,16 @@ static NSString *kBySortKey = @"all";   //排序字段
         default:
             break;
     }
-//    pickerView.pickerDataArray = _pickerArray;
 
     kPicker = pickerView.pickerView;
     [actionSheet addSubview:pickerView];
     [actionSheet showInView:self.view];
-    CGRect rect = pickerView.pickerView.bounds;
-    rect.size.width = 320;
-    pickerView.pickerView.bounds = rect;
-    CGPoint point = pickerView.pickerView.center;
-    point.x = 160;
-    pickerView.pickerView.center = point;
+//    CGRect rect = pickerView.pickerView.bounds;
+//    rect.size.width = 320;
+//    pickerView.pickerView.bounds = rect;
+//    CGPoint point = pickerView.pickerView.center;
+//    point.x = 160;
+//    pickerView.pickerView.center = point;
     kActionSheet = actionSheet;
     [actionSheet release];
 }

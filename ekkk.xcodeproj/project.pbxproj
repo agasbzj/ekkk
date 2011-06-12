@@ -349,7 +349,8 @@
 				41750DCD134AF09300CFF97E /* TBXML.h */,
 				41750DCE134AF09300CFF97E /* TBXML.m */,
 			);
-			path = TBXML;
+			name = TBXML;
+			path = ekkk/TBXML;
 			sourceTree = "<group>";
 		};
 		41750DE0134AF1E700CFF97E /* ImageDownloader */ = {
@@ -431,6 +432,8 @@
 			isa = PBXGroup;
 			children = (
 				41A4D05E1348CB9A00D070BB /* ekkk */,
+				A9BE3006134B215000DA6E86 /* ASIHttpRequest */,
+				41750DCA134AF09300CFF97E /* TBXML */,
 				41750E16134AFCE100CFF97E /* Resource */,
 				41A4D0571348CB9A00D070BB /* Frameworks */,
 				41A4D0551348CB9A00D070BB /* Products */,
@@ -472,12 +475,10 @@
 				A9A46A211362FF4700964881 /* Manage */,
 				41A037711358731D001D52A8 /* IndividualTableCell */,
 				A94AD54E136B06A80089D3AF /* credit_information.xml */,
-				A9BE3006134B215000DA6E86 /* ASIHttpRequest */,
 				41750E18134AFEDD00CFF97E /* ItemModel */,
 				41750E0E134AFB6100CFF97E /* MapView */,
 				41750DE1134AF1EB00CFF97E /* DetailView */,
 				41750DE0134AF1E700CFF97E /* ImageDownloader */,
-				41750DCA134AF09300CFF97E /* TBXML */,
 				41A4D0821348CC5E00D070BB /* Parse */,
 				41A4D0811348CC5300D070BB /* Offers */,
 				41A4D0801348CC4D00D070BB /* Nearby */,
@@ -673,7 +674,7 @@
 				A9BE307F134B21C000DA6E86 /* Reachability.m */,
 			);
 			name = ASIHttpRequest;
-			path = Classes;
+			path = ekkk/Classes;
 			sourceTree = "<group>";
 		};
 		A9D088E013A1D59F00C86075 /* UserInfo */ = {
