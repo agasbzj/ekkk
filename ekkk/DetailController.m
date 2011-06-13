@@ -133,6 +133,7 @@
             return [_oneItem.bank count];
             break;
         default:
+            return 0;
             break;
     }
 }

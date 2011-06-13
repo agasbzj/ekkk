@@ -177,7 +177,7 @@ static UIProgressView *kProgressView = nil;
         case 1:
         {
             if (kItemIndex == 0) {
-                break;
+                return;
             }
             kItemIndex--;
             [self.mapView removeAnnotations:self.mapView.annotations];
@@ -198,7 +198,7 @@ static UIProgressView *kProgressView = nil;
         case 2:
         {    
             if (kItemIndex == [_itemAnnotations count] / 10) {
-                break;
+                return;
             }
             kItemIndex++;
             [self.mapView removeAnnotations:self.mapView.annotations];

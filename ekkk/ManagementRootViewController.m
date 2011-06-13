@@ -162,7 +162,7 @@ static UIBarButtonItem *loginAndOutButton;
     }
     
     if (section == 0) {
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.textAlignment = UITextAlignmentLeft;
         UIFont *font = [UIFont systemFontOfSize:14];
@@ -198,6 +198,7 @@ static UIBarButtonItem *loginAndOutButton;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
         switch (indexPath.row) {
             case 0:
             {
