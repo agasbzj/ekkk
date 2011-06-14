@@ -102,7 +102,7 @@ NSArray *temp;  //跟踪指针，用来释放。
     NSArray *allData = ekkkDelegate.parsedItems;
     NSArray *myCards = ekkkDelegate.userCardsArray;
     _dataArray = [[NSMutableArray alloc] initWithCapacity:30];
-    NSMutableArray *allMyCards = [[NSMutableArray alloc] initWithCapacity:10];
+    NSMutableArray *allMyCards = [[[NSMutableArray alloc] initWithCapacity:10] autorelease];
     
     //所有用户的卡，每一项是string
     for (NSDictionary *dic in myCards)

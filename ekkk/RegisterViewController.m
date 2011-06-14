@@ -227,7 +227,6 @@ static NSString *confirmPassword = @"";
     textField.keyboardAppearance = UIKeyboardAppearanceAlert;
     textField.returnKeyType = UIReturnKeyDone;
     [textField addTarget:self action:@selector(hideKeyboard) forControlEvents:UIControlEventEditingDidEndOnExit];   
-    [cell.contentView addSubview:textField];
     switch (indexPath.section) {
         case 0:
             textField.keyboardType = UIKeyboardTypeAlphabet;
@@ -267,6 +266,8 @@ static NSString *confirmPassword = @"";
 
             break;
     }
+    [cell.contentView addSubview:textField];
+    [textField release];
     
     // Configure the cell...
     

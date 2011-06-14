@@ -82,7 +82,6 @@
 		41E3647B136439C2001EFDC4 /* 花旗银行.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E36476136439C2001EFDC4 /* 花旗银行.png */; };
 		41E3647C136439C2001EFDC4 /* 俏江南.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E36477136439C2001EFDC4 /* 俏江南.png */; };
 		A90AED1D135EB1BE002DEFD3 /* BanksAndCards.plist in Resources */ = {isa = PBXBuildFile; fileRef = A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */; };
-		A941960F13A49375000BC0D9 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A941960E13A49375000BC0D9 /* MainTabBarController.m */; };
 		A941961213A49DD4000BC0D9 /* TestAllThings.xib in Resources */ = {isa = PBXBuildFile; fileRef = A941961113A49DD4000BC0D9 /* TestAllThings.xib */; };
 		A94AD54F136B06A80089D3AF /* credit_information.xml in Resources */ = {isa = PBXBuildFile; fileRef = A94AD54E136B06A80089D3AF /* credit_information.xml */; };
 		A9724E2F135C835E000982A3 /* NearbyCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9724E2E135C835E000982A3 /* NearbyCategory.plist */; };
@@ -236,8 +235,6 @@
 		41E36476136439C2001EFDC4 /* 花旗银行.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "花旗银行.png"; sourceTree = "<group>"; };
 		41E36477136439C2001EFDC4 /* 俏江南.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "俏江南.png"; sourceTree = "<group>"; };
 		A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BanksAndCards.plist; sourceTree = "<group>"; };
-		A941960D13A49375000BC0D9 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
-		A941960E13A49375000BC0D9 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		A941961113A49DD4000BC0D9 /* TestAllThings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestAllThings.xib; sourceTree = "<group>"; };
 		A94AD54E136B06A80089D3AF /* credit_information.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = credit_information.xml; sourceTree = "<group>"; };
 		A9724E2E135C835E000982A3 /* NearbyCategory.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = NearbyCategory.plist; sourceTree = "<group>"; };
@@ -491,8 +488,6 @@
 				41A4D07E1348CC3D00D070BB /* Cards */,
 				41A4D0671348CB9A00D070BB /* ekkkAppDelegate.h */,
 				41A4D0681348CB9A00D070BB /* ekkkAppDelegate.m */,
-				A941960D13A49375000BC0D9 /* MainTabBarController.h */,
-				A941960E13A49375000BC0D9 /* MainTabBarController.m */,
 				41A4D06A1348CB9A00D070BB /* MainWindow.xib */,
 				A941961113A49DD4000BC0D9 /* TestAllThings.xib */,
 				41A4D05F1348CB9A00D070BB /* Supporting Files */,
@@ -889,7 +884,6 @@
 				A9DBA3D81395E9F000FA2770 /* RegisterViewController.m in Sources */,
 				A9D088DE13A1C92E00C86075 /* LoginAndRegisterView.m in Sources */,
 				A9D088E313A1D5C300C86075 /* UserInfoView.m in Sources */,
-				A941960F13A49375000BC0D9 /* MainTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

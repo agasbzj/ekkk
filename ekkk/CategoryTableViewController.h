@@ -18,29 +18,31 @@
     NSMutableArray *_pickerArray;
     
     UITableView *_tableView;
-    UIToolbar *_toolBar;
-    UIBarButtonItem *_cityButton;
-
+    
+    UIBarButtonItem *_bankButton;
+    UIBarButtonItem *_placeButton;
+    UIBarButtonItem *_categoryButton;
+    UIBarButtonItem *_distanceButton;
+    
     UIPickerView *_picker;
     
-    NSMutableArray *_cityArray, *_categoryArray, *_distanceArray, *_sortbyArray;
-    UIButton *_categoryButton, *_distanceButton, *_sortButton;
+    NSMutableArray *_categoryArray, *_distanceArray, *_bankArray;
+    NSMutableDictionary *_sortKeyDictionary;   //排序用的键值
     
 }
 @property (nonatomic, retain) NSArray *dataArray;
 @property (nonatomic, retain) NSMutableArray *showArray;
 @property (nonatomic, retain) NSMutableArray *pickerArray;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
-@property (nonatomic, retain) IBOutlet UIToolbar *toolBar;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *cityButton;
-@property (nonatomic, retain) IBOutlet UIButton *categoryButton;
-@property (nonatomic, retain) IBOutlet UIButton *distanceButton;
-@property (nonatomic, retain) IBOutlet UIButton *sortButton;
-@property (nonatomic, retain) NSMutableArray *cityArray;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *bankButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *categoryButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *distanceButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *placeButton;
 @property (nonatomic, retain) NSMutableArray *categoryArray;
 @property (nonatomic, retain) NSMutableArray *distanceArray;
-@property (nonatomic, retain) NSMutableArray *sortbyArray;
+@property (nonatomic, retain) NSMutableArray *bankArray;
 @property (nonatomic, retain) UIPickerView *picker;
+@property (nonatomic, retain) NSMutableDictionary *sortKeyDictionary;
 - (IBAction)selectButtonPressed:(id)sender;
 - (void)sortTableViewWithCategory;
 @end

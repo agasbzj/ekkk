@@ -70,7 +70,7 @@ static NSString *kDistanceElem = @"distance";
     tbxml = [[TBXML tbxmlWithXMLFile:@"credit_information.xml"] retain];
     TBXMLElement *root = tbxml.rootXMLElement; 
     
-    NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+    NSMutableArray *tempArray = [[[NSMutableArray alloc] init] autorelease];
     
     if (root) {
         TBXMLElement *index = [TBXML childElementNamed:@"index" parentElement:root];

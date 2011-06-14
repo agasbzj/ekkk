@@ -80,7 +80,7 @@
     
     if (section == 0) {
         UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(20, 0, 280, 44)];
-        [cell.contentView addSubview:textField];
+
         textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
         textField.borderStyle = UITextBorderStyleNone;
         textField.backgroundColor = [UIColor clearColor];
@@ -99,6 +99,8 @@
             default:
                 break;
         }
+        [cell.contentView addSubview:textField];
+        [textField release];
         
     }
     else if (section == 1) {

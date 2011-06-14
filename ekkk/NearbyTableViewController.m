@@ -48,10 +48,10 @@
 {
     
     ekkkAppDelegate *ekkkDelegate = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSArray *allData = [[NSArray alloc] initWithArray:_nearbyArray];    //所有附近item数组
+    NSArray *allData = [[[NSArray alloc] initWithArray:_nearbyArray] autorelease];    //所有附近item数组
     NSArray *myCards = ekkkDelegate.userCardsArray; //我的卡数组
     _dataArray = [[NSMutableArray alloc] initWithCapacity:30];
-    NSMutableArray *allMyCards = [[NSMutableArray alloc] initWithCapacity:10];
+    NSMutableArray *allMyCards = [[[NSMutableArray alloc] initWithCapacity:10] autorelease];
     
     //所有用户的卡，每一项是string
     for (NSDictionary *dic in myCards)

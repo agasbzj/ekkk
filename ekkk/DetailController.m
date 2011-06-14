@@ -239,10 +239,7 @@
 
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
     
-    NSString*msg;
-    
-    NSLog(@"发送结果：%@", msg);
-    
+        
     [self dismissModalViewControllerAnimated:YES]; 
 }
 
