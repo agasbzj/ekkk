@@ -8,7 +8,7 @@
 
 #import "ManagementRootViewController.h"
 #import "BankSelectViewController.h"
-#import "ekkkAppDelegate.h"
+#import "ekkkManager.h"
 #import "ShowMyCardsViewController.h"
 #import "RegisterViewController.h"
 #import "UserInfoView.h"
@@ -113,12 +113,12 @@ static UIBarButtonItem *loginAndOutButton;
 
 - (IBAction)editMyCards:(id)sender {
     BankSelectViewController *bankSelectViewController = [[BankSelectViewController alloc] init];
-    ekkkAppDelegate *ekkkDele = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
+    ekkkManager *ekkkDele = [ekkkManager sharedManager];
 
     bankSelectViewController.delegate = ekkkDele;
     
     //已保存的数据复制一份来进行修改
-    bankSelectViewController.userArray = ekkkDele.userCardsArray;
+    bankSelectViewController.userArray = [ekkkManager sharedManager].userCardsArray;
     bankSelectViewController.readyToWriteArray = [[NSMutableArray alloc] initWithArray:bankSelectViewController.userArray copyItems:YES];
     [self presentModalViewController:bankSelectViewController animated:YES];
     [bankSelectViewController release];
@@ -126,8 +126,7 @@ static UIBarButtonItem *loginAndOutButton;
 
 - (IBAction)showMyCards:(id)sender {
     ShowMyCardsViewController *showController = [[ShowMyCardsViewController alloc] init];
-    ekkkAppDelegate *ekkkDele = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
-    showController.dataArray = ekkkDele.userCardsArray;
+    showController.dataArray = [ekkkManager sharedManager].userCardsArray;
     [self presentModalViewController:showController animated:YES];
     [showController release];
 }
@@ -204,7 +203,7 @@ static UIBarButtonItem *loginAndOutButton;
             {
                 BankSelectViewController *bankSetViewController = [[BankSelectViewController alloc] init];
                 bankSetViewController.hidesBottomBarWhenPushed = YES;
-                ekkkAppDelegate *ekkkDele = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
+                ekkkManager *ekkkDele = [ekkkManager sharedManager];
                 
                 bankSetViewController.delegate = ekkkDele;
                 
@@ -219,7 +218,7 @@ static UIBarButtonItem *loginAndOutButton;
             {
                 ShowMyCardsViewController *showCardsController = [[ShowMyCardsViewController alloc] init];
                 showCardsController.hidesBottomBarWhenPushed = YES;
-                ekkkAppDelegate *ekkkDele = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
+                ekkkManager *ekkkDele = [ekkkManager sharedManager];
                 showCardsController.dataArray = ekkkDele.userCardsArray;
                 [self.navigationController pushViewController:showCardsController animated:YES];
                 [showCardsController release];

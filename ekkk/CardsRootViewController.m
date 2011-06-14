@@ -8,7 +8,10 @@
 
 #import "CardsRootViewController.h"
 #import "CardsTableViewController.h"
+#import "ekkkManager.h"
 #import "ekkkAppDelegate.h"
+#import "OneItem.h"
+
 @implementation CardsRootViewController
 @synthesize tableView = _tableView;
 @synthesize bankArray = _bankArray;
@@ -136,7 +139,7 @@
     }
     
     
-    CardsTableViewController *cardsTableViewController = [[CardsTableViewController alloc] init];
+    CardsTableViewController *cardsTableViewController = [[CardsTableViewController alloc] initWithNibName:@"CategoryTableViewController" bundle:[NSBundle mainBundle]];
     cardsTableViewController.dataArray = showArray;
     cardsTableViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:cardsTableViewController animated:YES];

@@ -8,6 +8,7 @@
  
 #import "ekkkAppDelegate.h"
 #import "InterconnectWithServer.h"
+#import "ekkkManager.h"
 
 #define kLocationFileName @"location.plist"
 #define kDataFileName @"Data.plist"
@@ -103,8 +104,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     _parsedItems = [[NSMutableArray alloc] initWithCapacity:50];
-//    _userCardsArray = [[NSMutableArray alloc] init];
-    _userCardsArray = [[[NSDictionary dictionaryWithContentsOfURL:[self userCardsFilePath]] valueForKey:@"cards"] retain];
+//    _userCardsArray = [[[NSDictionary dictionaryWithContentsOfURL:[self userCardsFilePath]] valueForKey:@"cards"] retain];
+    
+    [ekkkManager sharedManager];
     
     [self loadData];
     //注册为观察者，用于接受新线程解析的数据。

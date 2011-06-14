@@ -11,13 +11,14 @@
 #import "OneItem.h"
 #import "IndividualTableCell.h"
 #import "MapViewController.h"
-#import "ekkkAppDelegate.h"
 #import "PlaceSelectViewController.h"
+#import "ekkkManager.h"
 
 #define ChangePlaceTag  1
 #define CategoryTag     2
 #define DistanceTag     3
 #define BankTag         4
+#define CategoryCTag    5
 
 @implementation CategoryTableViewController
 
@@ -28,7 +29,7 @@
 @synthesize picker = _picker;
 @synthesize pickerArray = _pickerArray;
 
-@synthesize categoryArray = _categoryArray, distanceArray = _distanceArray, bankArray = _bankArray;
+@synthesize categoryArray = _categoryArray, distanceArray = _distanceArray, bankArray = _bankArray, categoryCArray = _categoryCArray;
 @synthesize categoryButton = _categoryButton;
 @synthesize distanceButton = _distanceButton;
 @synthesize placeButton = _placeButton;
@@ -45,9 +46,17 @@ static UIPickerView *kPicker;
 static UIBarButtonItem *kMapButton = nil;
 static UISegmentedControl *kSegmentedControl = nil; //切换控制 
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+        
+    }
+    return self;
+}
+
 - (void)dealloc
 {
     [_categoryArray release];
+    [_categoryCArray release];
     [_distanceArray release];
     [_bankButton release];
     [_picker release];
@@ -71,11 +80,27 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
 //配置选取器用的各个array
 - (void)configPickerArray {
     [_categoryArray removeAllObjects];
+    [_categoryCArray removeAllObjects];
 //    [_distanceArray removeAllObjects];
     
     NSInteger flag = 0;
     NSString *str;
-
+    
+    for (OneItem *item in _dataArray) {
+        str = item.category_Coarse;
+        for (NSString *s in _categoryCArray) {
+            if (s && [s isEqualToString:str] == YES) {
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 0) {
+            [_categoryCArray addObject:item.category_Coarse];
+        }
+        flag = 0;
+    }
+    flag = 0;
+    str = nil;
     
     for (OneItem *item in _dataArray) {
         str = item.category_Fine;
@@ -125,10 +150,8 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
 - (void)getMyCardsData 
 {
     
-    ekkkAppDelegate *ekkkDelegate = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
-//    NSArray *allData = [[NSArray alloc] initWithArray:_showArray];    //所有附近item数组
-    NSArray *myCards = ekkkDelegate.userCardsArray; //我的卡数组
-//    _showArray = [[NSMutableArray alloc] initWithCapacity:30];
+    NSArray *myCards = [ekkkManager sharedManager].userCardsArray; //我的卡数组
+    
     NSMutableArray *allMyCards = [[[NSMutableArray alloc] initWithCapacity:10] autorelease];
     
     //所有用户的卡，每一项是string
@@ -193,7 +216,7 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
     [super viewDidLoad];
     
     _sortKeyDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"all", @"kByCategory",
-                          @"all", @"kByDistance", @"all", @"kByBank",nil];
+                          @"all", @"kByDistance", @"all", @"kByBank", @"all", @"kByCategoryCoarse", nil];
 //    UIImageView *barImageView = [[UIImageView alloc] initWithFrame:CGRectMake(320, 44, 0, 0)];
 //    [barImageView setImage:[UIImage imageNamed:@"barimage.png"]];
 //    [self.view addSubview:barImageView];
@@ -225,6 +248,8 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
     _categoryArray = [[NSMutableArray alloc] initWithCapacity:10];
     _distanceArray = [[NSMutableArray alloc] initWithObjects:@"100", @"500", @"1000", @"3000", nil];
     _bankArray = [[NSMutableArray alloc] initWithCapacity:5];
+    _categoryCArray = [[NSMutableArray alloc] initWithCapacity:7];
+    
     [self configPickerArray];
     
     //分栏符
@@ -402,6 +427,8 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
         case 4:
             pickerView.pickerDataArray = _bankArray;
             break;
+        case 5:
+            pickerView.pickerDataArray = _categoryCArray;
         default:
             break;
     }
@@ -464,6 +491,7 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
 - (void)sortTableViewWithCategory {
     [_showArray removeAllObjects];
     NSString *kByCategory = [_sortKeyDictionary valueForKey:@"kByCategory"];  //风味筛选字段
+    NSString *kByCategoryC = [_sortKeyDictionary valueForKey:@"kByCategoryCoarse"];  //风味筛选字段
     NSString *kByDistance = [_sortKeyDictionary valueForKey:@"kByDistance"];     //距离筛选字段
     NSString *kBankKey = [_sortKeyDictionary valueForKey:@"kByBank"];     //银行字段
 
@@ -472,6 +500,11 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
         
         if (![kByCategory isEqualToString:@"all"]) {
             if (![item.category_Fine isEqualToString:kByCategory]) {
+                continue;
+            }
+        }
+        if (![kByCategoryC isEqualToString:@"all"]) {
+            if (![item.category_Coarse isEqualToString:kByCategoryC]) {
                 continue;
             }
         }
@@ -557,6 +590,12 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
                     [_sortKeyDictionary setValue:kBank forKey:@"kByBank"];
                     [_bankButton setTitle:kBank];
                     break;
+                }
+                case 5:
+                {
+                    NSString *kCategoryC = [_categoryCArray objectAtIndex:choosen];
+                    [_sortKeyDictionary setValue:kCategoryC forKey:@"kByCategoryCoarse"];
+                    [_bankButton setTitle:kCategoryC];
                 }
                 default:
                     break;

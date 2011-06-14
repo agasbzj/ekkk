@@ -13,13 +13,14 @@
 
 @implementation CardsTableViewController
 
-
-
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+    }
+    return self;
+}
 
 - (void)dealloc
 {
-    [_dataArray release];
-    [_tableView release];
     [super dealloc];
 }
 
@@ -43,6 +44,10 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [_bankButton setTitle:@"分类"];
+    [_bankButton setTag:5];
+
 }
 
 //- (void)viewDidUnload
@@ -176,4 +181,20 @@
 //    
 //}
 
+//生成、配置anction sheet， 包括其中的选取器
+- (void)generateActionSheet {
+    [super generateActionSheet];
+}
+
+#pragma mark - Action Sheet
+
+//筛选和排序
+- (void)sortTableViewWithCategory {
+    [super sortTableViewWithCategory];
+    
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    [super actionSheet:actionSheet didDismissWithButtonIndex:buttonIndex];
+}
 @end

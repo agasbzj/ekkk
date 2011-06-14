@@ -12,7 +12,7 @@
 #import "BankSelectViewController.h"
 
 @interface ekkkAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, 
-                                        CLLocationManagerDelegate, UserCardsSelectedDelegate>
+                                        CLLocationManagerDelegate>
 {
 
     CLLocationManager *locationManager;
@@ -20,7 +20,7 @@
     InterconnectWithServer *interconnectOperation;
     NSMutableArray *_parsedItems;   //存放解析完回传过来的新数据，其中每个元素为OneItem类
     UINavigationController *_offerNavController;
-    NSMutableArray *_userCardsArray;
+//    NSMutableArray *_userCardsArray;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

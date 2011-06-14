@@ -26,10 +26,11 @@
     
     UIPickerView *_picker;
     
-    NSMutableArray *_categoryArray, *_distanceArray, *_bankArray;
+    NSMutableArray *_categoryArray, *_distanceArray, *_bankArray, *_categoryCArray;
     NSMutableDictionary *_sortKeyDictionary;   //排序用的键值
     
 }
+
 @property (nonatomic, retain) NSArray *dataArray;
 @property (nonatomic, retain) NSMutableArray *showArray;
 @property (nonatomic, retain) NSMutableArray *pickerArray;
@@ -38,11 +39,14 @@
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *categoryButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *distanceButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *placeButton;
-@property (nonatomic, retain) NSMutableArray *categoryArray;
+@property (nonatomic, retain) NSMutableArray *categoryArray;    //细分类
 @property (nonatomic, retain) NSMutableArray *distanceArray;
 @property (nonatomic, retain) NSMutableArray *bankArray;
+@property (nonatomic, retain) NSMutableArray *categoryCArray;   //粗分类
 @property (nonatomic, retain) UIPickerView *picker;
 @property (nonatomic, retain) NSMutableDictionary *sortKeyDictionary;
+
+- (void)generateActionSheet;
 - (IBAction)selectButtonPressed:(id)sender;
 - (void)sortTableViewWithCategory;
 @end

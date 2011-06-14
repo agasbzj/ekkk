@@ -10,7 +10,6 @@
 #import "CategoryTableViewController.h"
 
 @interface CardsTableViewController: CategoryTableViewController {
-
+    
 }
-
 @end

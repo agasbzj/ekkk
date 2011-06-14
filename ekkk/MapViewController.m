@@ -339,6 +339,7 @@ static UIProgressView *kProgressView = nil;
                                                initWithAnnotation:annotation reuseIdentifier:AnnotationIdentifier] autorelease];
         customPinView.pinColor = MKPinAnnotationColorRed;
         customPinView.canShowCallout = YES;
+        customPinView.animatesDrop = YES;
         
         // add a detail disclosure button to the callout which will open a new view controller page
         //

@@ -8,7 +8,9 @@
 
 #import "CategoriesRootViewController.h"
 #import "CategoryTableViewController.h"
+#import "ekkkManager.h"
 #import "ekkkAppDelegate.h"
+#import "OneItem.h"
 
 @implementation CategoriesRootViewController
 @synthesize categoryArray = _categoryArray;
@@ -127,7 +129,7 @@
         }
     }
     
-    CategoryTableViewController *categoryTableViewController = [[CategoryTableViewController alloc] init];
+    CategoryTableViewController *categoryTableViewController = [[CategoryTableViewController alloc] initWithNibName:@"CategoryTableViewController" bundle:[NSBundle mainBundle]];
     categoryTableViewController.dataArray = showArray;
     categoryTableViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:categoryTableViewController animated:YES];
