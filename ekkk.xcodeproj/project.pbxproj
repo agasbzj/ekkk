@@ -28,7 +28,6 @@
 		41750DDE134AF1D000CFF97E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41750DDC134AF1D000CFF97E /* DetailViewController.m */; };
 		41750DE4134AF23000CFF97E /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 41750DE3134AF23000CFF97E /* ImageDownloader.m */; };
 		41750DE8134AF27B00CFF97E /* CardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41750DE6134AF27B00CFF97E /* CardsTableViewController.m */; };
-		41750DE9134AF27B00CFF97E /* CardsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41750DE7134AF27B00CFF97E /* CardsTableViewController.xib */; };
 		41750DFD134AFAB600CFF97E /* restaurants.png in Resources */ = {isa = PBXBuildFile; fileRef = 41750DF3134AFAB600CFF97E /* restaurants.png */; };
 		41750DFE134AFAB600CFF97E /* bar&coffee.png in Resources */ = {isa = PBXBuildFile; fileRef = 41750DF4134AFAB600CFF97E /* bar&coffee.png */; };
 		41750DFF134AFAB600CFF97E /* massages.png in Resources */ = {isa = PBXBuildFile; fileRef = 41750DF5134AFAB600CFF97E /* massages.png */; };
@@ -82,6 +81,20 @@
 		41E3647B136439C2001EFDC4 /* 花旗银行.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E36476136439C2001EFDC4 /* 花旗银行.png */; };
 		41E3647C136439C2001EFDC4 /* 俏江南.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E36477136439C2001EFDC4 /* 俏江南.png */; };
 		A90AED1D135EB1BE002DEFD3 /* BanksAndCards.plist in Resources */ = {isa = PBXBuildFile; fileRef = A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */; };
+		A93B9E5113A75226009C55B0 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B9E3A13A75226009C55B0 /* CDataScanner.m */; };
+		A93B9E5213A75226009C55B0 /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B9E3D13A75226009C55B0 /* CFilteringJSONSerializer.m */; };
+		A93B9E5313A75226009C55B0 /* CJSONDeserializer_BlocksExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B9E3F13A75226009C55B0 /* CJSONDeserializer_BlocksExtensions.m */; };
+		A93B9E5413A75226009C55B0 /* CJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B9E4113A75226009C55B0 /* CJSONSerialization.m */; };
+		A93B9E5513A75226009C55B0 /* CJSONSerializedData.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B9E4313A75226009C55B0 /* CJSONSerializedData.m */; };
+		A93B9E5613A75226009C55B0 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B9E4613A75226009C55B0 /* CDataScanner_Extensions.m */; };
+		A93B9E5713A75226009C55B0 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B9E4813A75226009C55B0 /* NSDictionary_JSONExtensions.m */; };
+		A93B9E5813A75226009C55B0 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B9E4B13A75226009C55B0 /* CJSONDeserializer.m */; };
+		A93B9E5913A75226009C55B0 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B9E4D13A75226009C55B0 /* CJSONScanner.m */; };
+		A93B9E5A13A75226009C55B0 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B9E4F13A75226009C55B0 /* CJSONSerializer.m */; };
+		A93B9E6013A7526D009C55B0 /* PlaceSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B9E5E13A7526D009C55B0 /* PlaceSelectViewController.m */; };
+		A93B9E6113A7526D009C55B0 /* PlaceSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93B9E5F13A7526D009C55B0 /* PlaceSelectViewController.xib */; };
+		A93B9E6513A78436009C55B0 /* GoogleApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B9E6413A78436009C55B0 /* GoogleApi.m */; };
+		A93B9E6813A794D8009C55B0 /* PlaceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B9E6713A794D8009C55B0 /* PlaceAnnotation.m */; };
 		A941961213A49DD4000BC0D9 /* TestAllThings.xib in Resources */ = {isa = PBXBuildFile; fileRef = A941961113A49DD4000BC0D9 /* TestAllThings.xib */; };
 		A94AD54F136B06A80089D3AF /* credit_information.xml in Resources */ = {isa = PBXBuildFile; fileRef = A94AD54E136B06A80089D3AF /* credit_information.xml */; };
 		A9724E2F135C835E000982A3 /* NearbyCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9724E2E135C835E000982A3 /* NearbyCategory.plist */; };
@@ -169,7 +182,6 @@
 		41750DE3134AF23000CFF97E /* ImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloader.m; sourceTree = "<group>"; };
 		41750DE5134AF27B00CFF97E /* CardsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardsTableViewController.h; sourceTree = "<group>"; };
 		41750DE6134AF27B00CFF97E /* CardsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsTableViewController.m; sourceTree = "<group>"; };
-		41750DE7134AF27B00CFF97E /* CardsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardsTableViewController.xib; sourceTree = "<group>"; };
 		41750DF3134AFAB600CFF97E /* restaurants.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restaurants.png; sourceTree = "<group>"; };
 		41750DF4134AFAB600CFF97E /* bar&coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar&coffee.png"; sourceTree = "<group>"; };
 		41750DF5134AFAB600CFF97E /* massages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = massages.png; sourceTree = "<group>"; };
@@ -235,6 +247,34 @@
 		41E36476136439C2001EFDC4 /* 花旗银行.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "花旗银行.png"; sourceTree = "<group>"; };
 		41E36477136439C2001EFDC4 /* 俏江南.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "俏江南.png"; sourceTree = "<group>"; };
 		A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BanksAndCards.plist; sourceTree = "<group>"; };
+		A93B9E3913A75226009C55B0 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
+		A93B9E3A13A75226009C55B0 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
+		A93B9E3C13A75226009C55B0 /* CFilteringJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFilteringJSONSerializer.h; sourceTree = "<group>"; };
+		A93B9E3D13A75226009C55B0 /* CFilteringJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFilteringJSONSerializer.m; sourceTree = "<group>"; };
+		A93B9E3E13A75226009C55B0 /* CJSONDeserializer_BlocksExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer_BlocksExtensions.h; sourceTree = "<group>"; };
+		A93B9E3F13A75226009C55B0 /* CJSONDeserializer_BlocksExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer_BlocksExtensions.m; sourceTree = "<group>"; };
+		A93B9E4013A75226009C55B0 /* CJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerialization.h; sourceTree = "<group>"; };
+		A93B9E4113A75226009C55B0 /* CJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerialization.m; sourceTree = "<group>"; };
+		A93B9E4213A75226009C55B0 /* CJSONSerializedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializedData.h; sourceTree = "<group>"; };
+		A93B9E4313A75226009C55B0 /* CJSONSerializedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializedData.m; sourceTree = "<group>"; };
+		A93B9E4513A75226009C55B0 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
+		A93B9E4613A75226009C55B0 /* CDataScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner_Extensions.m; sourceTree = "<group>"; };
+		A93B9E4713A75226009C55B0 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
+		A93B9E4813A75226009C55B0 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
+		A93B9E4A13A75226009C55B0 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
+		A93B9E4B13A75226009C55B0 /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
+		A93B9E4C13A75226009C55B0 /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
+		A93B9E4D13A75226009C55B0 /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONScanner.m; sourceTree = "<group>"; };
+		A93B9E4E13A75226009C55B0 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
+		A93B9E4F13A75226009C55B0 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
+		A93B9E5013A75226009C55B0 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
+		A93B9E5D13A7526D009C55B0 /* PlaceSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceSelectViewController.h; sourceTree = "<group>"; };
+		A93B9E5E13A7526D009C55B0 /* PlaceSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceSelectViewController.m; sourceTree = "<group>"; };
+		A93B9E5F13A7526D009C55B0 /* PlaceSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceSelectViewController.xib; sourceTree = "<group>"; };
+		A93B9E6313A78436009C55B0 /* GoogleApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleApi.h; sourceTree = "<group>"; };
+		A93B9E6413A78436009C55B0 /* GoogleApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleApi.m; sourceTree = "<group>"; };
+		A93B9E6613A794D7009C55B0 /* PlaceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceAnnotation.h; sourceTree = "<group>"; };
+		A93B9E6713A794D8009C55B0 /* PlaceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceAnnotation.m; sourceTree = "<group>"; };
 		A941961113A49DD4000BC0D9 /* TestAllThings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestAllThings.xib; sourceTree = "<group>"; };
 		A94AD54E136B06A80089D3AF /* credit_information.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = credit_information.xml; sourceTree = "<group>"; };
 		A9724E2E135C835E000982A3 /* NearbyCategory.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = NearbyCategory.plist; sourceTree = "<group>"; };
@@ -351,8 +391,7 @@
 				41750DCD134AF09300CFF97E /* TBXML.h */,
 				41750DCE134AF09300CFF97E /* TBXML.m */,
 			);
-			name = TBXML;
-			path = ekkk/TBXML;
+			path = TBXML;
 			sourceTree = "<group>";
 		};
 		41750DE0134AF1E700CFF97E /* ImageDownloader */ = {
@@ -434,8 +473,6 @@
 			isa = PBXGroup;
 			children = (
 				41A4D05E1348CB9A00D070BB /* ekkk */,
-				A9BE3006134B215000DA6E86 /* ASIHttpRequest */,
-				41750DCA134AF09300CFF97E /* TBXML */,
 				41750E16134AFCE100CFF97E /* Resource */,
 				41A4D0571348CB9A00D070BB /* Frameworks */,
 				41A4D0551348CB9A00D070BB /* Products */,
@@ -473,6 +510,9 @@
 		41A4D05E1348CB9A00D070BB /* ekkk */ = {
 			isa = PBXGroup;
 			children = (
+				A93B9E6213A783F7009C55B0 /* Network */,
+				A93B9E5C13A75249009C55B0 /* PlaceSelect */,
+				A93B9E2813A75146009C55B0 /* Third_Part */,
 				411FA7E3138BDB56001C27B3 /* Share */,
 				A9A46A211362FF4700964881 /* Manage */,
 				41A037711358731D001D52A8 /* IndividualTableCell */,
@@ -514,7 +554,6 @@
 				41A4D0941348CCE000D070BB /* CardsRootViewController.xib */,
 				41750DE5134AF27B00CFF97E /* CardsTableViewController.h */,
 				41750DE6134AF27B00CFF97E /* CardsTableViewController.m */,
-				41750DE7134AF27B00CFF97E /* CardsTableViewController.xib */,
 			);
 			name = Cards;
 			sourceTree = "<group>";
@@ -612,6 +651,97 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		A93B9E2813A75146009C55B0 /* Third_Part */ = {
+			isa = PBXGroup;
+			children = (
+				A93B9E2913A7516C009C55B0 /* Touch_Json */,
+				41750DCA134AF09300CFF97E /* TBXML */,
+				A9BE3006134B215000DA6E86 /* ASIHttpRequest */,
+			);
+			name = Third_Part;
+			sourceTree = "<group>";
+		};
+		A93B9E2913A7516C009C55B0 /* Touch_Json */ = {
+			isa = PBXGroup;
+			children = (
+				A93B9E3813A75226009C55B0 /* Source */,
+			);
+			name = Touch_Json;
+			sourceTree = "<group>";
+		};
+		A93B9E3813A75226009C55B0 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A93B9E3913A75226009C55B0 /* CDataScanner.h */,
+				A93B9E3A13A75226009C55B0 /* CDataScanner.m */,
+				A93B9E3B13A75226009C55B0 /* Experimental */,
+				A93B9E4413A75226009C55B0 /* Extensions */,
+				A93B9E4913A75226009C55B0 /* JSON */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		A93B9E3B13A75226009C55B0 /* Experimental */ = {
+			isa = PBXGroup;
+			children = (
+				A93B9E3C13A75226009C55B0 /* CFilteringJSONSerializer.h */,
+				A93B9E3D13A75226009C55B0 /* CFilteringJSONSerializer.m */,
+				A93B9E3E13A75226009C55B0 /* CJSONDeserializer_BlocksExtensions.h */,
+				A93B9E3F13A75226009C55B0 /* CJSONDeserializer_BlocksExtensions.m */,
+				A93B9E4013A75226009C55B0 /* CJSONSerialization.h */,
+				A93B9E4113A75226009C55B0 /* CJSONSerialization.m */,
+				A93B9E4213A75226009C55B0 /* CJSONSerializedData.h */,
+				A93B9E4313A75226009C55B0 /* CJSONSerializedData.m */,
+			);
+			path = Experimental;
+			sourceTree = "<group>";
+		};
+		A93B9E4413A75226009C55B0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A93B9E4513A75226009C55B0 /* CDataScanner_Extensions.h */,
+				A93B9E4613A75226009C55B0 /* CDataScanner_Extensions.m */,
+				A93B9E4713A75226009C55B0 /* NSDictionary_JSONExtensions.h */,
+				A93B9E4813A75226009C55B0 /* NSDictionary_JSONExtensions.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A93B9E4913A75226009C55B0 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				A93B9E4A13A75226009C55B0 /* CJSONDeserializer.h */,
+				A93B9E4B13A75226009C55B0 /* CJSONDeserializer.m */,
+				A93B9E4C13A75226009C55B0 /* CJSONScanner.h */,
+				A93B9E4D13A75226009C55B0 /* CJSONScanner.m */,
+				A93B9E4E13A75226009C55B0 /* CJSONSerializer.h */,
+				A93B9E4F13A75226009C55B0 /* CJSONSerializer.m */,
+				A93B9E5013A75226009C55B0 /* JSONRepresentation.h */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		A93B9E5C13A75249009C55B0 /* PlaceSelect */ = {
+			isa = PBXGroup;
+			children = (
+				A93B9E5D13A7526D009C55B0 /* PlaceSelectViewController.h */,
+				A93B9E5E13A7526D009C55B0 /* PlaceSelectViewController.m */,
+				A93B9E5F13A7526D009C55B0 /* PlaceSelectViewController.xib */,
+				A93B9E6613A794D7009C55B0 /* PlaceAnnotation.h */,
+				A93B9E6713A794D8009C55B0 /* PlaceAnnotation.m */,
+			);
+			name = PlaceSelect;
+			sourceTree = "<group>";
+		};
+		A93B9E6213A783F7009C55B0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A93B9E6313A78436009C55B0 /* GoogleApi.h */,
+				A93B9E6413A78436009C55B0 /* GoogleApi.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
 		A97F281F1396629B00368180 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -677,7 +807,7 @@
 				A9BE307F134B21C000DA6E86 /* Reachability.m */,
 			);
 			name = ASIHttpRequest;
-			path = ekkk/Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		A9D088E013A1D59F00C86075 /* UserInfo */ = {
@@ -767,7 +897,6 @@
 				41A4D08C1348CCB300D070BB /* NearbyRootViewController.xib in Resources */,
 				41A4D0911348CCC600D070BB /* CategoriesRootViewController.xib in Resources */,
 				41A4D0961348CCE000D070BB /* CardsRootViewController.xib in Resources */,
-				41750DE9134AF27B00CFF97E /* CardsTableViewController.xib in Resources */,
 				41750DFD134AFAB600CFF97E /* restaurants.png in Resources */,
 				41750DFE134AFAB600CFF97E /* bar&coffee.png in Resources */,
 				41750DFF134AFAB600CFF97E /* massages.png in Resources */,
@@ -830,6 +959,7 @@
 				A97F283E1396747300368180 /* img-offers-cellBackground@2x.png in Resources */,
 				A97354C2139E4F2900895C00 /* TextCell.xib in Resources */,
 				A941961213A49DD4000BC0D9 /* TestAllThings.xib in Resources */,
+				A93B9E6113A7526D009C55B0 /* PlaceSelectViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -884,6 +1014,19 @@
 				A9DBA3D81395E9F000FA2770 /* RegisterViewController.m in Sources */,
 				A9D088DE13A1C92E00C86075 /* LoginAndRegisterView.m in Sources */,
 				A9D088E313A1D5C300C86075 /* UserInfoView.m in Sources */,
+				A93B9E5113A75226009C55B0 /* CDataScanner.m in Sources */,
+				A93B9E5213A75226009C55B0 /* CFilteringJSONSerializer.m in Sources */,
+				A93B9E5313A75226009C55B0 /* CJSONDeserializer_BlocksExtensions.m in Sources */,
+				A93B9E5413A75226009C55B0 /* CJSONSerialization.m in Sources */,
+				A93B9E5513A75226009C55B0 /* CJSONSerializedData.m in Sources */,
+				A93B9E5613A75226009C55B0 /* CDataScanner_Extensions.m in Sources */,
+				A93B9E5713A75226009C55B0 /* NSDictionary_JSONExtensions.m in Sources */,
+				A93B9E5813A75226009C55B0 /* CJSONDeserializer.m in Sources */,
+				A93B9E5913A75226009C55B0 /* CJSONScanner.m in Sources */,
+				A93B9E5A13A75226009C55B0 /* CJSONSerializer.m in Sources */,
+				A93B9E6013A7526D009C55B0 /* PlaceSelectViewController.m in Sources */,
+				A93B9E6513A78436009C55B0 /* GoogleApi.m in Sources */,
+				A93B9E6813A794D8009C55B0 /* PlaceAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

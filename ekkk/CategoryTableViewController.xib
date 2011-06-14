@@ -49,7 +49,6 @@
 						<int key="NSvFlags">274</int>
 						<string key="NSFrameSize">{320, 372}</string>
 						<reference key="NSSuperview" ref="613906815"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="739808447"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -70,7 +69,6 @@
 						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{0, 372}, {320, 44}}</string>
 						<reference key="NSSuperview" ref="613906815"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -78,9 +76,9 @@
 						<int key="IBUIBarStyle">1</int>
 						<object class="NSMutableArray" key="IBUIItems">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUIBarButtonItem" id="607644274">
-								<int key="IBUITag">1</int>
-								<string key="IBUITitle">位置</string>
+							<object class="IBUIBarButtonItem" id="224318968">
+								<int key="IBUITag">4</int>
+								<string key="IBUITitle">银行</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIStyle">1</int>
 								<reference key="IBUIToolbar" ref="739808447"/>
@@ -90,9 +88,9 @@
 								<reference key="IBUIToolbar" ref="739808447"/>
 								<int key="IBUISystemItemIdentifier">5</int>
 							</object>
-							<object class="IBUIBarButtonItem" id="528005824">
+							<object class="IBUIBarButtonItem" id="98233368">
 								<int key="IBUITag">2</int>
-								<string key="IBUITitle">风格</string>
+								<string key="IBUITitle">分类</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIStyle">1</int>
 								<reference key="IBUIToolbar" ref="739808447"/>
@@ -102,21 +100,21 @@
 								<reference key="IBUIToolbar" ref="739808447"/>
 								<int key="IBUISystemItemIdentifier">5</int>
 							</object>
-							<object class="IBUIBarButtonItem" id="180504768">
+							<object class="IBUIBarButtonItem" id="280149362">
 								<int key="IBUITag">3</int>
 								<string key="IBUITitle">距离</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIStyle">1</int>
 								<reference key="IBUIToolbar" ref="739808447"/>
 							</object>
-							<object class="IBUIBarButtonItem" id="374150494">
+							<object class="IBUIBarButtonItem" id="864409046">
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<reference key="IBUIToolbar" ref="739808447"/>
 								<int key="IBUISystemItemIdentifier">5</int>
 							</object>
-							<object class="IBUIBarButtonItem" id="1010624412">
-								<int key="IBUITag">4</int>
-								<string key="IBUITitle">银行</string>
+							<object class="IBUIBarButtonItem" id="815921489">
+								<int key="IBUITag">1</int>
+								<string key="IBUITitle">附近</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIStyle">1</int>
 								<reference key="IBUIToolbar" ref="739808447"/>
@@ -126,7 +124,6 @@
 				</object>
 				<string key="NSFrame">{{0, 64}, {320, 416}}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="225217129"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
@@ -181,14 +178,14 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">bankButton</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="1010624412"/>
+						<reference key="destination" ref="224318968"/>
 					</object>
 					<int key="connectionID">72</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">selectButtonPressed:</string>
-						<reference key="source" ref="1010624412"/>
+						<reference key="source" ref="224318968"/>
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">74</int>
@@ -197,7 +194,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">categoryButton</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="528005824"/>
+						<reference key="destination" ref="98233368"/>
 					</object>
 					<int key="connectionID">77</int>
 				</object>
@@ -205,14 +202,14 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">distanceButton</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="180504768"/>
+						<reference key="destination" ref="280149362"/>
 					</object>
 					<int key="connectionID">78</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">selectButtonPressed:</string>
-						<reference key="source" ref="528005824"/>
+						<reference key="source" ref="98233368"/>
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">79</int>
@@ -220,10 +217,18 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">selectButtonPressed:</string>
-						<reference key="source" ref="180504768"/>
+						<reference key="source" ref="280149362"/>
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">80</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">selectButtonPressed:</string>
+						<reference key="source" ref="815921489"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">81</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -268,11 +273,11 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="589672608"/>
 							<reference ref="38405363"/>
-							<reference ref="1010624412"/>
-							<reference ref="374150494"/>
-							<reference ref="607644274"/>
-							<reference ref="528005824"/>
-							<reference ref="180504768"/>
+							<reference ref="864409046"/>
+							<reference ref="98233368"/>
+							<reference ref="280149362"/>
+							<reference ref="224318968"/>
+							<reference ref="815921489"/>
 						</object>
 						<reference key="parent" ref="613906815"/>
 						<string key="objectName">Toolbar</string>
@@ -289,27 +294,27 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">70</int>
-						<reference key="object" ref="1010624412"/>
+						<reference key="object" ref="224318968"/>
 						<reference key="parent" ref="739808447"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">71</int>
-						<reference key="object" ref="374150494"/>
+						<reference key="object" ref="864409046"/>
 						<reference key="parent" ref="739808447"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">73</int>
-						<reference key="object" ref="607644274"/>
+						<reference key="object" ref="815921489"/>
 						<reference key="parent" ref="739808447"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">75</int>
-						<reference key="object" ref="528005824"/>
+						<reference key="object" ref="98233368"/>
 						<reference key="parent" ref="739808447"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">76</int>
-						<reference key="object" ref="180504768"/>
+						<reference key="object" ref="280149362"/>
 						<reference key="parent" ref="739808447"/>
 					</object>
 				</object>
@@ -359,85 +364,9 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">80</int>
+			<int key="maxID">81</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<bool key="EncodedWithXMLCoder">YES</bool>
-				<object class="IBPartialClassDescription">
-					<string key="className">CategoryTableViewController</string>
-					<string key="superclassName">UIViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">selectButtonPressed:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">selectButtonPressed:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">selectButtonPressed:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<object class="NSMutableDictionary" key="outlets">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>bankButton</string>
-							<string>categoryButton</string>
-							<string>distanceButton</string>
-							<string>placeButton</string>
-							<string>tableView</string>
-						</object>
-						<object class="NSMutableArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>UIBarButtonItem</string>
-							<string>UIBarButtonItem</string>
-							<string>UIBarButtonItem</string>
-							<string>UIBarButtonItem</string>
-							<string>UITableView</string>
-						</object>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>bankButton</string>
-							<string>categoryButton</string>
-							<string>distanceButton</string>
-							<string>placeButton</string>
-							<string>tableView</string>
-						</object>
-						<object class="NSMutableArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBToOneOutletInfo">
-								<string key="name">bankButton</string>
-								<string key="candidateClassName">UIBarButtonItem</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">categoryButton</string>
-								<string key="candidateClassName">UIBarButtonItem</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">distanceButton</string>
-								<string key="candidateClassName">UIBarButtonItem</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">placeButton</string>
-								<string key="candidateClassName">UIBarButtonItem</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">tableView</string>
-								<string key="candidateClassName">UITableView</string>
-							</object>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CategoryTableViewController.h</string>
-					</object>
-				</object>
-			</object>
-		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">

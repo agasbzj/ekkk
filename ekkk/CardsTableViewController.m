@@ -12,20 +12,14 @@
 #import "OneItem.h"
 
 @implementation CardsTableViewController
-@synthesize dataArray = _dataArray;
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
+
 
 - (void)dealloc
 {
     [_dataArray release];
+    [_tableView release];
     [super dealloc];
 }
 
@@ -42,7 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-     self.tableView.rowHeight = 74;
+//     self.tableView.rowHeight = 74;
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -51,12 +45,12 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
+//- (void)viewDidUnload
+//{
+//    [super viewDidUnload];
+//    // Release any retained subviews of the main view.
+//    // e.g. self.myOutlet = nil;
+//}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -86,42 +80,42 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return [_dataArray count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    
-    IndividualTableCell *cell = (IndividualTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        //        [[NSBundle mainBundle] loadNibNamed:@"IndividualTableCell" owner:self options:nil];
-        //        cell = _individualCell;
-        //        self.individualCell = nil;
-        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"IndividualTableCell" owner:self options:nil];
-        cell = [array objectAtIndex:0];
-        
-    }
-    
-    // Configure the cell...
-    
-    OneItem *item = [_dataArray objectAtIndex:indexPath.row];
-    
-    cell.sellerLabel.text = item.seller;
-    cell.addressLabel.text = item.address;
-    cell.discountLabel.text = [[item.bank objectAtIndex:0] valueForKey:@"discount"];   
-    
-    return cell;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+//{
+//    // Return the number of sections.
+//    return 1;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//    // Return the number of rows in the section.
+//    return [_dataArray count];
+//}
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    static NSString *CellIdentifier = @"Cell";
+//    
+//    IndividualTableCell *cell = (IndividualTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    if (cell == nil) {
+//        //        [[NSBundle mainBundle] loadNibNamed:@"IndividualTableCell" owner:self options:nil];
+//        //        cell = _individualCell;
+//        //        self.individualCell = nil;
+//        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"IndividualTableCell" owner:self options:nil];
+//        cell = [array objectAtIndex:0];
+//        
+//    }
+//    
+//    // Configure the cell...
+//    
+//    OneItem *item = [_dataArray objectAtIndex:indexPath.row];
+//    
+//    cell.sellerLabel.text = item.seller;
+//    cell.addressLabel.text = item.address;
+//    cell.discountLabel.text = [[item.bank objectAtIndex:0] valueForKey:@"discount"];   
+//    
+//    return cell;
+//}
 
 /*
 // Override to support conditional editing of the table view.
@@ -164,22 +158,22 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
-    DetailController *detailViewController = [[DetailController alloc] init];
-    detailViewController.oneItem = [_dataArray objectAtIndex:indexPath.row];
-    detailViewController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-    
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    // Navigation logic may go here. Create and push another view controller.
+//    /*
+//     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+//     // ...
+//     // Pass the selected object to the new view controller.
+//     [self.navigationController pushViewController:detailViewController animated:YES];
+//     [detailViewController release];
+//     */
+//    DetailController *detailViewController = [[DetailController alloc] init];
+//    detailViewController.oneItem = [_dataArray objectAtIndex:indexPath.row];
+//    detailViewController.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:detailViewController animated:YES];
+//    [detailViewController release];
+//    
+//}
 
 @end

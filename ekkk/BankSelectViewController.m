@@ -155,6 +155,19 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+//- (void)viewWillDisappear:(BOOL)animated {
+//    [super viewWillDisappear:animated];
+//    //发送给代理（ekkkappdelegate），让代理来保存数据
+//    NSMutableArray *array = _readyToWriteArray;
+//    for (NSDictionary *dic in array) {
+//        NSArray *cards = [dic valueForKey:@"cards"];
+//        if ([cards count] == 0) {
+//            [array removeObject:dic];
+//        }
+//    }
+//    [delegate userCardsSelected:array];
+//}
+
 #pragma mark - CardsSelectView Delegate
 
 - (void)cardsSelected:(NSMutableArray *)cardsSelectedArray isCancel:(BOOL)isCancel{

@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CategoryTableViewController.h"
 
+@interface CardsTableViewController: CategoryTableViewController {
 
-@interface CardsTableViewController: UITableViewController {
-    NSArray *_dataArray;
 }
-@property (nonatomic, retain) NSArray *dataArray;
 
 @end

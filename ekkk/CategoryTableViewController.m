@@ -12,6 +12,7 @@
 #import "IndividualTableCell.h"
 #import "MapViewController.h"
 #import "ekkkAppDelegate.h"
+#import "PlaceSelectViewController.h"
 
 #define ChangePlaceTag  1
 #define CategoryTag     2
@@ -420,9 +421,13 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
     UIBarButtonItem *button = (UIBarButtonItem *)sender;
     [_pickerArray removeAllObjects];
     choosenTag = button.tag;
-     
-    
-    [self generateActionSheet];
+    if (choosenTag == 1) {
+        PlaceSelectViewController *selectController = [[PlaceSelectViewController alloc] init];
+        [self.navigationController pushViewController:selectController animated:YES];
+        [selectController release];
+    }
+    else
+        [self generateActionSheet];
 }
 
 - (void)buttonPressed:(NSUInteger)tag withStringInPicker:(NSString *)string{
@@ -526,12 +531,12 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
     NSUInteger choosen = [kPicker selectedRowInComponent:0];
     switch (buttonIndex) {
         case 1:
-//            [_showArray removeAllObjects];
             switch (choosenTag) {
                 case 1:
+                {
 
-                    
                     break;
+                }
                 case 2:
                 {
                     NSString *kCategory = [_categoryArray objectAtIndex:choosen];
