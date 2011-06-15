@@ -54,24 +54,27 @@
     UISlider *slider = (UISlider *)sender;
     switch (slider.tag) {
         case 1:
-            _environmentLabel.text = [NSString stringWithFormat:@"%d", (int)slider.value];
+            _environmentLabel.text = [NSString stringWithFormat:@"%d", (int)(slider.value + 0.5)];
             break;
         case 2:
-            _serviceLabel.text = [NSString stringWithFormat:@"%d", (int)slider.value];
+            _serviceLabel.text = [NSString stringWithFormat:@"%d", (int)(slider.value + 0.5)];
             break;
         case 3:
-            _discountLabel.text = [NSString stringWithFormat:@"%d", (int)slider.value];
+            _discountLabel.text = [NSString stringWithFormat:@"%d", (int)(slider.value + 0.5)];
             break;
         case 4:
-            _generalLabel.text = [NSString stringWithFormat:@"%d", (int)slider.value];
+            _generalLabel.text = [NSString stringWithFormat:@"%d", (int)(slider.value + 0.5)];
             break;
         default:
             break;
     }
 }
 
+
+//提交点评！！！
 - (void)commit {
-    
+    [_moneyTextField resignFirstResponder];
+    [_commitTextView resignFirstResponder];
 }
 
 #pragma mark - View lifecycle
@@ -100,4 +103,66 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+
+#pragma mark - UITextView Delegate
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    CGPoint point = self.view.center;
+    point.y = 8;
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [UIView beginAnimations:nil context:context];
+    [UIView setAnimationDuration:.3f];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.view cache:YES];
+    self.view.transform = CGAffineTransformIdentity;
+    self.view.center = point;
+    [UIView commitAnimations];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    CGPoint point = self.view.center;
+    point.y = 208;
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [UIView beginAnimations:nil context:context];
+    [UIView setAnimationDuration:.3f];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.view cache:YES];
+    self.view.transform = CGAffineTransformIdentity;
+    self.view.center = point;
+    [UIView commitAnimations];
+}
+
+
+
+
+
+
+#pragma mark - UITextFieldDelegate
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    CGPoint point = self.view.center;
+    point.y = 158;
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [UIView beginAnimations:nil context:context];
+    [UIView setAnimationDuration:.3f];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.view cache:YES];
+    self.view.transform = CGAffineTransformIdentity;
+    self.view.center = point;
+    [UIView commitAnimations];
+}
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    CGPoint point = self.view.center;
+    point.y = 208;
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [UIView beginAnimations:nil context:context];
+    [UIView setAnimationDuration:.3f];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.view cache:YES];
+    self.view.transform = CGAffineTransformIdentity;
+    self.view.center = point;
+    [UIView commitAnimations];
+}
 @end
