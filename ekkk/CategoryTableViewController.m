@@ -12,7 +12,6 @@
 #import "IndividualTableCell.h"
 #import "MapViewController.h"
 #import "PlaceSelectViewController.h"
-#import "ekkkManager.h"
 
 #define ChangePlaceTag  1
 #define CategoryTag     2
@@ -215,6 +214,7 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
 {
     [super viewDidLoad];
     
+    
     _sortKeyDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"all", @"kByCategory",
                           @"all", @"kByDistance", @"all", @"kByBank", @"all", @"kByCategoryCoarse", nil];
 //    UIImageView *barImageView = [[UIImageView alloc] initWithFrame:CGRectMake(320, 44, 0, 0)];
@@ -227,9 +227,13 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
     self.navigationItem.rightBarButtonItem = mapButton;
     [mapButton release];
     
-    
+
     
     _showArray = [[NSMutableArray alloc] initWithArray:_dataArray];
+    
+    if ([_showArray count] == 0) 
+        mapButton.enabled = NO;
+    
     _pickerArray = [[NSMutableArray alloc] initWithCapacity:10];
     self.tableView.rowHeight = 74;  
     _picker = [[UIPickerView alloc] init];
@@ -279,6 +283,7 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [_placeButton setTitle:[ekkkManager sharedManager].selectedPlace];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -442,14 +447,15 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
 }
 
 
-
+//底部的筛选按钮按下事件
 - (IBAction)selectButtonPressed:(id)sender {
 
     UIBarButtonItem *button = (UIBarButtonItem *)sender;
     [_pickerArray removeAllObjects];
     choosenTag = button.tag;
     if (choosenTag == 1) {
-        PlaceSelectViewController *selectController = [[PlaceSelectViewController alloc] init];
+        PlaceSelectViewController *selectController = [[PlaceSelectViewController alloc] initWithNibName:@"PlaceSelectViewController" bundle:[NSBundle mainBundle]];
+        selectController.delegate = self;
         [self.navigationController pushViewController:selectController animated:YES];
         [selectController release];
     }
@@ -611,7 +617,11 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
     kActionSheet = nil;
 }
                                   
+#pragma mark - PlaceSelect Delegate
 
+- (void)placeSelected:(PlaceAnnotation *)thePlace {
+    [_placeButton setTitle:[ekkkManager sharedManager].selectedPlace];
+}
 
 
 @end

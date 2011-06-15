@@ -11,7 +11,9 @@
 #import "OneItem.h"
 #import "OffersTableCell.h"
 #import "DetailController.h"
-#import "ekkkAppDelegate.h"
+#import "ekkkManager.h"
+#import "LocateAndDownload.h"
+
 #define kFileName @"location.plist"
 #define kDataFileName @"Data.plist"
 #define DARK_BACKGROUND [UIColor colorWithRed:151.0/255.0 green:152.0/255.0 blue:155.0/255.0 alpha:1.0];
@@ -72,7 +74,7 @@ NSArray *temp;  //跟踪指针，用来释放。
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//别的表视图重写这个方法！！！！
+
 - (void)getData {    
 //    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kDataFileName];
 //    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfURL:storeURL];
@@ -80,8 +82,8 @@ NSArray *temp;  //跟踪指针，用来释放。
     if ([_dataArray count] > 0) {
         [_dataArray removeAllObjects];
     }
-    ekkkAppDelegate *ekkkDelegate = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSArray *allData = ekkkDelegate.parsedItems;
+    
+    NSArray *allData = [ekkkManager sharedManager].parsedItems;
     _dataArray = [[NSMutableArray alloc] initWithCapacity:30];
     for (OneItem *item in allData) {
         if ([item.hot isEqualToString:@"1"]) {
@@ -98,9 +100,8 @@ NSArray *temp;  //跟踪指针，用来释放。
     {
         [_dataArray removeAllObjects];
     }
-    ekkkAppDelegate *ekkkDelegate = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSArray *allData = ekkkDelegate.parsedItems;
-    NSArray *myCards = ekkkDelegate.userCardsArray;
+    NSArray *allData = [ekkkManager sharedManager].parsedItems;
+    NSArray *myCards = [ekkkManager sharedManager].userCardsArray;
     _dataArray = [[NSMutableArray alloc] initWithCapacity:30];
     NSMutableArray *allMyCards = [[[NSMutableArray alloc] initWithCapacity:10] autorelease];
     
@@ -110,39 +111,7 @@ NSArray *temp;  //跟踪指针，用来释放。
         [allMyCards addObjectsFromArray:[dic valueForKey:@"cards"]];
     }
     
-//    BOOL isSameBank = NO;   //是否拥有某个银行的卡，如果有，则跳过该银行其他的卡的判断，否则会重复添加。
-//
-//    for (OneItem *item in allData) 
-//    {
-//        if ([item.hot isEqualToString:@"1"]) 
-//        {
-//            for (NSDictionary *bankDic in item.bank) 
-//            {
-//                NSArray *cardA = [bankDic valueForKey:@"card"];
-//                for (NSDictionary *cardD in cardA) 
-//                {
-//                    NSString *str1 = [cardD valueForKey:@"card_name"];
-//
-//                    for (NSString *str2 in allMyCards) 
-//                    {
-//                        if ([str1 isEqualToString:str2] == YES) 
-//                        {
-//                            [_dataArray addObject:item];
-//                            isSameBank = YES;
-//                            break;
-//                        }
-//                    }
-//                    if (isSameBank == YES) {
-//                        break;
-//                    }
-//                }
-//                if (isSameBank == YES) {
-//                    isSameBank = NO;
-//                    continue;
-//                }
-//            }
-//        }
-//    }
+
     for (OneItem *item in allData) 
     {
         for (NSDictionary *bankDic in item.bank) 

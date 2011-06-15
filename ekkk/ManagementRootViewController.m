@@ -8,7 +8,6 @@
 
 #import "ManagementRootViewController.h"
 #import "BankSelectViewController.h"
-#import "ekkkManager.h"
 #import "ShowMyCardsViewController.h"
 #import "RegisterViewController.h"
 #import "UserInfoView.h"

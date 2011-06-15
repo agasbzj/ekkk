@@ -17,6 +17,8 @@ static ekkkManager *instance = nil;
 
 @implementation ekkkManager
 @synthesize userCardsArray = _userCardsArray;
+@synthesize selectedPlace = _selectedPlace;
+@synthesize parsedItems = _parsedItems;
 
 - (NSURL *)userCardsFilePath {
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kUserCardsFileName];
@@ -57,6 +59,8 @@ static ekkkManager *instance = nil;
 - (id)init {
     if ((self = [super init])) {
         _userCardsArray = [[[NSDictionary dictionaryWithContentsOfURL:[self userCardsFilePath]] valueForKey:@"cards"] retain];
+        _selectedPlace = @"附近";
+        _parsedItems = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -107,7 +111,9 @@ static ekkkManager *instance = nil;
 }
 
 -(void)dealloc {
+    [_selectedPlace release];
     [_userCardsArray release];
+    [_parsedItems release];
     [super dealloc];
     
 }

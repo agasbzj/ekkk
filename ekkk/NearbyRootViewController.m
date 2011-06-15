@@ -8,7 +8,6 @@
 
 #import "NearbyRootViewController.h"
 #import "NearbyTableViewController.h"
-#import "ekkkAppDelegate.h"
 @implementation NearbyRootViewController
 
 @synthesize categoryArray = _categoryArray;
@@ -188,8 +187,7 @@
     NSString *str = [dic valueForKey:@"keyForSearch"];
     
     NSMutableArray *showArray = [[NSMutableArray alloc] initWithCapacity:30];
-    ekkkAppDelegate *myDelegate = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSArray *allData = (NSArray *)myDelegate.parsedItems;
+    NSArray *allData = (NSArray *)[ekkkManager sharedManager].parsedItems;
     for (OneItem *item in allData) {
         //nearby这里的数据源范围是所有非hot的数据，这样可以做到offers的数据源和其他信用卡的数据源共用一个xml文件的同种类型的记录，方便解析和数据model；
         if ([str isEqualToString:item.category_Coarse] & [item.hot isEqualToString:@"0"]) {

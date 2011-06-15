@@ -7,7 +7,7 @@
 //
 
 #import "BankSelectViewController.h"
-#import "ekkkAppDelegate.h"
+#import "ekkkManager.h"
 #define kCardsSelectViewTag 100
 
 @implementation BankSelectViewController

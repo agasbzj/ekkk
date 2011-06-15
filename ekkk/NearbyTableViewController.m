@@ -9,7 +9,6 @@
 #import "NearbyTableViewController.h"
 #import "DetailController.h"
 #import "IndividualTableCell.h"
-#import "ekkkAppDelegate.h"
 #import "MapViewController.h"
 
 @implementation NearbyTableViewController
@@ -47,9 +46,8 @@
 - (void)getMyCardsData 
 {
     
-    ekkkAppDelegate *ekkkDelegate = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
     NSArray *allData = [[[NSArray alloc] initWithArray:_nearbyArray] autorelease];    //所有附近item数组
-    NSArray *myCards = ekkkDelegate.userCardsArray; //我的卡数组
+    NSArray *myCards = [ekkkManager sharedManager].userCardsArray; //我的卡数组
     _dataArray = [[NSMutableArray alloc] initWithCapacity:30];
     NSMutableArray *allMyCards = [[[NSMutableArray alloc] initWithCapacity:10] autorelease];
     

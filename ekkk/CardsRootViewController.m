@@ -8,8 +8,6 @@
 
 #import "CardsRootViewController.h"
 #import "CardsTableViewController.h"
-#import "ekkkManager.h"
-#import "ekkkAppDelegate.h"
 #import "OneItem.h"
 
 @implementation CardsRootViewController
@@ -126,8 +124,7 @@
 //    FetchDataController *fetchController = [[FetchDataController alloc] init];
 //    [fetchController getDataByPredicate:predicate];
     
-    ekkkAppDelegate *myDelegate = (ekkkAppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSArray *allData = (NSArray *)myDelegate.parsedItems;
+    NSArray *allData = (NSArray *)[ekkkManager sharedManager].parsedItems;
     for (OneItem *item in allData) {
         for (NSDictionary *bankDic in item.bank) {
             if ([[bankDic valueForKey:@"bank_name"] isEqualToString:str]) {

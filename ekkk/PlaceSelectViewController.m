@@ -17,6 +17,8 @@
 @synthesize searchBar = _searchBar;
 @synthesize searchString = _searchString;
 @synthesize delegate;
+@synthesize segmentedControl = _segmentedControl;
+@synthesize selectBaseView = _selectBaseView;
 
 const static NSString *kGoogleGeoApi = @"http://maps.google.com/maps/api/geocode/json?address=";
 static PlaceAnnotation *kSelectedAnnotation = nil;
@@ -36,6 +38,7 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+
     }
     return self;
 }
@@ -44,6 +47,8 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
 {
     [_mapView release];
     [_searchBar release];
+    [_segmentedControl release];
+    [_selectBaseView release];
     [super dealloc];
 }
 
@@ -55,13 +60,38 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
     // Release any cached data, images, etc that aren't in use.
 }
 
-//- (void)mapTouched:(UITapGestureRecognizer *)touch {
-//    CGPoint touchPoint = [touch locationInView:_mapView];
-//    ItemAnnotation *anno = [[ItemAnnotation alloc] init];
-//    anno.seller = @"指定的位置";
-//    anno.coordinate = [_mapView convertPoint:touchPoint toCoordinateFromView:_mapView];
-//    [_mapView addAnnotation:anno];
-//}
+- (void)mapLongPressed:(UILongPressGestureRecognizer *)touch {
+    if (_segmentedControl.selectedSegmentIndex == 1) {
+        return;
+    }
+    CGPoint touchPoint = [touch locationInView:_mapView];
+    PlaceAnnotation *anno = [[PlaceAnnotation alloc] init];
+    anno.title = @"指定的位置";
+    anno.subtitle = @"";
+    anno.coordinate = [_mapView convertPoint:touchPoint toCoordinateFromView:_mapView];
+    [_mapView removeAnnotations:_mapView.annotations];
+    [_mapView addAnnotation:anno];
+}
+
+- (void)switchSelectMode {
+    switch (_segmentedControl.selectedSegmentIndex) {
+        case 0:
+        {   
+            self.navigationItem.prompt = @"在地图上长按以指定搜索位置";
+            [_searchBar resignFirstResponder];
+            _searchBar.hidden = YES;
+            break;
+        }
+        case 1:
+        {   
+            self.navigationItem.prompt = nil;
+            _searchBar.hidden = NO;
+            break;
+        }
+        default:
+            break;
+    }
+}
 
 #pragma mark - View lifecycle
 
@@ -69,9 +99,17 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-//    UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mapTouched:)];
-//    [_mapView addGestureRecognizer:tgr];
-//    [tgr release];
+    UILongPressGestureRecognizer *tgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(mapLongPressed:)];
+    [_mapView addGestureRecognizer:tgr];
+    [tgr release];
+    
+    _segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects: @"指定", @"搜索", nil]];
+    [_segmentedControl addTarget:self action:@selector(switchSelectMode) forControlEvents:UIControlEventValueChanged];
+    _segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
+    _segmentedControl.selectedSegmentIndex = 0;
+    UIBarButtonItem *segItem = [[UIBarButtonItem alloc] initWithCustomView:_segmentedControl];
+    self.navigationItem.rightBarButtonItem = segItem;
+    [segItem release];
 }
 
 - (void)viewDidUnload
@@ -183,8 +221,12 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
         [delegate placeSelected:kSelectedAnnotation];
+        [ekkkManager sharedManager].selectedPlace = kSelectedAnnotation.title;
+        NSLog(@"lat:%lf, lon:%lf, city:%@", kSelectedAnnotation.coordinate.latitude, kSelectedAnnotation.coordinate.longitude, kSelectedAnnotation.city);
+        NSLog(@"ekkk:%@", [ekkkManager sharedManager].selectedPlace);
+        [self.navigationController popViewControllerAnimated:YES];
     }
-    NSLog(@"lat:%lf, lon:%lf, city:%@", kSelectedAnnotation.coordinate.latitude, kSelectedAnnotation.coordinate.longitude, kSelectedAnnotation.city);
+
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
@@ -207,6 +249,9 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
         pinView.canShowCallout = YES;
         pinView.animatesDrop = YES;
         
+        if (_segmentedControl.selectedSegmentIndex == 0) {
+            pinView.pinColor = MKPinAnnotationColorPurple;
+        }
         // add a detail disclosure button to the callout which will open a new view controller page
         //
         // note: you can assign a specific call out accessory view, or as MKMapViewDelegate you can implement:

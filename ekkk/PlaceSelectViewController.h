@@ -16,13 +16,19 @@
 
 @end
 @interface PlaceSelectViewController : UIViewController <MKMapViewDelegate, UISearchBarDelegate> {
+    id <PlaceSelectDelegate> delegate;
+    
+@private
     MKMapView *_mapView;
     UISearchBar *_searchBar;
     NSString *_searchString;
-    id <PlaceSelectDelegate> delegate;
+    UISegmentedControl *_segmentedControl;
+    UIView *_selectBaseView;
 }
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 @property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, retain) NSString *searchString;
+@property (nonatomic, retain) UISegmentedControl *segmentedControl;
+@property (nonatomic, retain) UIView *selectBaseView;
 @property (nonatomic, assign) id <PlaceSelectDelegate> delegate;
 @end
