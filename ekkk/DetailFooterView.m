@@ -49,4 +49,10 @@
 
 }
 
+- (IBAction)commitButton:(id)sender
+{
+    [delegate commitButtonPressed];
+    
+}
+
 @end

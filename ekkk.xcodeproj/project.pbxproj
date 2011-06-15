@@ -82,6 +82,8 @@
 		41E3647C136439C2001EFDC4 /* 俏江南.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E36477136439C2001EFDC4 /* 俏江南.png */; };
 		A90AED1D135EB1BE002DEFD3 /* BanksAndCards.plist in Resources */ = {isa = PBXBuildFile; fileRef = A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */; };
 		A935358E13A88378001513A9 /* LocateAndDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = A935358D13A88378001513A9 /* LocateAndDownload.m */; };
+		A935359D13A8EC24001513A9 /* UserCommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A935359B13A8EC24001513A9 /* UserCommitViewController.m */; };
+		A935359E13A8EC24001513A9 /* UserCommitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A935359C13A8EC24001513A9 /* UserCommitViewController.xib */; };
 		A93B9E5113A75226009C55B0 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B9E3A13A75226009C55B0 /* CDataScanner.m */; };
 		A93B9E5213A75226009C55B0 /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B9E3D13A75226009C55B0 /* CFilteringJSONSerializer.m */; };
 		A93B9E5313A75226009C55B0 /* CJSONDeserializer_BlocksExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B9E3F13A75226009C55B0 /* CJSONDeserializer_BlocksExtensions.m */; };
@@ -251,6 +253,9 @@
 		A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BanksAndCards.plist; sourceTree = "<group>"; };
 		A935358C13A88378001513A9 /* LocateAndDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocateAndDownload.h; sourceTree = "<group>"; };
 		A935358D13A88378001513A9 /* LocateAndDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocateAndDownload.m; sourceTree = "<group>"; };
+		A935359A13A8EC24001513A9 /* UserCommitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCommitViewController.h; sourceTree = "<group>"; };
+		A935359B13A8EC24001513A9 /* UserCommitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCommitViewController.m; sourceTree = "<group>"; };
+		A935359C13A8EC24001513A9 /* UserCommitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCommitViewController.xib; sourceTree = "<group>"; };
 		A93B9E3913A75226009C55B0 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
 		A93B9E3A13A75226009C55B0 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
 		A93B9E3C13A75226009C55B0 /* CFilteringJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFilteringJSONSerializer.h; sourceTree = "<group>"; };
@@ -412,6 +417,7 @@
 		41750DE1134AF1EB00CFF97E /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
+				A935359813A8EC07001513A9 /* User_Commit */,
 				41A0377713588555001D52A8 /* DetailViewController.xib */,
 				41750DDB134AF1D000CFF97E /* DetailViewController.h */,
 				41750DDC134AF1D000CFF97E /* DetailViewController.m */,
@@ -656,6 +662,16 @@
 				41750DFC134AFAB600CFF97E /* png-0002.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		A935359813A8EC07001513A9 /* User_Commit */ = {
+			isa = PBXGroup;
+			children = (
+				A935359A13A8EC24001513A9 /* UserCommitViewController.h */,
+				A935359B13A8EC24001513A9 /* UserCommitViewController.m */,
+				A935359C13A8EC24001513A9 /* UserCommitViewController.xib */,
+			);
+			name = User_Commit;
 			sourceTree = "<group>";
 		};
 		A93B9E2813A75146009C55B0 /* Third_Part */ = {
@@ -970,6 +986,7 @@
 				A97354C2139E4F2900895C00 /* TextCell.xib in Resources */,
 				A941961213A49DD4000BC0D9 /* TestAllThings.xib in Resources */,
 				A93B9E6113A7526D009C55B0 /* PlaceSelectViewController.xib in Resources */,
+				A935359E13A8EC24001513A9 /* UserCommitViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1039,6 +1056,7 @@
 				A93B9E6813A794D8009C55B0 /* PlaceAnnotation.m in Sources */,
 				A93B9E6B13A7A1EF009C55B0 /* ekkkManager.m in Sources */,
 				A935358E13A88378001513A9 /* LocateAndDownload.m in Sources */,
+				A935359D13A8EC24001513A9 /* UserCommitViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

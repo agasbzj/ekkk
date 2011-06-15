@@ -10,6 +10,7 @@
 #import "DetailHeaderView.h"
 #import "DetailFooterView.h"
 #import "MapViewController.h"
+#import "UserCommitViewController.h"
 
 @implementation DetailController
 @synthesize tableView = _tableView;
@@ -95,12 +96,21 @@
     
     
 }
+
+#pragma mark - DetailFootView Delegate
+
 - (void)shareButtonPressed
 {
     UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消分享" destructiveButtonTitle:nil otherButtonTitles:@"通过新浪微博分享", @"通过Email分享", @"通过短信分享", nil];
     actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
     [actionSheet showInView:self.view];
     [actionSheet release];
+}
+
+- (void)commitButtonPressed {
+    UserCommitViewController *commitViewController = [[UserCommitViewController alloc] initWithNibName:@"UserCommitViewController" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:commitViewController animated:YES];
+    [commitViewController release];
 }
 
 - (void)viewDidUnload

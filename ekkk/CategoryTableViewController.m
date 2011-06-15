@@ -339,7 +339,7 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
     cell.sellerLabel.text = item.seller;
     cell.addressLabel.text = item.address;
     cell.discountLabel.text = [[item.bank objectAtIndex:0] valueForKey:@"discount"];
-    cell.distanceLabel.text = item.distance;
+    cell.distanceLabel.text = [NSString stringWithFormat:@"%@米", item.distance];
     return cell;
 }
 

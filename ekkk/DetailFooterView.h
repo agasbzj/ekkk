@@ -10,7 +10,8 @@
 
 @protocol DetailFooterViewDelegate 
 
-- (void)shareButtonPressed;
+- (void)shareButtonPressed;     //分享按钮按下
+- (void)commitButtonPressed;    //点评按钮按下
 
 @end
 
@@ -28,5 +29,5 @@
 @property (nonatomic, retain) IBOutlet UIButton *rightButton;
 @property (nonatomic, assign) id <DetailFooterViewDelegate> delegate;
 - (IBAction)shareButton:(id)sender;
-
+- (IBAction)commitButton:(id)sender;
 @end
