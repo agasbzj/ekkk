@@ -13,6 +13,7 @@
 @synthesize latitude;
 @synthesize longitude;
 @synthesize parseOperation;
+
 - (id)initWithCoordinate:(NSDictionary *)dictionary {
     if ((self = [super init])) {
         self.latitude = [dictionary valueForKey:@"latitude"];

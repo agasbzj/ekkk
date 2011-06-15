@@ -7,7 +7,8 @@
 //
 
 #import "ParseOperation.h"
-#define kFileName @"Data.plist"
+#define kFileName                   @"Data.plist"
+#define kDataBackupFileName         @"DataBackup.plist"
 
 @implementation ParseOperation
 @synthesize itemList;
@@ -216,8 +217,15 @@ static NSString *kDistanceElem = @"distance";
     
     NSDictionary *dc = [NSDictionary dictionaryWithObject:arrayToSave forKey:@"data_Array"];
     
+    //把数据保存在本地
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kFileName];
+    
+    //写入本次备份数据
+    NSURL *storeURL2 = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kDataBackupFileName];
+
+    
     [dc writeToURL:storeURL atomically:YES];
+    [dc writeToURL:storeURL2 atomically:YES];
 }
 
 - (void)saveParsedItems:(NSArray *)items {

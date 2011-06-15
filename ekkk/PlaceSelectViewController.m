@@ -10,6 +10,7 @@
 #import "PlaceAnnotation.h"
 #import "CJSONDeserializer.h"
 #import "GoogleApi.h"
+#import "LocateAndDownload.h"
 
 @implementation PlaceSelectViewController
 
@@ -103,6 +104,7 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
     [_mapView addGestureRecognizer:tgr];
     [tgr release];
     
+    
     _segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects: @"指定", @"搜索", nil]];
     [_segmentedControl addTarget:self action:@selector(switchSelectMode) forControlEvents:UIControlEventValueChanged];
     _segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
@@ -130,6 +132,7 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     [self.navigationItem setTitle:@"请指定一个位置"];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
+
     [super viewWillAppear:animated];
 }
 
@@ -222,8 +225,15 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
     if (buttonIndex == 1) {
         [delegate placeSelected:kSelectedAnnotation];
         [ekkkManager sharedManager].selectedPlace = kSelectedAnnotation.title;
+        NSNumber *latitude = [NSNumber numberWithDouble:kSelectedAnnotation.coordinate.latitude];
+        NSNumber *longitude = [NSNumber numberWithDouble:kSelectedAnnotation.coordinate.longitude];
         NSLog(@"lat:%lf, lon:%lf, city:%@", kSelectedAnnotation.coordinate.latitude, kSelectedAnnotation.coordinate.longitude, kSelectedAnnotation.city);
         NSLog(@"ekkk:%@", [ekkkManager sharedManager].selectedPlace);
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:latitude, @"latitude", longitude, @"longitude", nil];
+        
+        LocateAndDownload *locate = [[LocateAndDownload alloc] init];
+        [locate downloadInfoWithCoordinate:dic];
+        
         [self.navigationController popViewControllerAnimated:YES];
     }
 
@@ -244,7 +254,7 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
     {
         // if an existing pin view was not available, create one
         pinView = [[[MKPinAnnotationView alloc]
-                                               initWithAnnotation:annotation reuseIdentifier:AnnotationIdentifier] autorelease];
+                                               initWithAnnotation:annotation reuseIdentifier:nil] autorelease];
         pinView.pinColor = MKPinAnnotationColorRed;
         pinView.canShowCallout = YES;
         pinView.animatesDrop = YES;

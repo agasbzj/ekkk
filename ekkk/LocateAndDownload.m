@@ -9,34 +9,42 @@
 #import "LocateAndDownload.h"
 #import "InterconnectWithServer.h"
 
-#define kLocationFileName @"location.plist"
-#define kDataFileName @"Data.plist"
-#define kUserCardsFileName @"UserCards.plist"
+#define kLocationFileName           @"location.plist"
+#define kDataBackupFileName         @"DataBackup.plist"
+#define kDataFileName               @"Data.plist"
+#define kUserCardsFileName          @"UserCards.plist"
 
 @implementation LocateAndDownload
 @synthesize locationManager;
 @synthesize interConnectOperationQueue;
 @synthesize parsedItems = _parsedItems;
 @synthesize interconnectOperation;
+@synthesize coodToLocate = _coodToLocate;
+@synthesize locateCustomPosition;
 
 - (id)init {
     if ((self = [super init])) {
         _parsedItems = [[NSMutableArray alloc] initWithCapacity:50];
+        _coodToLocate = [[NSMutableDictionary alloc] init];
+        locateCustomPosition = NO;
         
         [ekkkManager sharedManager];
         
-        [self loadData];
+//        [self loadData];
         //注册为观察者，用于接受新线程解析的数据。
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadItems:) name:@"LocalXMLParsed" object:nil];
         
         
         //开始定位
-        [self startStandardUpdates];
+//        [self startStandardUpdates];
     }
     return self;
 }
 
 - (void)dealloc {
+    [_coodToLocate release];
+    [_parsedItems release];
+    [locationManager release];
     [super dealloc];
 }
 
@@ -47,19 +55,33 @@
 }
 
 - (NSURL *)locationDataFilePath {
-    
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kLocationFileName];
     NSLog(@"%@", storeURL);
     return storeURL;
 }
 
 - (NSURL *)itemDataFilePath {
-    
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kDataFileName];
     NSLog(@"%@", storeURL);
     return storeURL;
 }
 
+- (NSURL *)itemBackupDataFilePath {
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kDataBackupFileName];
+    NSLog(@"%@", storeURL);
+    return storeURL;
+}
+
+//用备份数据（附近）替换当前使用的文件，即切换回附近信息
+- (void)loadBackupData {
+    NSURL *url = [self itemDataFilePath];
+    NSURL *backupUrl = [self itemBackupDataFilePath];
+    NSArray *array = [NSArray arrayWithContentsOfURL:backupUrl];
+    [array writeToURL:url atomically:YES];
+    [self loadData];
+}
+
+//读取数据到_parsedItems，初始是附近数据，根据选择的地点而改变
 - (void)loadData {
     [_parsedItems removeAllObjects];
     NSURL *url = [self itemDataFilePath];
@@ -159,12 +181,14 @@
     [ddd writeToURL:[self locationDataFilePath] atomically:YES];
     
     
-    //新建线程
-    interConnectOperationQueue = [NSOperationQueue new];
+//    //新建线程
+//    interConnectOperationQueue = [NSOperationQueue new];
+//    
+//    //定位完成开始和服务器交互
+//    interconnectOperation = [[[InterconnectWithServer alloc] initWithCoordinate:ddd] autorelease];
+//    [self.interConnectOperationQueue addOperation: interconnectOperation];
     
-    //定位完成开始和服务器交互
-    interconnectOperation = [[[InterconnectWithServer alloc] initWithCoordinate:ddd] autorelease];
-    [self.interConnectOperationQueue addOperation: interconnectOperation];
+    [self downloadInfoWithCoordinate:ddd];
     
 }
 
@@ -173,6 +197,16 @@
     // We can ignore this error for the scenario of getting a single location fix, because we already have a 
     // timeout that will stop the location manager to save power.
     NSLog(@"Error:%@", [error userInfo]);
+}
+
+//把坐标发到服务器下载数据
+- (void)downloadInfoWithCoordinate:(NSDictionary *)coordinateDict {
+    //新建线程
+    interConnectOperationQueue = [NSOperationQueue new];
+    
+    //定位完成开始和服务器交互
+    interconnectOperation = [[[InterconnectWithServer alloc] initWithCoordinate:coordinateDict] autorelease];
+    [self.interConnectOperationQueue addOperation: interconnectOperation];
 }
 
 #pragma mark - Application's Documents directory

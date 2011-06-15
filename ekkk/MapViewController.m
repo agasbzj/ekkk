@@ -336,7 +336,7 @@ static UIProgressView *kProgressView = nil;
     {
         // if an existing pin view was not available, create one
         MKPinAnnotationView* customPinView = [[[MKPinAnnotationView alloc]
-                                               initWithAnnotation:annotation reuseIdentifier:AnnotationIdentifier] autorelease];
+                                               initWithAnnotation:annotation reuseIdentifier:nil] autorelease];
         customPinView.pinColor = MKPinAnnotationColorRed;
         customPinView.canShowCallout = YES;
         customPinView.animatesDrop = YES;

@@ -21,7 +21,7 @@
 
 @synthesize offerNavController = _offerNavController;
 
-
+static LocateAndDownload *kLAndD = nil;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -40,6 +40,9 @@
     */
     
     LocateAndDownload *locate = [[LocateAndDownload alloc] init];
+    [locate loadData];
+    [locate startStandardUpdates];
+    kLAndD = locate;
     
     // Override point for customization after application launch.
     // Add the tab bar controller's current view as a subview of the window
@@ -101,7 +104,7 @@
 
 - (void)dealloc
 {
-
+    [kLAndD release];
     [_window release];
     [_tabBarController release];
     [super dealloc];
