@@ -136,7 +136,7 @@ static NSString *confirmPassword = @"";
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.navigationItem.title = NSLocalizedString(@"Sign up", @"User Sign Up");
+    self.navigationItem.title = NSLocalizedString(@"Sign Up", @"User Sign Up");
     [super viewWillAppear:animated];
 }
 
