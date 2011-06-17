@@ -101,6 +101,7 @@
 
         NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"CardsTableCell" owner:self options:nil];
         cell = [array objectAtIndex:0];
+//        cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
     
     NSString *backgroundImagePath = [[NSBundle mainBundle] pathForResource:(indexPath.row % 2 == 0) ? @"DarkBackground" : @"LightBackground" ofType:@"png"];
@@ -122,7 +123,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSDictionary *dic = [_bankArray objectAtIndex:indexPath.row];
     NSString *str = [dic valueForKey:@"bankName"];
     NSMutableArray *showArray = [[NSMutableArray alloc] initWithCapacity:30];

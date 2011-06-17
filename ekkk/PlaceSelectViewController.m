@@ -129,7 +129,7 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
 
 #pragma mark - ViewController Delegate
 - (void)viewWillAppear:(BOOL)animated {
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+	self.navigationController.navigationBar.translucent = YES;
     [self.navigationItem setTitle:@"请指定一个位置"];
 //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
 
@@ -137,7 +137,7 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+	self.navigationController.navigationBar.translucent = NO;
 //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];
 
     [super viewWillDisappear:animated];

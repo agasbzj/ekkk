@@ -173,7 +173,7 @@
     }
     
 //    cell.textLabel.textColor = [UIColor colorWithRed:.4f green:.4f blue:.4f alpha:1.f];
-    cell.textLabel.textColor = [UIColor lightTextColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
     cell.indentationLevel = 2;
 
     if (section == 0) {

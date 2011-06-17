@@ -26,7 +26,8 @@ static UIProgressView *kProgressView = nil;
 - (void)viewWillDisappear:(BOOL)animated
 {		
 	// restore the nav bar and status bar color to default
-	self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+//	self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    self.navigationController.navigationBar.translucent = NO;
 //	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackOpaque;
     [super viewWillDisappear:animated];
 }
@@ -35,8 +36,8 @@ static UIProgressView *kProgressView = nil;
 - (void)viewWillAppear:(BOOL)animated
 {		
 	// for aesthetic reasons (the background is black), make the nav bar black for this particular page
-	self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
-	
+//	self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+	self.navigationController.navigationBar.translucent = YES;
 	// match the status bar with the nav bar
 //	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackTranslucent;
     
