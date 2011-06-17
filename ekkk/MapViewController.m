@@ -27,7 +27,7 @@ static UIProgressView *kProgressView = nil;
 {		
 	// restore the nav bar and status bar color to default
 	self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackOpaque;
+//	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackOpaque;
     [super viewWillDisappear:animated];
 }
 
@@ -38,7 +38,7 @@ static UIProgressView *kProgressView = nil;
 	self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
 	
 	// match the status bar with the nav bar
-	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackTranslucent;
+//	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackTranslucent;
     
     if (_showMultiItems == NO) {
         self.navigationItem.title = _theItem.seller;

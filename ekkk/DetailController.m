@@ -84,15 +84,21 @@
     footerView.delegate = self;
     footerView.backgroundColor = [UIColor clearColor];
     footerView.textView.text = _oneItem.details;
-    footerView.textView.backgroundColor = [UIColor colorWithRed:0.945 green:0.945 blue:0.945 alpha:.5f];
-    footerView.textView.layer.cornerRadius = 5.f;
+//    footerView.textView.backgroundColor = [UIColor colorWithRed:0.945 green:0.945 blue:0.945 alpha:.5f];
+//    footerView.textView.layer.cornerRadius = 5.f;
     
-    footerView.label.layer.cornerRadius = 10.f;
-    footerView.leftButton.layer.cornerRadius = 10.f;
-    footerView.rightButton.layer.cornerRadius = 10.f;
+    footerView.label.layer.cornerRadius = 3.f;
+//    footerView.leftButton.layer.cornerRadius = 10.f;
+//    footerView.rightButton.layer.cornerRadius = 10.f;
+    UIImage *oriImage = [UIImage imageNamed:@"whiteButton.png"];
+    UIImage *stretchableButtonImage = [oriImage stretchableImageWithLeftCapWidth:12 topCapHeight:0];
+    [footerView.leftButton setBackgroundImage:stretchableButtonImage forState:UIControlStateNormal];
+    [footerView.rightButton setBackgroundImage:stretchableButtonImage forState:UIControlStateNormal];
+    
+    
     
     _tableView.tableFooterView = footerView;
-    
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     
 }
@@ -155,6 +161,7 @@
     static NSString *CellIdentifier = @"CellIdentifer";
     UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
+        cell.backgroundColor = [UIColor clearColor];
         if (section == 0) {
             cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
             cell.imageView.image = indexPath.row == 0 ? [UIImage imageNamed:@"VoIP-Alt.png"] : [UIImage imageNamed:@"Home.png"];
@@ -165,6 +172,10 @@
         }
     }
     
+//    cell.textLabel.textColor = [UIColor colorWithRed:.4f green:.4f blue:.4f alpha:1.f];
+    cell.textLabel.textColor = [UIColor lightTextColor];
+    cell.indentationLevel = 2;
+
     if (section == 0) {
         switch (row) {
             case 0:
@@ -187,13 +198,15 @@
         cell.detailTextLabel.font = font;
         cell.textLabel.font = font;
 //        cell.textLabel.numberOfLines = 2;
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
         cell.detailTextLabel.numberOfLines = 2;
     }
     else if (section == 1) {
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.textLabel.text = [[_oneItem.bank objectAtIndex:row] valueForKey:@"discount"];
         cell.textLabel.numberOfLines = 2;
-        cell.textLabel.textAlignment = UITextAlignmentCenter;
+//        cell.textLabel.textAlignment = UITextAlignmentCenter;
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         UIFont *font = [UIFont systemFontOfSize:14];
         cell.textLabel.font = font;
 
@@ -201,7 +214,11 @@
         cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [[_oneItem.bank objectAtIndex:row] valueForKey:@"bank_name"]]];
 
     }
-
+    
+    cell.textLabel.backgroundColor = [UIColor clearColor];
+//    cell.backgroundColor = [UIColor colorWithRed:.4f green:.4f blue:.4f alpha:1.f];
+    
+    
     return cell;
 }
 

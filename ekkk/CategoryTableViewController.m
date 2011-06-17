@@ -214,6 +214,7 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
 {
     [super viewDidLoad];
     
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     _sortKeyDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"all", @"kByCategory",
                           @"all", @"kByDistance", @"all", @"kByBank", @"all", @"kByCategoryCoarse", nil];
@@ -331,6 +332,12 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
         cell = [array objectAtIndex:0];
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
+    
+    NSString *backgroundImagePath = [[NSBundle mainBundle] pathForResource:(indexPath.row % 2 == 0) ? @"DarkBackground" : @"LightBackground" ofType:@"png"];
+    UIImage *backgroundImage = [[UIImage imageWithContentsOfFile:backgroundImagePath] stretchableImageWithLeftCapWidth:0.0 topCapHeight:1.0];
+    cell.backgroundView = [[[UIImageView alloc] initWithImage:backgroundImage] autorelease];
+    cell.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    cell.backgroundView.frame = cell.bounds;
     
     // Configure the cell...
     

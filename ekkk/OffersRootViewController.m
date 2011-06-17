@@ -16,8 +16,8 @@
 
 #define kFileName @"location.plist"
 #define kDataFileName @"Data.plist"
-#define DARK_BACKGROUND [UIColor colorWithRed:151.0/255.0 green:152.0/255.0 blue:155.0/255.0 alpha:1.0];
-#define LIGHT_BACKGROUND [UIColor colorWithRed:172.0/255.0 green:173.0/255.0 blue:175.0/255.0 alpha:1.0];
+#define DARK_BACKGROUND [UIColor colorWithRed:0.757 green:0.757 blue:0.757 alpha:1.0]
+#define LIGHT_BACKGROUND [UIColor colorWithRed:0.961 green:0.961 blue:0.961 alpha:1.0]
 
 @implementation OffersRootViewController
 @synthesize tableView = _tableView;
@@ -167,8 +167,8 @@ NSArray *temp;  //跟踪指针，用来释放。
 {
     [super viewDidLoad];
     self.tableView.rowHeight = 74;  //设置每个cell行高
-    self.tableView.backgroundColor = [UIColor blackColor];
-    self.tableView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
+//    self.tableView.backgroundColor = [UIColor blackColor];
+//    self.tableView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 //    self.navigationController.navigationBarHidden = YES;
     
@@ -220,9 +220,8 @@ NSArray *temp;  //跟踪指针，用来释放。
 
         NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"OffersTableCell" owner:self options:nil];
         cell = [array objectAtIndex:0];
-        cell.backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"img-offers-cellBackground.png"]] autorelease];
+
         cell.selectionStyle = UITableViewCellEditingStyleNone;
-        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 
     }
     
@@ -233,10 +232,13 @@ NSArray *temp;  //跟踪指针，用来释放。
     cell.discountLabel.text = [[item.bank objectAtIndex:0] valueForKey:@"discount"];
     cell.sourceLabel.text = item.source;
     
-    if (indexPath.row % 2 == 0) {
-        cell.layer.backgroundColor = [[UIColor colorWithRed:.3f green:.3f blue:.3f alpha:1.f] CGColor];
-    }
-    else cell.layer.backgroundColor = [[UIColor colorWithRed:.6f green:.6f blue:.6f alpha:1.f] CGColor];
+
+    
+    NSString *backgroundImagePath = [[NSBundle mainBundle] pathForResource:(indexPath.row % 2 == 0) ? @"DarkBackground" : @"LightBackground" ofType:@"png"];
+    UIImage *backgroundImage = [[UIImage imageWithContentsOfFile:backgroundImagePath] stretchableImageWithLeftCapWidth:0.0 topCapHeight:1.0];
+    cell.backgroundView = [[[UIImageView alloc] initWithImage:backgroundImage] autorelease];
+    cell.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    cell.backgroundView.frame = cell.bounds;
     
     return cell;
 }

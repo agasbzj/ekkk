@@ -9,6 +9,7 @@
 #import "CardsRootViewController.h"
 #import "CardsTableViewController.h"
 #import "OneItem.h"
+#import "CardsTableCell.h"
 
 @implementation CardsRootViewController
 @synthesize tableView = _tableView;
@@ -49,7 +50,7 @@
 //    _bankList = [[[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"BanksAndCards" ofType:@"plist"]] valueForKey:@"Banks"] retain];
 //    self.tableView.rowHeight = 60;  //根据类别数量配置行高
     self.tableView.scrollEnabled = YES; //不允许滚动
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     //获得plist下的内容
     NSString *path = [[NSBundle mainBundle] pathForResource:@"BanksAndCards" ofType:@"plist"];
@@ -93,21 +94,24 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    CardsTableCell *cell = (CardsTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-        
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
+        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"CardsTableCell" owner:self options:nil];
+        cell = [array objectAtIndex:0];
     }
+    
+    NSString *backgroundImagePath = [[NSBundle mainBundle] pathForResource:(indexPath.row % 2 == 0) ? @"DarkBackground" : @"LightBackground" ofType:@"png"];
+    UIImage *backgroundImage = [[UIImage imageWithContentsOfFile:backgroundImagePath] stretchableImageWithLeftCapWidth:0.0 topCapHeight:1.0];
+    cell.backgroundView = [[[UIImageView alloc] initWithImage:backgroundImage] autorelease];
+    cell.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    cell.backgroundView.frame = cell.bounds;
     
     // Configure the cell...
     NSDictionary *dic = [_bankArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = [dic valueForKey:@"bankName"];
-    UIFont *font = [UIFont systemFontOfSize:14];
-    cell.detailTextLabel.font = font;
-    cell.textLabel.font = font;
+    cell.theLabel.text = [dic valueForKey:@"bankName"];
     UIImage *icon = [UIImage imageNamed:[dic valueForKey:@"icon"]];
-    cell.imageView.image = icon;                 
+    cell.iconImageView.image = icon;                 
     
     return cell;
 }

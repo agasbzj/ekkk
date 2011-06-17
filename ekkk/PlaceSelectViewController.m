@@ -131,14 +131,14 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     [self.navigationItem setTitle:@"请指定一个位置"];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
 
     [super viewWillAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];
 
     [super viewWillDisappear:animated];
 }

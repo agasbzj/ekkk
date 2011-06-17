@@ -8,6 +8,7 @@
 
 #import "BankSelectViewController.h"
 #import "ekkkManager.h"
+#import "CardsTableCell.h"
 #define kCardsSelectViewTag 100
 
 @implementation BankSelectViewController
@@ -54,6 +55,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     _bankArray = [[[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"BanksAndCards" ofType:@"plist"]] valueForKey:@"Banks"];
+    self.tableView.backgroundColor = [UIColor darkGrayColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
 }
 
@@ -83,19 +86,27 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"CellIdentifier";
-    UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    CardsTableCell *cell = (CardsTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"CardsTableCell" owner:self options:nil];
+        cell = [array objectAtIndex:0];
     }
     
+    NSString *backgroundImagePath = [[NSBundle mainBundle] pathForResource:(indexPath.row % 2 == 0) ? @"DarkBackground" : @"LightBackground" ofType:@"png"];
+    UIImage *backgroundImage = [[UIImage imageWithContentsOfFile:backgroundImagePath] stretchableImageWithLeftCapWidth:0.0 topCapHeight:1.0];
+    cell.backgroundView = [[[UIImageView alloc] initWithImage:backgroundImage] autorelease];
+    cell.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    cell.backgroundView.frame = cell.bounds;
+    
+    // Configure the cell...
+
+    
     NSDictionary *dic = [_bankArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = [dic valueForKey:@"bankName"];
-    UIFont *font = [UIFont systemFontOfSize:14];
-    cell.detailTextLabel.font = font;
-    cell.textLabel.font = font;
+    cell.theLabel.text = [dic valueForKey:@"bankName"];
     UIImage *icon = [UIImage imageNamed:[dic valueForKey:@"icon"]];
-    cell.imageView.image = icon;  
+    cell.iconImageView.image = icon;  
+    
     
     return cell;
 }

@@ -119,6 +119,13 @@
 		A986BAA113647A2C0085433E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A986BAA013647A2B0085433E /* QuartzCore.framework */; };
 		A9904879136D5EE200306D37 /* ShowMyCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9904877136D5EE200306D37 /* ShowMyCardsViewController.m */; };
 		A990487A136D5EE200306D37 /* ShowMyCardsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9904878136D5EE200306D37 /* ShowMyCardsViewController.xib */; };
+		A990997613AB2A0300EB6871 /* blackboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A990997513AB2A0300EB6871 /* blackboard@2x.png */; };
+		A990997913AB33BE00EB6871 /* CategoryRootCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A990997813AB33BE00EB6871 /* CategoryRootCell.xib */; };
+		A990997C13AB342200EB6871 /* CategoryRootCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A990997B13AB342200EB6871 /* CategoryRootCell.m */; };
+		A990997F13AB373100EB6871 /* DarkBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = A990997D13AB373100EB6871 /* DarkBackground.png */; };
+		A990998013AB373100EB6871 /* LightBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = A990997E13AB373100EB6871 /* LightBackground.png */; };
+		A990998313AB383500EB6871 /* CardsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A990998213AB383500EB6871 /* CardsTableCell.m */; };
+		A990998513AB384700EB6871 /* CardsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A990998413AB384700EB6871 /* CardsTableCell.xib */; };
 		A99BD8F8135DA84A0008588C /* NearbyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99BD8F6135DA84A0008588C /* NearbyTableViewController.m */; };
 		A99BD8F9135DA84A0008588C /* NearbyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99BD8F7135DA84A0008588C /* NearbyTableViewController.xib */; };
 		A9A46A261363004100964881 /* ManagementRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A46A241363004100964881 /* ManagementRootViewController.m */; };
@@ -310,6 +317,15 @@
 		A9904876136D5EE200306D37 /* ShowMyCardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowMyCardsViewController.h; sourceTree = "<group>"; };
 		A9904877136D5EE200306D37 /* ShowMyCardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowMyCardsViewController.m; sourceTree = "<group>"; };
 		A9904878136D5EE200306D37 /* ShowMyCardsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowMyCardsViewController.xib; sourceTree = "<group>"; };
+		A990997513AB2A0300EB6871 /* blackboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackboard@2x.png"; sourceTree = "<group>"; };
+		A990997813AB33BE00EB6871 /* CategoryRootCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryRootCell.xib; sourceTree = "<group>"; };
+		A990997A13AB342200EB6871 /* CategoryRootCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryRootCell.h; sourceTree = "<group>"; };
+		A990997B13AB342200EB6871 /* CategoryRootCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryRootCell.m; sourceTree = "<group>"; };
+		A990997D13AB373100EB6871 /* DarkBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DarkBackground.png; sourceTree = "<group>"; };
+		A990997E13AB373100EB6871 /* LightBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LightBackground.png; sourceTree = "<group>"; };
+		A990998113AB383500EB6871 /* CardsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardsTableCell.h; sourceTree = "<group>"; };
+		A990998213AB383500EB6871 /* CardsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsTableCell.m; sourceTree = "<group>"; };
+		A990998413AB384700EB6871 /* CardsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardsTableCell.xib; sourceTree = "<group>"; };
 		A99BD8F5135DA84A0008588C /* NearbyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyTableViewController.h; sourceTree = "<group>"; };
 		A99BD8F6135DA84A0008588C /* NearbyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyTableViewController.m; sourceTree = "<group>"; };
 		A99BD8F7135DA84A0008588C /* NearbyTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearbyTableViewController.xib; sourceTree = "<group>"; };
@@ -567,6 +583,9 @@
 				41A4D0941348CCE000D070BB /* CardsRootViewController.xib */,
 				41750DE5134AF27B00CFF97E /* CardsTableViewController.h */,
 				41750DE6134AF27B00CFF97E /* CardsTableViewController.m */,
+				A990998113AB383500EB6871 /* CardsTableCell.h */,
+				A990998213AB383500EB6871 /* CardsTableCell.m */,
+				A990998413AB384700EB6871 /* CardsTableCell.xib */,
 			);
 			name = Cards;
 			sourceTree = "<group>";
@@ -586,6 +605,9 @@
 				A9D10203136D9E1A007B5F0D /* PickerView.h */,
 				A9D10204136D9E1A007B5F0D /* PickerView.m */,
 				A9D10200136D9C05007B5F0D /* PickerView.xib */,
+				A990997A13AB342200EB6871 /* CategoryRootCell.h */,
+				A990997B13AB342200EB6871 /* CategoryRootCell.m */,
+				A990997813AB33BE00EB6871 /* CategoryRootCell.xib */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -628,6 +650,9 @@
 		41A4D0971348CDD700D070BB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A990997513AB2A0300EB6871 /* blackboard@2x.png */,
+				A990997D13AB373100EB6871 /* DarkBackground.png */,
+				A990997E13AB373100EB6871 /* LightBackground.png */,
 				A97F283D1396747300368180 /* img-offers-cellBackground@2x.png */,
 				A97F281F1396629B00368180 /* Icons */,
 				A9DBA3CE1395E0F500FA2770 /* Buttons */,
@@ -987,6 +1012,11 @@
 				A941961213A49DD4000BC0D9 /* TestAllThings.xib in Resources */,
 				A93B9E6113A7526D009C55B0 /* PlaceSelectViewController.xib in Resources */,
 				A935359E13A8EC24001513A9 /* UserCommitViewController.xib in Resources */,
+				A990997613AB2A0300EB6871 /* blackboard@2x.png in Resources */,
+				A990997913AB33BE00EB6871 /* CategoryRootCell.xib in Resources */,
+				A990997F13AB373100EB6871 /* DarkBackground.png in Resources */,
+				A990998013AB373100EB6871 /* LightBackground.png in Resources */,
+				A990998513AB384700EB6871 /* CardsTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1057,6 +1087,8 @@
 				A93B9E6B13A7A1EF009C55B0 /* ekkkManager.m in Sources */,
 				A935358E13A88378001513A9 /* LocateAndDownload.m in Sources */,
 				A935359D13A8EC24001513A9 /* UserCommitViewController.m in Sources */,
+				A990997C13AB342200EB6871 /* CategoryRootCell.m in Sources */,
+				A990998313AB383500EB6871 /* CardsTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

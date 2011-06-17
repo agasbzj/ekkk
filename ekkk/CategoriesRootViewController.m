@@ -8,6 +8,7 @@
 
 #import "CategoriesRootViewController.h"
 #import "CategoryTableViewController.h"
+#import "CategoryRootCell.h"
 #import "OneItem.h"
 
 @implementation CategoriesRootViewController
@@ -47,11 +48,13 @@
     // Do any additional setup after loading the view from its nib.
     self.tableView.rowHeight = 60;  //根据类别数量配置行高
     self.tableView.scrollEnabled = NO; //不允许滚动
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     //获得plist下的内容
     NSString *path = [[NSBundle mainBundle] pathForResource:@"NearbyCategory" ofType:@"plist"];
     _plistKey = [[NSDictionary alloc] initWithContentsOfFile:path];
     _categoryArray = [_plistKey valueForKey:@"categoryList"];
+    
+    self.tableView.backgroundColor = [UIColor darkGrayColor];
     
 }
 
@@ -90,21 +93,33 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    CategoryRootCell *cell = (CategoryRootCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-        cell.selectionStyle = UITableViewCellSelectionStyleGray;
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+//        cell.selectionStyle = UITableViewCellSelectionStyleGray;
+//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//        cell.indentationLevel = 1;
+    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"CategoryRootCell" owner:self options:nil];
+    cell = [array objectAtIndex:0];
+
     }
     
+    
+    NSString *backgroundImagePath = [[NSBundle mainBundle] pathForResource:(indexPath.row % 2 == 0) ? @"DarkBackground" : @"LightBackground" ofType:@"png"];
+    UIImage *backgroundImage = [[UIImage imageWithContentsOfFile:backgroundImagePath] stretchableImageWithLeftCapWidth:0.0 topCapHeight:1.0];
+    cell.backgroundView = [[[UIImageView alloc] initWithImage:backgroundImage] autorelease];
+    cell.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    cell.backgroundView.frame = cell.bounds;
+        
     // Configure the cell...
     NSDictionary *dic = [_categoryArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = [dic valueForKey:@"name"];
-    UIFont *font = [UIFont systemFontOfSize:14];
-    cell.detailTextLabel.font = font;
-    cell.textLabel.font = font;
+    cell.theLabel.text = [dic valueForKey:@"name"];
+//    UIFont *font = [UIFont systemFontOfSize:14];
+//    cell.detailTextLabel.font = font;
+//    cell.textLabel.font = font;
     UIImage *icon = [UIImage imageNamed:[dic valueForKey:@"icon"]];
-    cell.imageView.image = icon;                 
+    cell.iconImageView.image = icon;                 
+
     return cell;
 }
 
