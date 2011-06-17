@@ -1,0 +1,124 @@
+/* 
+  localizable.strings
+  ekkk
+
+  Created by 卞中杰 on 11-6-17.
+  Copyright 2011年 __MyCompanyName__. All rights reserved.
+*/
+
+/* OK */
+"OK" = "好";
+
+/* Cancel */
+"Cancel" = "取消";
+
+/* Hot */
+"Hot" = "火热推荐";
+
+/* All Cards */
+"All Cards" = "所有卡片";
+
+/* My Cards */
+"My Cards" = "我的卡片";
+
+/* Map */
+"Map" = "地图";
+
+/* Satellite */
+"Satellite" = "卫星";
+
+/* User Commit */
+"Commit This" = "用户点评";
+
+/* User Share */
+"Share This" = "用户分享";
+
+/* Bank */
+"Bank" = "银行";
+
+/* Category Coarse*/
+"Category Coarse" = "分类";
+
+/*Category Fine*/
+"Category Fine" = "子类";
+
+/*Distance*/
+"Distance" = "距离";
+
+/* Nearby */
+"Nearby" = "附近";
+
+/* Mile(s) */
+"Mile(s)" = "米";
+
+/* From: */
+"From:" = "来自于：";
+
+/* Next 10 */
+"Next 10" = "后10个";
+
+/* Last 10 */
+"Last 10" = "前10个";
+
+/* Sign In */
+"Sign In" = "登录";
+
+/* User Sign In */
+"User Sign In" = "用户登录：";
+
+/* Sign Out */
+"Sign Out" = "登出";
+
+/* User Sign Up */
+"Sign Up" = "用户注册";
+
+/* Sign Up! */
+"Sign Up!" = "注册！";
+
+/* Type User Name */
+"Type User Name" = "请输入用户名";
+
+/* Type Password */
+"Type Password" = "请输入密码";
+
+/* Cards Management */
+"Cards Management" = "卡片管理：";
+
+/* Set My Cards */
+"Set My Cards" = "设置我的卡片";
+
+/* Show My Cards */
+"Show My Cards" = "显示我的卡片";
+
+/* Create An Account */
+"Create An Account" = "用户注册：";
+
+/* User Name */
+"User Name" = "用户名：";
+
+/* Password */
+"Password" = "密码：";
+
+/* Confirm Password */
+"Confirm Password" = "请确认密码";
+
+/* Email */
+"Email" = "电子邮件地址：";
+
+/* Type Email */
+"Type Email" = "请输入Email地址";
+
+/* Type User Name 6 ~ 12 Charactors */
+"User Name Limit" = "用户名为6～12英文字母或数字";
+
+/* Password Dosen't Match */
+"Password Dosen't Match" = "密码验证不一致";
+
+/* Share This Via Sina*/
+"Share This Via Sina Weibo" = "通过新浪微博分享";
+
+/* Share This Via Email */
+"Share This Via Email" = "通过Email分享";
+
+/* Share This Via Text Message */
+"Share This Via Text Message" = "通过短信分享";

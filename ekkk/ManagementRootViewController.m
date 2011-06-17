@@ -51,7 +51,7 @@ static UIBarButtonItem *loginAndOutButton;
     [UIView setAnimationDuration:.5f];
     [self.tableView setTableHeaderView:userInfoView];
     userInfoView.alpha = 1.f;
-    [loginAndOutButton setTitle:@"登出"];
+    [loginAndOutButton setTitle:NSLocalizedString(@"Sign Out", @"Sign Out")];
     [loginAndOutButton setAction:@selector(logout)];
     [UIView commitAnimations];
     
@@ -69,7 +69,7 @@ static UIBarButtonItem *loginAndOutButton;
     [UIView setAnimationDuration:.5f];
     [self.tableView setTableHeaderView:loginView];
     loginView.alpha = 1.f;
-    [loginAndOutButton setTitle:@"登录"];
+    [loginAndOutButton setTitle:NSLocalizedString(@"Sign In", @"Sign In")];
     [loginAndOutButton setAction:@selector(login)];
     [UIView commitAnimations];
     
@@ -88,7 +88,7 @@ static UIBarButtonItem *loginAndOutButton;
     [self.tableView setTableHeaderView:loginView];
     [loginView release];
     
-    UIBarButtonItem *loginButton = [[UIBarButtonItem alloc] initWithTitle:@"登录" style:UIBarButtonItemStyleBordered target:self action:@selector(login)];
+    UIBarButtonItem *loginButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Sign In", @"Sign In") style:UIBarButtonItemStyleBordered target:self action:@selector(login)];
     loginAndOutButton = loginButton;
     self.navigationItem.rightBarButtonItem = loginButton;
     [loginButton release];
@@ -167,10 +167,10 @@ static UIBarButtonItem *loginAndOutButton;
         cell.textLabel.font = font;
         switch (row) {
             case 0:
-                cell.textLabel.text = @"设置我的卡片";
+                cell.textLabel.text = NSLocalizedString(@"Set My Cards", @"Set My Cards");
                 break;
             case 1:
-                cell.textLabel.text = @"显示我的卡片";
+                cell.textLabel.text = NSLocalizedString(@"Show My Cards", @"Show My Cards");
                 
             default:
                 break;
@@ -185,7 +185,7 @@ static UIBarButtonItem *loginAndOutButton;
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return @"卡片管理：";
+            return NSLocalizedString(@"Cards Management", @"Cards Management");
             break;
 
         default:

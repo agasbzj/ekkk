@@ -237,7 +237,7 @@ static UIProgressView *kProgressView = nil;
     
     NSInteger maxCount = [_itemAnnotations count];
     
-    UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"地图", @"卫星", nil]];
+    UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:NSLocalizedString(@"Map", @"Map"), NSLocalizedString(@"Satellite", @"Satellite"), nil]];
     [seg addTarget:self action:@selector(setMapStyle:) forControlEvents:UIControlEventValueChanged];
     seg.segmentedControlStyle = UISegmentedControlStyleBar;
     seg.selectedSegmentIndex = 0;
@@ -257,7 +257,7 @@ static UIProgressView *kProgressView = nil;
         UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 436, 320, 44)];
         toolBar.barStyle = UIBarStyleBlackTranslucent;
         
-        UIBarButtonItem *last = [[UIBarButtonItem alloc] initWithTitle:@"前10个" style:UIBarButtonItemStyleBordered target:self action:@selector(reflashArrayWithButton:)];
+        UIBarButtonItem *last = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Last 10", @"Last 10") style:UIBarButtonItemStyleBordered target:self action:@selector(reflashArrayWithButton:)];
         last.tag = 1;
         
         UIBarButtonItem *flexLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
@@ -273,7 +273,7 @@ static UIProgressView *kProgressView = nil;
         
         UIBarButtonItem *flexRight = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
         
-        UIBarButtonItem *next = [[UIBarButtonItem alloc] initWithTitle:@"后10个" style:UIBarButtonItemStyleBordered target:self action:@selector(reflashArrayWithButton:)];
+        UIBarButtonItem *next = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Next 10", @"Next 10") style:UIBarButtonItemStyleBordered target:self action:@selector(reflashArrayWithButton:)];
         next.tag = 2;
         
         [toolBar setItems:[NSArray arrayWithObjects:last, flexLeft, progressItem, flexRight, next, nil] animated:YES];

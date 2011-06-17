@@ -223,7 +223,7 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
 //    [self.view addSubview:barImageView];
     
     //增加地图按钮
-    UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:@"地图" style:UIBarButtonItemStyleDone target:self action:@selector(showMap:)];
+    UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Map", @"Map") style:UIBarButtonItemStyleDone target:self action:@selector(showMap:)];
     kMapButton = mapButton;
     self.navigationItem.rightBarButtonItem = mapButton;
     [mapButton release];
@@ -258,7 +258,7 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
     [self configPickerArray];
     
     //分栏符
-    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"All Cards", @"My Cards", nil]];
+    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:NSLocalizedString(@"All Cards", @"All Cards"), NSLocalizedString(@"My Cards", @"My Cards"), nil]];
     kSegmentedControl = segmentedControl;
     segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
     segmentedControl.selectedSegmentIndex = 0;
@@ -346,7 +346,7 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
     cell.sellerLabel.text = item.seller;
     cell.addressLabel.text = item.address;
     cell.discountLabel.text = [[item.bank objectAtIndex:0] valueForKey:@"discount"];
-    cell.distanceLabel.text = [NSString stringWithFormat:@"%@米", item.distance];
+    cell.distanceLabel.text = [NSString stringWithFormat:@"%@", item.distance];
     return cell;
 }
 

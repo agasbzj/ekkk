@@ -10,15 +10,12 @@
 		411FA7E7138BDBC3001C27B3 /* SinaWeiboView.m in Sources */ = {isa = PBXBuildFile; fileRef = 411FA7E6138BDBC3001C27B3 /* SinaWeiboView.m */; };
 		411FA7F1138BDDBC001C27B3 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411FA7F0138BDDBC001C27B3 /* MessageUI.framework */; };
 		4125CB44136B12910064A69A /* OffersTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4125CB42136B12900064A69A /* OffersTableCell.m */; };
-		4125CB45136B12910064A69A /* OffersTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4125CB43136B12910064A69A /* OffersTableCell.xib */; };
 		4137581D136BDBF900CDE06E /* DetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4137581B136BDBF800CDE06E /* DetailController.m */; };
 		4137581E136BDBF900CDE06E /* DetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4137581C136BDBF900CDE06E /* DetailController.xib */; };
 		41375821136BDCB200CDE06E /* DetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41375820136BDCB000CDE06E /* DetailHeaderView.m */; };
 		41375824136BDCD400CDE06E /* DetailFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41375823136BDCD300CDE06E /* DetailFooterView.m */; };
 		41375826136BDCED00CDE06E /* DetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41375825136BDCEC00CDE06E /* DetailHeaderView.xib */; };
-		41375828136BDD1100CDE06E /* DetailFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41375827136BDD0F00CDE06E /* DetailFooterView.xib */; };
 		413F1D53135DC736000CDB11 /* CategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 413F1D51135DC736000CDB11 /* CategoryTableViewController.m */; };
-		413F1D54135DC736000CDB11 /* CategoryTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413F1D52135DC736000CDB11 /* CategoryTableViewController.xib */; };
 		4155F0E61355F8A800EE4A1C /* Cards.m in Sources */ = {isa = PBXBuildFile; fileRef = 4155F0E51355F8A800EE4A1C /* Cards.m */; };
 		41750DCF134AF09300CFF97E /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 41750DCC134AF09300CFF97E /* NSDataAdditions.m */; };
 		41750DD0134AF09300CFF97E /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 41750DCE134AF09300CFF97E /* TBXML.m */; };
@@ -81,6 +78,9 @@
 		41E3647B136439C2001EFDC4 /* 花旗银行.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E36476136439C2001EFDC4 /* 花旗银行.png */; };
 		41E3647C136439C2001EFDC4 /* 俏江南.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E36477136439C2001EFDC4 /* 俏江南.png */; };
 		A90AED1D135EB1BE002DEFD3 /* BanksAndCards.plist in Resources */ = {isa = PBXBuildFile; fileRef = A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */; };
+		A90B8F3F13AB6DBD00BB2363 /* localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A90B8F4113AB6DBD00BB2363 /* localizable.strings */; };
+		A90B8F4313AB6E2400BB2363 /* DetailFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90B8F4513AB6E2400BB2363 /* DetailFooterView.xib */; };
+		A90B8F4713AB82AC00BB2363 /* OffersTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90B8F4913AB82AC00BB2363 /* OffersTableCell.xib */; };
 		A935358E13A88378001513A9 /* LocateAndDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = A935358D13A88378001513A9 /* LocateAndDownload.m */; };
 		A935359D13A8EC24001513A9 /* UserCommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A935359B13A8EC24001513A9 /* UserCommitViewController.m */; };
 		A935359E13A8EC24001513A9 /* UserCommitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A935359C13A8EC24001513A9 /* UserCommitViewController.xib */; };
@@ -131,9 +131,7 @@
 		A9A46A261363004100964881 /* ManagementRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A46A241363004100964881 /* ManagementRootViewController.m */; };
 		A9A46A271363004100964881 /* ManagementRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A46A251363004100964881 /* ManagementRootViewController.xib */; };
 		A9A46A331363021500964881 /* BankSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A46A311363021500964881 /* BankSelectViewController.m */; };
-		A9A46A341363021500964881 /* BankSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A46A321363021500964881 /* BankSelectViewController.xib */; };
 		A9A46A4613630D4A00964881 /* CardsSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A46A4513630D4A00964881 /* CardsSelectView.m */; };
-		A9A46A4813630D6000964881 /* CardsSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A46A4713630D5F00964881 /* CardsSelectView.xib */; };
 		A9BE3005134B1F4600DA6E86 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BE3004134B1F4600DA6E86 /* CFNetwork.framework */; };
 		A9BE3080134B21C000DA6E86 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE307F134B21C000DA6E86 /* Reachability.m */; };
 		A9BE3086134B22BD00DA6E86 /* InterconnectWithServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE3085134B22BD00DA6E86 /* InterconnectWithServer.m */; };
@@ -155,6 +153,9 @@
 		A9DBA3D31395E11300FA2770 /* blueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A9DBA3D11395E11300FA2770 /* blueButton.png */; };
 		A9DBA3D81395E9F000FA2770 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DBA3D61395E9F000FA2770 /* RegisterViewController.m */; };
 		A9DBA3D91395E9F000FA2770 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9DBA3D71395E9F000FA2770 /* RegisterViewController.xib */; };
+		A9EC51E113AB662E003E7060 /* CardsSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9EC51E313AB662E003E7060 /* CardsSelectView.xib */; };
+		A9EC51E513AB6688003E7060 /* BankSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9EC51E713AB6688003E7060 /* BankSelectViewController.xib */; };
+		A9EC51EA13AB6CCB003E7060 /* CategoryTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9EC51EC13AB6CCB003E7060 /* CategoryTableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -163,7 +164,6 @@
 		411FA7F0138BDDBC001C27B3 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		4125CB41136B12900064A69A /* OffersTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffersTableCell.h; sourceTree = "<group>"; };
 		4125CB42136B12900064A69A /* OffersTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OffersTableCell.m; sourceTree = "<group>"; };
-		4125CB43136B12910064A69A /* OffersTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OffersTableCell.xib; sourceTree = "<group>"; };
 		4137581A136BDBF800CDE06E /* DetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailController.h; sourceTree = "<group>"; };
 		4137581B136BDBF800CDE06E /* DetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailController.m; sourceTree = "<group>"; };
 		4137581C136BDBF900CDE06E /* DetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailController.xib; sourceTree = "<group>"; };
@@ -172,10 +172,8 @@
 		41375822136BDCD200CDE06E /* DetailFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailFooterView.h; sourceTree = "<group>"; };
 		41375823136BDCD300CDE06E /* DetailFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailFooterView.m; sourceTree = "<group>"; };
 		41375825136BDCEC00CDE06E /* DetailHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailHeaderView.xib; sourceTree = "<group>"; };
-		41375827136BDD0F00CDE06E /* DetailFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailFooterView.xib; sourceTree = "<group>"; };
 		413F1D50135DC736000CDB11 /* CategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewController.h; sourceTree = "<group>"; };
 		413F1D51135DC736000CDB11 /* CategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewController.m; sourceTree = "<group>"; };
-		413F1D52135DC736000CDB11 /* CategoryTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewController.xib; sourceTree = "<group>"; };
 		4155F0E41355F8A800EE4A1C /* Cards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cards.h; sourceTree = "<group>"; };
 		4155F0E51355F8A800EE4A1C /* Cards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cards.m; sourceTree = "<group>"; };
 		41750DCB134AF09300CFF97E /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
@@ -258,6 +256,12 @@
 		41E36476136439C2001EFDC4 /* 花旗银行.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "花旗银行.png"; sourceTree = "<group>"; };
 		41E36477136439C2001EFDC4 /* 俏江南.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "俏江南.png"; sourceTree = "<group>"; };
 		A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BanksAndCards.plist; sourceTree = "<group>"; };
+		A90B8F4013AB6DBD00BB2363 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localizable.strings; sourceTree = "<group>"; };
+		A90B8F4213AB6DC400BB2363 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/localizable.strings"; sourceTree = "<group>"; };
+		A90B8F4413AB6E2400BB2363 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailFooterView.xib; sourceTree = "<group>"; };
+		A90B8F4613AB6E2800BB2363 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/DetailFooterView.xib"; sourceTree = "<group>"; };
+		A90B8F4813AB82AC00BB2363 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OffersTableCell.xib; sourceTree = "<group>"; };
+		A90B8F4A13AB82B100BB2363 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/OffersTableCell.xib"; sourceTree = "<group>"; };
 		A935358C13A88378001513A9 /* LocateAndDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocateAndDownload.h; sourceTree = "<group>"; };
 		A935358D13A88378001513A9 /* LocateAndDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocateAndDownload.m; sourceTree = "<group>"; };
 		A935359A13A8EC24001513A9 /* UserCommitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCommitViewController.h; sourceTree = "<group>"; };
@@ -334,10 +338,8 @@
 		A9A46A251363004100964881 /* ManagementRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManagementRootViewController.xib; sourceTree = "<group>"; };
 		A9A46A301363021500964881 /* BankSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankSelectViewController.h; sourceTree = "<group>"; };
 		A9A46A311363021500964881 /* BankSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankSelectViewController.m; sourceTree = "<group>"; };
-		A9A46A321363021500964881 /* BankSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankSelectViewController.xib; sourceTree = "<group>"; };
 		A9A46A4413630D4A00964881 /* CardsSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardsSelectView.h; sourceTree = "<group>"; };
 		A9A46A4513630D4A00964881 /* CardsSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsSelectView.m; sourceTree = "<group>"; };
-		A9A46A4713630D5F00964881 /* CardsSelectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardsSelectView.xib; sourceTree = "<group>"; };
 		A9BE3004134B1F4600DA6E86 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		A9BE307E134B21C000DA6E86 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		A9BE307F134B21C000DA6E86 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -377,6 +379,13 @@
 		A9DBA3D51395E9F000FA2770 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		A9DBA3D61395E9F000FA2770 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		A9DBA3D71395E9F000FA2770 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		A9EC51DF13AB5D51003E7060 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "/Users/agasbzj/Documents/Projects/ekkk/ekkk/zh-Hans.lproj/MainWindow.xib"; sourceTree = "<absolute>"; };
+		A9EC51E213AB662E003E7060 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CardsSelectView.xib; sourceTree = "<group>"; };
+		A9EC51E413AB663E003E7060 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/CardsSelectView.xib"; sourceTree = "<group>"; };
+		A9EC51E613AB6688003E7060 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BankSelectViewController.xib; sourceTree = "<group>"; };
+		A9EC51E813AB668F003E7060 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/BankSelectViewController.xib"; sourceTree = "<group>"; };
+		A9EC51EB13AB6CCB003E7060 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CategoryTableViewController.xib; sourceTree = "<group>"; };
+		A9EC51ED13AB6CD1003E7060 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/CategoryTableViewController.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -445,7 +454,7 @@
 				41375825136BDCEC00CDE06E /* DetailHeaderView.xib */,
 				41375822136BDCD200CDE06E /* DetailFooterView.h */,
 				41375823136BDCD300CDE06E /* DetailFooterView.m */,
-				41375827136BDD0F00CDE06E /* DetailFooterView.xib */,
+				A90B8F4513AB6E2400BB2363 /* DetailFooterView.xib */,
 			);
 			name = DetailView;
 			sourceTree = "<group>";
@@ -492,7 +501,7 @@
 				41A0377313587383001D52A8 /* RatingView.m */,
 				4125CB41136B12900064A69A /* OffersTableCell.h */,
 				4125CB42136B12900064A69A /* OffersTableCell.m */,
-				4125CB43136B12910064A69A /* OffersTableCell.xib */,
+				A90B8F4913AB82AC00BB2363 /* OffersTableCell.xib */,
 			);
 			name = IndividualTableCell;
 			sourceTree = "<group>";
@@ -571,6 +580,7 @@
 				41A4D0611348CB9A00D070BB /* InfoPlist.strings */,
 				41A4D0641348CB9A00D070BB /* ekkk-Prefix.pch */,
 				41A4D0651348CB9A00D070BB /* main.m */,
+				A90B8F4113AB6DBD00BB2363 /* localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -598,7 +608,7 @@
 				41A4D08F1348CCC600D070BB /* CategoriesRootViewController.xib */,
 				413F1D50135DC736000CDB11 /* CategoryTableViewController.h */,
 				413F1D51135DC736000CDB11 /* CategoryTableViewController.m */,
-				413F1D52135DC736000CDB11 /* CategoryTableViewController.xib */,
+				A9EC51EC13AB6CCB003E7060 /* CategoryTableViewController.xib */,
 				A97DA87C1361BBC100994946 /* CategoryTableCell.h */,
 				A97DA87D1361BBC100994946 /* CategoryTableCell.m */,
 				A97DA87F1361BBD000994946 /* CategoryTableCell.xib */,
@@ -820,10 +830,10 @@
 				A9A46A251363004100964881 /* ManagementRootViewController.xib */,
 				A9A46A301363021500964881 /* BankSelectViewController.h */,
 				A9A46A311363021500964881 /* BankSelectViewController.m */,
-				A9A46A321363021500964881 /* BankSelectViewController.xib */,
+				A9EC51E713AB6688003E7060 /* BankSelectViewController.xib */,
 				A9A46A4413630D4A00964881 /* CardsSelectView.h */,
 				A9A46A4513630D4A00964881 /* CardsSelectView.m */,
-				A9A46A4713630D5F00964881 /* CardsSelectView.xib */,
+				A9EC51E313AB662E003E7060 /* CardsSelectView.xib */,
 				A9904876136D5EE200306D37 /* ShowMyCardsViewController.h */,
 				A9904877136D5EE200306D37 /* ShowMyCardsViewController.m */,
 				A9904878136D5EE200306D37 /* ShowMyCardsViewController.xib */,
@@ -926,6 +936,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = 41A4D0491348CB9A00D070BB;
 			productRefGroup = 41A4D0551348CB9A00D070BB /* Products */;
@@ -964,21 +975,21 @@
 				41A0377813588555001D52A8 /* DetailViewController.xib in Resources */,
 				A9724E2F135C835E000982A3 /* NearbyCategory.plist in Resources */,
 				A99BD8F9135DA84A0008588C /* NearbyTableViewController.xib in Resources */,
-				413F1D54135DC736000CDB11 /* CategoryTableViewController.xib in Resources */,
+				A9EC51EA13AB6CCB003E7060 /* CategoryTableViewController.xib in Resources */,
 				A90AED1D135EB1BE002DEFD3 /* BanksAndCards.plist in Resources */,
 				A97DA8801361BBD000994946 /* CategoryTableCell.xib in Resources */,
 				A9A46A271363004100964881 /* ManagementRootViewController.xib in Resources */,
-				A9A46A341363021500964881 /* BankSelectViewController.xib in Resources */,
-				A9A46A4813630D6000964881 /* CardsSelectView.xib in Resources */,
+				A9EC51E513AB6688003E7060 /* BankSelectViewController.xib in Resources */,
+				A9EC51E113AB662E003E7060 /* CardsSelectView.xib in Resources */,
 				41E36478136439C2001EFDC4 /* 图标.png in Resources */,
 				41E36479136439C2001EFDC4 /* 汇丰银行.png in Resources */,
 				41E3647B136439C2001EFDC4 /* 花旗银行.png in Resources */,
 				41E3647C136439C2001EFDC4 /* 俏江南.png in Resources */,
 				A94AD54F136B06A80089D3AF /* credit_information.xml in Resources */,
-				4125CB45136B12910064A69A /* OffersTableCell.xib in Resources */,
+				A90B8F4713AB82AC00BB2363 /* OffersTableCell.xib in Resources */,
 				4137581E136BDBF900CDE06E /* DetailController.xib in Resources */,
 				41375826136BDCED00CDE06E /* DetailHeaderView.xib in Resources */,
-				41375828136BDD1100CDE06E /* DetailFooterView.xib in Resources */,
+				A90B8F4313AB6E2400BB2363 /* DetailFooterView.xib in Resources */,
 				A990487A136D5EE200306D37 /* ShowMyCardsViewController.xib in Resources */,
 				A9D10201136D9C05007B5F0D /* PickerView.xib in Resources */,
 				41BEF1A01371A7E8009DF1A9 /* StarsBackground.png in Resources */,
@@ -1017,6 +1028,7 @@
 				A990997F13AB373100EB6871 /* DarkBackground.png in Resources */,
 				A990998013AB373100EB6871 /* LightBackground.png in Resources */,
 				A990998513AB384700EB6871 /* CardsTableCell.xib in Resources */,
+				A90B8F3F13AB6DBD00BB2363 /* localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1107,8 +1119,63 @@
 			isa = PBXVariantGroup;
 			children = (
 				41A4D06B1348CB9A00D070BB /* en */,
+				A9EC51DF13AB5D51003E7060 /* zh-Hans */,
 			);
 			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		A90B8F4113AB6DBD00BB2363 /* localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A90B8F4013AB6DBD00BB2363 /* en */,
+				A90B8F4213AB6DC400BB2363 /* zh-Hans */,
+			);
+			name = localizable.strings;
+			sourceTree = "<group>";
+		};
+		A90B8F4513AB6E2400BB2363 /* DetailFooterView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A90B8F4413AB6E2400BB2363 /* en */,
+				A90B8F4613AB6E2800BB2363 /* zh-Hans */,
+			);
+			name = DetailFooterView.xib;
+			sourceTree = "<group>";
+		};
+		A90B8F4913AB82AC00BB2363 /* OffersTableCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A90B8F4813AB82AC00BB2363 /* en */,
+				A90B8F4A13AB82B100BB2363 /* zh-Hans */,
+			);
+			name = OffersTableCell.xib;
+			sourceTree = "<group>";
+		};
+		A9EC51E313AB662E003E7060 /* CardsSelectView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9EC51E213AB662E003E7060 /* en */,
+				A9EC51E413AB663E003E7060 /* zh-Hans */,
+			);
+			name = CardsSelectView.xib;
+			sourceTree = "<group>";
+		};
+		A9EC51E713AB6688003E7060 /* BankSelectViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9EC51E613AB6688003E7060 /* en */,
+				A9EC51E813AB668F003E7060 /* zh-Hans */,
+			);
+			name = BankSelectViewController.xib;
+			sourceTree = "<group>";
+		};
+		A9EC51EC13AB6CCB003E7060 /* CategoryTableViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9EC51EB13AB6CCB003E7060 /* en */,
+				A9EC51ED13AB6CD1003E7060 /* zh-Hans */,
+			);
+			name = CategoryTableViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -1,0 +1,124 @@
+/* 
+  localizable.strings
+  ekkk
+
+  Created by 卞中杰 on 11-6-17.
+  Copyright 2011年 __MyCompanyName__. All rights reserved.
+*/
+
+/* OK */
+"OK" = "OK";
+
+/* Cancel */
+"Cancel" = "Cancel";
+
+/* Hot */
+"Hot" = "Hot";
+
+/* All Cards */
+"All Cards" = "All Cards";
+
+/* My Cards */
+"My Cards" = "My Cards";
+
+/* Map */
+"Map" = "Map";
+
+/* Satellite */
+"Satellite" = "Satellite";
+
+/* User Commit */
+"Commit This" = "Commit This";
+
+/* User Share */
+"Share This" = "Share This";
+
+/* Bank */
+"Bank" = "Bank";
+
+/* Category Coarse*/
+"Category Coarse" = "Category";
+
+/*Category Fine*/
+"Category Fine" = "Style";
+
+/*Distance*/
+"Distance" = "Distance";
+
+/* Nearby */
+"Nearby" = "Nearby";
+
+/* Mile(s) */
+"Mile(s)" = "Mile(s)";
+
+/* From: */
+"From:" = "From:";
+
+/* Next 10 */
+"Next 10" = "Next 10";
+
+/* Last 10 */
+"Last 10" = "Last 10";
+
+/* Sign In */
+"Sign In" = "Sign In";
+
+/* User Sign In */
+"User Sign In" = "User Sign In:";
+
+/* Sign Out */
+"Sign Out" = "Sign Out";
+
+/* User Sign Up */
+"Sign Up" = "New User Sign Up";
+
+/* Sign Up! */
+"Sign Up!" = "Sign Up!";
+
+/* Type User Name */
+"Type User Name" = "Please Type User Name";
+
+/* Type Password */
+"Type Password" = "Please Type Password";
+
+/* Cards Management */
+"Cards Management" = "Cards Management:";
+
+/* Set My Cards */
+"Set My Cards" = "Set My Cards";
+
+/* Show My Cards */
+"Show My Cards" = "Show My Cards";
+
+/* Create An Account */
+"Create An Account" = "Creat An Account";
+
+/* User Name */
+"User Name" = "User Name:";
+
+/* Password */
+"Password" = "Password:";
+
+/* Confirm Password */
+"Confirm Password" = "Please Confirm Your Password";
+
+/* Email */
+"Email" = "Email Address:";
+
+/* Type Email */
+"Type Email" = "Please Type Email Address";
+
+/* Type User Name 6 ~ 12 Charactors */
+"User Name Limit" = "Please Type 6 ~ 12 Charactors";
+
+/* Password Dosen't Match */
+"Password Dosen't Match" = "The Password Dosen't Match";
+
+/* Share This Via Sina*/
+"Share This Via Sina Weibo" = "Share This Via Sina Weibo";
+
+/* Share This Via Email */
+"Share This Via Email" = "Share This Via Email";
+
+/* Share This Via Text Message */
+"Share This Via Text Message" = "Share This Via Text Message";

@@ -107,7 +107,7 @@
 
 - (void)shareButtonPressed
 {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消分享" destructiveButtonTitle:nil otherButtonTitles:@"通过新浪微博分享", @"通过Email分享", @"通过短信分享", nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", @"Cancel") destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Share This Via Sina Weibo", @"Share This Via Sina Weibo"), NSLocalizedString(@"Share This Via Email", @"Share This Via Email"), NSLocalizedString(@"Share This Via Text Message", @"Share This Via Text Message"), nil];
     actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
     [actionSheet showInView:self.view];
     [actionSheet release];
@@ -223,8 +223,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [_tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 0 && indexPath.row == 1) {
-        [_tableView deselectRowAtIndexPath:indexPath animated:YES];
         [self showMap:nil];
     }
 }

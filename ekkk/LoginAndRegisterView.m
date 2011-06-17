@@ -90,10 +90,10 @@
         [textField addTarget:self action:@selector(hideKeyboard) forControlEvents:UIControlEventEditingDidEndOnExit];
         switch (row) {
             case 0:
-                textField.placeholder = @"请输入用户名";
+                textField.placeholder = NSLocalizedString(@"Type User Name", @"Type User Name");
                 break;
             case 1:
-                textField.placeholder = @"请输入密码";
+                textField.placeholder = NSLocalizedString(@"Type Password", @"Type Password");
                 textField.secureTextEntry = YES;
                 break;
             default:
@@ -107,7 +107,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;
         cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
         cell.textLabel.textColor = [UIColor blueColor];
-        cell.textLabel.text = @"创建新帐户";
+        cell.textLabel.text = NSLocalizedString(@"Create An Account", @"Create An Account");
         cell.textLabel.textAlignment = UITextAlignmentLeft;
         UIFont *font = [UIFont systemFontOfSize:14];
         cell.textLabel.font = font;
@@ -120,10 +120,10 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return @"用户登录：";
+            return NSLocalizedString(@"User Sign In", @"User Sign In");
             break;
         case 1:
-            return @"用户注册：";
+            return NSLocalizedString(@"Sign Up", @"User Sign Up");
             break;
         default:
             return nil;

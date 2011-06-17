@@ -57,6 +57,8 @@
     _plistKey = [[NSDictionary alloc] initWithContentsOfFile:path];
     _bankArray = [_plistKey valueForKey:@"Banks"];
     
+    self.tableView.backgroundColor = [UIColor darkGrayColor];
+    
 }
 
 - (void)viewDidUnload

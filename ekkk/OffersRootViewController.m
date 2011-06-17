@@ -182,7 +182,7 @@ NSArray *temp;  //跟踪指针，用来释放。
     
     [self getData];
     
-    _segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"Hot", @"My Cards", nil]];
+    _segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:NSLocalizedString(@"Hot", @"Hot"), NSLocalizedString(@"My Cards", @"My Cards"), nil]];
     _segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
     _segmentedControl.selectedSegmentIndex = 0;
     

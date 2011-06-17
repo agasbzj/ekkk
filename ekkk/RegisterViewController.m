@@ -44,9 +44,9 @@ static NSString *confirmPassword = @"";
 
 - (void)dealloc
 {
-    [_userName release];
-    [_password release];
-    [_email release];
+//    [_userName release];
+//    [_password release];
+//    [_email release];
     [super dealloc];
 }
 
@@ -66,31 +66,31 @@ static NSString *confirmPassword = @"";
     _email = ((UITextField *)[self.view viewWithTag:4]).text;
 
     if (![_userName length]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请输入用户名" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"Type User Name", @"Type User Name") delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil, nil];
         [alert show];
         [alert release];
         return;
     }
     else if (![_password length]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请输入密码" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"Type Password", @"Please Type Password") delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil, nil];
         [alert show];
         [alert release];
         return;
     }
     else if (![confirmPassword length]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请确认密码" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"Confirm Password", @"Confirm Password") delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil, nil];
         [alert show];
         [alert release];
         return;
     }
     else if (![_email length]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请输入Email地址" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"Type Email", @"Type Email") delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil, nil];
         [alert show];
         [alert release];
         return;
     }
     else if ([_password isEqualToString:confirmPassword] == NO) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"密码验证不一致" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"Password Dosen't Match", @"Password Dosen't Match") delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil, nil];
         [alert show];
         [alert release];
         return;
@@ -116,7 +116,7 @@ static NSString *confirmPassword = @"";
     footerView.backgroundColor = [UIColor clearColor];
     UIButton *registerButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 20, 300, 50)];
     
-    [registerButton setTitle:@"注册！" forState:UIControlStateNormal];
+    [registerButton setTitle:NSLocalizedString(@"Sign Up!", @"Sign Up!") forState:UIControlStateNormal];
     [registerButton addTarget:self action:@selector(registerButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     UIImage *oriImage = [UIImage imageNamed:@"blueButton.png"];
     UIImage *stretchableButtonImage = [oriImage stretchableImageWithLeftCapWidth:12 topCapHeight:0];
@@ -136,7 +136,7 @@ static NSString *confirmPassword = @"";
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.navigationItem.title = @"用户注册";
+    self.navigationItem.title = NSLocalizedString(@"Sign up", @"User Sign Up");
     [super viewWillAppear:animated];
 }
 
@@ -195,13 +195,13 @@ static NSString *confirmPassword = @"";
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return @"用户名：";
+            return NSLocalizedString(@"User Name", @"User Name");
             break;
         case 1:
-            return @"密码：";
+            return NSLocalizedString(@"Password", @"Password");
             break;
         case 2:
-            return @"电子邮件地址：";
+            return NSLocalizedString(@"Email", @"Email");
             break;
         default:
             return nil;
@@ -231,7 +231,7 @@ static NSString *confirmPassword = @"";
         case 0:
             textField.keyboardType = UIKeyboardTypeAlphabet;
             textField.tag = 1;
-            textField.placeholder = @"用户名为6到12个字符";
+            textField.placeholder = NSLocalizedString(@"User Name Limit", Type User Name 6 ~ 12 Charactors);
             break;
         case 1:
         {
@@ -241,13 +241,13 @@ static NSString *confirmPassword = @"";
                 case 0:
                 {
                     textField.tag = 2;
-                    textField.placeholder = @"请输入密码";
+                    textField.placeholder = NSLocalizedString(@"Type Password", @"Type Password");
                     break;
                 }
                 case 1:
                 {
                     textField.tag = 3;
-                    textField.placeholder = @"请确认密码";
+                    textField.placeholder = NSLocalizedString(@"Confirm Password", @"Confirm Password");
                     break;
                 }
                 default:
@@ -259,7 +259,7 @@ static NSString *confirmPassword = @"";
         {
             textField.tag = 4;
             textField.keyboardType = UIKeyboardTypeEmailAddress;
-            textField.placeholder = @"Email地址将用于帐号激活";
+            textField.placeholder = NSLocalizedString(@"Type Email", @"Type Email");
             break;
         }
         default:
