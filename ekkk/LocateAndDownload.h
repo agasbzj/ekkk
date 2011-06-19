@@ -31,7 +31,9 @@
 //Returns the URL to the application's Documents directory.
 - (NSURL *)applicationDocumentsDirectory;
 - (NSURL *)locationDataFilePath;
-
+- (NSURL *)userCardsFilePath;
+- (NSURL *)itemDataFilePath;
+- (NSURL *)itemBackupDataFilePath;
 //写入解析完的数据
 - (void)loadItems:(NSNotification *)itemList;
 
@@ -40,4 +42,6 @@
 
 //把坐标发到服务器下载数据
 - (void)downloadInfoWithCoordinate:(NSDictionary *)coordinateDict;
+
+
 @end

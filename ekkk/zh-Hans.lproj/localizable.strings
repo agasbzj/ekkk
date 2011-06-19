@@ -122,3 +122,39 @@
 
 /* Share This Via Text Message */
 "Share This Via Text Message" = "通过短信分享";
+
+/* User Selected Place */
+"User Selected Place" = "指定的位置";
+
+/* Search */
+"Search" = "搜索";
+
+/* Appoint */
+"Appoint" = "指定";
+
+/* Appoint a place */
+"Please Appoint A Place" = "请指定一个位置";
+
+/* Place Selection */
+"Place Selection" = "地点选择";
+
+/* Long Press On The Map */
+"Please Long Press A Point On The Map" = "在地图上长按以指定搜索位置";
+
+/* Are You Sure About The Place? */
+"Are you sure about the place?" = "确定选择这个地点吗？";
+
+/* Type An Address To Search */
+"Type An Address To Search" = "输入地址进行搜索";
+
+/* Please Commit */
+"Please Commit This" = "用户点评";
+
+/* Commit */
+"Commit" = "提交";
+
+/* Telephone */
+"Telephone:" = "电话：";
+
+/* Address */
+"Address:" = "地址：";

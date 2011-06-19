@@ -83,9 +83,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self.navigationItem setTitle:@"请您点评"];
+    [self.navigationItem setTitle:NSLocalizedString(@"Please Commit This", @"Please Commit")];
     
-    UIBarButtonItem *commitBtn = [[UIBarButtonItem alloc] initWithTitle:@"提交" style:UIBarButtonItemStyleBordered target:self action:@selector(commit)];
+    UIBarButtonItem *commitBtn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Commit", @"Commit") style:UIBarButtonItemStyleBordered target:self action:@selector(commit)];
     self.navigationItem.rightBarButtonItem = commitBtn;
     [commitBtn release];
 }

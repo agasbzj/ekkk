@@ -16,6 +16,7 @@
 @synthesize distanceLabel = _distanceLabel;
 @synthesize imageSeller = _imageSeller;
 @synthesize imageBank = _imageBank;
+@synthesize subImageBank = _subImageBank;
 @synthesize discountLabel = _discountLabel;
 @synthesize addressLabel = _addressLabel;
 
@@ -43,6 +44,7 @@
     [_discountLabel release];
     [_imageSeller release];
     [_imageBank release];
+    [_subImageBank release];
     [_addressLabel release];
     [super dealloc];
 }

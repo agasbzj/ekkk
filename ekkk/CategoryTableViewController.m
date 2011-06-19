@@ -213,7 +213,7 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     _sortKeyDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"all", @"kByCategory",
@@ -333,11 +333,15 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
     
-    NSString *backgroundImagePath = [[NSBundle mainBundle] pathForResource:(indexPath.row % 2 == 0) ? @"DarkBackground" : @"LightBackground" ofType:@"png"];
-    UIImage *backgroundImage = [[UIImage imageWithContentsOfFile:backgroundImagePath] stretchableImageWithLeftCapWidth:0.0 topCapHeight:1.0];
-    cell.backgroundView = [[[UIImageView alloc] initWithImage:backgroundImage] autorelease];
-    cell.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    cell.backgroundView.frame = cell.bounds;
+    if (indexPath.row % 2 == 0) {
+        NSString *backgroundImagePath = [[NSBundle mainBundle] pathForResource:@"lightGrayBackground" ofType:@"png"];
+        UIImage *backgroundImage = [[UIImage imageWithContentsOfFile:backgroundImagePath] stretchableImageWithLeftCapWidth:0.0 topCapHeight:1.0];
+        cell.backgroundView = [[[UIImageView alloc] initWithImage:backgroundImage] autorelease];
+        cell.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        cell.backgroundView.frame = cell.bounds;
+    }
+    
+
     
     // Configure the cell...
     

@@ -59,7 +59,7 @@ static ekkkManager *instance = nil;
 - (id)init {
     if ((self = [super init])) {
         _userCardsArray = [[[NSDictionary dictionaryWithContentsOfURL:[self userCardsFilePath]] valueForKey:@"cards"] retain];
-        _selectedPlace = @"附近";
+        _selectedPlace = NSLocalizedString(@"Nearby", @"Nearby");
         _parsedItems = [[NSMutableArray alloc] init];
     }
     return self;

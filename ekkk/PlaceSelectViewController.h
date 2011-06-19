@@ -31,4 +31,5 @@
 @property (nonatomic, retain) UISegmentedControl *segmentedControl;
 @property (nonatomic, retain) UIView *selectBaseView;
 @property (nonatomic, assign) id <PlaceSelectDelegate> delegate;
+
 @end

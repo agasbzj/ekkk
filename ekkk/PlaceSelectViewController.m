@@ -21,7 +21,8 @@
 @synthesize segmentedControl = _segmentedControl;
 @synthesize selectBaseView = _selectBaseView;
 
-const static NSString *kGoogleGeoApi = @"http://maps.google.com/maps/api/geocode/json?address=";
+static NSString *kGoogleGeoApi = @"http://maps.google.com/maps/api/geocode/json?address=";
+static NSString *kGoogleDecApi = @"http://maps.google.com/maps/api/geocode/json?latlng=";
 static PlaceAnnotation *kSelectedAnnotation = nil;
 
 - (NSString *)_encodeString:(NSString *)string
@@ -67,7 +68,7 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
     }
     CGPoint touchPoint = [touch locationInView:_mapView];
     PlaceAnnotation *anno = [[PlaceAnnotation alloc] init];
-    anno.title = @"指定的位置";
+    anno.title = NSLocalizedString(@"User Selected Place", @"User Selected Place");
     anno.subtitle = @"";
     anno.coordinate = [_mapView convertPoint:touchPoint toCoordinateFromView:_mapView];
     [_mapView removeAnnotations:_mapView.annotations];
@@ -78,7 +79,7 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
     switch (_segmentedControl.selectedSegmentIndex) {
         case 0:
         {   
-            self.navigationItem.prompt = @"在地图上长按以指定搜索位置";
+            self.navigationItem.prompt = NSLocalizedString(@"Please Long Press A Point On The Map", @"Long Press On The Map");
             [_searchBar resignFirstResponder];
             _searchBar.hidden = YES;
             break;
@@ -94,6 +95,16 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
     }
 }
 
+//按下附近按钮，还原备份数据，当前数据为附近的数据
+- (void)nearbyButtonPressed {
+    LocateAndDownload *lAndD = [[LocateAndDownload alloc] init];
+    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfURL:[lAndD itemBackupDataFilePath]];
+    [dic writeToURL:[lAndD itemDataFilePath] atomically:YES];
+    [lAndD release];
+    [[ekkkManager sharedManager] setSelectedPlace:NSLocalizedString(@"Nearby", @"Nearby")];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -105,13 +116,19 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
     [tgr release];
     
     
-    _segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects: @"指定", @"搜索", nil]];
+    _segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects: NSLocalizedString(@"Appoint", @"Appoint"), NSLocalizedString(@"Search", @"Search"), nil]];
     [_segmentedControl addTarget:self action:@selector(switchSelectMode) forControlEvents:UIControlEventValueChanged];
     _segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
     _segmentedControl.selectedSegmentIndex = 0;
     UIBarButtonItem *segItem = [[UIBarButtonItem alloc] initWithCustomView:_segmentedControl];
     self.navigationItem.rightBarButtonItem = segItem;
     [segItem release];
+    
+    UIButton *nearbyBtn = [[UIButton alloc] initWithFrame:CGRectMake(200, 200, 85, 37)];
+    [nearbyBtn setTitle:NSLocalizedString(@"Nearby", @"Nearby") forState:UIControlStateNormal];
+    [nearbyBtn addTarget:self action:@selector(nearbyButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:nearbyBtn];
+    [nearbyBtn release];
 }
 
 - (void)viewDidUnload
@@ -119,6 +136,7 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -130,9 +148,9 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
 #pragma mark - ViewController Delegate
 - (void)viewWillAppear:(BOOL)animated {
 	self.navigationController.navigationBar.translucent = YES;
-    [self.navigationItem setTitle:@"请指定一个位置"];
+    [self.navigationItem setTitle:NSLocalizedString(@"Appoint", @"Appoint")];
 //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
-
+    self.searchBar.placeholder = NSLocalizedString(@"Type An Address To Search", @"Type An Address To Search");
     [super viewWillAppear:animated];
 }
 
@@ -174,26 +192,30 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
 
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
-    [self.mapView removeAnnotations:self.mapView.annotations];
-    // Use when fetching text data
-    NSString *responseString = [request responseString];
-    NSLog(@"%@", responseString);
-    // Use when fetching binary data
-    NSData *responseData = [request responseData];
-    NSDictionary *dict = [[CJSONDeserializer deserializer] deserializeAsDictionary:responseData error:NULL];
-    [dict writeToURL:[self itemDataFilePath] atomically:YES];
-    NSArray *array = [dict valueForKey:@"results"];
-    for (NSDictionary *dic in array) {
-        
-        PlaceAnnotation *anno = [[PlaceAnnotation alloc] init];
-        anno.title = [[[dic valueForKey:@"address_components"] objectAtIndex:0] valueForKey:@"long_name"];
-        anno.subtitle = [dic valueForKey:@"formatted_address"];
-        anno.city = [[[dic valueForKey:@"address_components"] objectAtIndex:1] valueForKey:@"long_name"];
-        NSDictionary *loc = [[dic valueForKey:@"geometry"] valueForKey:@"location"];
-        anno.coordinate = CLLocationCoordinate2DMake([[loc valueForKey:@"lat"] doubleValue], [[loc valueForKey:@"lng"] doubleValue]);
-        [_mapView addAnnotation:anno];
-        [anno release];
+    if (_segmentedControl.selectedSegmentIndex == 1) {
+        [self.mapView removeAnnotations:self.mapView.annotations];
+        // Use when fetching text data
+        NSString *responseString = [request responseString];
+        NSLog(@"%@", responseString);
+        // Use when fetching binary data
+        NSData *responseData = [request responseData];
+        NSDictionary *dict = [[CJSONDeserializer deserializer] deserializeAsDictionary:responseData error:NULL];
+        [dict writeToURL:[self itemDataFilePath] atomically:YES];
+        NSArray *array = [dict valueForKey:@"results"];
+        for (NSDictionary *dic in array) {
+            
+            PlaceAnnotation *anno = [[PlaceAnnotation alloc] init];
+            anno.title = [[[dic valueForKey:@"address_components"] objectAtIndex:0] valueForKey:@"long_name"];
+            anno.subtitle = [dic valueForKey:@"formatted_address"];
+            anno.city = [[[dic valueForKey:@"address_components"] objectAtIndex:1] valueForKey:@"long_name"];
+            NSDictionary *loc = [[dic valueForKey:@"geometry"] valueForKey:@"location"];
+            anno.coordinate = CLLocationCoordinate2DMake([[loc valueForKey:@"lat"] doubleValue], [[loc valueForKey:@"lng"] doubleValue]);
+            [_mapView addAnnotation:anno];
+            [anno release];
+        }
     }
+
+
 
 }
 
@@ -222,11 +244,32 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
 
 //传出一个annotation，其中包括坐标和城市名，发送此信息与服务器交互
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+
     if (buttonIndex == 1) {
         [delegate placeSelected:kSelectedAnnotation];
         [ekkkManager sharedManager].selectedPlace = kSelectedAnnotation.title;
         NSNumber *latitude = [NSNumber numberWithDouble:kSelectedAnnotation.coordinate.latitude];
         NSNumber *longitude = [NSNumber numberWithDouble:kSelectedAnnotation.coordinate.longitude];
+        
+        //如果是用户在地图上长按来选择地点，则反向解析，获取城市／省名
+        if (_segmentedControl.selectedSegmentIndex == 0) {
+            NSMutableString *url = [NSMutableString stringWithString:kGoogleDecApi];
+            [url appendString:[NSString stringWithFormat:@"%@,%@&language=zh-CN&sensor=true", latitude, longitude]];
+            
+            NSLog(@"%@", url);
+            ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+            [request startSynchronous];
+            
+            NSError *error = [request error];
+            if (!error) {
+                NSString *responseString = [request responseString];
+                NSLog(@"%@", responseString);
+                NSData *responseData = [request responseData];
+                NSDictionary *dict = [[CJSONDeserializer deserializer] deserializeAsDictionary:responseData error:NULL];
+                [dict writeToURL:[self itemDataFilePath] atomically:YES];
+            }
+        }
+        
         NSLog(@"lat:%lf, lon:%lf, city:%@", kSelectedAnnotation.coordinate.latitude, kSelectedAnnotation.coordinate.longitude, kSelectedAnnotation.city);
         NSLog(@"ekkk:%@", [ekkkManager sharedManager].selectedPlace);
         NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:latitude, @"latitude", longitude, @"longitude", nil];
@@ -241,7 +284,7 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
     kSelectedAnnotation = view.annotation;
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"地点选择" message:@"确定选择这个地点吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"好", nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Place Selection", @"Place Selection") message:NSLocalizedString(@"Are you sure about the place?", @"Are You Sure About The Place?") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", @"Cancel") otherButtonTitles:NSLocalizedString(@"OK", @"OK"), nil];
     [alert show];
     [alert release];
 }

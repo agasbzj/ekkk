@@ -56,7 +56,7 @@
     // Do any additional setup after loading the view from its nib.
 
     self.navigationItem.title = _oneItem.seller;
-    UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:@"地图" style:UIBarButtonItemStyleDone target:self action:@selector(showMap:)];
+    UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Map", @"Map") style:UIBarButtonItemStyleDone target:self action:@selector(showMap:)];
     self.navigationItem.rightBarButtonItem = mapButton;
     [mapButton release];
     
@@ -163,33 +163,32 @@
     if (cell == nil) {
         cell.backgroundColor = [UIColor clearColor];
         if (section == 0) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier] autorelease];
             cell.imageView.image = indexPath.row == 0 ? [UIImage imageNamed:@"VoIP-Alt.png"] : [UIImage imageNamed:@"Home.png"];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
         else if (section == 1) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier] autorelease];
         }
     }
     
 //    cell.textLabel.textColor = [UIColor colorWithRed:.4f green:.4f blue:.4f alpha:1.f];
-    cell.textLabel.textColor = [UIColor whiteColor];
-    cell.indentationLevel = 2;
+//    cell.indentationLevel = 2;
 
     if (section == 0) {
         switch (row) {
             case 0:
             {
-                NSString *telText = [NSString stringWithFormat:@"电话：%@", _oneItem.telephone];
-                cell.textLabel.text = telText;
-//                cell.detailTextLabel.text = _oneItem.telephone;
+//                NSString *telText = [NSString stringWithFormat:@"%@%@", NSLocalizedString(@"Telephone:", @"Telephone:") , _oneItem.telephone];
+                cell.textLabel.text = NSLocalizedString(@"Telephone:", @"Telephone:");
+                cell.detailTextLabel.text = _oneItem.telephone;
                 break;
             }
             case 1:
             {
-                NSString *telText = [NSString stringWithFormat:@"地址：%@", _oneItem.address];
-                cell.textLabel.text = telText;
-//                cell.detailTextLabel.text = _oneItem.address;
+//                NSString *telText = [NSString stringWithFormat:@"%@%@", NSLocalizedString(@"Address:", @"Address:") , _oneItem.address];
+                cell.textLabel.text = NSLocalizedString(@"Address:", @"Address:");
+                cell.detailTextLabel.text = _oneItem.address;
             }
             default:
                 break;
@@ -197,14 +196,12 @@
         UIFont *font = [UIFont systemFontOfSize:14];
         cell.detailTextLabel.font = font;
         cell.textLabel.font = font;
-//        cell.textLabel.numberOfLines = 2;
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
         cell.detailTextLabel.numberOfLines = 2;
     }
     else if (section == 1) {
         cell.textLabel.text = [[_oneItem.bank objectAtIndex:row] valueForKey:@"discount"];
         cell.textLabel.numberOfLines = 2;
-//        cell.textLabel.textAlignment = UITextAlignmentCenter;
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         UIFont *font = [UIFont systemFontOfSize:14];
@@ -216,8 +213,9 @@
     }
     
     cell.textLabel.backgroundColor = [UIColor clearColor];
-//    cell.backgroundColor = [UIColor colorWithRed:.4f green:.4f blue:.4f alpha:1.f];
-    
+    cell.textLabel.textColor = [UIColor orangeColor];
+    cell.detailTextLabel.textColor = [UIColor whiteColor];
+
     
     return cell;
 }

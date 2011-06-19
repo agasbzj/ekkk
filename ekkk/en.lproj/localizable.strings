@@ -122,3 +122,39 @@
 
 /* Share This Via Text Message */
 "Share This Via Text Message" = "Share This Via Text Message";
+
+/* User Selected Place */
+"User Selected Place" = "User Selected";
+
+/* Search */
+"Search" = "Search";
+
+/* Appoint */
+"Appoint" = "Appoint";
+
+/* Appoint a place */
+"Please Appoint A Place" = "Please Appoint A Place";
+
+/* Place Selection */
+"Place Selection" = "Place Selection";
+
+/* Long Press On The Map */
+"Please Long Press A Point On The Map" = "Please Long Press A Point On The Map";
+
+/* Are You Sure About The Place? */
+"Are you sure about the place?" = "Are you sure about the place?";
+
+/* Type An Address To Search */
+"Type An Address To Search" = "Type An Address To Search";
+
+/* Please Commit */
+"Please Commit This" = "User Commit";
+
+/* Commit */
+"Commit" = "Commit";
+
+/* Telephone */
+"Telephone:" = "Telephone:";
+
+/* Address */
+"Address:" = "Address:";
