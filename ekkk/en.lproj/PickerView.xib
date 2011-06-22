@@ -59,7 +59,7 @@
 							<double key="NSSize">15</double>
 							<int key="NSfFlags">16</int>
 						</object>
-						<string key="IBUINormalTitle">取消</string>
+						<string key="IBUINormalTitle">Cancel</string>
 						<object class="NSColor" key="IBUIHighlightedTitleColor" id="584439977">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
@@ -93,7 +93,7 @@
 							<double key="NSSize">15</double>
 							<int key="NSfFlags">16</int>
 						</object>
-						<string key="IBUINormalTitle">确定</string>
+						<string key="IBUINormalTitle">OK</string>
 						<reference key="IBUIHighlightedTitleColor" ref="584439977"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
