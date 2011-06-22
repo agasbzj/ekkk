@@ -49,7 +49,6 @@
 						<string key="NSFrame">{{15, 12}, {80, 80}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
@@ -332,7 +331,47 @@
 						<reference key="source" ref="191373211"/>
 						<reference key="destination" ref="443751950"/>
 					</object>
-					<int key="connectionID">26</int>
+					<int key="connectionID">56</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">seller</string>
+						<reference key="source" ref="191373211"/>
+						<reference key="destination" ref="898085284"/>
+					</object>
+					<int key="connectionID">57</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">comments_Enviroment</string>
+						<reference key="source" ref="191373211"/>
+						<reference key="destination" ref="69418446"/>
+					</object>
+					<int key="connectionID">59</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">comments_Service</string>
+						<reference key="source" ref="191373211"/>
+						<reference key="destination" ref="129274819"/>
+					</object>
+					<int key="connectionID">60</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">comments_Discount</string>
+						<reference key="source" ref="191373211"/>
+						<reference key="destination" ref="923606650"/>
+					</object>
+					<int key="connectionID">61</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">ratingView</string>
+						<reference key="source" ref="191373211"/>
+						<reference key="destination" ref="38481237"/>
+					</object>
+					<int key="connectionID">62</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -509,7 +548,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">55</int>
+			<int key="maxID">62</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -521,7 +560,6 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>_ratingView</string>
 							<string>category_Fine</string>
 							<string>comments_Discount</string>
 							<string>comments_Enviroment</string>
@@ -533,7 +571,6 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>RatingView</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
@@ -548,7 +585,6 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>_ratingView</string>
 							<string>category_Fine</string>
 							<string>comments_Discount</string>
 							<string>comments_Enviroment</string>
@@ -560,10 +596,6 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBToOneOutletInfo">
-								<string key="name">_ratingView</string>
-								<string key="candidateClassName">RatingView</string>
-							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">category_Fine</string>
 								<string key="candidateClassName">UILabel</string>
