@@ -20,6 +20,7 @@
 @synthesize delegate;
 @synthesize segmentedControl = _segmentedControl;
 @synthesize selectBaseView = _selectBaseView;
+@synthesize nearbyButton = _nearbyButton;
 
 static NSString *kGoogleGeoApi = @"http://maps.google.com/maps/api/geocode/json?address=";
 static NSString *kGoogleDecApi = @"http://maps.google.com/maps/api/geocode/json?latlng=";
@@ -51,6 +52,7 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
     [_searchBar release];
     [_segmentedControl release];
     [_selectBaseView release];
+//    [_nearbyButton release];
     [super dealloc];
 }
 
@@ -96,7 +98,7 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
 }
 
 //按下附近按钮，还原备份数据，当前数据为附近的数据
-- (void)nearbyButtonPressed {
+- (IBAction)nearbyButtonPressed:(id)sender {
     LocateAndDownload *lAndD = [[LocateAndDownload alloc] init];
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfURL:[lAndD itemBackupDataFilePath]];
     [dic writeToURL:[lAndD itemDataFilePath] atomically:YES];
@@ -124,11 +126,13 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
     self.navigationItem.rightBarButtonItem = segItem;
     [segItem release];
     
-    UIButton *nearbyBtn = [[UIButton alloc] initWithFrame:CGRectMake(200, 200, 85, 37)];
-    [nearbyBtn setTitle:NSLocalizedString(@"Nearby", @"Nearby") forState:UIControlStateNormal];
-    [nearbyBtn addTarget:self action:@selector(nearbyButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:nearbyBtn];
-    [nearbyBtn release];
+    
+    [_nearbyButton setTitle:NSLocalizedString(@"Nearby", @"Nearby") forState:UIControlStateNormal];
+//    UIButton *nearbyBtn = [[UIButton alloc] initWithFrame:CGRectMake(200, 200, 85, 37)];
+//    [nearbyBtn setTitle:NSLocalizedString(@"Nearby", @"Nearby") forState:UIControlStateNormal];
+//    [nearbyBtn addTarget:self action:@selector(nearbyButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:nearbyBtn];
+//    [nearbyBtn release];
 }
 
 - (void)viewDidUnload

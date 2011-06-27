@@ -124,7 +124,6 @@
 		A990998313AB383500EB6871 /* CardsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A990998213AB383500EB6871 /* CardsTableCell.m */; };
 		A990998513AB384700EB6871 /* CardsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A990998413AB384700EB6871 /* CardsTableCell.xib */; };
 		A992424A13AB97ED00113C45 /* yellowBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A992424813AB97ED00113C45 /* yellowBackground@2x.png */; };
-		A992424B13AB97ED00113C45 /* blueBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A992424913AB97ED00113C45 /* blueBackground@2x.png */; };
 		A992424E13AB9C9C00113C45 /* grayBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = A992424D13AB9C9C00113C45 /* grayBackground.png */; };
 		A99BD8F8135DA84A0008588C /* NearbyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99BD8F6135DA84A0008588C /* NearbyTableViewController.m */; };
 		A99BD8F9135DA84A0008588C /* NearbyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99BD8F7135DA84A0008588C /* NearbyTableViewController.xib */; };
@@ -132,6 +131,7 @@
 		A9A46A271363004100964881 /* ManagementRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9A46A251363004100964881 /* ManagementRootViewController.xib */; };
 		A9A46A331363021500964881 /* BankSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A46A311363021500964881 /* BankSelectViewController.m */; };
 		A9A46A4613630D4A00964881 /* CardsSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A46A4513630D4A00964881 /* CardsSelectView.m */; };
+		A9B4725E13B2D46300A86A95 /* blueBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = A9B4725D13B2D46300A86A95 /* blueBackground.png */; };
 		A9BE3005134B1F4600DA6E86 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BE3004134B1F4600DA6E86 /* CFNetwork.framework */; };
 		A9BE3080134B21C000DA6E86 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE307F134B21C000DA6E86 /* Reachability.m */; };
 		A9BE3086134B22BD00DA6E86 /* InterconnectWithServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BE3085134B22BD00DA6E86 /* InterconnectWithServer.m */; };
@@ -332,7 +332,6 @@
 		A990998213AB383500EB6871 /* CardsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsTableCell.m; sourceTree = "<group>"; };
 		A990998413AB384700EB6871 /* CardsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardsTableCell.xib; sourceTree = "<group>"; };
 		A992424813AB97ED00113C45 /* yellowBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellowBackground@2x.png"; sourceTree = "<group>"; };
-		A992424913AB97ED00113C45 /* blueBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueBackground@2x.png"; sourceTree = "<group>"; };
 		A992424D13AB9C9C00113C45 /* grayBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayBackground.png; sourceTree = "<group>"; };
 		A99BD8F5135DA84A0008588C /* NearbyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyTableViewController.h; sourceTree = "<group>"; };
 		A99BD8F6135DA84A0008588C /* NearbyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyTableViewController.m; sourceTree = "<group>"; };
@@ -344,6 +343,7 @@
 		A9A46A311363021500964881 /* BankSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankSelectViewController.m; sourceTree = "<group>"; };
 		A9A46A4413630D4A00964881 /* CardsSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardsSelectView.h; sourceTree = "<group>"; };
 		A9A46A4513630D4A00964881 /* CardsSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsSelectView.m; sourceTree = "<group>"; };
+		A9B4725D13B2D46300A86A95 /* blueBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueBackground.png; sourceTree = "<group>"; };
 		A9BE3004134B1F4600DA6E86 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		A9BE307E134B21C000DA6E86 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		A9BE307F134B21C000DA6E86 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -672,10 +672,10 @@
 		41A4D0971348CDD700D070BB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A9B4725D13B2D46300A86A95 /* blueBackground.png */,
 				A9FA279513ACF38C00FE2889 /* lightGrayBackground.png */,
 				A992424D13AB9C9C00113C45 /* grayBackground.png */,
 				A992424813AB97ED00113C45 /* yellowBackground@2x.png */,
-				A992424913AB97ED00113C45 /* blueBackground@2x.png */,
 				A990997513AB2A0300EB6871 /* blackboard@2x.png */,
 				A990997D13AB373100EB6871 /* DarkBackground.png */,
 				A990997E13AB373100EB6871 /* LightBackground.png */,
@@ -1046,9 +1046,9 @@
 				A990998513AB384700EB6871 /* CardsTableCell.xib in Resources */,
 				A90B8F3F13AB6DBD00BB2363 /* localizable.strings in Resources */,
 				A992424A13AB97ED00113C45 /* yellowBackground@2x.png in Resources */,
-				A992424B13AB97ED00113C45 /* blueBackground@2x.png in Resources */,
 				A992424E13AB9C9C00113C45 /* grayBackground.png in Resources */,
 				A9FA279613ACF38C00FE2889 /* lightGrayBackground.png in Resources */,
+				A9B4725E13B2D46300A86A95 /* blueBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

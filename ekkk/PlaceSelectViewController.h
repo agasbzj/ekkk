@@ -24,6 +24,7 @@
     NSString *_searchString;
     UISegmentedControl *_segmentedControl;
     UIView *_selectBaseView;
+    UIButton *_nearbyButton;
 }
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 @property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
@@ -31,5 +32,7 @@
 @property (nonatomic, retain) UISegmentedControl *segmentedControl;
 @property (nonatomic, retain) UIView *selectBaseView;
 @property (nonatomic, assign) id <PlaceSelectDelegate> delegate;
+@property (nonatomic, retain) IBOutlet UIButton *nearbyButton;
 
+- (IBAction)nearbyButtonPressed:(id)sender;
 @end
