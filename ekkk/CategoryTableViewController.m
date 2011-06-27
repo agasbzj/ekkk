@@ -479,7 +479,7 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
     UIBarButtonItem *barButton = (UIBarButtonItem *)[self.view viewWithTag:choosenTag];
     if (tag == 1) {
         if (choosenTag == 3) {
-            string = [NSString stringWithFormat:@"%@米", string];
+            string = [NSString stringWithFormat:@"%@%@", string, NSLocalizedString(@"Mile(s)", @"Mile(s)")];
         }
         [barButton setTitle:string];
     }
@@ -598,7 +598,7 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
                 {
                     NSString *kDistance = [_distanceArray objectAtIndex:choosen];
                     [_sortKeyDictionary setValue:kDistance forKey:@"kByDistance"];
-                    [_distanceButton setTitle:[NSString stringWithFormat:@"%@米", kDistance]];
+                    [_distanceButton setTitle:[NSString stringWithFormat:@"%@%@", kDistance, NSLocalizedString(@"Mile(s)", @"Mile(s)")]];
                     break;
                 }
                 case 4:

@@ -387,7 +387,6 @@
 		A9DBEB7113AE1B0A00A0EDC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailHeaderView.xib; sourceTree = "<group>"; };
 		A9DBEB7313AE1B1300A0EDC3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/DetailHeaderView.xib"; sourceTree = "<group>"; };
 		A9DBEB7513AE237600A0EDC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PickerView.xib; sourceTree = "<group>"; };
-		A9DBEB7713AE237B00A0EDC3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/PickerView.xib"; sourceTree = "<group>"; };
 		A9DBEB7913AE242F00A0EDC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/IndividualTableCell.xib; sourceTree = "<group>"; };
 		A9DBEB7B13AE243400A0EDC3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/IndividualTableCell.xib"; sourceTree = "<group>"; };
 		A9EC51DF13AB5D51003E7060 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "/Users/agasbzj/Documents/Projects/ekkk/ekkk/zh-Hans.lproj/MainWindow.xib"; sourceTree = "<absolute>"; };
@@ -1193,7 +1192,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				A9DBEB7513AE237600A0EDC3 /* en */,
-				A9DBEB7713AE237B00A0EDC3 /* zh-Hans */,
 			);
 			name = PickerView.xib;
 			sourceTree = "<group>";

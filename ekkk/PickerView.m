@@ -33,7 +33,7 @@
         UIImage *stretchableButtonImage = [oriImage stretchableImageWithLeftCapWidth:12 topCapHeight:0];
         _confirmButton = [[UIButton alloc] initWithFrame:CGRectMake(180, 4, 120, 37)];
         _confirmButton.tag = 1;
-        [_confirmButton setTitle:@"确定" forState:UIControlStateNormal];
+        [_confirmButton setTitle:NSLocalizedString(@"OK", @"OK") forState:UIControlStateNormal];
         [_confirmButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
         [_confirmButton setBackgroundImage:stretchableButtonImage forState:UIControlStateNormal];
         [self addSubview:_confirmButton];
@@ -44,7 +44,7 @@
         _cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 4, 120, 37)];
         _cancelButton.tag = 2;
         [_cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [_cancelButton setTitle:@"取消" forState:UIControlStateNormal];
+        [_cancelButton setTitle:NSLocalizedString(@"Cancel", @"Cancel") forState:UIControlStateNormal];
         [_cancelButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
         [_cancelButton setBackgroundImage:stretchableButtonImage2 forState:UIControlStateNormal];
         [self addSubview:_cancelButton];

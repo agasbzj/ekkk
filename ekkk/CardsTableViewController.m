@@ -45,7 +45,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    [_bankButton setTitle:@"分类"];
+    [_bankButton setTitle:NSLocalizedString(@"Category Coarse", @"Category Coarse")];
     [_bankButton setTag:5];
 
 }
