@@ -152,7 +152,7 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
 #pragma mark - ViewController Delegate
 - (void)viewWillAppear:(BOOL)animated {
 	self.navigationController.navigationBar.translucent = YES;
-    [self.navigationItem setTitle:NSLocalizedString(@"Appoint", @"Appoint")];
+    [self.navigationItem setTitle:NSLocalizedString(@"Please Appoint A Place", @"Appoint a place")];
 //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
     self.searchBar.placeholder = NSLocalizedString(@"Type An Address To Search", @"Type An Address To Search");
     [super viewWillAppear:animated];

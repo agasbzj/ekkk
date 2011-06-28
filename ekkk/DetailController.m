@@ -11,6 +11,7 @@
 #import "DetailFooterView.h"
 #import "MapViewController.h"
 #import "UserCommitViewController.h"
+#import "DetailInfoTableCell.h"
 
 @implementation DetailController
 @synthesize tableView = _tableView;
@@ -159,17 +160,18 @@
     NSUInteger row = [indexPath row];
     
     static NSString *CellIdentifier = @"CellIdentifer";
-    UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    DetailInfoTableCell *cell = (DetailInfoTableCell *)[_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell.backgroundColor = [UIColor clearColor];
-        if (section == 0) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier] autorelease];
-            cell.imageView.image = indexPath.row == 0 ? [UIImage imageNamed:@"VoIP-Alt.png"] : [UIImage imageNamed:@"Home.png"];
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        }
-        else if (section == 1) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier] autorelease];
-        }
+//        cell.backgroundColor = [UIColor clearColor];
+//        if (section == 0) {
+//            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier] autorelease];
+            NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"DetailInfoTableCell" owner:self options:nil];
+            cell = [array objectAtIndex:0];
+            cell.icon.image = indexPath.row == 0 ? [UIImage imageNamed:@"VoIP-Alt.png"] : [UIImage imageNamed:@"Home.png"];
+//        }
+//        else if (section == 1) {
+//            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier] autorelease];
+//        }
     }
     
 //    cell.textLabel.textColor = [UIColor colorWithRed:.4f green:.4f blue:.4f alpha:1.f];
@@ -180,41 +182,31 @@
             case 0:
             {
 //                NSString *telText = [NSString stringWithFormat:@"%@%@", NSLocalizedString(@"Telephone:", @"Telephone:") , _oneItem.telephone];
-                cell.textLabel.text = NSLocalizedString(@"Telephone:", @"Telephone:");
-                cell.detailTextLabel.text = _oneItem.telephone;
+                cell.typeLabel.text = NSLocalizedString(@"Telephone:", @"Telephone:");
+                cell.detailLabel.text = _oneItem.telephone;
                 break;
             }
             case 1:
             {
 //                NSString *telText = [NSString stringWithFormat:@"%@%@", NSLocalizedString(@"Address:", @"Address:") , _oneItem.address];
-                cell.textLabel.text = NSLocalizedString(@"Address:", @"Address:");
-                cell.detailTextLabel.text = _oneItem.address;
+                cell.typeLabel.text = NSLocalizedString(@"Address:", @"Address:");
+                cell.detailLabel.text = _oneItem.address;
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             }
             default:
                 break;
         }
-        UIFont *font = [UIFont systemFontOfSize:14];
-        cell.detailTextLabel.font = font;
-        cell.textLabel.font = font;
-        cell.selectionStyle = UITableViewCellSelectionStyleGray;
         cell.detailTextLabel.numberOfLines = 2;
     }
     else if (section == 1) {
-        cell.textLabel.text = [[_oneItem.bank objectAtIndex:row] valueForKey:@"discount"];
-        cell.textLabel.numberOfLines = 2;
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        UIFont *font = [UIFont systemFontOfSize:14];
-        cell.textLabel.font = font;
-
-        cell.textLabel.textColor = [UIColor orangeColor];
-        cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [[_oneItem.bank objectAtIndex:row] valueForKey:@"bank_name"]]];
+        cell.typeLabel.text = @"";
+        cell.detailLabel.text = [[_oneItem.bank objectAtIndex:row] valueForKey:@"discount"];
+        cell.detailLabel.numberOfLines = 2;
+        cell.icon.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [[_oneItem.bank objectAtIndex:row] valueForKey:@"bank_name"]]];
 
     }
     
-    cell.textLabel.backgroundColor = [UIColor clearColor];
-    cell.textLabel.textColor = [UIColor orangeColor];
-    cell.detailTextLabel.textColor = [UIColor whiteColor];
+
 
     
     return cell;
