@@ -102,9 +102,9 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
     LocateAndDownload *lAndD = [[LocateAndDownload alloc] init];
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfURL:[lAndD itemBackupDataFilePath]];
     [dic writeToURL:[lAndD itemDataFilePath] atomically:YES];
-    [lAndD release];
     [[ekkkManager sharedManager] setSelectedPlace:NSLocalizedString(@"Nearby", @"Nearby")];
     [self.navigationController popViewControllerAnimated:YES];
+//    [lAndD release];
 }
 
 #pragma mark - View lifecycle
@@ -282,6 +282,7 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
         [locate downloadInfoWithCoordinate:dic];
         
         [self.navigationController popViewControllerAnimated:YES];
+//        [locate release];
     }
 
 }

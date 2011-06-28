@@ -7,6 +7,8 @@
 //
 
 #import "ParseOperation.h"
+#import "LocateAndDownload.h"
+
 #define kFileName                   @"Data.plist"
 #define kDataBackupFileName         @"DataBackup.plist"
 
@@ -21,7 +23,7 @@
         // Initialization code here.
         [self parseLocalXML];
         
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"LocalXMLParsed" object:self userInfo:[NSDictionary dictionaryWithObject:self.itemList forKey:@"Items"]];
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"LocalXMLParsed" object:self userInfo:[NSDictionary dictionaryWithObject:self.itemList forKey:@"Items"]];
         
     }
     
@@ -226,6 +228,9 @@ static NSString *kDistanceElem = @"distance";
     
     [dc writeToURL:storeURL atomically:YES];
     [dc writeToURL:storeURL2 atomically:YES];
+    
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"LocalXMLParsed" object:self userInfo:[NSDictionary dictionaryWithObject:self.itemList forKey:@"Items"]];
 }
 
 - (void)saveParsedItems:(NSArray *)items {
