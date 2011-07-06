@@ -475,6 +475,11 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
 }
 
 - (void)buttonPressed:(NSUInteger)tag withStringInPicker:(NSString *)string{
+    //如果为空，则什么都不做，返回
+    if (!string) {
+        [kActionSheet dismissWithClickedButtonIndex:tag animated:YES];
+        return;
+    }
     //更改按钮为选中的文字
     UIBarButtonItem *barButton = (UIBarButtonItem *)[self.view viewWithTag:choosenTag];
     if (tag == 1) {

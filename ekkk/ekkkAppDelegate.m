@@ -23,6 +23,9 @@
 
 static LocateAndDownload *kLAndD = nil;
 
+- (void)changeBadge {
+    [[[_tabBarController.viewControllers objectAtIndex:0] tabBarItem] setBadgeValue:[NSString stringWithFormat:@"%d", [[[ekkkManager sharedManager] parsedItems] count]]];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -38,7 +41,9 @@ static LocateAndDownload *kLAndD = nil;
    //开始定位
     [self startStandardUpdates];
     */
-    
+//    [[[[self.tabBarController viewControllers] objectAtIndex:1] tabBarItem] setBadgeValue:@"New"];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeBadge) name:@"NewDataSaved" object:nil];
     LocateAndDownload *locate = [[LocateAndDownload alloc] init];
     [locate loadData];
     [locate startStandardUpdates];

@@ -94,9 +94,16 @@
 
 - (IBAction)buttonPressed:(id)sender {
     NSInteger row = [_pickerView selectedRowInComponent:0];
-    _selectedString = [_pickerDataArray objectAtIndex:row];
-    
     UIButton *button = (UIButton *)sender;
-    [delegate buttonPressed:button.tag withStringInPicker:_selectedString];
+    //检查是否为空
+    if ([_pickerDataArray count]) {
+        _selectedString = [_pickerDataArray objectAtIndex:row];
+        
+        [delegate buttonPressed:button.tag withStringInPicker:_selectedString];
+    }
+    else {
+        [delegate buttonPressed:button.tag withStringInPicker:nil];
+    }
+
 }
 @end

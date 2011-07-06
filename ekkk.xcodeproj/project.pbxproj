@@ -114,6 +114,8 @@
 		A97F283E1396747300368180 /* img-offers-cellBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A97F283D1396747300368180 /* img-offers-cellBackground@2x.png */; };
 		A981566A13598B300056396A /* ItemAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A981566913598B300056396A /* ItemAnnotation.m */; };
 		A986BAA113647A2C0085433E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A986BAA013647A2B0085433E /* QuartzCore.framework */; };
+		A98F7C0113C43AA8001B5411 /* background_black@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A98F7BFF13C43AA8001B5411 /* background_black@2x.jpg */; };
+		A98F7C0213C43AA8001B5411 /* background_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A98F7C0013C43AA8001B5411 /* background_light@2x.png */; };
 		A9904879136D5EE200306D37 /* ShowMyCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9904877136D5EE200306D37 /* ShowMyCardsViewController.m */; };
 		A990487A136D5EE200306D37 /* ShowMyCardsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9904878136D5EE200306D37 /* ShowMyCardsViewController.xib */; };
 		A990997613AB2A0300EB6871 /* blackboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A990997513AB2A0300EB6871 /* blackboard@2x.png */; };
@@ -318,6 +320,8 @@
 		A981566813598B2F0056396A /* ItemAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemAnnotation.h; sourceTree = "<group>"; };
 		A981566913598B300056396A /* ItemAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemAnnotation.m; sourceTree = "<group>"; };
 		A986BAA013647A2B0085433E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A98F7BFF13C43AA8001B5411 /* background_black@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background_black@2x.jpg"; sourceTree = "<group>"; };
+		A98F7C0013C43AA8001B5411 /* background_light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background_light@2x.png"; sourceTree = "<group>"; };
 		A9904876136D5EE200306D37 /* ShowMyCardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowMyCardsViewController.h; sourceTree = "<group>"; };
 		A9904877136D5EE200306D37 /* ShowMyCardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowMyCardsViewController.m; sourceTree = "<group>"; };
 		A9904878136D5EE200306D37 /* ShowMyCardsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowMyCardsViewController.xib; sourceTree = "<group>"; };
@@ -480,6 +484,8 @@
 		41750E16134AFCE100CFF97E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A98F7BFF13C43AA8001B5411 /* background_black@2x.jpg */,
+				A98F7C0013C43AA8001B5411 /* background_light@2x.png */,
 				41A4D0971348CDD700D070BB /* Images */,
 			);
 			name = Resource;
@@ -556,6 +562,8 @@
 		41A4D05E1348CB9A00D070BB /* ekkk */ = {
 			isa = PBXGroup;
 			children = (
+				A93B9E6913A7A1EB009C55B0 /* ekkkManager.h */,
+				A93B9E6A13A7A1ED009C55B0 /* ekkkManager.m */,
 				A93B9E6213A783F7009C55B0 /* Network */,
 				A93B9E5C13A75249009C55B0 /* PlaceSelect */,
 				411FA7E3138BDB56001C27B3 /* Share */,
@@ -573,8 +581,6 @@
 				41A4D0671348CB9A00D070BB /* ekkkAppDelegate.h */,
 				41A4D0681348CB9A00D070BB /* ekkkAppDelegate.m */,
 				41A4D06A1348CB9A00D070BB /* MainWindow.xib */,
-				A93B9E6913A7A1EB009C55B0 /* ekkkManager.h */,
-				A93B9E6A13A7A1ED009C55B0 /* ekkkManager.m */,
 				A941961113A49DD4000BC0D9 /* TestAllThings.xib */,
 				A93B9E2813A75146009C55B0 /* Third_Part */,
 				41A4D05F1348CB9A00D070BB /* Supporting Files */,
@@ -1044,6 +1050,8 @@
 				A9FA279613ACF38C00FE2889 /* lightGrayBackground.png in Resources */,
 				A9B4725E13B2D46300A86A95 /* blueBackground.png in Resources */,
 				A91F87AD13BA0235002A149B /* DetailInfoTableCell.xib in Resources */,
+				A98F7C0113C43AA8001B5411 /* background_black@2x.jpg in Resources */,
+				A98F7C0213C43AA8001B5411 /* background_light@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

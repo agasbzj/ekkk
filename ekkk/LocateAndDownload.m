@@ -14,6 +14,7 @@
 #define kDataFileName               @"Data.plist"
 #define kUserCardsFileName          @"UserCards.plist"
 
+
 @implementation LocateAndDownload
 @synthesize locationManager;
 @synthesize interConnectOperationQueue;
@@ -85,29 +86,29 @@
 - (void)loadData {
     [_parsedItems removeAllObjects];
     NSURL *url = [self itemDataFilePath];
-    NSArray *tempArray = [[NSDictionary dictionaryWithContentsOfURL:url] valueForKey: @"data_Array"];
+    NSArray *tempArray = [[NSDictionary dictionaryWithContentsOfURL:url] valueForKey: @"result"];
     
     for (NSDictionary *dic in tempArray) {
         OneItem *oneItem = [[OneItem alloc] init];
-        oneItem.city = [dic valueForKey:@"city"];
+        oneItem.city = [dic valueForKey:@"cityName"];
         oneItem.area = [dic valueForKey:@"area"];
         oneItem.seller = [dic valueForKey:@"seller"];
         oneItem.image = [dic valueForKey:@"image"];
-        oneItem.category_Fine = [dic valueForKey:@"category_Fine"];
-        oneItem.category_Coarse = [dic valueForKey:@"category_Coarse"];
+        oneItem.category_Fine = [dic valueForKey:@"categoryFineName"];
+        oneItem.category_Coarse = [dic valueForKey:@"categoryCoarseName"];
         oneItem.telephone = [dic valueForKey:@"telephone"];
         oneItem.address = [dic valueForKey:@"address"];
         oneItem.www_Address = [dic valueForKey:@"www_Address"];
         oneItem.latitude = [dic valueForKey:@"latitude"];
         oneItem.longitude = [dic valueForKey:@"longitude"];
         oneItem.details = [dic valueForKey:@"details"];
-        oneItem.hot = [dic valueForKey:@"hot"];
+        oneItem.hot = [dic valueForKey:@"is_hot"];
         oneItem.comments_General = [dic valueForKey:@"comments_General"];
         oneItem.comments_Discount = [dic valueForKey:@"comments_Discount"];
         oneItem.comments_Service = [dic valueForKey:@"comments_Service"];
         oneItem.comments_Enviroment = [dic valueForKey:@"comments_Enviroment"];
-        oneItem.bank = [dic valueForKey:@"bank"];
-        oneItem.card = [dic valueForKey:@"card"];
+//        oneItem.bank = [dic valueForKey:@"bank"];
+//        oneItem.card = [dic valueForKey:@"card"];
         oneItem.source = [dic valueForKey:@"source"];
         oneItem.distance = [dic valueForKey:@"distance"];
         [_parsedItems addObject:oneItem];

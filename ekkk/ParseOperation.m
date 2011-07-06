@@ -8,12 +8,16 @@
 
 #import "ParseOperation.h"
 #import "LocateAndDownload.h"
-
 #define kFileName                   @"Data.plist"
 #define kDataBackupFileName         @"DataBackup.plist"
 
+
+
 @implementation ParseOperation
 @synthesize itemList;
+
+
+
 
 
 - (id)init
@@ -21,10 +25,10 @@
     self = [super init];
     if (self) {
         // Initialization code here.
-        [self parseLocalXML];
+//        [self parseLocalXML];
         
 //        [[NSNotificationCenter defaultCenter] postNotificationName:@"LocalXMLParsed" object:self userInfo:[NSDictionary dictionaryWithObject:self.itemList forKey:@"Items"]];
-        
+
     }
     
     return self;
@@ -65,6 +69,7 @@ static NSString *kCommentsGeneralElem = @"comments_General";
 static NSString *kHotElem = @"hot";
 static NSString *kSourceElem = @"source";
 static NSString *kDistanceElem = @"distance";
+
 
 #pragma mark - Parse Local XML File
 //解析xml文件
@@ -240,4 +245,50 @@ static NSString *kDistanceElem = @"distance";
 }
 
 
+//解析并输出到ekkkManager的parsedItems
+- (void)parseLocalPlist:(NSDictionary *)dictionary {
+    itemList = [[NSMutableArray alloc] initWithCapacity:50];
+    if (dictionary) {
+        NSMutableArray *array = [ekkkManager sharedManager].parsedItems;
+        if (!array) {
+            array = [[NSMutableArray alloc] init];
+        }
+        else {
+            [array removeAllObjects];
+        }
+        //把每一项item添加进parsedItems
+        NSArray *resultArray = [dictionary valueForKey:@"result"];
+        for (NSDictionary *dic in resultArray) {
+            OneItem *item = [[OneItem alloc] init];
+            item.address = [dic valueForKey:@"address"];
+            item.area = [dic valueForKey:@"area"];
+            item.category_Coarse = [dic valueForKey:@"categoryCoarseName"];
+            item.category_Fine = [dic valueForKey:@"categoryFineName"];
+            item.city = [dic valueForKey:@"cityName"];
+            item.comments_Discount = [dic valueForKey:@"comments_Discount"];
+            item.comments_Enviroment = [dic valueForKey:@"comments_Enviroment"];
+            item.comments_General = [dic valueForKey:@"comments_General"];
+            item.comments_Service = [dic valueForKey:@"comments_Service"];
+            item.details = [dic valueForKey:@"details"];
+            item.image = [dic valueForKey:@"imageUrl"];
+//            item.bank = [[dic valueForKey:@"specialOfferInfo"] valueForKey:@"bank"];
+            item.latitude = [NSNumber numberWithDouble:[[dic valueForKey:@"latitude"] doubleValue]];
+            item.longitude = [NSNumber numberWithDouble:[[dic valueForKey:@"longitude"] doubleValue]];
+            item.telephone = [dic valueForKey:@"telephone"];
+            item.hot = [dic valueForKey:@"is_hot"];
+//            [array addObject:item];
+            [self.itemList addObject:item];
+
+            //            [item release];
+        }
+        //    //把数据保存在本地
+        //    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kFileName];
+        
+        //写入本次备份数据
+        NSURL *storeURL2 = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kDataBackupFileName];
+        [dictionary writeToURL:storeURL2 atomically:YES];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"LocalXMLParsed" object:self userInfo:[NSDictionary dictionaryWithObject:self.itemList forKey:@"Items"]];
+
+    }
+}
 @end
