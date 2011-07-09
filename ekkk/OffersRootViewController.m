@@ -163,6 +163,14 @@ NSArray *temp;  //跟踪指针，用来释放。
 
 #pragma mark - View lifecycle
 
+- (void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

@@ -79,43 +79,53 @@
     NSURL *backupUrl = [self itemBackupDataFilePath];
     NSArray *array = [NSArray arrayWithContentsOfURL:backupUrl];
     [array writeToURL:url atomically:YES];
-    [self loadData];
+    [self loadDataWithParsedItems:nil];
 }
 
 //读取数据到_parsedItems，初始是附近数据，根据选择的地点而改变
-- (void)loadData {
-    [_parsedItems removeAllObjects];
-    NSURL *url = [self itemDataFilePath];
-    NSArray *tempArray = [[NSDictionary dictionaryWithContentsOfURL:url] valueForKey: @"result"];
-    
-    for (NSDictionary *dic in tempArray) {
-        OneItem *oneItem = [[OneItem alloc] init];
-        oneItem.city = [dic valueForKey:@"cityName"];
-        oneItem.area = [dic valueForKey:@"area"];
-        oneItem.seller = [dic valueForKey:@"seller"];
-        oneItem.image = [dic valueForKey:@"image"];
-        oneItem.category_Fine = [dic valueForKey:@"categoryFineName"];
-        oneItem.category_Coarse = [dic valueForKey:@"categoryCoarseName"];
-        oneItem.telephone = [dic valueForKey:@"telephone"];
-        oneItem.address = [dic valueForKey:@"address"];
-        oneItem.www_Address = [dic valueForKey:@"www_Address"];
-        oneItem.latitude = [dic valueForKey:@"latitude"];
-        oneItem.longitude = [dic valueForKey:@"longitude"];
-        oneItem.details = [dic valueForKey:@"details"];
-        oneItem.hot = [dic valueForKey:@"is_hot"];
-        oneItem.comments_General = [dic valueForKey:@"comments_General"];
-        oneItem.comments_Discount = [dic valueForKey:@"comments_Discount"];
-        oneItem.comments_Service = [dic valueForKey:@"comments_Service"];
-        oneItem.comments_Enviroment = [dic valueForKey:@"comments_Enviroment"];
-//        oneItem.bank = [dic valueForKey:@"bank"];
-//        oneItem.card = [dic valueForKey:@"card"];
-        oneItem.source = [dic valueForKey:@"source"];
-        oneItem.distance = [dic valueForKey:@"distance"];
-        [_parsedItems addObject:oneItem];
-        [oneItem release];
-    }
-    
-    [ekkkManager sharedManager].parsedItems = _parsedItems;
+- (void)loadDataWithParsedItems:(NSArray *)items {
+    //读取的是本地数据
+//    if (items == nil) {
+        if (_parsedItems && [_parsedItems count] > 0) {
+            [_parsedItems removeAllObjects];
+        }
+        
+        NSURL *url = [self itemDataFilePath];
+        NSArray *tempArray = [[NSDictionary dictionaryWithContentsOfURL:url] valueForKey: @"result"];
+        
+        //这里是读取数据，解析plist到内存
+        for (NSDictionary *dic in tempArray) {
+            OneItem *oneItem = [[OneItem alloc] init];
+            oneItem.city = [dic valueForKey:@"cityName"];
+            oneItem.area = [dic valueForKey:@"area"];
+            oneItem.seller = [dic valueForKey:@"seller"];
+            oneItem.image = [dic valueForKey:@"image"];
+            oneItem.category_Fine = [dic valueForKey:@"categoryFineName"];
+            oneItem.category_Coarse = [dic valueForKey:@"categoryCoarseName"];
+            oneItem.telephone = [dic valueForKey:@"telephone"];
+            oneItem.address = [dic valueForKey:@"address"];
+            oneItem.www_Address = [dic valueForKey:@"www_Address"];
+            oneItem.latitude = [dic valueForKey:@"latitude"];
+            oneItem.longitude = [dic valueForKey:@"longitude"];
+            oneItem.details = [dic valueForKey:@"details"];
+            oneItem.hot = [dic valueForKey:@"is_hot"];
+            oneItem.comments_General = [dic valueForKey:@"comments_General"];
+            oneItem.comments_Discount = [dic valueForKey:@"comments_Discount"];
+            oneItem.comments_Service = [dic valueForKey:@"comments_Service"];
+            oneItem.comments_Enviroment = [dic valueForKey:@"comments_Enviroment"];
+            //        oneItem.bank = [dic valueForKey:@"bank"];
+            //        oneItem.card = [dic valueForKey:@"card"];
+            oneItem.source = [dic valueForKey:@"source"];
+            oneItem.distance = [NSString stringWithFormat:@"%f", [[dic valueForKey:@"distance"] doubleValue] * 1000.0];
+            [_parsedItems addObject:oneItem];
+            [oneItem release];
+        }
+        
+        [ekkkManager sharedManager].parsedItems = _parsedItems;
+
+//    }
+//    else
+//        [ekkkManager sharedManager].parsedItems = (NSMutableArray *)items;
 }
 
 //写入解析完的数据
@@ -131,7 +141,7 @@
     
     
     
-    [self loadData];
+    [self loadDataWithParsedItems:[[items userInfo] valueForKey:@"Items"]];
     
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"NewDataSaved" object:self];

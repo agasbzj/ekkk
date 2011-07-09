@@ -38,7 +38,7 @@
 - (void)loadItems:(NSNotification *)itemList;
 
 //读取数据到_parsedItems，初始是附近数据，根据选择的地点而改变
-- (void)loadData;
+- (void)loadDataWithParsedItems:(NSArray *)items;
 
 //把坐标发到服务器下载数据
 - (void)downloadInfoWithCoordinate:(NSDictionary *)coordinateDict;

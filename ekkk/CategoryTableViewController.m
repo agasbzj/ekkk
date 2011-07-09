@@ -285,8 +285,8 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
 {
     [super viewWillAppear:animated];
     [_placeButton setTitle:[ekkkManager sharedManager].selectedPlace];
+    self.navigationController.navigationBar.tintColor = [UIColor darkGrayColor];
 }
-
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -406,7 +406,7 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
-    DetailController *detailViewController = [[DetailController alloc] init];
+    DetailController *detailViewController = [[DetailController alloc] initWithNibName:@"DetailController" bundle:[NSBundle mainBundle]];
     detailViewController.oneItem = [_showArray objectAtIndex:indexPath.row];
 //    detailViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detailViewController animated:YES];

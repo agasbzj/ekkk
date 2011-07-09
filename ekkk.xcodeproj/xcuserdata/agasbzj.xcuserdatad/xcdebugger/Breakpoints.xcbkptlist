@@ -8,13 +8,27 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "ekkk/CategoriesRootViewController.m"
-         timestampString = "331381030.772996"
+         filePath = "ekkk/DetailController.m"
+         timestampString = "331922856.916028"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "139"
-         endingLineNumber = "139"
-         landmarkName = "-tableView:didSelectRowAtIndexPath:"
+         startingLineNumber = "57"
+         endingLineNumber = "57"
+         landmarkName = "-viewWillAppear:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "ekkk/LocateAndDownload.m"
+         timestampString = "331924075.289495"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "121"
+         endingLineNumber = "121"
+         landmarkName = "-loadDataWithParsedItems:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

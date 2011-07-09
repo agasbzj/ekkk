@@ -241,14 +241,16 @@ static NSString *kDistanceElem = @"distance";
 - (void)saveParsedItems:(NSArray *)items {
     assert([NSThread isMainThread]);
     //解析完成，把数据发回。
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"LocalXMLParsed" object:self userInfo:[NSDictionary dictionaryWithObject:items forKey:@"Items"]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"LocalXMLParsed" object:self userInfo:nil/*[NSDictionary dictionaryWithObject:items forKey:@"Items"]*/];
 }
 
 
 //解析并输出到ekkkManager的parsedItems
 - (void)parseLocalPlist:(NSDictionary *)dictionary {
+    
     itemList = [[NSMutableArray alloc] initWithCapacity:50];
     if (dictionary) {
+        /*
         NSMutableArray *array = [ekkkManager sharedManager].parsedItems;
         if (!array) {
             array = [[NSMutableArray alloc] init];
@@ -262,6 +264,7 @@ static NSString *kDistanceElem = @"distance";
             OneItem *item = [[OneItem alloc] init];
             item.address = [dic valueForKey:@"address"];
             item.area = [dic valueForKey:@"area"];
+            item.seller = [dic valueForKey:@"seller"];
             item.category_Coarse = [dic valueForKey:@"categoryCoarseName"];
             item.category_Fine = [dic valueForKey:@"categoryFineName"];
             item.city = [dic valueForKey:@"cityName"];
@@ -276,16 +279,19 @@ static NSString *kDistanceElem = @"distance";
             item.longitude = [NSNumber numberWithDouble:[[dic valueForKey:@"longitude"] doubleValue]];
             item.telephone = [dic valueForKey:@"telephone"];
             item.hot = [dic valueForKey:@"is_hot"];
+            item.distance = [dic valueForKey:@"distance"];
 //            [array addObject:item];
             [self.itemList addObject:item];
 
             //            [item release];
         }
-        //    //把数据保存在本地
-        //    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kFileName];
+     */
+            //把数据保存在本地
+        NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kFileName];
         
         //写入本次备份数据
         NSURL *storeURL2 = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kDataBackupFileName];
+        [dictionary writeToURL:storeURL atomically:YES];
         [dictionary writeToURL:storeURL2 atomically:YES];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"LocalXMLParsed" object:self userInfo:[NSDictionary dictionaryWithObject:self.itemList forKey:@"Items"]];
 

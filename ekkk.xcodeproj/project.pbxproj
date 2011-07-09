@@ -511,9 +511,6 @@
 				A9DBEB7A13AE242F00A0EDC3 /* IndividualTableCell.xib */,
 				41A0377213587383001D52A8 /* RatingView.h */,
 				41A0377313587383001D52A8 /* RatingView.m */,
-				4125CB41136B12900064A69A /* OffersTableCell.h */,
-				4125CB42136B12900064A69A /* OffersTableCell.m */,
-				A90B8F4913AB82AC00BB2363 /* OffersTableCell.xib */,
 				A91F87AE13BA024D002A149B /* DetailInfoTableCell.h */,
 				A91F87AF13BA024D002A149B /* DetailInfoTableCell.m */,
 				A91F87AC13BA0235002A149B /* DetailInfoTableCell.xib */,
@@ -656,6 +653,9 @@
 				41A4D0831348CC9D00D070BB /* OffersRootViewController.h */,
 				41A4D0841348CC9D00D070BB /* OffersRootViewController.m */,
 				41A4D0851348CC9D00D070BB /* OffersRootViewController.xib */,
+				4125CB41136B12900064A69A /* OffersTableCell.h */,
+				4125CB42136B12900064A69A /* OffersTableCell.m */,
+				A90B8F4913AB82AC00BB2363 /* OffersTableCell.xib */,
 			);
 			name = Offers;
 			sourceTree = "<group>";

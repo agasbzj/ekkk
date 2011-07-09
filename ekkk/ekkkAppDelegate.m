@@ -45,7 +45,7 @@ static LocateAndDownload *kLAndD = nil;
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeBadge) name:@"NewDataSaved" object:nil];
     LocateAndDownload *locate = [[LocateAndDownload alloc] init];
-    [locate loadData];
+    [locate loadDataWithParsedItems:nil];
     [locate startStandardUpdates];
     kLAndD = locate;
     

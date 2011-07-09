@@ -22,6 +22,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        //self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     }
     return self;
 }
@@ -51,11 +52,17 @@
 
 #pragma mark - View lifecycle
 
+- (void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBar.tintColor = nil;
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
+    //self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     self.navigationItem.title = _oneItem.seller;
     UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Map", @"Map") style:UIBarButtonItemStyleDone target:self action:@selector(showMap:)];
     self.navigationItem.rightBarButtonItem = mapButton;
