@@ -113,10 +113,13 @@
             oneItem.comments_Discount = [dic valueForKey:@"comments_Discount"];
             oneItem.comments_Service = [dic valueForKey:@"comments_Service"];
             oneItem.comments_Enviroment = [dic valueForKey:@"comments_Enviroment"];
-            //        oneItem.bank = [dic valueForKey:@"bank"];
+            
+            oneItem.bank = [[dic valueForKey:@"specialOfferInfo"] valueForKey:@"bank"];
+            
             //        oneItem.card = [dic valueForKey:@"card"];
             oneItem.source = [dic valueForKey:@"source"];
             oneItem.distance = [NSString stringWithFormat:@"%f", [[dic valueForKey:@"distance"] doubleValue] * 1000.0];
+            oneItem.discount = [[dic valueForKey:@"specialOfferInfo"] valueForKey:@"specialOffer"];
             [_parsedItems addObject:oneItem];
             [oneItem release];
         }

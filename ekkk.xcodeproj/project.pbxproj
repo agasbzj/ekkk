@@ -48,7 +48,7 @@
 		4182736613723B75002288B4 /* 中国民生银行.png in Resources */ = {isa = PBXBuildFile; fileRef = 4182735B13723B75002288B4 /* 中国民生银行.png */; };
 		4182736713723B75002288B4 /* 中国银行.png in Resources */ = {isa = PBXBuildFile; fileRef = 4182735C13723B75002288B4 /* 中国银行.png */; };
 		4182736813723B75002288B4 /* 中信银行.png in Resources */ = {isa = PBXBuildFile; fileRef = 4182735D13723B75002288B4 /* 中信银行.png */; };
-		4182736913723B75002288B4 /* 上海浦东发展银行.png in Resources */ = {isa = PBXBuildFile; fileRef = 4182735E13723B75002288B4 /* 上海浦东发展银行.png */; };
+		4182736913723B75002288B4 /* 上海浦东发展银行 .png in Resources */ = {isa = PBXBuildFile; fileRef = 4182735E13723B75002288B4 /* 上海浦东发展银行 .png */; };
 		41A0376F1358730C001D52A8 /* IndividualTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A0376E1358730C001D52A8 /* IndividualTableCell.m */; };
 		41A0377413587383001D52A8 /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A0377313587383001D52A8 /* RatingView.m */; };
 		41A34B3B1391490E00715CB4 /* barimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A34B3A1391490E00715CB4 /* barimage.png */; };
@@ -220,7 +220,7 @@
 		4182735B13723B75002288B4 /* 中国民生银行.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "中国民生银行.png"; sourceTree = "<group>"; };
 		4182735C13723B75002288B4 /* 中国银行.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "中国银行.png"; sourceTree = "<group>"; };
 		4182735D13723B75002288B4 /* 中信银行.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "中信银行.png"; sourceTree = "<group>"; };
-		4182735E13723B75002288B4 /* 上海浦东发展银行.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "上海浦东发展银行.png"; sourceTree = "<group>"; };
+		4182735E13723B75002288B4 /* 上海浦东发展银行 .png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "上海浦东发展银行 .png"; sourceTree = "<group>"; };
 		41A0376D1358730C001D52A8 /* IndividualTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndividualTableCell.h; sourceTree = "<group>"; };
 		41A0376E1358730C001D52A8 /* IndividualTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndividualTableCell.m; sourceTree = "<group>"; };
 		41A0377213587383001D52A8 /* RatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingView.h; sourceTree = "<group>"; };
@@ -696,7 +696,7 @@
 				4182735B13723B75002288B4 /* 中国民生银行.png */,
 				4182735C13723B75002288B4 /* 中国银行.png */,
 				4182735D13723B75002288B4 /* 中信银行.png */,
-				4182735E13723B75002288B4 /* 上海浦东发展银行.png */,
+				4182735E13723B75002288B4 /* 上海浦东发展银行 .png */,
 				41BEF19F1371A7E8009DF1A9 /* StarsForeground.png */,
 				41750E12134AFCAB00CFF97E /* Place_holder.png */,
 				41E36473136439C2001EFDC4 /* 图标.png */,
@@ -1020,7 +1020,7 @@
 				4182736613723B75002288B4 /* 中国民生银行.png in Resources */,
 				4182736713723B75002288B4 /* 中国银行.png in Resources */,
 				4182736813723B75002288B4 /* 中信银行.png in Resources */,
-				4182736913723B75002288B4 /* 上海浦东发展银行.png in Resources */,
+				4182736913723B75002288B4 /* 上海浦东发展银行 .png in Resources */,
 				41A34B3B1391490E00715CB4 /* barimage.png in Resources */,
 				A9DBA3D21395E11300FA2770 /* whiteButton.png in Resources */,
 				A9DBA3D31395E11300FA2770 /* blueButton.png in Resources */,

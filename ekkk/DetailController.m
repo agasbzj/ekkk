@@ -142,7 +142,10 @@
 
 #pragma mark - TableView
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    if ([[[_oneItem.bank objectAtIndex:0] valueForKey:@"bank_name"] isEqualToString:@""]) {
+//    if ([[[_oneItem.bank objectAtIndex:0] valueForKey:@"bank_name"] isEqualToString:@""]) {
+//        return 1;
+//    }
+    if ([_oneItem.bank count] == 0) {
         return 1;
     }
     return 2;
@@ -206,11 +209,10 @@
         cell.detailTextLabel.numberOfLines = 2;
     }
     else if (section == 1) {
-        cell.typeLabel.text = @"";
-        cell.detailLabel.text = [[_oneItem.bank objectAtIndex:row] valueForKey:@"discount"];
+        cell.typeLabel.text = @"折扣：";
+        cell.detailLabel.text = _oneItem.discount;
         cell.detailLabel.numberOfLines = 2;
-        cell.icon.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [[_oneItem.bank objectAtIndex:row] valueForKey:@"bank_name"]]];
-
+        cell.icon.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [_oneItem.bank objectAtIndex:row]]];
     }
     
 

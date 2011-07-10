@@ -118,8 +118,8 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
     str = nil;
     
     for (OneItem *item in _dataArray) {
-        for (NSDictionary *dic in item.bank) {
-            str = [dic valueForKey:@"bank_name"];
+        for (NSString *str in item.bank) {
+            
             for (NSString *s in _bankArray) {
                 if ([s isEqualToString:str] == YES) {
                     flag = 1;
@@ -163,9 +163,9 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
     while (i < [_showArray count]) 
     {
         OneItem *item = [_showArray objectAtIndex:i];
-        for (NSDictionary *bankDic in item.bank) 
+        for (NSString *bankName in item.bank) 
         {
-            NSString *bankName = [bankDic valueForKey:@"bank_name"];
+//            NSString *bankName = [bankDic valueForKey:@"bank_name"];
             for (NSDictionary *dic in myCards) {
                 NSString *str2 = [dic valueForKey:@"bank_name"];
                 if ([bankName isEqualToString:str2]) {
@@ -349,7 +349,7 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
     
     cell.sellerLabel.text = item.seller;
     cell.addressLabel.text = item.address;
-    cell.discountLabel.text = [[item.bank objectAtIndex:0] valueForKey:@"discount"];
+    cell.discountLabel.text = item.discount;
     cell.distanceLabel.text = [NSString stringWithFormat:@"%@", item.distance];
     return cell;
 }

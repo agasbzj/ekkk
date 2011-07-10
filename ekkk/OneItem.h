@@ -37,7 +37,7 @@
     NSString *comments_General;          //评论
     NSMutableArray *bank;                 //银行
     NSMutableArray *card;
-//    NSString *discount;         //折扣
+    NSString *discount;         //折扣
     NSString *source;
     NSString *distance;
     
@@ -74,6 +74,8 @@
 @property (nonatomic, retain) NSMutableArray *card;
 @property (nonatomic, retain) NSString *source;
 @property (nonatomic, retain) NSString *distance;
+
+@property (nonatomic, retain) NSString *discount;
 
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 

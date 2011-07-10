@@ -133,8 +133,8 @@
     
     NSArray *allData = (NSArray *)[ekkkManager sharedManager].parsedItems;
     for (OneItem *item in allData) {
-        for (NSDictionary *bankDic in item.bank) {
-            if ([[bankDic valueForKey:@"bank_name"] isEqualToString:str]) {
+        for (NSString *bankDic in item.bank) {
+            if ([/*[bankDic valueForKey:@"bank_name"]*/bankDic isEqualToString:str]) {
                 [showArray addObject:item];
                 break;
             }

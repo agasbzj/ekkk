@@ -114,12 +114,12 @@ NSArray *temp;  //跟踪指针，用来释放。
 
     for (OneItem *item in allData) 
     {
-        for (NSDictionary *bankDic in item.bank) 
+        for (NSString *bankName in item.bank) 
         {
-            NSString *bankName = [bankDic valueForKey:@"bank_name"];
+//            NSString *bankName = [bankDic valueForKey:@"bank_name"];
             for (NSDictionary *dic in myCards) {
                 NSString *str2 = [dic valueForKey:@"bank_name"];
-                if ([bankName isEqualToString:str2]) {
+                if ([bankName isEqualToString:str2] && [item.hot isEqualToString:@"1"]) {
                     [_dataArray addObject:item];
                 }
             }
@@ -240,7 +240,7 @@ NSArray *temp;  //跟踪指针，用来释放。
     OneItem *item = [_dataArray objectAtIndex:indexPath.row];
     
     cell.sellerLabel.text = item.seller;
-    cell.discountLabel.text = [[item.bank objectAtIndex:0] valueForKey:@"discount"];
+    cell.discountLabel.text = item.discount;
     cell.sourceLabel.text = item.source;
     
 
