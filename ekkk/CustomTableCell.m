@@ -1,19 +1,16 @@
 //
-//  OffersTableCell.m
+//  CustomTableCell.m
 //  ekkk
 //
-//  Created by Wu Jianjun on 11-4-29.
+//  Created by 卞中杰 on 11-7-10.
 //  Copyright 2011年 __MyCompanyName__. All rights reserved.
 //
 
-#import "OffersTableCell.h"
+#import "CustomTableCell.h"
 
-@implementation OffersTableCell
 
-@synthesize sellerLabel = _sellerLabel;
-@synthesize discountLabel = _discountLabel;
-@synthesize sourceLabel = _sourceLabel;
-//@synthesize image = _image;
+@implementation CustomTableCell
+@synthesize iconImageView = _iconImageView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -27,17 +24,13 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-    
+
     // Configure the view for the selected state
 }
 
 - (void)dealloc
 {
-    [_sellerLabel release];
-    [_discountLabel release];
-    //[_image release];
-    [_sourceLabel release];
-
+    [_iconImageView release];
     [super dealloc];
 }
 

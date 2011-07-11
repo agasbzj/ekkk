@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomTableCell.h"
 
-
-@interface OffersTableCell : UITableViewCell {
+@interface OffersTableCell : CustomTableCell {
     UILabel *_sellerLabel;
-    UIImageView *_image;
+    //UIImageView *_image;
     UILabel *_discountLabel;
     UILabel *_sourceLabel;
 }
@@ -19,6 +19,6 @@
 @property (nonatomic, retain) IBOutlet UILabel *sellerLabel;
 @property (nonatomic, retain) IBOutlet UILabel *sourceLabel;
 @property (nonatomic, retain) IBOutlet UILabel *discountLabel;
-@property (nonatomic, retain) IBOutlet UIImageView *image;
+//@property (nonatomic, retain) IBOutlet UIImageView *image;
 
 @end

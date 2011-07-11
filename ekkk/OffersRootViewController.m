@@ -60,6 +60,7 @@ NSArray *temp;  //跟踪指针，用来释放。
     [_segmentedControl release];
     [_dataArray release];
     [_tableView release];
+    [cellReceivers release];
     [super dealloc];
 }
 
@@ -73,6 +74,44 @@ NSArray *temp;  //跟踪指针，用来释放。
 
 
 
+- (void)backgroundProcessData:(NSData *)responseData {
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    
+    
+    ImageDownloader *imageDownloader = [ImageDownloader downloaderWithName:@"profileImages"];
+    
+    for (OneItem *item in _dataArray) {
+        [imageDownloader queueImage:item.image delegate:nil];
+    }
+    [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+    [pool release];
+}
+
+- (void)startImageDownload:(NSString *)imageURL forIndexPath:(NSIndexPath *)indexPath
+{
+    ImageDownloader *imageDownloader = [ImageDownloader downloaderWithName:@"profileImages"];
+    TableCellDownloadReceiver *receiver = [[TableCellDownloadReceiver alloc] init];
+    receiver.tableView = self.tableView;
+    receiver.indexPath = indexPath;
+    [cellReceivers setObject:receiver forKey:indexPath];
+    [receiver release];
+    [imageDownloader activeRequest:imageURL delegate:receiver];
+}
+
+- (void)loadImagesForOnscreenRows
+{
+    if ([_dataArray count] > 0)
+    {
+        NSArray *visiblePaths = [self.tableView indexPathsForVisibleRows];
+        for (int i = visiblePaths.count - 1; i >= 0 ; i--)
+        {
+            NSIndexPath *indexPath = [visiblePaths objectAtIndex:i];       
+            //PAMessage *msg = [_messagesArray objectAtIndex:indexPath.row];
+            OneItem *item = [_dataArray objectAtIndex:indexPath.row];
+            [self startImageDownload:item.image forIndexPath:indexPath];            
+        }
+    }
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 - (void)getData {    
@@ -181,7 +220,7 @@ NSArray *temp;  //跟踪指针，用来释放。
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 //    self.navigationController.navigationBarHidden = YES;
     
-    
+    cellReceivers = [[NSMutableDictionary alloc] init];
     
     //观察新数据是否保持完毕
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(regetData) name:@"NewDataSaved" object:nil];
@@ -250,7 +289,7 @@ NSArray *temp;  //跟踪指针，用来释放。
     cell.backgroundView = [[[UIImageView alloc] initWithImage:backgroundImage] autorelease];
     cell.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     cell.backgroundView.frame = cell.bounds;
-    
+    [self startImageDownload:item.image forIndexPath:indexPath]; 
     return cell;
 }
 

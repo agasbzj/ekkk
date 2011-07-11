@@ -13,7 +13,7 @@
 #define kDataBackupFileName         @"DataBackup.plist"
 #define kDataFileName               @"Data.plist"
 #define kUserCardsFileName          @"UserCards.plist"
-
+#define IMAGE_URL                   @"http://xiaochen-shi.com/ckk_forServer/api/image/"
 
 @implementation LocateAndDownload
 @synthesize locationManager;
@@ -99,7 +99,7 @@
             oneItem.city = [dic valueForKey:@"cityName"];
             oneItem.area = [dic valueForKey:@"area"];
             oneItem.seller = [dic valueForKey:@"seller"];
-            oneItem.image = [dic valueForKey:@"image"];
+            oneItem.image = [NSString stringWithFormat:@"%@%@", IMAGE_URL, [dic valueForKey:@"imageUrl"]];
             oneItem.category_Fine = [dic valueForKey:@"categoryFineName"];
             oneItem.category_Coarse = [dic valueForKey:@"categoryCoarseName"];
             oneItem.telephone = [dic valueForKey:@"telephone"];

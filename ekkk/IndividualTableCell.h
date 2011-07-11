@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface IndividualTableCell : UITableViewCell {
+#import "CustomTableCell.h"
+@interface IndividualTableCell : CustomTableCell {
 
     UILabel *_sellerLabel;
-    UIImageView *_imageSeller;
+    //UIImageView *_imageSeller;
     UIImageView *_imageBank;
     UIImageView *_subImageBank;
     UILabel *_discountLabel;
@@ -21,7 +21,7 @@
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *sellerLabel;
-@property (nonatomic, retain) IBOutlet UIImageView *imageSeller;
+//@property (nonatomic, retain) IBOutlet UIImageView *imageSeller;
 @property (nonatomic, retain) IBOutlet UIImageView *imageBank;
 @property (nonatomic, retain) IBOutlet UIImageView *subImageBank;
 @property (nonatomic, retain) IBOutlet UILabel *discountLabel;

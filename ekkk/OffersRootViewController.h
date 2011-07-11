@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
-
+#import "ImageDownloader.h"
+#import "TableCellDownloadReceiver.h"
 @interface OffersRootViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
     UITableView *_tableView;
     UISegmentedControl *_segmentedControl;
     NSMutableArray *_dataArray;
+    
+    @private
+    NSMutableDictionary *cellReceivers;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
