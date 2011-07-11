@@ -223,6 +223,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [_tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", _oneItem.telephone]]];
+    }
     if (indexPath.section == 0 && indexPath.row == 1) {
         [self showMap:nil];
     }

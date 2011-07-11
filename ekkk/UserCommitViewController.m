@@ -108,7 +108,7 @@
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
     CGPoint point = self.view.center;
-    point.y = 8;
+    point.y -= 200;
     CGContextRef context = UIGraphicsGetCurrentContext();
     [UIView beginAnimations:nil context:context];
     [UIView setAnimationDuration:.3f];
@@ -121,7 +121,7 @@
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
     CGPoint point = self.view.center;
-    point.y = 208;
+    point.y += 200;
     CGContextRef context = UIGraphicsGetCurrentContext();
     [UIView beginAnimations:nil context:context];
     [UIView setAnimationDuration:.3f];
@@ -141,7 +141,7 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     CGPoint point = self.view.center;
-    point.y = 158;
+    point.y -= 50;
     CGContextRef context = UIGraphicsGetCurrentContext();
     [UIView beginAnimations:nil context:context];
     [UIView setAnimationDuration:.3f];
@@ -155,7 +155,7 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     CGPoint point = self.view.center;
-    point.y = 208;
+    point.y += 50;
     CGContextRef context = UIGraphicsGetCurrentContext();
     [UIView beginAnimations:nil context:context];
     [UIView setAnimationDuration:.3f];

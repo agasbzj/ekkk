@@ -351,6 +351,13 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
     cell.addressLabel.text = item.address;
     cell.discountLabel.text = item.discount;
     cell.distanceLabel.text = [NSString stringWithFormat:@"%@", item.distance];
+    if ([item.bank count]) {
+        cell.imageBank.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [item.bank objectAtIndex:0]]];
+    }
+    if ([item.bank count] > 1) {
+        cell.subImageBank.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [item.bank objectAtIndex:1]]];
+    }
+
     return cell;
 }
 
@@ -536,8 +543,8 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
             }
         }
         if (![kBankKey isEqualToString:@"all"]) {
-            for (NSDictionary *dic in item.bank) {
-                if ([[dic valueForKey:@"bank_name"] isEqualToString:kBankKey]) {
+            for (NSString *bankName in item.bank) {
+                if ([bankName isEqualToString:kBankKey]) {
                     flag = 1;
                 }
             }

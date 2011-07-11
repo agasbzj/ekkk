@@ -118,7 +118,7 @@
             
             //        oneItem.card = [dic valueForKey:@"card"];
             oneItem.source = [dic valueForKey:@"source"];
-            oneItem.distance = [NSString stringWithFormat:@"%f", [[dic valueForKey:@"distance"] doubleValue] * 1000.0];
+            oneItem.distance = [NSString stringWithFormat:@"%d", [[dic valueForKey:@"distance"] intValue] * 1000];
             oneItem.discount = [[dic valueForKey:@"specialOfferInfo"] valueForKey:@"specialOffer"];
             [_parsedItems addObject:oneItem];
             [oneItem release];
