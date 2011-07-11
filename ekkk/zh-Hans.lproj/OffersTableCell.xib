@@ -143,7 +143,6 @@
 								<string key="NSFrame">{{115, 48}, {187, 21}}</string>
 								<reference key="NSSuperview" ref="551520525"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
@@ -216,7 +215,7 @@
 						<reference key="source" ref="875217620"/>
 						<reference key="destination" ref="346376538"/>
 					</object>
-					<int key="connectionID">18</int>
+					<int key="connectionID">19</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -317,7 +316,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">18</int>
+			<int key="maxID">19</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

@@ -73,7 +73,6 @@
 		41E3647B136439C2001EFDC4 /* 花旗银行.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E36476136439C2001EFDC4 /* 花旗银行.png */; };
 		41E3647C136439C2001EFDC4 /* 俏江南.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E36477136439C2001EFDC4 /* 俏江南.png */; };
 		A90AED1D135EB1BE002DEFD3 /* BanksAndCards.plist in Resources */ = {isa = PBXBuildFile; fileRef = A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */; };
-		A90B8F3F13AB6DBD00BB2363 /* localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A90B8F4113AB6DBD00BB2363 /* localizable.strings */; };
 		A90B8F4313AB6E2400BB2363 /* DetailFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90B8F4513AB6E2400BB2363 /* DetailFooterView.xib */; };
 		A90B8F4713AB82AC00BB2363 /* OffersTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90B8F4913AB82AC00BB2363 /* OffersTableCell.xib */; };
 		A91F87AD13BA0235002A149B /* DetailInfoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A91F87AC13BA0235002A149B /* DetailInfoTableCell.xib */; };
@@ -149,6 +148,7 @@
 		A9D088DE13A1C92E00C86075 /* LoginAndRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D088DD13A1C92E00C86075 /* LoginAndRegisterView.m */; };
 		A9D088E313A1D5C300C86075 /* UserInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D088E213A1D5C300C86075 /* UserInfoView.m */; };
 		A9D10205136D9E1A007B5F0D /* PickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D10204136D9E1A007B5F0D /* PickerView.m */; };
+		A9D1A6A213CB3D6A00E41A12 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9D1A6A013CB3D6A00E41A12 /* Localizable.strings */; };
 		A9DBA3D21395E11300FA2770 /* whiteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A9DBA3D01395E11300FA2770 /* whiteButton.png */; };
 		A9DBA3D31395E11300FA2770 /* blueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A9DBA3D11395E11300FA2770 /* blueButton.png */; };
 		A9DBA3D81395E9F000FA2770 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DBA3D61395E9F000FA2770 /* RegisterViewController.m */; };
@@ -260,8 +260,6 @@
 		41E36476136439C2001EFDC4 /* 花旗银行.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "花旗银行.png"; sourceTree = "<group>"; };
 		41E36477136439C2001EFDC4 /* 俏江南.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "俏江南.png"; sourceTree = "<group>"; };
 		A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BanksAndCards.plist; sourceTree = "<group>"; };
-		A90B8F4013AB6DBD00BB2363 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localizable.strings; sourceTree = "<group>"; };
-		A90B8F4213AB6DC400BB2363 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/localizable.strings"; sourceTree = "<group>"; };
 		A90B8F4413AB6E2400BB2363 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailFooterView.xib; sourceTree = "<group>"; };
 		A90B8F4613AB6E2800BB2363 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/DetailFooterView.xib"; sourceTree = "<group>"; };
 		A90B8F4813AB82AC00BB2363 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OffersTableCell.xib; sourceTree = "<group>"; };
@@ -384,6 +382,8 @@
 		A9D088E213A1D5C300C86075 /* UserInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoView.m; sourceTree = "<group>"; };
 		A9D10203136D9E1A007B5F0D /* PickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerView.h; sourceTree = "<group>"; };
 		A9D10204136D9E1A007B5F0D /* PickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerView.m; sourceTree = "<group>"; };
+		A9D1A6A113CB3D6A00E41A12 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A9D1A6A313CB3D7A00E41A12 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A9DBA3D01395E11300FA2770 /* whiteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteButton.png; sourceTree = "<group>"; };
 		A9DBA3D11395E11300FA2770 /* blueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueButton.png; sourceTree = "<group>"; };
 		A9DBA3D51395E9F000FA2770 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -603,7 +603,7 @@
 				41A4D0611348CB9A00D070BB /* InfoPlist.strings */,
 				41A4D0641348CB9A00D070BB /* ekkk-Prefix.pch */,
 				41A4D0651348CB9A00D070BB /* main.m */,
-				A90B8F4113AB6DBD00BB2363 /* localizable.strings */,
+				A9D1A6A013CB3D6A00E41A12 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1073,7 +1073,6 @@
 				A990997F13AB373100EB6871 /* DarkBackground.png in Resources */,
 				A990998013AB373100EB6871 /* LightBackground.png in Resources */,
 				A990998513AB384700EB6871 /* CardsTableCell.xib in Resources */,
-				A90B8F3F13AB6DBD00BB2363 /* localizable.strings in Resources */,
 				A992424A13AB97ED00113C45 /* yellowBackground@2x.png in Resources */,
 				A992424E13AB9C9C00113C45 /* grayBackground.png in Resources */,
 				A9FA279613ACF38C00FE2889 /* lightGrayBackground.png in Resources */,
@@ -1081,6 +1080,7 @@
 				A91F87AD13BA0235002A149B /* DetailInfoTableCell.xib in Resources */,
 				A98F7C0113C43AA8001B5411 /* background_black@2x.jpg in Resources */,
 				A98F7C0213C43AA8001B5411 /* background_light@2x.png in Resources */,
+				A9D1A6A213CB3D6A00E41A12 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1181,15 +1181,6 @@
 			name = MainWindow.xib;
 			sourceTree = "<group>";
 		};
-		A90B8F4113AB6DBD00BB2363 /* localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A90B8F4013AB6DBD00BB2363 /* en */,
-				A90B8F4213AB6DC400BB2363 /* zh-Hans */,
-			);
-			name = localizable.strings;
-			sourceTree = "<group>";
-		};
 		A90B8F4513AB6E2400BB2363 /* DetailFooterView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1206,6 +1197,15 @@
 				A90B8F4A13AB82B100BB2363 /* zh-Hans */,
 			);
 			name = OffersTableCell.xib;
+			sourceTree = "<group>";
+		};
+		A9D1A6A013CB3D6A00E41A12 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9D1A6A113CB3D6A00E41A12 /* en */,
+				A9D1A6A313CB3D7A00E41A12 /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		A9DBEB6D13AE193300A0EDC3 /* UserCommitViewController.xib */ = {

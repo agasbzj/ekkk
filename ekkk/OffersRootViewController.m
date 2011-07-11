@@ -232,7 +232,10 @@ NSArray *temp;  //跟踪指针，用来释放。
     
     [self getData];
     
-    _segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:NSLocalizedString(@"Hot", @"Hot"), NSLocalizedString(@"My Cards", @"My Cards"), nil]];
+    NSString *hotStr = NSLocalizedString(@"Hot", @"Hot");
+    NSString *cardStr = NSLocalizedString(@"My Cards", @"My Cards");
+//    _segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:NSLocalizedString(@"Hot", @"Hot"), NSLocalizedString(@"My Cards", @"My Cards"), nil]];
+    _segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:hotStr, cardStr, nil]];
     _segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
     _segmentedControl.selectedSegmentIndex = 0;
     
@@ -289,7 +292,7 @@ NSArray *temp;  //跟踪指针，用来释放。
     cell.backgroundView = [[[UIImageView alloc] initWithImage:backgroundImage] autorelease];
     cell.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     cell.backgroundView.frame = cell.bounds;
-    [self startImageDownload:item.image forIndexPath:indexPath]; 
+//    [self startImageDownload:item.image forIndexPath:indexPath]; 
     return cell;
 }
 
