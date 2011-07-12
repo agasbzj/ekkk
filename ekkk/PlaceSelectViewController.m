@@ -121,7 +121,7 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
     _segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects: NSLocalizedString(@"Appoint", @"Appoint"), NSLocalizedString(@"Search", @"Search"), nil]];
     [_segmentedControl addTarget:self action:@selector(switchSelectMode) forControlEvents:UIControlEventValueChanged];
     _segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
-    _segmentedControl.selectedSegmentIndex = 0;
+    _segmentedControl.selectedSegmentIndex = 1;
     UIBarButtonItem *segItem = [[UIBarButtonItem alloc] initWithCustomView:_segmentedControl];
     self.navigationItem.rightBarButtonItem = segItem;
     [segItem release];

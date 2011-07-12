@@ -208,47 +208,42 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
     [button setBackgroundImage:stretchableButtonImage forState:UIControlStateNormal];
 }
 
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    self.tableView.backgroundColor = [UIColor whiteColor];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
+//设置表数据以及选取器数据
+- (void)setupData {
+    if (_dataArray) {
+        [_dataArray release];
+    }
+    _dataArray = [[ekkkManager sharedManager].parsedItems retain];
+    if (_sortKeyDictionary) {
+        [_sortKeyDictionary release];
+    }
+    if (_showArray) {
+        [_showArray release];
+    }
+    if (_pickerArray) {
+        [_pickerArray release];
+    }
+    if (_categoryArray) {
+        [_categoryArray release];
+    }
+    if (_distanceArray) {
+        [_distanceArray release];
+    }
+    if (_bankArray) {
+        [_bankArray release];
+    }
+    if (_categoryCArray) {
+        [_categoryCArray release];
+    }
     _sortKeyDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"all", @"kByCategory",
                           @"all", @"kByDistance", @"all", @"kByBank", @"all", @"kByCategoryCoarse", nil];
-//    UIImageView *barImageView = [[UIImageView alloc] initWithFrame:CGRectMake(320, 44, 0, 0)];
-//    [barImageView setImage:[UIImage imageNamed:@"barimage.png"]];
-//    [self.view addSubview:barImageView];
-    
-    //增加地图按钮
-    UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Map", @"Map") style:UIBarButtonItemStyleDone target:self action:@selector(showMap:)];
-    kMapButton = mapButton;
-    self.navigationItem.rightBarButtonItem = mapButton;
-    [mapButton release];
-    
-
     
     _showArray = [[NSMutableArray alloc] initWithArray:_dataArray];
     
-    if ([_showArray count] == 0) 
-        mapButton.enabled = NO;
+
     
     _pickerArray = [[NSMutableArray alloc] initWithCapacity:10];
-    self.tableView.rowHeight = 74;  
-    _picker = [[UIPickerView alloc] init];
-    _picker.delegate = self;
-    _picker.dataSource = self;
-    _picker.showsSelectionIndicator = YES;
-    
-    CGPoint p = _picker.center;
-    p.y += 50;
-    _picker.center = p;
-    
-    CGRect rect = _picker.bounds;
-    rect.size.width = 280;
-    _picker.bounds = rect;
+
     
     _categoryArray = [[NSMutableArray alloc] initWithCapacity:10];
     _distanceArray = [[NSMutableArray alloc] initWithObjects:@"100", @"500", @"1000", @"3000", nil];
@@ -256,6 +251,51 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
     _categoryCArray = [[NSMutableArray alloc] initWithCapacity:7];
     
     [self configPickerArray];
+    
+    [self.tableView reloadData];
+}
+
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    //观察新数据是否保持完毕
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupData) name:@"NewDataSaved" object:nil];
+    
+    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.rowHeight = 74;  
+
+    _picker = [[UIPickerView alloc] init];
+    _picker.delegate = self;
+    _picker.dataSource = self;
+    _picker.showsSelectionIndicator = YES;
+
+    
+    [self setupData];
+    
+    //增加地图按钮
+    UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Map", @"Map") style:UIBarButtonItemStyleDone target:self action:@selector(showMap:)];
+    kMapButton = mapButton;
+    self.navigationItem.rightBarButtonItem = mapButton;
+    [mapButton release];
+    
+    if ([_showArray count] == 0) 
+        mapButton.enabled = NO;
+    
+
+    
+//    CGPoint p = _picker.center;
+//    p.y += 50;
+//    _picker.center = p;
+//    
+//    CGRect rect = _picker.bounds;
+//    rect.size.width = 280;
+//    _picker.bounds = rect;
+    
+
     
     //分栏符
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:NSLocalizedString(@"All Cards", @"All Cards"), NSLocalizedString(@"My Cards", @"My Cards"), nil]];

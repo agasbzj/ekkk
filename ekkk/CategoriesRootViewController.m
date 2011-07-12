@@ -142,7 +142,7 @@
     }
     
     CategoryTableViewController *categoryTableViewController = [[CategoryTableViewController alloc] initWithNibName:@"CategoryTableViewController" bundle:[NSBundle mainBundle]];
-    categoryTableViewController.dataArray = showArray;
+//    categoryTableViewController.dataArray = showArray;
     categoryTableViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:categoryTableViewController animated:YES];
     [categoryTableViewController release];
