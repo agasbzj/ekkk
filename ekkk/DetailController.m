@@ -224,10 +224,19 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [_tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 0 && indexPath.row == 0) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", _oneItem.telephone]]];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"拨打电话" message:[NSString stringWithFormat:@"您确定要拨打%@吗？", _oneItem.telephone] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alert show];
+        [alert release];
     }
     if (indexPath.section == 0 && indexPath.row == 1) {
         [self showMap:nil];
+    }
+}
+
+#pragma mark - Alert Delegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", _oneItem.telephone]]];
     }
 }
 

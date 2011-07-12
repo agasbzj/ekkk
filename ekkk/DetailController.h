@@ -12,7 +12,7 @@
 #import <MessageUI/MFMailComposeViewController.h>
 #import <MessageUI/MessageUI.h>
 
-@interface DetailController : UIViewController <UITableViewDataSource, UITableViewDelegate, DetailFooterViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate> {
+@interface DetailController : UIViewController <UITableViewDataSource, UITableViewDelegate, DetailFooterViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate, UIAlertViewDelegate> {
     UITableView *_tableView;
     OneItem *_oneItem;
 }
