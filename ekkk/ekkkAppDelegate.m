@@ -6,7 +6,7 @@
 //  Copyright 2011年 __MyCompanyName__. All rights reserved.
 //
  
-#import "ekkkAppDelegate.h"
+# import "ekkkAppDelegate.h"
 #import "InterconnectWithServer.h"
 #import "LocateAndDownload.h"
 
@@ -24,7 +24,26 @@
 static LocateAndDownload *kLAndD = nil;
 
 - (void)changeBadge {
-    [[[_tabBarController.viewControllers objectAtIndex:0] tabBarItem] setBadgeValue:[NSString stringWithFormat:@"%d", [[[ekkkManager sharedManager] parsedItems] count]]];
+    
+    NSInteger all = [[ekkkManager sharedManager].parsedItems count];
+    NSInteger sumHot = 0;
+    
+    for (int i = 0; i < all; i++) {
+        if ([[(OneItem *)[[ekkkManager sharedManager].parsedItems objectAtIndex:i] hot] isEqualToString:@"1"]) {
+            sumHot ++;
+//            NSLog(@"HOTHOTSUM:%d", sumHot);
+        }
+    }
+    //设置offer标记
+    if (sumHot) {
+        [[[_tabBarController.viewControllers objectAtIndex:0] tabBarItem] setBadgeValue:[NSString stringWithFormat:@"%d", sumHot]];
+    }
+    //设置category标记
+    if (all - sumHot) {
+        [[[_tabBarController.viewControllers objectAtIndex:1] tabBarItem] setBadgeValue:[NSString stringWithFormat:@"%d", (all - sumHot)]];
+    }
+    
+
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -99,12 +118,14 @@ static LocateAndDownload *kLAndD = nil;
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    
     /*
      Called when the application is about to terminate.
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
 //    [self saveContext];
+    
 }
 
 - (void)dealloc

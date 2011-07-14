@@ -13,7 +13,7 @@
 @class IndividualTableCell;
 
 @interface CategoryTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UIPickerViewDelegate, UIPickerViewDataSource, MyPickViewDelegate, PlaceSelectDelegate> {
-    
+    NSString *_categoryCoarse;
     NSArray *_dataArray;    //初始传入的值
     NSMutableArray *_showArray;    //表视图用来显示的数据
     NSMutableArray *_pickerArray;
@@ -31,7 +31,7 @@
     NSMutableDictionary *_sortKeyDictionary;   //排序用的键值
     
 }
-
+@property (nonatomic, retain) NSString *categoryCoarse;
 @property (nonatomic, retain) NSArray *dataArray;
 @property (nonatomic, retain) NSMutableArray *showArray;
 @property (nonatomic, retain) NSMutableArray *pickerArray;

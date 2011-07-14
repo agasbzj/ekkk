@@ -7,7 +7,10 @@
 //
 
 #import "RegisterViewController.h"
+#import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
 
+#define REGISTER_URL @"http://xiaochen-shi.com/ckk_forServer/api/register.php"    //注册网址
 
 @implementation RegisterViewController
 @synthesize userName = _userName;
@@ -58,6 +61,35 @@ static NSString *confirmPassword = @"";
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (void)doRegistation {
+    ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:REGISTER_URL]];
+    [request setRequestMethod:@"POST"];
+    [request addRequestHeader:@"user" value:_userName];
+    [request addRequestHeader:@"pass" value:_password];
+    [request addRequestHeader:@"email" value:_email];
+    
+    [request setDelegate:self];
+    NSDictionary *dic = [request responseHeaders];
+    [request startAsynchronous];
+    
+}
+
+//- (void)doRegistation {
+//    ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:REGISTER_URL]];
+//    [request setPostValue:_userName forKey:@"user"];
+//    [request setPostValue:_password forKey:@"pass"];
+//    [request setPostValue:_email forKey:@"email"];
+//    [request setDelegate:self];
+//    [request startAsynchronous];
+//}
+
+#pragma mark - ASIHTTPRequest
+- (void)requestFinished:(ASIHTTPRequest *)request {
+    NSString *resultStr = [request responseString];
+    NSLog(@"Register:%@", resultStr);
+}
+
+
 //注册
 - (void)registerButtonPressed {
     _userName = ((UITextField *)[self.view viewWithTag:1]).text;
@@ -98,6 +130,7 @@ static NSString *confirmPassword = @"";
     //注册流程
     else {
         NSLog(@"ID:%@\nPass:%@\nEmail:%@", _userName, _password, _email);
+        [self doRegistation];
     }
 }
 

@@ -84,25 +84,16 @@
     
     
     
+    CGSize _size = [_oneItem.details sizeWithFont:[UIFont systemFontOfSize:17]];
+    int w = 300;
+    int row = (int)_size.width / w + 1;
+    int viewHeight = 45 + row * _size.height + 15 + 10 + 37 + 10;
     
-    
-    NSArray *array2 = [[NSBundle mainBundle] loadNibNamed:@"DetailFooterView" owner:self options:nil];
-    DetailFooterView *footerView;
-    footerView = [array2 objectAtIndex:0];
+    DetailFooterView *footerView = [[DetailFooterView alloc] initWithFrame:CGRectMake(0, 0, 320, viewHeight)];
     footerView.delegate = self;
     footerView.backgroundColor = [UIColor clearColor];
-    footerView.textView.text = _oneItem.details;
-//    footerView.textView.backgroundColor = [UIColor colorWithRed:0.945 green:0.945 blue:0.945 alpha:.5f];
-//    footerView.textView.layer.cornerRadius = 5.f;
-    
-    footerView.label.layer.cornerRadius = 3.f;
-//    footerView.leftButton.layer.cornerRadius = 10.f;
-//    footerView.rightButton.layer.cornerRadius = 10.f;
-    UIImage *oriImage = [UIImage imageNamed:@"whiteButton.png"];
-    UIImage *stretchableButtonImage = [oriImage stretchableImageWithLeftCapWidth:12 topCapHeight:0];
-    [footerView.leftButton setBackgroundImage:stretchableButtonImage forState:UIControlStateNormal];
-    [footerView.rightButton setBackgroundImage:stretchableButtonImage forState:UIControlStateNormal];
-    
+    footerView.detailString = _oneItem.details;
+    [footerView configFooterView];
     
     
     _tableView.tableFooterView = footerView;

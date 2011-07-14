@@ -17,17 +17,15 @@
 
 @interface DetailFooterView : UIView {
     UITextView *_textView;
-    UILabel *_label;
-    UIButton *_leftButton;
-    UIButton *_rightButton;
     id <DetailFooterViewDelegate> delegate;
+    NSString *_detailString;
 }
 
-@property (nonatomic, retain) IBOutlet UITextView *textView;
-@property (nonatomic, retain) IBOutlet UILabel *label;
-@property (nonatomic, retain) IBOutlet UIButton *leftButton;
-@property (nonatomic, retain) IBOutlet UIButton *rightButton;
 @property (nonatomic, assign) id <DetailFooterViewDelegate> delegate;
+@property (nonatomic, retain) NSString *detailString;
+
 - (IBAction)shareButton:(id)sender;
 - (IBAction)commitButton:(id)sender;
+
+- (void)configFooterView;
 @end

@@ -103,6 +103,9 @@ static PlaceAnnotation *kSelectedAnnotation = nil;
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfURL:[lAndD itemBackupDataFilePath]];
     [dic writeToURL:[lAndD itemDataFilePath] atomically:YES];
     [[ekkkManager sharedManager] setSelectedPlace:NSLocalizedString(@"Nearby", @"Nearby")];
+    [lAndD loadDataWithParsedItems:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"NewDataSaved" object:nil userInfo:nil];
+    [lAndD release];
     [self.navigationController popViewControllerAnimated:YES];
 //    [lAndD release];
 }

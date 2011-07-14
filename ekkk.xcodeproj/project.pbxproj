@@ -73,7 +73,6 @@
 		41E3647B136439C2001EFDC4 /* 花旗银行.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E36476136439C2001EFDC4 /* 花旗银行.png */; };
 		41E3647C136439C2001EFDC4 /* 俏江南.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E36477136439C2001EFDC4 /* 俏江南.png */; };
 		A90AED1D135EB1BE002DEFD3 /* BanksAndCards.plist in Resources */ = {isa = PBXBuildFile; fileRef = A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */; };
-		A90B8F4313AB6E2400BB2363 /* DetailFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90B8F4513AB6E2400BB2363 /* DetailFooterView.xib */; };
 		A90B8F4713AB82AC00BB2363 /* OffersTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90B8F4913AB82AC00BB2363 /* OffersTableCell.xib */; };
 		A91F87AD13BA0235002A149B /* DetailInfoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A91F87AC13BA0235002A149B /* DetailInfoTableCell.xib */; };
 		A91F87B013BA024D002A149B /* DetailInfoTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A91F87AF13BA024D002A149B /* DetailInfoTableCell.m */; };
@@ -260,8 +259,6 @@
 		41E36476136439C2001EFDC4 /* 花旗银行.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "花旗银行.png"; sourceTree = "<group>"; };
 		41E36477136439C2001EFDC4 /* 俏江南.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "俏江南.png"; sourceTree = "<group>"; };
 		A90AED1C135EB1BE002DEFD3 /* BanksAndCards.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BanksAndCards.plist; sourceTree = "<group>"; };
-		A90B8F4413AB6E2400BB2363 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailFooterView.xib; sourceTree = "<group>"; };
-		A90B8F4613AB6E2800BB2363 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/DetailFooterView.xib"; sourceTree = "<group>"; };
 		A90B8F4813AB82AC00BB2363 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OffersTableCell.xib; sourceTree = "<group>"; };
 		A90B8F4A13AB82B100BB2363 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/OffersTableCell.xib"; sourceTree = "<group>"; };
 		A91F87AC13BA0235002A149B /* DetailInfoTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailInfoTableCell.xib; sourceTree = "<group>"; };
@@ -473,7 +470,6 @@
 				A9DBEB7213AE1B0A00A0EDC3 /* DetailHeaderView.xib */,
 				41375822136BDCD200CDE06E /* DetailFooterView.h */,
 				41375823136BDCD300CDE06E /* DetailFooterView.m */,
-				A90B8F4513AB6E2400BB2363 /* DetailFooterView.xib */,
 			);
 			name = DetailView;
 			sourceTree = "<group>";
@@ -1035,7 +1031,6 @@
 				A90B8F4713AB82AC00BB2363 /* OffersTableCell.xib in Resources */,
 				4137581E136BDBF900CDE06E /* DetailController.xib in Resources */,
 				A9DBEB7013AE1B0A00A0EDC3 /* DetailHeaderView.xib in Resources */,
-				A90B8F4313AB6E2400BB2363 /* DetailFooterView.xib in Resources */,
 				A990487A136D5EE200306D37 /* ShowMyCardsViewController.xib in Resources */,
 				41BEF1A01371A7E8009DF1A9 /* StarsBackground.png in Resources */,
 				41BEF1A11371A7E8009DF1A9 /* StarsForeground.png in Resources */,
@@ -1179,15 +1174,6 @@
 				A9EC51DF13AB5D51003E7060 /* zh-Hans */,
 			);
 			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
-		A90B8F4513AB6E2400BB2363 /* DetailFooterView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A90B8F4413AB6E2400BB2363 /* en */,
-				A90B8F4613AB6E2800BB2363 /* zh-Hans */,
-			);
-			name = DetailFooterView.xib;
 			sourceTree = "<group>";
 		};
 		A90B8F4913AB82AC00BB2363 /* OffersTableCell.xib */ = {

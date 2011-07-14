@@ -20,7 +20,7 @@
 #define CategoryCTag    5
 
 @implementation CategoryTableViewController
-
+@synthesize categoryCoarse = _categoryCoarse;
 @synthesize dataArray = _dataArray;
 @synthesize tableView = _tableView;
 @synthesize bankButton = _bankButton;
@@ -54,6 +54,7 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
 
 - (void)dealloc
 {
+    [_categoryCoarse release];
     [_categoryArray release];
     [_categoryCArray release];
     [_distanceArray release];
@@ -238,8 +239,15 @@ static UISegmentedControl *kSegmentedControl = nil; //切换控制
     _sortKeyDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"all", @"kByCategory",
                           @"all", @"kByDistance", @"all", @"kByBank", @"all", @"kByCategoryCoarse", nil];
     
-    _showArray = [[NSMutableArray alloc] initWithArray:_dataArray];
-    
+//    _showArray = [[NSMutableArray alloc] initWithArray:_dataArray];
+    if (_showArray == nil) {
+        _showArray = [[NSMutableArray alloc] init];
+    }
+    for (OneItem *item in _dataArray) {
+        if (/*[item.category_Coarse isEqualToString:_categoryCoarse] &&*/ [item.hot isEqualToString:@"0"]) {
+            [_showArray addObject:item];
+        }
+    }
 
     
     _pickerArray = [[NSMutableArray alloc] initWithCapacity:10];
