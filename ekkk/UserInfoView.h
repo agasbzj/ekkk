@@ -15,4 +15,5 @@
     NSString *_userName;
 }
 @property (nonatomic, retain) NSString *userName;
+- (id)initWithFrame:(CGRect)frame user:(NSString *)name;
 @end

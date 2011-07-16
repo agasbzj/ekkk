@@ -11,11 +11,15 @@
 #import "ShowMyCardsViewController.h"
 #import "RegisterViewController.h"
 #import "UserInfoView.h"
+#import "ASIFormDataRequest.h"
+
+#define LOGIN_URL   @"http://xiaochen-shi.com/ckk_forServer/api/login.php"
 
 @implementation ManagementRootViewController
 @synthesize tableView = _tableView;
 
 static UIBarButtonItem *loginAndOutButton;
+static LoginAndRegisterView *kLoginAndRegView = nil;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,7 +47,41 @@ static UIBarButtonItem *loginAndOutButton;
 
 
 - (void)login {
-    UserInfoView *userInfoView = [[UserInfoView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+//    UserInfoView *userInfoView = [[UserInfoView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+//    userInfoView.alpha = 0.f;
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    [UIView beginAnimations:nil context:context];
+//    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+//    [UIView setAnimationDuration:.5f];
+//    [self.tableView setTableHeaderView:userInfoView];
+//    userInfoView.alpha = 1.f;
+//    [loginAndOutButton setTitle:NSLocalizedString(@"Sign Out", @"Sign Out")];
+//    [loginAndOutButton setAction:@selector(logout)];
+//    [UIView commitAnimations];
+    
+//    [userInfoView release];
+    ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:LOGIN_URL]];
+    [request setRequestMethod:@"POST"];
+    [request setPostValue:kLoginAndRegView.userTextField.text forKey:@"user"];
+    [request setPostValue:kLoginAndRegView.passTextField.text forKey:@"pass"];
+    NSLog(@"USER:%@PASS:%@", kLoginAndRegView.userTextField.text, kLoginAndRegView.passTextField.text);
+    [request setDelegate:self];
+    [request startAsynchronous];
+    [request release];
+}
+
+#pragma mark - ASIHTTPRequest
+- (void)requestFinished:(ASIHTTPRequest *)request {
+    NSString *resultStr = [request responseString];
+    NSLog(@"Register:%@", resultStr);
+    if ([resultStr isEqualToString:@"0"]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"登录失败" message:@"请检查用户名和密码" delegate:nil cancelButtonTitle:@"好" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+        return;
+    }
+    UserInfoView *userInfoView = [[UserInfoView alloc] initWithFrame:CGRectMake(0, 0, 320, 100) user:resultStr];
+//    userInfoView.userName = resultStr;
     userInfoView.alpha = 0.f;
     CGContextRef context = UIGraphicsGetCurrentContext();
     [UIView beginAnimations:nil context:context];
@@ -54,7 +92,7 @@ static UIBarButtonItem *loginAndOutButton;
     [loginAndOutButton setTitle:NSLocalizedString(@"Sign Out", @"Sign Out")];
     [loginAndOutButton setAction:@selector(logout)];
     [UIView commitAnimations];
-    
+
     [userInfoView release];
 }
 
@@ -62,7 +100,7 @@ static UIBarButtonItem *loginAndOutButton;
     LoginAndRegisterView *loginView = [[LoginAndRegisterView alloc] initWithFrame:CGRectMake(0, 0, 320, 240)];
     loginView.delegate = self;
     loginView.alpha = 0.f;
-    
+    kLoginAndRegView = loginView;
     CGContextRef context = UIGraphicsGetCurrentContext();
     [UIView beginAnimations:nil context:context];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
@@ -85,6 +123,7 @@ static UIBarButtonItem *loginAndOutButton;
     // Do any additional setup after loading the view from its nib.
     LoginAndRegisterView *loginView = [[LoginAndRegisterView alloc] initWithFrame:CGRectMake(0, 0, 320, 240)];
     loginView.delegate = self;
+    kLoginAndRegView = loginView;
     [self.tableView setTableHeaderView:loginView];
     [loginView release];
     
@@ -97,6 +136,7 @@ static UIBarButtonItem *loginAndOutButton;
 
 - (void)viewDidUnload
 {
+    kLoginAndRegView = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

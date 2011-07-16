@@ -57,10 +57,6 @@
 								<reference key="NSNextKeyView" ref="237464028"/>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<object class="NSCustomResource" key="IBUIImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">图标.png</string>
-								</object>
 							</object>
 							<object class="IBUILabel" id="237464028">
 								<reference key="NSNextResponder" ref="551520525"/>
@@ -143,6 +139,7 @@
 								<string key="NSFrame">{{115, 48}, {187, 21}}</string>
 								<reference key="NSSuperview" ref="551520525"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
@@ -397,10 +394,6 @@
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">图标.png</string>
-			<string key="NS.object.0">{117, 117}</string>
-		</object>
 		<string key="IBCocoaTouchPluginVersion">301</string>
 	</data>
 </archive>

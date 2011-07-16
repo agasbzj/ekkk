@@ -63,10 +63,10 @@
     if (!error) {
         NSData *responseData = [request responseData];
         NSString *resultStr = [request responseString];
-        NSString *reStr = [resultStr substringFromIndex:6];
-        NSData *newData = [reStr dataUsingEncoding:NSUTF8StringEncoding];
+//        NSString *reStr = [resultStr substringFromIndex:6];
+//        NSData *newData = [reStr dataUsingEncoding:NSUTF8StringEncoding];
         NSLog(@"RESULT:%@", resultStr);
-        NSDictionary *dict = [[CJSONDeserializer deserializer] deserializeAsDictionary:newData error:&error];
+        NSDictionary *dict = [[CJSONDeserializer deserializer] deserializeAsDictionary:responseData error:&error];
         [dict writeToFile:[NSString stringWithFormat:@"%@/Documents/Data.plist", NSHomeDirectory()] atomically:YES];
         parseOperation = [[ParseOperation alloc] init];
         [parseOperation parseLocalPlist:dict];

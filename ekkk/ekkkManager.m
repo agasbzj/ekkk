@@ -66,9 +66,7 @@ static ekkkManager *instance = nil;
 }
 
 - (id)copyWithZone:(NSZone *)zone {
-    
     return self;
-    
 }
 
 

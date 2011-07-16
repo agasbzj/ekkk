@@ -16,7 +16,6 @@
     NSMutableArray *_userCardsArray;    //用户的卡片数组
     NSString *_selectedPlace;           //当前选择的查询地点
     NSMutableArray *_parsedItems;   //存放解析完回传过来的新数据，其中每个元素为OneItem类
-
 }
 @property (nonatomic, retain) NSMutableArray *userCardsArray;
 @property (nonatomic, retain) NSString *selectedPlace;

@@ -12,6 +12,8 @@
 @implementation LoginAndRegisterView
 @synthesize tableView = _tableView;
 @synthesize delegate;
+@synthesize userTextField = _userTextField;
+@synthesize passTextField = _passTextField;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -39,6 +41,8 @@
 - (void)dealloc
 {
     [_tableView release];
+//    [_userTextField release];
+//    [_passTextField release];
     [super dealloc];
 }
 
@@ -80,7 +84,7 @@
     
     if (section == 0) {
         UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(20, 0, 280, 44)];
-
+        
         textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
         textField.borderStyle = UITextBorderStyleNone;
         textField.backgroundColor = [UIColor clearColor];
@@ -90,9 +94,13 @@
         [textField addTarget:self action:@selector(hideKeyboard) forControlEvents:UIControlEventEditingDidEndOnExit];
         switch (row) {
             case 0:
+                _userTextField = textField;
+                textField.tag = 1;
                 textField.placeholder = NSLocalizedString(@"Type User Name", @"Type User Name");
                 break;
             case 1:
+                _passTextField = textField;
+                textField.tag = 2;
                 textField.placeholder = NSLocalizedString(@"Type Password", @"Type Password");
                 textField.secureTextEntry = YES;
                 break;

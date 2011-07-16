@@ -61,27 +61,29 @@ static NSString *confirmPassword = @"";
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)doRegistation {
-    ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:REGISTER_URL]];
-    [request setRequestMethod:@"POST"];
-    [request addRequestHeader:@"user" value:_userName];
-    [request addRequestHeader:@"pass" value:_password];
-    [request addRequestHeader:@"email" value:_email];
-    
-    [request setDelegate:self];
-    NSDictionary *dic = [request responseHeaders];
-    [request startAsynchronous];
-    
-}
-
 //- (void)doRegistation {
-//    ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:REGISTER_URL]];
-//    [request setPostValue:_userName forKey:@"user"];
-//    [request setPostValue:_password forKey:@"pass"];
-//    [request setPostValue:_email forKey:@"email"];
+//    ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:REGISTER_URL]];
+//    [request setRequestMethod:@"POST"];
+//    [request addRequestHeader:@"user" value:_userName];
+//    [request addRequestHeader:@"pass" value:_password];
+//    [request addRequestHeader:@"email" value:_email];
+//    
 //    [request setDelegate:self];
+//    NSDictionary *dic = [request responseHeaders];
 //    [request startAsynchronous];
+//    
 //}
+
+- (void)doRegistation {
+    ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:REGISTER_URL]];
+    [request setTimeOutSeconds:30];
+    [request setRequestMethod:@"POST"];
+    [request setPostValue:_userName forKey:@"user"];
+    [request setPostValue:_password forKey:@"pass"];
+    [request setPostValue:_email forKey:@"email"];
+    [request setDelegate:self];
+    [request startAsynchronous];
+}
 
 #pragma mark - ASIHTTPRequest
 - (void)requestFinished:(ASIHTTPRequest *)request {

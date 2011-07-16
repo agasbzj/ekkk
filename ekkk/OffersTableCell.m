@@ -15,11 +15,31 @@
 @synthesize sourceLabel = _sourceLabel;
 //@synthesize image = _image;
 
+- (void)configCell {
+    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    _iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 60, 60)];
+    [self addSubview:_iconImageView];
+    
+    _sellerLabel = [[UILabel alloc] initWithFrame:CGRectMake(78, 5, 220, 21)];
+    [self addSubview:_sellerLabel];
+    
+    _discountLabel = [[UILabel alloc] initWithFrame:CGRectMake(78, 27, 220, 21)];
+    [self addSubview:_sellerLabel];
+    
+    NSString *from = @"来自于：";
+    [from drawInRect:CGRectMake(78, 48, 45, 21) withFont:[UIFont systemFontOfSize:10]];
+    
+    _sourceLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 48, 487, 21)];
+    [self addSubview:_sourceLabel];
+}
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+//        [self configCell];
     }
     return self;
 }

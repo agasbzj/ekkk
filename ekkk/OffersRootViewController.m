@@ -74,18 +74,18 @@ NSArray *temp;  //跟踪指针，用来释放。
 
 
 
-- (void)backgroundProcessData:(NSData *)responseData {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    
-    
-    ImageDownloader *imageDownloader = [ImageDownloader downloaderWithName:@"profileImages"];
-    
-    for (OneItem *item in _dataArray) {
-        [imageDownloader queueImage:item.image delegate:nil];
-    }
-    [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
-    [pool release];
-}
+//- (void)backgroundProcessData:(NSData *)responseData {
+//    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+//    
+//    
+//    ImageDownloader *imageDownloader = [ImageDownloader downloaderWithName:@"profileImages"];
+//    
+//    for (OneItem *item in _dataArray) {
+//        [imageDownloader queueImage:item.image delegate:nil];
+//    }
+//    [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+//    [pool release];
+//}
 
 - (void)startImageDownload:(NSString *)imageURL forIndexPath:(NSIndexPath *)indexPath
 {
@@ -273,7 +273,8 @@ NSArray *temp;  //跟踪指针，用来释放。
 
         NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"OffersTableCell" owner:self options:nil];
         cell = [array objectAtIndex:0];
-
+//        cell = [[[OffersTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
+//        cell.frame = CGRectMake(0, 0, 320, 74);
         cell.selectionStyle = UITableViewCellEditingStyleNone;
 
     }
@@ -292,7 +293,11 @@ NSArray *temp;  //跟踪指针，用来释放。
     cell.backgroundView = [[[UIImageView alloc] initWithImage:backgroundImage] autorelease];
     cell.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     cell.backgroundView.frame = cell.bounds;
-//    [self startImageDownload:item.image forIndexPath:indexPath]; 
+    
+//    if (![item.image isEqualToString:@""]) {
+//        [self startImageDownload:item.image forIndexPath:indexPath]; 
+//    }
+    
     return cell;
 }
 

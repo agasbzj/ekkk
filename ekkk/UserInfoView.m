@@ -12,16 +12,16 @@
 @implementation UserInfoView
 @synthesize userName = _userName;
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame user:(NSString *)name
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        _userName = @"Agas";
         UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, 320, 60)];
         nameLabel.backgroundColor = [UIColor clearColor];
         nameLabel.font = [UIFont boldSystemFontOfSize:20];
         nameLabel.textAlignment = UITextAlignmentCenter;
+        _userName = name;
         nameLabel.text = [NSString stringWithFormat:@"欢迎您：%@", _userName];
         [self addSubview:nameLabel];
         [nameLabel release];
@@ -40,7 +40,7 @@
 
 - (void)dealloc
 {
-    [_userName release];
+//    [_userName release];
     [super dealloc];
 }
 
