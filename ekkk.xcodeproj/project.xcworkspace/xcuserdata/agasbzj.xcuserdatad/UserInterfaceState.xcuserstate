@@ -124,7 +124,7 @@
 		<string>IDEWorkspaceTabController_DE818854-C57B-40E3-8C43-15BA42795C36</string>
 		<string>IDEWindowTabBarIsVisible</string>
 		<true/>
-		<string>{{78, 63}, {1326, 815}}</string>
+		<string>{{37, 63}, {1326, 815}}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -315,7 +315,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>17</integer>
+					<integer>13</integer>
 				</dict>
 			</array>
 		</dict>
@@ -930,8 +930,8 @@
 		<string>PrimaryDocumentVisibleCharacterRange</string>
 		<string>HideAllIssues</string>
 		<string>PrimaryDocumentSelectedCharacterRange</string>
-		<real>333793443.475788</real>
-		<string>{2158, 1642}</string>
+		<real>333795883.46516699</real>
+		<string>{2158, 1336}</string>
 		<string>{3304, 0}</string>
 		<dict>
 			<key>$classes</key>
@@ -995,7 +995,7 @@
 				</dict>
 			</array>
 		</dict>
-		<string>{{0, 0}, {787, 739}}</string>
+		<string>{{0, 0}, {787, 578}}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -2592,7 +2592,7 @@
 		<string>IDESCMStatusFilteringEnabled</string>
 		<string>IDESelectedObjects</string>
 		<string>IDEExpandedItemsSet</string>
-		<string>{{0, 376}, {278, 695}}</string>
+		<string>{{0, 582}, {278, 695}}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -20489,8 +20489,8 @@
 				</dict>
 			</array>
 		</dict>
-		<real>333793443.47316903</real>
-		<string>{2158, 1642}</string>
+		<real>333795883.46387303</real>
+		<string>{2158, 1336}</string>
 		<string>{3304, 0}</string>
 		<dict>
 			<key>$class</key>
@@ -33325,7 +33325,7 @@
 				<integer>2309</integer>
 			</dict>
 			<key>NS.time</key>
-			<real>333793413.55086899</real>
+			<real>333795638.42990798</real>
 		</dict>
 		<dict>
 			<key>$classes</key>
@@ -33336,7 +33336,7 @@
 			<key>$classname</key>
 			<string>NSDate</string>
 		</dict>
-		<string>Today at 下午4:23</string>
+		<string>Today at 下午5:00</string>
 		<integer>234</integer>
 		<dict>
 			<key>$class</key>
