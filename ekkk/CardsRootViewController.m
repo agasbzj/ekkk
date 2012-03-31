@@ -57,7 +57,7 @@
     _plistKey = [[NSDictionary alloc] initWithContentsOfFile:path];
     _bankArray = [_plistKey valueForKey:@"Banks"];
     
-    self.tableView.backgroundColor = [UIColor darkGrayColor];
+    //self.tableView.backgroundColor = [UIColor darkGrayColor];
     
 }
 
@@ -96,26 +96,30 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    CardsTableCell *cell = (CardsTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    CardsTableCell *cell = (CardsTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
 
-        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"CardsTableCell" owner:self options:nil];
-        cell = [array objectAtIndex:0];
-//        cell.selectionStyle = UITableViewCellSelectionStyleGray;
+//        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"CardsTableCell" owner:self options:nil];
+//        cell = [array objectAtIndex:0];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    NSString *backgroundImagePath = [[NSBundle mainBundle] pathForResource:(indexPath.row % 2 == 0) ? @"DarkBackground" : @"LightBackground" ofType:@"png"];
-    UIImage *backgroundImage = [[UIImage imageWithContentsOfFile:backgroundImagePath] stretchableImageWithLeftCapWidth:0.0 topCapHeight:1.0];
-    cell.backgroundView = [[[UIImageView alloc] initWithImage:backgroundImage] autorelease];
-    cell.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    cell.backgroundView.frame = cell.bounds;
+//    NSString *backgroundImagePath = [[NSBundle mainBundle] pathForResource:(indexPath.row % 2 == 0) ? @"DarkBackground" : @"LightBackground" ofType:@"png"];
+//    UIImage *backgroundImage = [[UIImage imageWithContentsOfFile:backgroundImagePath] stretchableImageWithLeftCapWidth:0.0 topCapHeight:1.0];
+//    cell.backgroundView = [[[UIImageView alloc] initWithImage:backgroundImage] autorelease];
+//    cell.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//    cell.backgroundView.frame = cell.bounds;
     
     // Configure the cell...
     NSDictionary *dic = [_bankArray objectAtIndex:indexPath.row];
-    cell.theLabel.text = [dic valueForKey:@"bankName"];
-    UIImage *icon = [UIImage imageNamed:[dic valueForKey:@"icon"]];
-    cell.iconImageView.image = icon;                 
+//    cell.theLabel.text = [dic valueForKey:@"bankName"];
+//    UIImage *icon = [UIImage imageNamed:[dic valueForKey:@"icon"]];
+//    cell.iconImageView.image = icon;                 
     
+    cell.textLabel.text = [dic valueForKey:@"bankName"];
+    cell.imageView.image = [UIImage imageNamed:[dic valueForKey:@"icon"]];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 

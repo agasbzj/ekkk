@@ -94,7 +94,26 @@
 		A93B9E6813A794D8009C55B0 /* PlaceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B9E6713A794D8009C55B0 /* PlaceAnnotation.m */; };
 		A93B9E6B13A7A1EF009C55B0 /* ekkkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A93B9E6A13A7A1ED009C55B0 /* ekkkManager.m */; };
 		A941961213A49DD4000BC0D9 /* TestAllThings.xib in Resources */ = {isa = PBXBuildFile; fileRef = A941961113A49DD4000BC0D9 /* TestAllThings.xib */; };
+		A949A59D1526002500012E54 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A949A59C1526002500012E54 /* Default.png */; };
+		A949A5A01526002900012E54 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A949A59F1526002900012E54 /* Default@2x.png */; };
+		A949A5B21526040F00012E54 /* gongshang.png in Resources */ = {isa = PBXBuildFile; fileRef = A949A5A21526040F00012E54 /* gongshang.png */; };
+		A949A5B31526040F00012E54 /* guangda.png in Resources */ = {isa = PBXBuildFile; fileRef = A949A5A31526040F00012E54 /* guangda.png */; };
+		A949A5B41526040F00012E54 /* guangfa.png in Resources */ = {isa = PBXBuildFile; fileRef = A949A5A41526040F00012E54 /* guangfa.png */; };
+		A949A5B51526040F00012E54 /* huaqi.png in Resources */ = {isa = PBXBuildFile; fileRef = A949A5A51526040F00012E54 /* huaqi.png */; };
+		A949A5B61526040F00012E54 /* huaxia.png in Resources */ = {isa = PBXBuildFile; fileRef = A949A5A61526040F00012E54 /* huaxia.png */; };
+		A949A5B71526040F00012E54 /* huifeng.png in Resources */ = {isa = PBXBuildFile; fileRef = A949A5A71526040F00012E54 /* huifeng.png */; };
+		A949A5B81526040F00012E54 /* jianshe.png in Resources */ = {isa = PBXBuildFile; fileRef = A949A5A81526040F00012E54 /* jianshe.png */; };
+		A949A5B91526040F00012E54 /* jiaotong.png in Resources */ = {isa = PBXBuildFile; fileRef = A949A5A91526040F00012E54 /* jiaotong.png */; };
+		A949A5BA1526040F00012E54 /* minsheng.png in Resources */ = {isa = PBXBuildFile; fileRef = A949A5AA1526040F00012E54 /* minsheng.png */; };
+		A949A5BB1526040F00012E54 /* nongye.png in Resources */ = {isa = PBXBuildFile; fileRef = A949A5AB1526040F00012E54 /* nongye.png */; };
+		A949A5BC1526040F00012E54 /* pingan.png in Resources */ = {isa = PBXBuildFile; fileRef = A949A5AC1526040F00012E54 /* pingan.png */; };
+		A949A5BD1526040F00012E54 /* pufa.png in Resources */ = {isa = PBXBuildFile; fileRef = A949A5AD1526040F00012E54 /* pufa.png */; };
+		A949A5BE1526040F00012E54 /* sfz.png in Resources */ = {isa = PBXBuildFile; fileRef = A949A5AE1526040F00012E54 /* sfz.png */; };
+		A949A5BF1526040F00012E54 /* zhaoshang.png in Resources */ = {isa = PBXBuildFile; fileRef = A949A5AF1526040F00012E54 /* zhaoshang.png */; };
+		A949A5C01526040F00012E54 /* zhongguo.png in Resources */ = {isa = PBXBuildFile; fileRef = A949A5B01526040F00012E54 /* zhongguo.png */; };
+		A949A5C11526040F00012E54 /* zhongxin.png in Resources */ = {isa = PBXBuildFile; fileRef = A949A5B11526040F00012E54 /* zhongxin.png */; };
 		A94AD54F136B06A80089D3AF /* credit_information.xml in Resources */ = {isa = PBXBuildFile; fileRef = A94AD54E136B06A80089D3AF /* credit_information.xml */; };
+		A9653E5414FBC48600E0A3FF /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A9653E5314FBC48600E0A3FF /* libz.1.2.5.dylib */; };
 		A9724E2F135C835E000982A3 /* NearbyCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9724E2E135C835E000982A3 /* NearbyCategory.plist */; };
 		A97354C2139E4F2900895C00 /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97354C1139E4F2900895C00 /* TextCell.xib */; };
 		A97DA87E1361BBC100994946 /* CategoryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A97DA87D1361BBC100994946 /* CategoryTableCell.m */; };
@@ -166,7 +185,6 @@
 		A9FAAA4F13C9D3F9008B2798 /* ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAAA4A13C9D3F9008B2798 /* ImageCache.m */; };
 		A9FAAA5113C9D3F9008B2798 /* ImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAAA4E13C9D3F9008B2798 /* ImageRequest.m */; };
 		A9FAAA5413C9D47E008B2798 /* CustomTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAAA5313C9D47E008B2798 /* CustomTableCell.m */; };
-		A9FAAA5613C9DAFF008B2798 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FAAA5513C9DAFF008B2798 /* libz.1.2.3.dylib */; };
 		A9FAAA6313C9DCDF008B2798 /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAAA6213C9DCDF008B2798 /* ImageDownloader.m */; };
 /* End PBXBuildFile section */
 
@@ -301,7 +319,26 @@
 		A93B9E6913A7A1EB009C55B0 /* ekkkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ekkkManager.h; sourceTree = "<group>"; };
 		A93B9E6A13A7A1ED009C55B0 /* ekkkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ekkkManager.m; sourceTree = "<group>"; };
 		A941961113A49DD4000BC0D9 /* TestAllThings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestAllThings.xib; sourceTree = "<group>"; };
+		A949A59C1526002500012E54 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		A949A59F1526002900012E54 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		A949A5A21526040F00012E54 /* gongshang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gongshang.png; sourceTree = "<group>"; };
+		A949A5A31526040F00012E54 /* guangda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guangda.png; sourceTree = "<group>"; };
+		A949A5A41526040F00012E54 /* guangfa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guangfa.png; sourceTree = "<group>"; };
+		A949A5A51526040F00012E54 /* huaqi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = huaqi.png; sourceTree = "<group>"; };
+		A949A5A61526040F00012E54 /* huaxia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = huaxia.png; sourceTree = "<group>"; };
+		A949A5A71526040F00012E54 /* huifeng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = huifeng.png; sourceTree = "<group>"; };
+		A949A5A81526040F00012E54 /* jianshe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jianshe.png; sourceTree = "<group>"; };
+		A949A5A91526040F00012E54 /* jiaotong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jiaotong.png; sourceTree = "<group>"; };
+		A949A5AA1526040F00012E54 /* minsheng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minsheng.png; sourceTree = "<group>"; };
+		A949A5AB1526040F00012E54 /* nongye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nongye.png; sourceTree = "<group>"; };
+		A949A5AC1526040F00012E54 /* pingan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pingan.png; sourceTree = "<group>"; };
+		A949A5AD1526040F00012E54 /* pufa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pufa.png; sourceTree = "<group>"; };
+		A949A5AE1526040F00012E54 /* sfz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sfz.png; sourceTree = "<group>"; };
+		A949A5AF1526040F00012E54 /* zhaoshang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhaoshang.png; sourceTree = "<group>"; };
+		A949A5B01526040F00012E54 /* zhongguo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhongguo.png; sourceTree = "<group>"; };
+		A949A5B11526040F00012E54 /* zhongxin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhongxin.png; sourceTree = "<group>"; };
 		A94AD54E136B06A80089D3AF /* credit_information.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = credit_information.xml; sourceTree = "<group>"; };
+		A9653E5314FBC48600E0A3FF /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		A9724E2E135C835E000982A3 /* NearbyCategory.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = NearbyCategory.plist; sourceTree = "<group>"; };
 		A97354C1139E4F2900895C00 /* TextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
 		A97DA87C1361BBC100994946 /* CategoryTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableCell.h; sourceTree = "<group>"; };
@@ -414,7 +451,6 @@
 		A9FAAA4E13C9D3F9008B2798 /* ImageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageRequest.m; sourceTree = "<group>"; };
 		A9FAAA5213C9D47E008B2798 /* CustomTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableCell.h; sourceTree = "<group>"; };
 		A9FAAA5313C9D47E008B2798 /* CustomTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableCell.m; sourceTree = "<group>"; };
-		A9FAAA5513C9DAFF008B2798 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		A9FAAA6113C9DCDF008B2798 /* ImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloader.h; sourceTree = "<group>"; };
 		A9FAAA6213C9DCDF008B2798 /* ImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -424,7 +460,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9FAAA5613C9DAFF008B2798 /* libz.1.2.3.dylib in Frameworks */,
+				A9653E5414FBC48600E0A3FF /* libz.1.2.5.dylib in Frameworks */,
 				411FA7F1138BDDBC001C27B3 /* MessageUI.framework in Frameworks */,
 				A986BAA113647A2C0085433E /* QuartzCore.framework in Frameworks */,
 				41750DD5134AF0C500CFF97E /* CoreLocation.framework in Frameworks */,
@@ -532,6 +568,8 @@
 		41A4D0491348CB9A00D070BB = {
 			isa = PBXGroup;
 			children = (
+				A949A59F1526002900012E54 /* Default@2x.png */,
+				A949A59C1526002500012E54 /* Default.png */,
 				A981BEE813D1EEA800B172F5 /* 屏幕快照 2011-07-17 上午12.06.14.png */,
 				A981BEE513D1EE2500B172F5 /* DD1A58E3-5E3E-4206-B073-42614BB84230.png */,
 				41A4D05E1348CB9A00D070BB /* ekkk */,
@@ -552,7 +590,7 @@
 		41A4D0571348CB9A00D070BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A9FAAA5513C9DAFF008B2798 /* libz.1.2.3.dylib */,
+				A9653E5314FBC48600E0A3FF /* libz.1.2.5.dylib */,
 				411FA7F0138BDDBC001C27B3 /* MessageUI.framework */,
 				A986BAA013647A2B0085433E /* QuartzCore.framework */,
 				A981565E135969570056396A /* CoreLocation.framework */,
@@ -687,6 +725,7 @@
 		41A4D0971348CDD700D070BB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A949A5A1152603FE00012E54 /* BankIcons */,
 				A9B4725D13B2D46300A86A95 /* blueBackground.png */,
 				A9FA279513ACF38C00FE2889 /* lightGrayBackground.png */,
 				A992424D13AB9C9C00113C45 /* grayBackground.png */,
@@ -833,6 +872,29 @@
 				A935358D13A88378001513A9 /* LocateAndDownload.m */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		A949A5A1152603FE00012E54 /* BankIcons */ = {
+			isa = PBXGroup;
+			children = (
+				A949A5A21526040F00012E54 /* gongshang.png */,
+				A949A5A31526040F00012E54 /* guangda.png */,
+				A949A5A41526040F00012E54 /* guangfa.png */,
+				A949A5A51526040F00012E54 /* huaqi.png */,
+				A949A5A61526040F00012E54 /* huaxia.png */,
+				A949A5A71526040F00012E54 /* huifeng.png */,
+				A949A5A81526040F00012E54 /* jianshe.png */,
+				A949A5A91526040F00012E54 /* jiaotong.png */,
+				A949A5AA1526040F00012E54 /* minsheng.png */,
+				A949A5AB1526040F00012E54 /* nongye.png */,
+				A949A5AC1526040F00012E54 /* pingan.png */,
+				A949A5AD1526040F00012E54 /* pufa.png */,
+				A949A5AE1526040F00012E54 /* sfz.png */,
+				A949A5AF1526040F00012E54 /* zhaoshang.png */,
+				A949A5B01526040F00012E54 /* zhongguo.png */,
+				A949A5B11526040F00012E54 /* zhongxin.png */,
+			);
+			name = BankIcons;
 			sourceTree = "<group>";
 		};
 		A97F281F1396629B00368180 /* Icons */ = {
@@ -1084,6 +1146,24 @@
 				A9D1A6A213CB3D6A00E41A12 /* Localizable.strings in Resources */,
 				A981BEE613D1EE2500B172F5 /* DD1A58E3-5E3E-4206-B073-42614BB84230.png in Resources */,
 				A981BEE913D1EEA800B172F5 /* 屏幕快照 2011-07-17 上午12.06.14.png in Resources */,
+				A949A59D1526002500012E54 /* Default.png in Resources */,
+				A949A5A01526002900012E54 /* Default@2x.png in Resources */,
+				A949A5B21526040F00012E54 /* gongshang.png in Resources */,
+				A949A5B31526040F00012E54 /* guangda.png in Resources */,
+				A949A5B41526040F00012E54 /* guangfa.png in Resources */,
+				A949A5B51526040F00012E54 /* huaqi.png in Resources */,
+				A949A5B61526040F00012E54 /* huaxia.png in Resources */,
+				A949A5B71526040F00012E54 /* huifeng.png in Resources */,
+				A949A5B81526040F00012E54 /* jianshe.png in Resources */,
+				A949A5B91526040F00012E54 /* jiaotong.png in Resources */,
+				A949A5BA1526040F00012E54 /* minsheng.png in Resources */,
+				A949A5BB1526040F00012E54 /* nongye.png in Resources */,
+				A949A5BC1526040F00012E54 /* pingan.png in Resources */,
+				A949A5BD1526040F00012E54 /* pufa.png in Resources */,
+				A949A5BE1526040F00012E54 /* sfz.png in Resources */,
+				A949A5BF1526040F00012E54 /* zhaoshang.png in Resources */,
+				A949A5C01526040F00012E54 /* zhongguo.png in Resources */,
+				A949A5C11526040F00012E54 /* zhongxin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1263,7 +1343,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jianjun Wu (VC2QCB97TF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jianjun Wu (VC2QCB97TF)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -1273,6 +1354,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PROVISIONING_PROFILE = "12D4D0A1-B305-4BC3-B77A-963B9CB0E086";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "12D4D0A1-B305-4BC3-B77A-963B9CB0E086";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1281,7 +1364,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jianjun Wu (VC2QCB97TF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jianjun Wu (VC2QCB97TF)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -1289,6 +1373,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "12D4D0A1-B305-4BC3-B77A-963B9CB0E086";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "12D4D0A1-B305-4BC3-B77A-963B9CB0E086";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -1297,12 +1383,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jianjun Wu (VC2QCB97TF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jianjun Wu (VC2QCB97TF)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ekkk/ekkk-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "ekkk/ekkk-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "25DB8770-EBE9-4C6E-9B89-5495559622B2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "25DB8770-EBE9-4C6E-9B89-5495559622B2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1311,11 +1402,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jianjun Wu (VC2QCB97TF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jianjun Wu (VC2QCB97TF)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ekkk/ekkk-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "ekkk/ekkk-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "25DB8770-EBE9-4C6E-9B89-5495559622B2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "25DB8770-EBE9-4C6E-9B89-5495559622B2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

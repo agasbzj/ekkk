@@ -13,7 +13,7 @@
 				<string>白金卡</string>
 			</array>
 			<key>icon</key>
-			<string>中国工商银行.png</string>
+			<string>gongshang.png</string>
 		</dict>
 		<dict>
 			<key>bankName</key>
@@ -24,7 +24,7 @@
 				<string>白金卡</string>
 			</array>
 			<key>icon</key>
-			<string>中国农业银行.png</string>
+			<string>nongye.png</string>
 		</dict>
 		<dict>
 			<key>bankName</key>
@@ -35,7 +35,7 @@
 				<string>白金卡</string>
 			</array>
 			<key>icon</key>
-			<string>中国银行.png</string>
+			<string>zhongguo.png</string>
 		</dict>
 		<dict>
 			<key>bankName</key>
@@ -46,7 +46,7 @@
 				<string>白金卡</string>
 			</array>
 			<key>icon</key>
-			<string>中国建设银行.png</string>
+			<string>jianshe.png</string>
 		</dict>
 		<dict>
 			<key>bankName</key>
@@ -57,7 +57,7 @@
 				<string>浦发白金卡</string>
 			</array>
 			<key>icon</key>
-			<string>上海浦东发展银行.png</string>
+			<string>pufa.png</string>
 		</dict>
 		<dict>
 			<key>bankName</key>
@@ -68,7 +68,7 @@
 				<string>白金卡</string>
 			</array>
 			<key>icon</key>
-			<string>交通银行.png</string>
+			<string>jiaotong.png</string>
 		</dict>
 		<dict>
 			<key>bankName</key>
@@ -79,7 +79,7 @@
 				<string>白金卡</string>
 			</array>
 			<key>icon</key>
-			<string>深圳发展银行.png</string>
+			<string>sfz.png</string>
 		</dict>
 		<dict>
 			<key>bankName</key>
@@ -90,7 +90,7 @@
 				<string>白金卡</string>
 			</array>
 			<key>icon</key>
-			<string>广东发展银行.png</string>
+			<string>guangfa.png</string>
 		</dict>
 		<dict>
 			<key>bankName</key>
@@ -101,7 +101,7 @@
 				<string>白金卡</string>
 			</array>
 			<key>icon</key>
-			<string>中国光大银行.png</string>
+			<string>guangda.png</string>
 		</dict>
 		<dict>
 			<key>bankName</key>
@@ -112,7 +112,7 @@
 				<string>白金卡</string>
 			</array>
 			<key>icon</key>
-			<string>中国民生银行.png</string>
+			<string>minsheng.png</string>
 		</dict>
 		<dict>
 			<key>bankName</key>
@@ -123,7 +123,7 @@
 				<string>白金卡</string>
 			</array>
 			<key>icon</key>
-			<string>华夏银行.png</string>
+			<string>huaxia.png</string>
 		</dict>
 		<dict>
 			<key>bankName</key>
@@ -134,7 +134,7 @@
 				<string>白金卡</string>
 			</array>
 			<key>icon</key>
-			<string>中信银行.png</string>
+			<string>zhongxin.png</string>
 		</dict>
 		<dict>
 			<key>bankName</key>
@@ -145,7 +145,7 @@
 				<string>白金卡</string>
 			</array>
 			<key>icon</key>
-			<string>中国平安银行.png</string>
+			<string>pingan.png</string>
 		</dict>
 		<dict>
 			<key>bankName</key>
@@ -156,7 +156,7 @@
 				<string>白金卡</string>
 			</array>
 			<key>icon</key>
-			<string>花旗银行.png</string>
+			<string>huaqi.png</string>
 		</dict>
 		<dict>
 			<key>bankName</key>
@@ -167,7 +167,7 @@
 				<string>白金卡</string>
 			</array>
 			<key>icon</key>
-			<string>汇丰银行.png</string>
+			<string>huifeng.png</string>
 		</dict>
 		<dict>
 			<key>bankName</key>
@@ -178,7 +178,7 @@
 				<string>白金卡</string>
 			</array>
 			<key>icon</key>
-			<string>招商银行.png</string>
+			<string>zhaoshang.png</string>
 		</dict>
 	</array>
 </dict>

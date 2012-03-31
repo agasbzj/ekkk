@@ -48,13 +48,14 @@
     // Do any additional setup after loading the view from its nib.
     self.tableView.rowHeight = 60;  //根据类别数量配置行高
     self.tableView.scrollEnabled = NO; //不允许滚动
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
     //获得plist下的内容
     NSString *path = [[NSBundle mainBundle] pathForResource:@"NearbyCategory" ofType:@"plist"];
     _plistKey = [[NSDictionary alloc] initWithContentsOfFile:path];
     _categoryArray = [_plistKey valueForKey:@"categoryList"];
     
-    self.tableView.backgroundColor = [UIColor darkGrayColor];
+    //self.tableView.backgroundColor = [UIColor darkGrayColor];
     
 }
 
@@ -93,33 +94,32 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    CategoryRootCell *cell = (CategoryRootCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    CategoryRootCell *cell = (CategoryRootCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-//        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-//        cell.selectionStyle = UITableViewCellSelectionStyleGray;
-//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//        cell.indentationLevel = 1;
-    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"CategoryRootCell" owner:self options:nil];
-    cell = [array objectAtIndex:0];
 
+//        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"CategoryRootCell" owner:self options:nil];
+//        cell = [array objectAtIndex:0];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
     
-    NSString *backgroundImagePath = [[NSBundle mainBundle] pathForResource:(indexPath.row % 2 == 0) ? @"DarkBackground" : @"LightBackground" ofType:@"png"];
-    UIImage *backgroundImage = [[UIImage imageWithContentsOfFile:backgroundImagePath] stretchableImageWithLeftCapWidth:0.0 topCapHeight:1.0];
-    cell.backgroundView = [[[UIImageView alloc] initWithImage:backgroundImage] autorelease];
-    cell.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    cell.backgroundView.frame = cell.bounds;
-        
-    // Configure the cell...
+//    NSString *backgroundImagePath = [[NSBundle mainBundle] pathForResource:(indexPath.row % 2 == 0) ? @"DarkBackground" : @"LightBackground" ofType:@"png"];
+//    UIImage *backgroundImage = [[UIImage imageWithContentsOfFile:backgroundImagePath] stretchableImageWithLeftCapWidth:0.0 topCapHeight:1.0];
+//    cell.backgroundView = [[[UIImageView alloc] initWithImage:backgroundImage] autorelease];
+//    cell.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//    cell.backgroundView.frame = cell.bounds;
+//        
+//    // Configure the cell...
+//    NSDictionary *dic = [_categoryArray objectAtIndex:indexPath.row];
+//    cell.theLabel.text = [dic valueForKey:@"name"];
+//    UIImage *icon = [UIImage imageNamed:[dic valueForKey:@"icon"]];
+//    cell.iconImageView.image = icon;                 
+    
     NSDictionary *dic = [_categoryArray objectAtIndex:indexPath.row];
-    cell.theLabel.text = [dic valueForKey:@"name"];
-//    UIFont *font = [UIFont systemFontOfSize:14];
-//    cell.detailTextLabel.font = font;
-//    cell.textLabel.font = font;
-    UIImage *icon = [UIImage imageNamed:[dic valueForKey:@"icon"]];
-    cell.iconImageView.image = icon;                 
-
+    cell.textLabel.text = [dic valueForKey:@"name"];
+    cell.imageView.image = [UIImage imageNamed:[dic valueForKey:@"icon"]];
+    
     return cell;
 }
 
