@@ -10,7 +10,10 @@
 
 @interface FlipView : UIView {
     UIImageView *_imageView;
+    NSInteger _page;
 }
 
+- (id)initWithPageNumber:(NSInteger)page;
 - (void)setImage:(UIImage *)image;
+- (UIImageView *)imageView;
 @end

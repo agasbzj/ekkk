@@ -11,7 +11,12 @@
 @interface FlipViewController : NSObject <UIScrollViewDelegate> {
     UIScrollView *_scrollView;
     NSMutableArray *_flipArray;
+    UIPageControl *_pageControl;
+    BOOL _pageControlUsed;
+    UIView *_superView;
 }
 
 - (UIScrollView *)getScrollView;
+- (id)initWithSuperView:(UIView *)view;
+- (void)setHide:(BOOL)value;
 @end

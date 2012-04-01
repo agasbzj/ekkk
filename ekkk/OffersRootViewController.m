@@ -58,6 +58,7 @@ NSArray *temp;  //跟踪指针，用来释放。
 
 - (void)dealloc
 {
+    [_flipViewController release];
     [_segmentedControl release];
     [_dataArray release];
     [_tableView release];
@@ -184,12 +185,14 @@ NSArray *temp;  //跟踪指针，用来释放。
     switch (_segmentedControl.selectedSegmentIndex) {
         case 0:
         {
+            [_flipViewController setHide:NO];
             [self getData];
             
             break;
         }
         case 1:
         {
+            [_flipViewController setHide:YES];
             [self getMyCardsData];
             break;
         }
@@ -243,6 +246,7 @@ NSArray *temp;  //跟踪指针，用来释放。
     [_segmentedControl addTarget:self action:@selector(switchCategory:) forControlEvents:UIControlEventValueChanged];
     self.navigationItem.titleView = _segmentedControl;
     
+    _flipViewController = [[FlipViewController alloc] initWithSuperView:self.view];
     
 }
 
