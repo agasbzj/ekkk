@@ -44,10 +44,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, 480) style:UITableViewStyleGrouped];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.tableView release];
+    //[self.view addSubview:self.tableView];
     // Do any additional setup after loading the view from its nib.
-    self.tableView.rowHeight = 60;  //根据类别数量配置行高
-    self.tableView.scrollEnabled = NO; //不允许滚动
+    self.tableView.rowHeight = 50;  //根据类别数量配置行高
+    //self.tableView.scrollEnabled = NO; //不允许滚动
     //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     //获得plist下的内容
@@ -119,7 +123,7 @@
     NSDictionary *dic = [_categoryArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [dic valueForKey:@"name"];
     cell.imageView.image = [UIImage imageNamed:[dic valueForKey:@"icon"]];
-    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 
