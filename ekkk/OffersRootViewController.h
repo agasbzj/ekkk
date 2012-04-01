@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ImageDownloader.h"
 #import "TableCellDownloadReceiver.h"
+
+@class FlipViewController;
 @interface OffersRootViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
     UITableView *_tableView;
     UISegmentedControl *_segmentedControl;
@@ -16,6 +18,7 @@
     
     @private
     NSMutableDictionary *cellReceivers;
+    FlipViewController *_flipViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;

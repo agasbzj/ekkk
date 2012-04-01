@@ -186,6 +186,8 @@
 		A9FAAA5113C9D3F9008B2798 /* ImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAAA4E13C9D3F9008B2798 /* ImageRequest.m */; };
 		A9FAAA5413C9D47E008B2798 /* CustomTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAAA5313C9D47E008B2798 /* CustomTableCell.m */; };
 		A9FAAA6313C9DCDF008B2798 /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FAAA6213C9DCDF008B2798 /* ImageDownloader.m */; };
+		C98624B01527FAAA0098D8A9 /* FlipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98624AF1527FAAA0098D8A9 /* FlipViewController.m */; };
+		C98624B41527FACD0098D8A9 /* FlipView.m in Sources */ = {isa = PBXBuildFile; fileRef = C98624B31527FACD0098D8A9 /* FlipView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -453,6 +455,10 @@
 		A9FAAA5313C9D47E008B2798 /* CustomTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableCell.m; sourceTree = "<group>"; };
 		A9FAAA6113C9DCDF008B2798 /* ImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloader.h; sourceTree = "<group>"; };
 		A9FAAA6213C9DCDF008B2798 /* ImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloader.m; sourceTree = "<group>"; };
+		C98624AE1527FAAA0098D8A9 /* FlipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipViewController.h; sourceTree = "<group>"; };
+		C98624AF1527FAAA0098D8A9 /* FlipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipViewController.m; sourceTree = "<group>"; };
+		C98624B21527FACD0098D8A9 /* FlipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipView.h; sourceTree = "<group>"; };
+		C98624B31527FACD0098D8A9 /* FlipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -707,6 +713,10 @@
 				4125CB41136B12900064A69A /* OffersTableCell.h */,
 				4125CB42136B12900064A69A /* OffersTableCell.m */,
 				A90B8F4913AB82AC00BB2363 /* OffersTableCell.xib */,
+				C98624AE1527FAAA0098D8A9 /* FlipViewController.h */,
+				C98624AF1527FAAA0098D8A9 /* FlipViewController.m */,
+				C98624B21527FACD0098D8A9 /* FlipView.h */,
+				C98624B31527FACD0098D8A9 /* FlipView.m */,
 			);
 			name = Offers;
 			sourceTree = "<group>";
@@ -1241,6 +1251,8 @@
 				A9FAAA5113C9D3F9008B2798 /* ImageRequest.m in Sources */,
 				A9FAAA5413C9D47E008B2798 /* CustomTableCell.m in Sources */,
 				A9FAAA6313C9DCDF008B2798 /* ImageDownloader.m in Sources */,
+				C98624B01527FAAA0098D8A9 /* FlipViewController.m in Sources */,
+				C98624B41527FACD0098D8A9 /* FlipView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

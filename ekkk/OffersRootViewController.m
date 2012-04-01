@@ -13,6 +13,7 @@
 #import "DetailController.h"
 #import "ekkkManager.h"
 #import "LocateAndDownload.h"
+#import "FlipViewController.h"
 
 #define kFileName @"location.plist"
 #define kDataFileName @"Data.plist"
